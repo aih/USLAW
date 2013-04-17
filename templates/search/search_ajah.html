@@ -1,0 +1,24 @@
+{% autoescape off %} 
+{% for r in main_result.object_list %}
+<span class="search_item">
+<a href="/laws/{{ r.section.title }}/{{ r.section.section }}{% if r.subsection %}/#{{ r.subsection }}{% endif %}" class="sec">{{ r }}</a>
+  <br />
+  {{ r.text|striptags|truncatewords:25 }}
+</span>
+  <br />
+{% empty %}
+<p>No results found.</p>
+{% endfor %}
+{% endautoescape %}
+
+
+  {% if previous_page %}<a href="#" onclick="do_search(document.getElementById('search_query').value, {{ page_id|add:'-1' }} );"><<{{ page_id|add:"-1" }}</a>{% endif %} { {{ page_id }} of {{ p_main.num_pages }} }  {% if next_page %}<a href="#" onclick="do_search(document.getElementById('search_query').value, {{ page_id|add:'1' }} );">>>{{ page_id|add:"1" }}</a>{% endif %}
+<br />
+<div style="padding:0px; margin:0px; border-top: 1px solid gray; width:100%; margin-top:20px;">
+  <a href="#" onclick="$('#search_results').fadeOut('slow'); setCookie('seach_query', '', null); ">Close</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  {% if user.is_authenticated %}<a href="#" onclick="last_search();">Recent Searches</a>{% endif %}
+</div>
+
+<script type="text/javascript">//<![CDATA[
+  attachHovers("body");
+//]]></script>

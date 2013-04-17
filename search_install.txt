@@ -1,0 +1,51 @@
+Search installation:
+
+Information.
+  M - changed files, A - new files.
+M laws/urls.py
+M laws/views.py
+M media/css/style.css
+M settings.py
+M settings_local.py.template
+M templates/base.html
+M templates/index.html
+M urls.py
+A laws/search_indexes.py
+A search_install.txt
+A search_sites.py
+A templates/search/form.html
+A templates/search/search.html
+A templates/search/search_ajah.html
+
+We need some additional components:
+(All commands must be executed by root user)
+apt-get install python-pip
+apt-get install solr-common
+apt-get install solr-tomcat
+pip install django-haystack
+apt-get install python-beautifulsoup
+pip install pysolr
+
+Next step, configuring Django project.
+There are new options we need to add into settings_local.py:
+
+HAYSTACK_SITECONF = 'uslaw.search_sites'  # If project in uslaw directory
+HAYSTACK_SEARCH_ENGINE = 'solr'
+HAYSTACK_SOLR_URL = 'http://127.0.0.1:8080/solr'
+
+Next step, configuring Solr:
+Run in project dir:
+  python manage.py build_solr_schema
+Drop the XML output in your Solr’s schema.xml (usualy /etc/solr/conf/schema.xml), old schema file need to be deleted.
+Restart Solr: 
+  service tomcat restart
+Next, run:
+  python manage.py rebuild_index 
+
+That's All! You can run app.
+
+Here what we have now:
+ 1. Ajax search on all pages (it is not very beautiful I'l fix it, then you take a look).
+ 2. /search/ page - standalone page for search.
+
+ 

@@ -1,0 +1,73 @@
+{% load usc_links %}
+{% for comment in comments %}
+<div style="width:100%; float:left;">
+  <div class="comment">
+      <div class="comment_header">
+	<a name="{{ comment.id }}" href="#{{ comment.id }}"></a> 
+	{% if user.is_staff %}
+	<b>&nbsp;Admin: <a href="/admin/comment/comment/{{ comment.id }}/delete/">[Del]</a> <a href="/admin/comment/comment/{{ comment.id }}/">[Edit]</a>:</b>
+	{% else %}
+	  {% if user == comment.profile.user %}&nbsp; <b><a href="{% url del_comment comment.id %}">[Del]</a> <a href="{% url edit_comment comment.id %}">[Edit]</a>:</b> {% endif %} 
+	{% endif %}
+	<div class="left">
+	  <a class="a_color" href="{{ comment.get_absolute_url }}"></a> <a href="{{ comment.profile.get_absolute_url }}">{{ comment.profile.user.first_name }}   {{ comment.profile.user.last_name }}</a>
+	</div>
+	<div class="right" style="font-style:italic;">
+	  {{ comment.human_date }}&nbsp;&nbsp;
+	</div>
+      </div>
+
+    <div class="comment_left_part">
+      {% if comment.profile.avatar %}<a href="{{ comment.profile.get_absolute_url }}"><img id="comment-avatar-{{ comment.id }}" class="avatar" qtitle="{{ comment.profile }}" src="{{ comment.profile.avatar }}" width="40px" /></a>{% endif %}<br />
+     
+    </div>
+
+    <div class="comment_right_part">
+
+      <div class="left" title="{% if comment.rate > 0 %}{{ comment.rate }} people like this comment{% endif %}">{{ comment.text|linebreaks|usc_links|safe }}</div> 
+      <div title="{{ comment.rate }} people like this comment" class="right big24" id="id_comment_rate-{{ comment.id }}" style="padding-top:10px;">
+	{{ comment.rate }} <a class="pointer vote" onclick="voteup({{ comment.id }});"><img title="I like this!" src="{{ MEDIA_URL }}img/thumbs_up.png" width="20px" /></a><!--<br /> <a class="pointer vote" onclick="votedown({{ comment.id }});">↓</a>-->
+      </div>
+	<div class="right big14">
+	   
+	</div>
+    </div>
+
+    <!--  <span style="cursor:pointer; width: 200px; font-size:10px; color:grey; float:top; text-align:right;" id="c-{{ comment.id }}">Answer</span>
+
+      <div id="f-{{ comment.id }}" style="display: none; float:left;">
+	<span style="font-size:10px; color: grey;"></span><br />
+	<form action="/users/add-comment/" method="post">{% csrf_token %}
+	  <p>
+	    <textarea   rows="3" cols="40" name="text">>{{ comment.text|striptags }}</textarea>
+	  </p>
+	  <p><input type="hidden" name="object_id" value="{{ section.id }}" />
+	  <input type="hidden" name="object_type" value="{{ object_type }}" />
+	  <input type="hidden" name="parent" value="{{ comment.id }}" /></p>
+	  <input type="hidden" name="next" value="/laws/26/{{ section.section }}/?update" /></p>
+	  <span class="panel_off"><input type="text" name="email" value="" size="1"></span>
+	  <br />
+	  <input type="submit" value=" Add " />
+	</form>
+      </div>-->
+
+  </div>
+
+  <!--<script>
+      $("#c-{{ comment.id }}").click(function () {
+	$("#f-{{ comment.id }}").toggle("slow");
+     });
+  </script>
+  -->
+</div>
+{% empty %}
+      {% if post.post_type.name == 'Question' %}
+    <!--  No answers yet-->
+      {% else %}
+<!--      No comments-->
+      {% endif %}
+
+
+{% endfor %}
+<br />
+

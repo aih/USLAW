@@ -1,0 +1,10 @@
+<div id="header">
+  <div id="header_left"><a href="/" class="head">TAX26.COM</a></div>
+
+  <div id="header_right" class="big14 a_color" style="font-spacing:10px;">
+    {% if user.is_authenticated %}{% if user.username != 'Anonymous' %}Welcome, <a href="{% if profile %}{{ profile.get_absolute_url }}{% else %}/users/profile/{% endif %}">{% if user.first_name != "" %}{{ user.first_name }}{% else %}{{ user.email }}{% endif %}{% endif %}</a><br />
+    <!--<div class="right" style="margin-top:-7px;"><a class="big14 a_color" href="/users/logout/">Logout</a></div>-->
+    {% endif %}
+  </div>
+</div>
+

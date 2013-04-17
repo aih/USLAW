@@ -1,0 +1,27 @@
+{% extends "laws/resource_base.html" %}
+
+{% block content %}
+
+  {% if r.is_outdated  %}
+  <div class="outdated width100 big22 left">This document is outdated</div>
+  {% endif %}
+
+   
+    <div id="main_text" style="padding:5px; float:left;">
+      {% block document_body %}
+      {% autoescape off %}
+      <h1>{{ r.title }}</h1>
+      {{ r.description }}
+        {% if r.section %}
+         <br />Related section: <a href="{{ r.section.get_absolute_url }}">Section {{ r.section }} of Title §{{ r.section.top_title.title }}</a>.
+        {% endif %}
+        {% if r.top_title %}
+         <br />Related Title: <a href="{{ r.top_title.get_absolute_url }}">{{ r.top_title }}</a>.
+        {% endif %}
+      {% endautoescape %}
+      {% endblock %}
+    </div>
+
+
+{% endblock %}
+

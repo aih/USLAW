@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?xml-stylesheet href="\billres.xsl" type="text/xsl"?>-->
+<!--<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://xml.house.gov/bill.dtd">-->
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://thomas.loc.gov/dtd/bill.dtd">
+<bill bill-stage="Enrolled-Bill" dms-id="HA700845E1A654F14BDDF4A5C851D8AAB" public-private="public" key="H" bill-type="olc"> 
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HR 5901 ENR: To amend the Internal Revenue Code of 1986 to authorize the tax court to appoint employees. </dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="no">I</distribution-code> 
+<congress>One Hundred Eleventh Congress of the United States of America</congress> <session>At the Second Session</session><enrolled-dateline>Begun and held at the City of Washington on Tuesday, the fifth day of January, two thousand and ten</enrolled-dateline> 
+<legis-num>H. R. 5901</legis-num> 
+<current-chamber display="no"></current-chamber> 
+<legis-type>AN ACT</legis-type> 
+<official-title display="yes">To amend the Internal Revenue Code of 1986 to authorize the tax court to appoint employees. </official-title> 
+</form> 
+<legis-body id="H85A8A3D9E1C24464BA5EB4F21EF578BA" style="OLC"> 
+<section id="H4E6700390F294FD190038B995B648B02" section-type="section-one"><enum>1.</enum><header>Authority of tax court to appoint employees</header> 
+<subsection id="H414CDA33121B4E61A6ED8AFF0ED4182D"><enum>(a)</enum><header>In general</header><text>Subsection (a) of <external-xref legal-doc="usc" parsable-cite="usc/26/7471">section 7471</external-xref> of the Internal Revenue Code of 1986 (relating to employees) is amended to read as follows:</text> 
+<quoted-block id="H30DBDCB457FB4295AFB9C1027B6F5A0C" style="OLC"> 
+<subsection id="H491CDE546089496A9B6F00BF13F18285"><enum>(a)</enum><header>Appointment and compensation</header> 
+<paragraph id="HC5A3CA188C3040D18099C1250CB8557D"><enum>(1)</enum><header>Clerk</header><text>The Tax Court may appoint a clerk without regard to the provisions of title 5, United States Code, governing appointments in the competitive service. The clerk shall serve at the pleasure of the Tax Court.</text></paragraph> 
+<paragraph id="H78020B32156A41E3B12A1C7184DEAF4F"><enum>(2)</enum><header>Judge-appointed employees</header> 
+<subparagraph id="HA59913A0DA8642349E6ECA48F122E3E0"><enum>(A)</enum><header>In general</header><text>The judges and special trial judges of the Tax Court may appoint employees, in such numbers as the Tax Court may approve, without regard to the provisions of title 5, United States Code, governing appointments in the competitive service. Any such employee shall serve at the pleasure of the appointing judge.</text></subparagraph> 
+<subparagraph id="H6CF176B0CDA142849836D02F8E0E6989"><enum>(B)</enum><header>Exemption from federal leave provisions</header><text>A law clerk appointed under this subsection shall be exempt from the provisions of subchapter I of <external-xref legal-doc="usc-chapter" parsable-cite="usc-chapter/5/63">chapter 63</external-xref> of title 5, United States Code. Any unused sick leave or annual leave standing to the law clerk’s credit as of the effective date of this subsection shall remain credited to the law clerk and shall be available to the law clerk upon separation from the Federal Government.</text></subparagraph></paragraph> 
+<paragraph id="H7062DFF7D47E4A8095C2EA7EA3780B4F"><enum>(3)</enum><header>Other employees</header><text>The Tax Court may appoint necessary employees without regard to the provisions of title 5, United States Code, governing appointments in the competitive service. Such employees shall be subject to removal by the Tax Court.</text></paragraph> 
+<paragraph id="H132CC9F633184978A62040B9A68CC059"><enum>(4)</enum><header>Pay</header><text>The Tax Court may fix and adjust the compensation for the clerk and other employees of the Tax Court without regard to the provisions of chapter 51, subchapter III of chapter 53, or <external-xref legal-doc="usc" parsable-cite="usc/5/5373">section 5373</external-xref> of title 5, United States Code. To the maximum extent feasible, the Tax Court shall compensate employees at rates consistent with those for employees holding comparable positions in courts established under Article III of the Constitution of the United States.</text></paragraph> 
+<paragraph id="H0322E556970F442FA1ECFAEE7C99028C"><enum>(5)</enum><header>Programs</header><text>The Tax Court may establish programs for employee evaluations, incentive awards, flexible work schedules, premium pay, and resolution of employee grievances.</text></paragraph> 
+<paragraph id="HBD9446A23BA84D48B63447B5919240EA"><enum>(6)</enum><header>Discrimination prohibited</header><text>The Tax Court shall—</text> 
+<subparagraph id="HBC28F5B7A2F8413CA7CDBD587E6EBB68"><enum>(A)</enum><text>prohibit discrimination on the basis of race, color, religion, age, sex, national origin, political affiliation, marital status, or handicapping condition; and</text></subparagraph> 
+<subparagraph id="HB06F6E2952E6434CB02A37BAD4634D4D"><enum>(B)</enum><text>promulgate procedures for resolving complaints of discrimination by employees and applicants for employment.</text></subparagraph></paragraph> 
+<paragraph id="HB19470725C124A8B94CE948DC8AA9F48"><enum>(7)</enum><header>Experts and consultants</header><text>The Tax Court may procure the services of experts and consultants under <external-xref legal-doc="usc" parsable-cite="usc/5/3109">section 3109</external-xref> of title 5, United States Code.</text></paragraph> 
+<paragraph id="HAD3AA939D583490F919DD6A864765FDB"><enum>(8)</enum><header>Rights to certain appeals reserved</header><text>Notwithstanding any other provision of law, an individual who is an employee of the Tax Court on the day before the effective date of this subsection and who, as of that day, was entitled to—</text> 
+<subparagraph id="H582F2F9EA444439C9C95E36DDABBFC50"><enum>(A)</enum><text>appeal a reduction in grade or removal to the Merit Systems Protection Board under <external-xref legal-doc="usc-chapter" parsable-cite="usc-chapter/5/43">chapter 43</external-xref> of title 5, United States Code,</text></subparagraph> 
+<subparagraph id="HF5A50BDD5E9447A2BDEBA4DD0ED2E231"><enum>(B)</enum><text>appeal an adverse action to the Merit Systems Protection Board under <external-xref legal-doc="usc-chapter" parsable-cite="usc-chapter/5/75">chapter 75</external-xref> of title 5, United States Code,</text></subparagraph> 
+<subparagraph id="HF991CF4D786246AAB18B3E4DC13E071F"><enum>(C)</enum><text>appeal a prohibited personnel practice described under <external-xref legal-doc="usc" parsable-cite="usc/5/2302">section 2302(b)</external-xref> of title 5, United States Code, to the Merit Systems Protection Board under <external-xref legal-doc="usc-chapter" parsable-cite="usc-chapter/26/77">chapter 77</external-xref> of that title,</text></subparagraph> 
+<subparagraph id="H5121D3A376C44E7FB1E04D61C0F2A97C"><enum>(D)</enum><text>make an allegation of a prohibited personnel practice described under <external-xref legal-doc="usc" parsable-cite="usc/5/2302">section 2302(b)</external-xref> of title 5, United States Code, with the Office of Special Counsel under <external-xref legal-doc="usc-chapter" parsable-cite="usc-chapter/26/12">chapter 12</external-xref> of that title for action in accordance with that chapter, or</text></subparagraph> 
+<subparagraph id="H48C02578C0214A29B66FCB2C357C1A9E"><enum>(E)</enum><text>file an appeal with the Equal Employment Opportunity Commission under part 1614 of title 29 of the Code of Federal Regulations,</text></subparagraph><continuation-text continuation-text-level="paragraph">shall continue to be entitled to file such appeal or make such an allegation so long as the individual remains an employee of the Tax Court.</continuation-text></paragraph> 
+<paragraph id="H10676C8C4EA14EEFA69D937BE1C2EFFE"><enum>(9)</enum><header>Competitive status</header><text>Notwithstanding any other provision of law, any employee of the Tax Court who has completed at least 1 year of continuous service under a non-temporary appointment with the Tax Court acquires a competitive status for appointment to any position in the competitive service for which the employee possesses the required qualifications.</text></paragraph> 
+<paragraph id="H882D168556C24F1F9FCB85D5A66CD3F2"><enum>(10)</enum><header>Merit system principles, prohibited personnel practices, and preference eligibles</header><text>Any personnel management system of the Tax Court shall—</text> 
+<subparagraph id="H2B0519FA812847E0B2B2C1D2FCD1D36E"><enum>(A)</enum><text>include the principles set forth in <external-xref legal-doc="usc" parsable-cite="usc/5/2301">section 2301(b)</external-xref> of title 5, United States Code;</text></subparagraph> 
+<subparagraph id="H2E8EA46F6B5B48BCBE5B4E6F5FC15850"><enum>(B)</enum><text>prohibit personnel practices prohibited under <external-xref legal-doc="usc" parsable-cite="usc/5/2302">section 2302(b)</external-xref> of title 5, United States Code; and</text></subparagraph> 
+<subparagraph id="H13AA868F25B14F5AA35670440851C227"><enum>(C)</enum><text>in the case of any individual who would be a preference eligible in the executive branch, provide preference for that individual in a manner and to an extent consistent with preference accorded to preference eligibles in the executive branch.</text></subparagraph></paragraph></subsection><after-quoted-block>.</after-quoted-block></quoted-block></subsection> 
+<subsection commented="no" display-inline="no-display-inline" id="H87E30F10F2CC46DF81B3093228162899"><enum>(b)</enum><header>Effective date</header><text>The amendments made by this section shall take effect on the date the United States Tax Court adopts a personnel management system after the date of the enactment of this Act.</text></subsection></section> 
+</legis-body> <attestation><attestation-group><role>Speaker of the House of Representatives.</role></attestation-group><attestation-group><role>Vice President of the United States and President of the Senate.</role></attestation-group></attestation> 
+</bill> 
+
+

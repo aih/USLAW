@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Named Acts{% endblock %}
+{% block content %}
+<div id="main_big">
+  <h1>Named Acts:</h1>
+  {% autoescape off %}
+  {% for r in page.object_list %}
+  <div class="list_item" id="item-{{ r.id }}">
+    <a href="{% url view_named_act pk=r.id %}">{{ r.title }}</a>
+  </div>
+  {% endfor %}
+  {% endautoescape %}
+  {% include "paginator.html" %}
+
+</div>
+{% endblock %}

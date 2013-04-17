@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+  <div class="comment_right_part">
+    <h2>Edit comment:</h2>
+    <form action="/comment/edit-comment/{{ c.id }}/" method="post">{% csrf_token %}
+      <fieldset>
+      {{ form.text }}
+      </fieldset>
+      <fieldset>
+      {{ form.profile }}
+      {{ form.content_type }}
+      {{ form.object_id }}
+      {{ form.parent }}
+      <input type="submit" value="Save" class="post_btn find_btn"/>
+      </fieldset>
+      <p class="panel_off"><input type="text" name="email" value="" size="1" /></p>
+    </form>
+    </div>
+
+{% else %}
+<h1>You must be signed in to Edit comments</h1>
+{% endif %}
+{% endblock %}

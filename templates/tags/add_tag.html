@@ -1,0 +1,13 @@
+{% if user.is_authenticated %}
+<form action="/tags/add/" method="post" title="Separate Tags with Commas" id="id_tag_form">{% csrf_token %}
+<div class="left" style="padding-top:4px; padding:2px;">
+{{ tagsform.tag }} {{ tagsform.tag.errors }}
+{{ tagsform.next }}
+{{ tagsform.content_type }}
+{{ tagsform.object_id }}
+{{ tagsform.content_object }}
+</div>
+<div class="left" style="padding-top:4px; padding:2px;"><input type="submit" value="Add Tags" class="post_btn pointer" style="width:80px; height:29px; background-color:#fff;" /></div>
+</form>
+
+{% endif %}

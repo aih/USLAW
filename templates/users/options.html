@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="block">
+  <div class="border_block left"> </div>
+  
+  <div class="border_block left"> </div>
+  <div class="left width100" style="padding:10px;">
+    <div class="left big18 width100"><h3>My Settings:</h3></div>
+  </div>
+  <div class="left width100" style="padding-left:10px; padding-top:0px;">
+    <div class="left big18 width100"><a class="pointer underline big16" onclick="$('#area_of_interest').toggle('slow');">Areas of interest:</a></div>
+    <div class="left width100">
+      <ul>
+	{% for a in tags_ %}
+	<li><a href="{{ a.tag.get_absolute_url }}">{{ a.tag }}</a></li>
+	{% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% if form %}
+  <div style="width:100%; float:left;">
+    <div id="area_of_interest" style="display:none; ">
+      <div class="border_block left"> </div>
+      <div class="left width100" style="padding:10px; padding-top:0px;">
+	<div class="left big18">Check your areas of interest:</div>
+	<div class="left width100">
+	  <form method="post" action="">{% csrf_token %}
+	    {{ form.areaofinterest }}
+	    <input type="submit" value= "Save" class= "find_btn right_btn" />
+	  </form>
+	</div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  
+  <div style="width:100%; float:left;">
+    <div class="left width100" style="padding:10px; padding-top:0px;">
+      <a href="/users/password-change/"><div class="left big18" style="text-decoration:underline;">Change password</div></a>
+    </div>
+  </div>
+  <div style="width:100%; float:left;">
+    <div class="left width100" style="padding:10px; padding-top:0px;">
+      <div class="left big18" style="text-decoration:underline;">{% if p.public_profile %}<a href="/users/linkedin-update/">Update my profile details from LinkedIN{% else %}<a id="id_linkedin_connect" href="/users/linkedin-connect/">Connect with LinkedIN profile{% endif %}</a></div>
+      <div class="left" style="padding:10px; margin-top:-18px;"><a href="/users/linkedin-connect/"><img title="Note: You can connect only with 1 linkedIN profile." src="{{ MEDIA_URL }}img/linkedin_icon.png" /></a></div>
+    </div>
+  </div>
+  <div class="border_block left"> </div>
+  <div style="width:100%; float:left;">
+    <div class="left width100" style="padding:10px; padding-top:0px;">
+      <h2>Site appearance:</h2>
+    </div>
+  </div>
+  <div style="width:100%; float:left;">
+    <div class="left width100" style="padding-left:10px; padding-top:0px;">
+      <form action="." method="post">{% csrf_token %}
+	<input type="hidden" name="form_type" value="options" />
+	<p>Display linkedin connect notice? <input name = "display_linkedin_connect" type="checkbox" {% if display_linkedin_connect.bvalue %}checked{% endif %} /></p>
+	<p>Display help bubbles? <input type="checkbox" name ="display_help_bubbles" {% if display_help_bubbles.bvalue %}checked{% endif %} /></p>
+	<input type="submit" value = " Save " class= "find_btn right_btn" />
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

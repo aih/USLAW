@@ -1,0 +1,10 @@
+{% for s in documents %}
+<span id="document-{{ s.id }}" style="cursor:pointer; padding-left:2px; margin-top:10px;"><img title="Delete document from list" width="12px;" src="{{ MEDIA_URL }}img/delete.png" onclick="delete_document({{ s.id }}, '#document-{{ s.id }}')" />
+<a style="font-size:14px;" href="{{ s.content_object.get_absolute_url }}">{{ s.content_object|striptags|truncatewords:7 }}</a>  
+</span>    
+<br /><br />
+{% empty %}
+<div class="width100 padding5">No documents.</div>
+{% endfor %}
+
+

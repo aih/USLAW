@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0"?>-->
+<!--<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill.dtd//EN" "C:\Program Files\JustSystems\rules\bill.dtd" []>-->
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://thomas.loc.gov/dtd/bill.dtd">
+<bill bill-stage="Enrolled-Bill" bill-type="olc" dms-id="HEDBE50B2E41947FDB78AE54AFCCBD2C6" public-private="public" stage-count="1">
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HR 5160 ENR: Haiti Economic Lift Program Act of 2010</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+		<distribution-code display="no">I</distribution-code>
+		<congress>One Hundred Eleventh Congress of the United States of
+		  America</congress>
+		<session>At the Second Session</session><enrolled-dateline>Begun and held
+		at the City of Washington on Tuesday, the fifth day of January, two thousand
+		and ten</enrolled-dateline>
+		<legis-num>H. R. 5160</legis-num>
+		<current-chamber display="no"></current-chamber>
+		<legis-type>AN ACT</legis-type>
+		<official-title display="yes">To extend the Caribbean Basin Economic
+		  Recovery Act, to provide customs support services to Haiti, and for other
+		  purposes.</official-title>
+	</form>
+	<legis-body id="H60341F35EE954A74A5D3F0328E48E95C" style="OLC">
+		<section id="H02C70DD90D6D4E40A5B4DD3C0F821AF1" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the
+			 <quote><short-title>Haiti Economic Lift Program Act of
+			 2010</short-title></quote>.</text>
+		</section><section id="H130330EEAF7545F0A05387FA9D63F977"><enum>2.</enum><header>Findings</header><text display-inline="no-display-inline">Congress finds the following:</text>
+			<paragraph id="HE15436E52BF5454292BDA5D57E936A72"><enum>(1)</enum><text display-inline="yes-display-inline">On January 12, 2010, Haiti was hit by a 7.0
+			 magnitude earthquake, the worst earthquake to affect Haiti in recorded history.
+			 Aftershocks from the earthquake, measuring up to 6.0 on the Richter scale,
+			 continued for days afterwards.</text>
+			</paragraph><paragraph id="H7B6464DC9BED496E9CC125B6142FBEAC"><enum>(2)</enum><text display-inline="yes-display-inline">The earthquake has devastated Haiti’s
+			 infrastructure, including homes, offices, factories, roads, ports,
+			 communications, and other facilities. The loss of life attributable to the
+			 earthquake was massive.</text>
+			</paragraph><paragraph id="HBD895A48186A4589AC8F124ECD78ABB0"><enum>(3)</enum><text>Even before the
+			 earthquake, Haiti was the poorest country in the Western Hemisphere, ranking
+			 149 out of 182 countries according to the United Nation’s Human Development
+			 Index.</text>
+			</paragraph><paragraph id="HBE0B17B1FB414381B5EE51817C5C7FE7"><enum>(4)</enum><text display-inline="yes-display-inline">In recent years, however, the Government
+			 and people of Haiti had taken important steps forward to promote economic
+			 growth and development, including making strides towards establishing a
+			 competitive apparel sector.</text>
+			</paragraph><paragraph commented="no" id="HDEAAF35EC4CA41408115368E3E300EDA"><enum>(5)</enum><text display-inline="yes-display-inline">United States trade preference programs,
+			 including the Caribbean Basin Economic Recovery Act (as amended by the United
+			 States-Caribbean Basin Trade Partnership Act, the Haitian Hemispheric
+			 Opportunity through Partnership Encouragement Act of 2006, and the Haitian
+			 Hemispheric Opportunity through Partnership Encouragement Act of 2008), which
+			 extend duty-free tariff treatment to certain apparel produced in Haiti, have
+			 made an important contribution to Haiti’s economic development efforts.</text>
+			</paragraph><paragraph id="HE2DB1558C96447D29CF48A2082826ABD"><enum>(6)</enum><text>However, the
+			 Haitian apparel sector has been hard hit by the January 12, 2010, earthquake. A
+			 number of apparel factories based in and around Port-au-Prince have been
+			 heavily damaged, including the collapse of one major apparel factory that had
+			 employed nearly 4,000 workers.</text>
+			</paragraph><paragraph id="H84D2FBD7FFE84E7C91D7A75EBAA80EAF"><enum>(7)</enum><text>The Port-au-Prince
+			 seaport that had served the apparel trade has been badly damaged. And extensive
+			 damage to roads has made it difficult to transport apparel to the Dominican
+			 Republic for shipment from ports in that country.</text>
+			</paragraph><paragraph id="HBAC0BCC728084B0D9E6127AB054EA575"><enum>(8)</enum><text>According to
+			 estimates by the Department of Commerce, imports of apparel articles from Haiti
+			 to the United States in 2010 have decreased by 43 percent as compared to the
+			 same period in 2009.</text>
+			</paragraph><paragraph commented="no" display-inline="no-display-inline" id="H402BD1A4B8314C0EB4D1564A8F378132"><enum>(9)</enum><text>The earthquake has
+			 increased significantly the costs and uncertainty of doing business in Haiti. A
+			 strong and unequivocal commitment from the United States is needed to help
+			 Haiti offset these costs and preserve the gains made under United States trade
+			 preference programs, and to encourage buyers and investors to stand with Haiti
+			 through this crisis.</text>
+			</paragraph></section><section id="HE358B613D17247078DFD4B90B4E2AECD"><enum>3.</enum><header>Extension of
+			 Caribbean Basin Economic Recovery Act</header><text display-inline="no-display-inline">The Caribbean Basin Economic Recovery Act
+			 (<external-xref legal-doc="usc" parsable-cite="usc/19/2701">19 U.S.C. 2701 et seq.</external-xref>) is amended—</text>
+			<paragraph id="H51DDAB5CF1C1409EA0DF510E80E8458C"><enum>(1)</enum><text>in section
+			 213(b)—</text>
+				<subparagraph id="H6DD8EA5C99DF47CFB1904214DBC57EF7"><enum>(A)</enum><text>in paragraph
+			 (2)(A)—</text>
+					<clause id="H30C987E0A8D34F808C2423A85EE6383B"><enum>(i)</enum><text>in
+			 clause (iii)—</text>
+						<subclause id="H63A87C085EE44C03AAC77E1565CF9D85"><enum>(I)</enum><text>in subclause
+			 (II)(cc), by striking <quote>September 30, 2010</quote> and inserting
+			 <quote>September 30, 2020</quote>; and</text>
+						</subclause><subclause id="HEC295CE8434746EFBC85E6120FBE131B"><enum>(II)</enum><text>in subclause
+			 (IV)(dd), by striking <quote>September 30, 2010</quote> and inserting
+			 <quote>September 30, 2020</quote>; and</text>
+						</subclause></clause><clause id="H678390ED5ABD405E85A155C3F619ABF8"><enum>(ii)</enum><text>in
+			 clause (iv)(II), by striking <quote>8</quote> and inserting <quote>18</quote>;
+			 and</text>
+					</clause></subparagraph><subparagraph id="H927014C8CE514022A2F6F45542A0812D"><enum>(B)</enum><text>in paragraph
+			 (5)(D)(i), by striking <quote>September 30, 2010</quote> and inserting
+			 <quote>September 30, 2020</quote>; and</text>
+				</subparagraph></paragraph><paragraph id="H84506F147C184890932F39A8EFEBAFD2"><enum>(2)</enum><text>in section
+			 213A(h), by striking <quote>September 30, 2018</quote> and inserting
+			 <quote>September 30, 2020</quote>.</text>
+			</paragraph></section><section id="HE38354C24C624216A2A9FB9CF6C1D75D" section-type="subsequent-section"><enum>4.</enum><header>Apparel and other
+			 articles subject to certain assembly rules</header>
+			<subsection id="H5D668B0793E54DB39FF4C873A3B3945B"><enum>(a)</enum><header>Certain other
+			 apparel articles</header><text display-inline="yes-display-inline">Section
+			 213A(b)(3) of the Caribbean Basin Economic Recovery Act (<external-xref legal-doc="usc" parsable-cite="usc/19/2703a">19 U.S.C. 2703a(b)(3)</external-xref>)
+			 is amended by adding at the end the following:</text>
+				<quoted-block display-inline="no-display-inline" id="HAEBC164DF65D418381C789280D99EB30" style="OLC">
+					<subparagraph id="H86BCEEB0B965409A8B0F6C7D79B303B6"><enum>(F)</enum><header>Certain other
+				apparel articles</header>
+						<clause id="HCB9BD078479D44E1852F69DFE7925367"><enum>(i)</enum><header>In
+				general</header><text>Any of the apparel articles described in clause (ii) that
+				is wholly assembled, or knit-to-shape, in Haiti from any combination of
+				fabrics, fabric components, components knit-to-shape, or yarns and is imported
+				directly from Haiti or the Dominican Republic shall enter the United States
+				free of duty, without regard to the source of the fabric, fabric components,
+				components knit-to-shape, or yarns from which the article is made.</text>
+						</clause><clause id="HFEA00DC172C041D5909B69376932B45D"><enum>(ii)</enum><header>Articles
+				described</header><text display-inline="yes-display-inline">Apparel articles
+				described in this clause are apparel articles in the following category numbers
+				that fall within the following statistical reporting numbers of the HTS (as in
+				effect on the day before the date of the enactment of this
+				subparagraph):</text>
+							<table align-to-level="section" blank-lines-before="1" colsep="0" frame="all" line-rules="hor-sides" rowsep="1" rule-weights="4.4.4.4.0.0" table-template-name="Entry: 2 text, bold hds" table-type="">
+								<tgroup cols="2" grid-typeface="1.1" rowsep="1" thead-tbody-ldg-size="0.10.12"><colspec coldef="txt-no-ldr" colname="column1" colwidth="219pts" min-data-value="190"></colspec><colspec coldef="fig" colname="column2" colwidth="106pts" min-data-value="19"></colspec>
+									<tbody>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="1" stub-definition="txt-ldr"><bold>Category Number</bold></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="1"><bold>HTS Statistical
+						Reporting Number</bold></entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">334</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6101.90.9010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.11.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.22.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="1" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="1">6113.00.9015</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">335</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.22.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.2010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6112.11.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr">336</entry><entry colname="column2" leader-modify="clr-ldr">6104.49.9010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">338</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.22.0050</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6105.90.8010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6112.11.0030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">339</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.22.0060</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.2049</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.90.2510</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.90.3010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.20.1031</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.20.1033</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="1" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="1">6112.11.0040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">342</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.22.0030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.2022</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.52.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.52.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="1" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="1">6104.59.8010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">350</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6107.91.0040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="1" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="1">6107.91.0090</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">351</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6107.21.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6107.21.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6107.91.0030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6108.31.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6108.31.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">433 </entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.23.0007</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.29.0520</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.31.0000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.33.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6103.39.8020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">434</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6101.30.1500</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6101.90.0500</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6101.90.9020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.23.0005</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6103.29.0510</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">435</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6102.30.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6102.90.9010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.23.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.0510</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.2012</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.33.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6104.39.2020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">438</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.23.0025</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.29.0550</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.23.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.0560</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.2051</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6105.90.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6105.90.8020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.20.1020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.90.1010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.90.1020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.90.2520</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.90.3020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.11.0070</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.12.2070</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.12.2080</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.19.0070</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.19.0080</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.30.1550</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6110.30.1560</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">633 </entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.23.0037</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.29.1015</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.33.2000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.39.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6103.39.8030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">634</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6101.30.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6101.90.9030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.23.0036</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.29.1010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.12.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.19.1010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.20.1010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.20.1030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6113.00.9025</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">635</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6102.30.0500</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6102.90.9015</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.23.0026</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.1010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.2014</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.39.2030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.12.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.19.1020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.20.1020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.20.1040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6113.00.9030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">636</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.49.9030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6104.44.2020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">638</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.23.0075</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6103.29.1050</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6105.90.8030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.30.1050</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.30.2051</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.30.2053</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.12.0030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6112.19.1030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">639</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.23.0036</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.1050</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6104.29.2055</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.90.2530</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6106.90.3030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.30.1060</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.30.2061</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6110.30.2063</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6112.12.0040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6112.19.1040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">651</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6107.22.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6107.22.0015</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6107.22.0025</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6107.99.1030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6108.32.0015</entry>
+										</row>
+									</tbody>
+								</tgroup>
+							</table>
+						</clause><clause id="H60CE21A6007349869C0BE64297BDE9D6"><enum>(iii)</enum><header>Category
+				defined</header><text>In this subparagraph, the term <term>category</term> has
+				the meaning given that term in paragraph (2A)(E) of this
+				subsection.</text>
+						</clause></subparagraph><after-quoted-block>.</after-quoted-block></quoted-block>
+			</subsection><subsection id="H11993F4F8737439AA3080F9DA7C6BF12"><enum>(b)</enum><header>Made-Up textile
+			 articles</header><text>Section 213A(b)(3) of the Caribbean Basin Economic
+			 Recovery Act (<external-xref legal-doc="usc" parsable-cite="usc/19/2703a">19 U.S.C. 2703a(b)(3)</external-xref>), as amended by subsection (a), is further
+			 amended by adding at the end the following:</text>
+				<quoted-block display-inline="no-display-inline" id="H33CD7EA207C343FDBD3DF3405409450D" style="OLC">
+					<subparagraph id="H134141D1120B418981E38D52EA9424B3"><enum>(G)</enum><header>Made-up textile
+				articles</header>
+						<clause id="H7F8899EACB924B3C96BF2D3B34A14974"><enum>(i)</enum><header>In
+				general</header><text>Any of the made-up textile articles described in clauses
+				(ii) and (iii) that is wholly assembled, or knit-to-shape, in Haiti from any
+				combination of fabrics, fabric components, components knit-to-shape, or yarns
+				and is imported directly from Haiti or the Dominican Republic shall enter the
+				United States free of duty, without regard to the source of the fabric, fabric
+				components, components knit-to-shape, or yarns from which the article is
+				made.</text>
+						</clause><clause id="HCC4CC8956C884909920DB1A566BEE847"><enum>(ii)</enum><header>Articles
+				described</header><text>Made-up textile articles described in this clause are
+				articles in the following category numbers that fall within the following
+				statistical reporting numbers of the HTS (as in effect on the day before the
+				date of the enactment of this subparagraph):</text>
+							<table align-to-level="section" blank-lines-before="1" colsep="0" frame="all" line-rules="hor-sides" rowsep="1" rule-weights="4.4.4.4.0.0" table-template-name="Entry: 2 text, bold hds" table-type="">
+								<tgroup cols="2" grid-typeface="1.1" rowsep="1" thead-tbody-ldg-size="0.10.12"><colspec coldef="txt-no-ldr" colname="column1" colwidth="219pts" min-data-value="190"></colspec><colspec coldef="fig" colname="column2" colsep-modify="parallel" colwidth="106pts" min-data-value="19"></colspec>
+									<tbody>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="1" stub-definition="txt-ldr"><bold>Category Number</bold></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="1"><bold>HTS Statistical
+						Reporting Number</bold></entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">363</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6302.60.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6302.91.0015</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6302.91.0035</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6307.90.8940</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">369</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.91.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.92.0000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6302.60.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6302.60.0030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6302.91.0005</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6302.91.0050</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6307.90.8910</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6307.90.8945</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5701.90.2020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.39.2010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.50.5600</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.99.0500</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.99.1500</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5705.00.2020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5807.10.0510</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5807.90.0510</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6307.90.3010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6301.30.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6305.20.0000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6307.10.1020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6307.10.1090</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6406.10.7700</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">9404.90.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">9404.90.9505</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6301.30.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6302.91.0045</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">465</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5701.10.9000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.50.2000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.50.4000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.91.3000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.91.4000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5703.10.2000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5703.10.8000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5704.10.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5705.00.2005</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5705.00.2015</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.31.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">5702.31.2000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">469</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.19.3040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.91.0050</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.99.1500</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.99.6010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5601.29.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6302.39.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6406.10.9020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">665</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5701.90.1030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5701.90.2030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.32.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.32.2000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.42.2090</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.50.5200</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.92.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5702.92.9000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5703.20.1000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5703.30.2000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5703.30.8030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5703.30.8080</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5704.10.0090</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5705.00.2030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5703.20.2010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="1" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="1">5703.20.2090 </entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">666</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.11.2000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.91.0040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.93.0000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.99.6020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6301.40.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6301.40.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6301.90.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">669</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5601.10.2000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5601.22.0090</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5807.10.0520</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5807.90.0520</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6307.90.3020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6305.32.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6305.32.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6305.32.0050</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6305.32.0060</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6305.39.0000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6406.10.9040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="1" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="1">6308.00.0020</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">899</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.11.3000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.19.3060</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.91.0070</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.99.3500</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6304.99.6040</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5601.29.0090</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6301.90.0030</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6305.90.0000</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr">6406.10.9060</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr">900</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5601.29.0010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">5701.90.2010</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="clr-ldr" rowsep="0" stub-definition="txt-ldr"></entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">6301.90.0020</entry>
+										</row>
+									</tbody>
+								</tgroup>
+							</table>
+						</clause><clause commented="no" id="HCDDA8609940D4A4A89D58EFE387FC7AA"><enum>(iii)</enum><header>Other articles
+				described</header><text>Made-up textile articles described in this clause are
+				articles that fall within statistical reporting number 6406.10.9090 of the HTS
+				(as in effect on the day before the date of the enactment of this
+				subparagraph).</text>
+						</clause><clause commented="no" display-inline="no-display-inline" id="HBE34167A570C461896DC3093B9BB8BF3"><enum>(iv)</enum><header>Category
+				defined</header><text>In this subparagraph, the term <term>category</term> has
+				the meaning given that term in paragraph (2A)(E) of this
+				subsection.</text>
+						</clause></subparagraph><after-quoted-block>.</after-quoted-block></quoted-block>
+			</subsection></section><section id="H1170026CA16A4A4798FD53B4487F6D81"><enum>5.</enum><header>Modification of
+			 tariff preference levels; verification with respect to transshipment for
+			 certain apparel articles</header><text display-inline="no-display-inline">Section 213A(b) of the Caribbean Basin
+			 Economic Recovery Act (<external-xref legal-doc="usc" parsable-cite="usc/19/2703a">19 U.S.C. 2703a(b)</external-xref>) is amended—</text>
+			<paragraph id="HE7C13C46B8574BA9AB8540D706DCFFDE"><enum>(1)</enum><text>in paragraph
+			 (2)—</text>
+				<subparagraph id="HB352E0E739044599BE2740552220065E"><enum>(A)</enum><text display-inline="yes-display-inline">in subparagraph (A)(ii)—</text>
+					<clause id="H53EFD86D701846B1BBC9455E262AB42E"><enum>(i)</enum><text display-inline="yes-display-inline">by striking <quote>The preferential
+			 treatment</quote> and inserting <quote>Except as provided in paragraph (2A),
+			 the preferential treatment</quote>; and</text>
+					</clause><clause commented="no" id="H6DF1D54BD4894E87AE5B3D52AAFFFD87"><enum>(ii)</enum><text>by striking
+			 <quote>9</quote> and inserting <quote>11</quote>; and</text>
+					</clause></subparagraph><subparagraph id="H6C9C17863D644CF9A1A50CF18A1A8CFE"><enum>(B)</enum><text>in subparagraph
+			 (B)(iii)—</text>
+					<clause id="H8C12BFD16C8B4C8EA8C6E40EBBA7FF04"><enum>(i)</enum><text display-inline="yes-display-inline">by striking <quote>The preferential
+			 treatment</quote> and inserting <quote>Except as provided in paragraph (2A),
+			 the preferential treatment</quote>; and</text>
+					</clause><clause commented="no" id="HECF02D7F770746EEB022257769C15F8C"><enum>(ii)</enum><text>by striking
+			 <quote>9</quote> and inserting <quote>11</quote>; and</text>
+					</clause></subparagraph></paragraph><paragraph commented="no" id="H64CCF60628FF4CE69EA3353DC54FE044"><enum>(2)</enum><text>by inserting after
+			 paragraph (2) the following:</text>
+				<quoted-block display-inline="no-display-inline" id="H127481D0C477432CAFA73817005BE031" style="OLC">
+					<paragraph commented="no" display-inline="no-display-inline" id="H53805790E04340FE9E7ED51EFDB9CB17"><enum>(2A)</enum><header display-inline="yes-display-inline">Special rule for certain woven articles and
+				certain knit articles entered during fiscal year 2010 and succeeding 1-year
+				periods</header>
+						<subparagraph commented="no" display-inline="no-display-inline" id="H7B314A55E5C84169BC181810477A8ACD"><enum>(A)</enum><header>In
+				general</header><text display-inline="yes-display-inline">Except as provided in
+				subparagraphs (B) and (C) and subject to subparagraph (D), if 52,000,000 square
+				meter equivalents of apparel articles described in paragraph (2)(A)(i) or
+				(2)(B)(i) enter the United States during the 1-year period beginning October 1,
+				2009, or any of the succeeding 1-year periods, the President shall extend the
+				preferential treatment described in paragraph (2)(A)(i) or (2)(B)(i) (as the
+				case may be) to not more than 200,000,000 square meter equivalents of apparel
+				articles described in paragraph (2)(A)(i) or (2)(B)(i) (as the case may be)
+				during that 1-year period, and shall publish notice of the extension in the
+				Federal Register.</text>
+						</subparagraph><subparagraph commented="no" display-inline="no-display-inline" id="H3B0B90E1B5A743A3A3DBE98632F8F666"><enum>(B)</enum><header>Exception for
+				certain woven articles</header>
+							<clause commented="no" display-inline="no-display-inline" id="HF4D4A754B084441BAF75C5B3720B493B"><enum>(i)</enum><header>In
+				general</header><text>In the case of apparel articles described in clause (ii),
+				subparagraph (A) shall be applied by substituting <quote>70,000,000</quote> for
+				<quote>200,000,000</quote>.</text>
+							</clause><clause commented="no" display-inline="no-display-inline" id="H59D2F0A23DE44728BC15A401C7356CEC"><enum>(ii)</enum><header>Apparel
+				articles described</header><text>Apparel articles described in this clause are
+				apparel articles described in paragraph (2)(A)(i) that are the
+				following:</text>
+								<subclause commented="no" id="HAA271E6FA91C45CAA0D04AFFCE3C018D"><enum>(I)</enum><header>Category
+				347</header><text>Apparel articles in category 347 that fall within the
+				following statistical reporting numbers of the HTS (as in effect on the day
+				before the date of the enactment of this paragraph):</text>
+									<table align-to-level="section" blank-lines-before="1" colsep="0" frame="none" line-rules="no-gen" rowsep="0" rule-weights="0.0.0.0.0.0" table-template-name="Generic: 3 text, even cols" table-type="">
+										<tgroup cols="3" grid-typeface="1.1" rowsep="0" thead-tbody-ldg-size="10.10.10"><colspec coldef="txt" colname="column1" colwidth="105pts" min-data-value="95"></colspec><colspec coldef="txt" colname="column2" colwidth="105pts" min-data-value="95"></colspec><colspec coldef="txt-no-ldr" colname="column3" colwidth="105pts" min-data-value="95"></colspec>
+											<tbody>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">6203.19.1020</entry><entry align="left" colname="column2" leader-modify="force-ldr">6203.42.4011</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6203.42.4061</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6203.19.9020</entry><entry align="left" colname="column2" leader-modify="force-ldr">6203.42.4016</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6203.49.8020</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6203.22.3020</entry><entry align="left" colname="column2" leader-modify="force-ldr">6203.42.4026</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6210.40.9033</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6203.22.3030</entry><entry align="left" colname="column2" leader-modify="force-ldr">6203.42.4036</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.20.1520</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6203.42.4003</entry><entry align="left" colname="column2" leader-modify="force-ldr">6203.42.4046</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.20.3810</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6203.42.4006</entry><entry align="left" colname="column2" leader-modify="force-ldr">6203.42.4051</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.32.0040</entry>
+												</row>
+											</tbody>
+										</tgroup>
+									</table>
+								</subclause><subclause commented="no" id="H9B115EFAE3214AAA8D69EDE676592430"><enum>(II)</enum><header>Category
+				348</header><text>Apparel articles in category 348 that fall within the
+				following statistical reporting numbers of the HTS (as in effect on the day
+				before the date of the enactment of this paragraph):</text>
+									<table align-to-level="section" blank-lines-before="1" colsep="0" frame="none" line-rules="no-gen" rowsep="0" rule-weights="0.0.0.0.0.0" table-template-name="Generic: 3 text, even cols" table-type="">
+										<tgroup cols="3" grid-typeface="1.1" rowsep="0" thead-tbody-ldg-size="10.10.10"><colspec coldef="txt" colname="column1" colwidth="105pts" min-data-value="95"></colspec><colspec coldef="txt" colname="column2" colwidth="105pts" min-data-value="95"></colspec><colspec coldef="txt-no-ldr" colname="column3" colwidth="105pts" min-data-value="95"></colspec>
+											<tbody>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">6204.12.0030</entry><entry align="left" colname="column2" leader-modify="force-ldr">6204.62.4011</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6204.69.9010</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6204.19.8030</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.62.4021</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6210.50.9060 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6204.22.3040 </entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.62.4031</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.20.1550 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6204.22.3050</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.62.4041</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.20.6810 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6204.29.4034</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.62.4051</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.42.0030 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6204.62.3000</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.62.4056</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6217.90.9050 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6204.62.4003</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.62.4066</entry><entry align="left" colname="column3" leader-modify="clr-ldr"></entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6204.62.4006</entry><entry colname="column2" leader-modify="force-ldr" rowsep="0">6204.69.6010</entry><entry align="left" colname="column3" leader-modify="clr-ldr"></entry>
+												</row>
+											</tbody>
+										</tgroup>
+									</table>
+								</subclause><subclause commented="no" id="HD801D2DEA55E468285CE3BA50D77DB28"><enum>(III)</enum><header>Category
+				647</header><text>Apparel articles in category 647 that fall within the
+				following statistical reporting numbers of the HTS (as in effect on the day
+				before the date of the enactment of this paragraph):</text>
+									<table align-to-level="section" blank-lines-before="1" colsep="0" frame="none" line-rules="no-gen" rowsep="0" rule-weights="0.0.0.0.0.0" table-template-name="Generic: 3 text, even cols" table-type="">
+										<tgroup cols="3" grid-typeface="1.1" rowsep="0" thead-tbody-ldg-size="10.10.10"><colspec coldef="txt" colname="column1" colwidth="101pts" min-data-value="95"></colspec><colspec coldef="txt" colname="column2" colwidth="108pts" min-data-value="95"></colspec><colspec coldef="txt-no-ldr" colname="column3" colwidth="105pts" min-data-value="95"></colspec>
+											<tbody>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">6203.23.0060</entry><entry align="left" colname="column2" leader-modify="force-ldr">6203.43.4020</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6203.49.8030</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6203.23.0070</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6203.43.4030</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6210.40.5031</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6203.29.2030</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6203.43.4040</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6210.40.5039</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6203.29.2035</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6203.49.1500</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.20.1525 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6203.43.2500</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6203.49.2015</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.20.3820 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6203.43.3510</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6203.49.2030</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.33.0030 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6203.43.3590</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6203.49.2045</entry><entry align="left" colname="column3" leader-modify="clr-ldr"></entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6203.43.4010</entry><entry align="left" colname="column2" leader-modify="force-ldr">6203.49.2060</entry><entry align="left" colname="column3" leader-modify="clr-ldr"></entry>
+												</row>
+											</tbody>
+										</tgroup>
+									</table>
+								</subclause><subclause commented="no" id="HAC5DE697421047DA9EE99ABF4F1E4F64"><enum>(IV)</enum><header>Category
+				648</header><text>Apparel articles in category 648 that fall within the
+				following statistical reporting numbers of the HTS (as in effect on the day
+				before the date of the enactment of this paragraph):</text>
+									<table align-to-level="section" blank-lines-before="1" colsep="0" frame="none" line-rules="no-gen" rowsep="0" rule-weights="0.0.0.0.0.0" table-template-name="Generic: 3 text, even cols" table-type="">
+										<tgroup cols="3" grid-typeface="1.1" rowsep="0" thead-tbody-ldg-size="10.10.10"><colspec coldef="txt" colname="column1" colwidth="105pts" min-data-value="95"></colspec><colspec coldef="txt" colname="column2" colwidth="105pts" min-data-value="95"></colspec><colspec coldef="txt-no-ldr" colname="column3" colwidth="105pts" min-data-value="95"></colspec>
+											<tbody>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">6204.23.0040</entry><entry align="left" colname="column2" leader-modify="force-ldr">6204.63.3510</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6204.69.6030</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6204.23.0045</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.63.3530</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6204.69.9030</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6204.29.2020</entry><entry align="left" colname="column2" leader-modify="force-ldr">6204.63.3532</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6210.50.5031</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6204.29.2025</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.63.3540</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6210.50.5039 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6204.29.4038</entry><entry align="left" colname="column2" leader-modify="force-ldr">6204.69.2510</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.20.1555</entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6204.63.2000</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.69.2530</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.20.6820 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6204.63.3010</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.69.2540</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6211.43.0040 </entry>
+												</row>
+												<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">
+						 6204.63.3090</entry><entry align="left" colname="column2" leader-modify="force-ldr"> 6204.69.2560</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6217.90.9060 </entry>
+												</row>
+											</tbody>
+										</tgroup>
+									</table>
+								</subclause></clause></subparagraph><subparagraph id="HB2C9BC0A1E3D406F820E0F471622183C"><enum>(C)</enum><header>Exception for
+				certain knit articles</header>
+							<clause id="HFF9416C006754E67AD24D80FF7ABC5E4"><enum>(i)</enum><header>In
+				general</header><text>In the case of apparel articles described in clause (ii),
+				subparagraph (A) shall be applied by substituting <quote>85,000,000</quote> for
+				<quote>200,000,000</quote>.</text>
+							</clause><clause id="H2AC45BDCD6B84F52A0B8E0047953A925"><enum>(ii)</enum><header>Apparel
+				articles described</header><text>Apparel articles described in this clause are
+				apparel articles described in paragraph (2)(B)(i) that fall within the
+				following statistical reporting numbers of the HTS (as in effect on the day
+				before the date of the enactment of this paragraph), other than shirts with
+				plackets and pointed collars:</text>
+								<table align-to-level="section" blank-lines-before="1" colsep="0" frame="none" line-rules="no-gen" rowsep="0" rule-weights="0.0.0.0.0.0" table-template-name="Generic: 3 text, even cols" table-type="">
+									<tgroup cols="3" grid-typeface="1.1" rowsep="0" thead-tbody-ldg-size="10.10.10"><colspec coldef="txt" colname="column1" colwidth="105pts" min-data-value="95"></colspec><colspec coldef="txt" colname="column2" colwidth="105pts" min-data-value="95"></colspec><colspec coldef="txt-no-ldr" colname="column3" colwidth="105pts" min-data-value="95"></colspec>
+										<tbody>
+											<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1">6105.10.0010</entry><entry align="left" colname="column2" leader-modify="force-ldr">6109.10.0040</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6110.30.3053</entry>
+											</row>
+											<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6109.10.0018</entry><entry align="left" colname="column2" leader-modify="force-ldr">6109.10.0045</entry><entry align="left" colname="column3" leader-modify="clr-ldr">6110.30.3059</entry>
+											</row>
+											<row><entry align="left" colname="column1" leader-modify="force-ldr" stub-definition="txt-ldr" stub-hierarchy="1"> 6109.10.0027</entry><entry align="left" colname="column2" leader-modify="force-ldr">6110.20.2079</entry><entry align="left" colname="column3" leader-modify="clr-ldr"></entry>
+											</row>
+										</tbody>
+									</tgroup>
+								</table>
+							</clause></subparagraph><subparagraph id="H7DD07963657D47CAAB7E963C858E53FF"><enum>(D)</enum><header>Verification
+				with respect to transshipment for certain apparel articles</header>
+							<clause id="HA8266D5294BE4FEA93593FCD2F1D72EE"><enum>(i)</enum><header>In
+				general</header><text>Not later than April 1, July 1, October 1, and January 1
+				of each year, the Commissioner responsible for United States Customs and Border
+				Protection shall verify that apparel articles imported into the United States
+				under this paragraph are not being unlawfully transshipped (within the meaning
+				of subsection (f)) into the United States.</text>
+							</clause><clause id="HC896F50C8E3247EB92FDA2B1C6D2DE69"><enum>(ii)</enum><header>Report to
+				President</header><text>If the Commissioner determines pursuant to clause (i)
+				that apparel articles imported into the United States under this paragraph are
+				being unlawfully transshipped into the United States, the Commissioner shall
+				report that determination to the President.</text>
+							</clause><clause commented="no" display-inline="no-display-inline" id="H3B01D443E8C3480DAE3CEC04A56130CA"><enum>(iii)</enum><header display-inline="yes-display-inline">Authority to reduce quantitative
+				limitation</header><text display-inline="yes-display-inline">If, in any 1-year
+				period with respect to which the President extends preferential treatment as
+				described in this paragraph, the Commissioner reports to the President pursuant
+				to clause (ii) regarding unlawful transshipments, the President—</text>
+								<subclause commented="no" display-inline="no-display-inline" id="HD4042A68D6C24BC0A38EB9981DA8BE6A"><enum>(I)</enum><text display-inline="yes-display-inline">may modify the quantitative limitation
+				under this paragraph as the President considers appropriate to account for such
+				transshipments; and</text>
+								</subclause><subclause commented="no" display-inline="no-display-inline" id="H62CC1209DA7A4AC0BE05CB0A11BFF1E7"><enum>(II)</enum><text display-inline="yes-display-inline">if the President modifies the limitation
+				under subclause (I), shall publish notice of the modification in the Federal
+				Register.</text>
+								</subclause></clause></subparagraph><subparagraph id="H70E3DA8CD55045FBA8804251DE2C0DA9"><enum>(E)</enum><header>Category
+				defined</header><text>In this paragraph, the term <term>category</term> means
+				the number assigned under the U.S. Textile and Apparel Category System of the
+				Office of Textiles and Apparel of the Department of Commerce, as listed in the
+				HTS under the applicable heading or subheading (as in effect on the day before
+				the date of the enactment of this
+				paragraph).</text>
+						</subparagraph></paragraph><after-quoted-block>.</after-quoted-block></quoted-block>
+			</paragraph></section><section id="HA399256E4D0F4205A252A25F7A76A01B"><enum>6.</enum><header>Earned import
+			 allowance rule</header><text display-inline="no-display-inline">Section
+			 213A(b)(4)(B)(ii)(I) of the Caribbean Basin Economic Recovery Act (19 U.S.C.
+			 2703a(b)(4)(B)(ii)(I)) is amended by striking <quote>three</quote> and
+			 inserting <quote>two</quote>.</text>
+		</section><section id="HC5274B9B00D94F739F0F4C59732E9F03"><enum>7.</enum><header>Extension of
+			 value-added rule</header><text display-inline="no-display-inline">Section 213A
+			 of the Caribbean Basin Economic Recovery Act (<external-xref legal-doc="usc" parsable-cite="usc/19/2703a">19 U.S.C. 2703a</external-xref>), as amended by
+			 this Act, is further amended—</text>
+			<paragraph id="H9BF960A757354019A7515EDE7DB96511"><enum>(1)</enum><text display-inline="yes-display-inline">in subsection (a), by striking paragraph
+			 (1) and inserting the following:</text>
+				<quoted-block display-inline="no-display-inline" id="H2626BA841D844DC6B773D7DC211C8E31" style="OLC">
+					<paragraph id="H2CC7441FFAEC4943AB6841CB4868A7E6"><enum>(1)</enum><header>Initial
+				applicable 1-year period</header><text>The term <term>initial applicable 1-year
+				period</term> means the 1-year period beginning on December 20,
+				2006.</text>
+					</paragraph><after-quoted-block>;
+				and</after-quoted-block></quoted-block>
+			</paragraph><paragraph id="HFF6EBE5E269F4D47A19291C563413759"><enum>(2)</enum><text>in subsection
+			 (b)(1)—</text>
+				<subparagraph id="HD2D054C117AB44E9A6203B85D303A540"><enum>(A)</enum><text>in subparagraph
+			 (A), by striking <quote>an applicable 1-year period</quote> and inserting
+			 <quote>the initial applicable 1-year period and any 1-year period
+			 thereafter</quote>;</text>
+				</subparagraph><subparagraph id="HC37AC9B1C16E4C438E618A55C57DB836"><enum>(B)</enum><text>in subparagraph
+			 (B)—</text>
+					<clause id="H3BFBFD427DD643389C60133B9340EF42"><enum>(i)</enum><text>in
+			 clause (i)—</text>
+						<subclause id="H1FFEBEE362A047778E294C0056ECE539"><enum>(I)</enum><text>by striking
+			 <quote>any applicable 1-year period</quote> and inserting <quote>the initial
+			 applicable 1-year period and any 1-year period thereafter</quote>; and</text>
+						</subclause><subclause id="H2B48F67DFEF147D0AE9CDADBBBA7D13B"><enum>(II)</enum><text>by striking
+			 <quote>the applicable 1-year period</quote> and inserting <quote>that 1-year
+			 period</quote>;</text>
+						</subclause></clause><clause id="HDF6C958E50AB45A2A4716179C2FDFD76"><enum>(ii)</enum><text>in
+			 clause (iv)(II)—</text>
+						<subclause id="HBB968335C45B40DBA4ED886200375211"><enum>(I)</enum><text>in the subclause
+			 heading, by striking <quote><header-in-text level="subclause" style="OLC">applicable</header-in-text></quote>;</text>
+						</subclause><subclause id="HC0F9B958F5DE496793E564A0E05FDB41"><enum>(II)</enum><text>by striking
+			 <quote>In each of the second, third, fourth, and fifth applicable 1-year
+			 periods</quote> and inserting <quote>In any 1-year period after the initial
+			 applicable 1-year period</quote>; and</text>
+						</subclause><subclause id="HDE80B22DF8054BC59C09E25E36F29994"><enum>(III)</enum><text>by striking
+			 <quote>applicable 1-year period</quote> each place it appears and inserting
+			 <quote>1-year period</quote>;</text>
+						</subclause></clause><clause id="H581CA1B5B7D14257A01B41DEA4E5D7A2"><enum>(iii)</enum><text>in
+			 clause (v)(I)—</text>
+						<subclause id="H0A240D1204E84140BA8A2D279AAE69A1"><enum>(I)</enum><text>in item (aa), by
+			 striking <quote>, the second applicable 1-year period, and the third applicable
+			 1-year period</quote> and inserting <quote>and the succeeding 8 1-year
+			 periods</quote>;</text>
+						</subclause><subclause id="HF4F29EC211FA4EDB86432AFEE764FFA4"><enum>(II)</enum><text>in item (bb), by
+			 striking <quote>the fourth applicable 1-year period</quote> and inserting
+			 <quote>the 1-year period beginning on December 20, 2015, and the 1-year period
+			 beginning on December 20, 2016</quote>; and</text>
+						</subclause><subclause id="HFA6EC9C41EFE4883811C337F0CC6C750"><enum>(III)</enum><text>in item (cc), by
+			 striking <quote>the fifth applicable 1-year period</quote> and inserting
+			 <quote>the 1-year period beginning on December 20, 2017</quote>; and</text>
+						</subclause></clause><clause id="HE38345F9C43E4D0398E25AD9E809A49A"><enum>(iv)</enum><text>in
+			 clause (vi)—</text>
+						<subclause id="HEB5B7CAADBEB4AC59AF071847C7997F6"><enum>(I)</enum><text>in subclause
+			 (II)—</text>
+							<item id="HED933A6C5E024FBFBA5D159D34192D51"><enum>(aa)</enum><text>by
+			 striking <quote>any applicable 1-year period</quote> and inserting <quote>the
+			 initial applicable 1-year period or any 1-year period thereafter</quote>;
+			 and</text>
+							</item><item id="H133C10A326774094A83A6DF41D0C069B"><enum>(bb)</enum><text>by
+			 striking <quote>applicable 1-year period</quote> each place it appears and
+			 inserting <quote>1-year period</quote>; and</text>
+							</item></subclause><subclause id="H5C749EE582004AE7845EB8DCB83E1BAF"><enum>(II)</enum><text>in subclause
+			 (III)—</text>
+							<item id="H1F5A8D1A5A7840B09B8E9D29A70E0E3B"><enum>(aa)</enum><text>in
+			 item (aa), by striking <quote>an applicable 1-year period</quote> and inserting
+			 <quote>the initial applicable 1-year period or any 1-year period
+			 thereafter</quote>; and</text>
+							</item><item id="HFD4CC78DB7AA48EEBF9D7D935B56580B"><enum>(bb)</enum><text>by
+			 striking <quote>applicable 1-year period</quote> each place it appears and
+			 inserting <quote>1-year period</quote>; and</text>
+							</item></subclause></clause></subparagraph><subparagraph id="H73DF7371F0F1460BA464AF02EA8D115C"><enum>(C)</enum><text>in subparagraph
+			 (C)—</text>
+					<clause id="H9E0988AF210D411D96113231F0B954DC"><enum>(i)</enum><text>by
+			 striking <quote>applicable 1-year periods</quote> and inserting <quote>1-year
+			 periods</quote>;</text>
+					</clause><clause id="H6E873ADF54464A119B633E93708C0458"><enum>(ii)</enum><text>by
+			 striking the table and inserting the following:</text>
+						<quoted-block display-inline="no-display-inline" id="H33D6AFD014DC46B793E9F757325E9303" style="OLC">
+							<table align-to-level="section" blank-lines-before="1" colsep="0" frame="none" line-rules="no-gen" rowsep="0" rule-weights="0.0.0.0.0.0" table-template-name="Entry: 2 text, bold hds" table-type="">
+								<tgroup cols="2" grid-typeface="1.1" rowsep="0" thead-tbody-ldg-size="0.10.12"><colspec coldef="txt" colname="column1" colwidth="205pts" min-data-value="160" rowsep="0"></colspec><colspec coldef="txt-no-ldr-no-spread" colname="column2" colwidth="120pts" min-data-value="120" rowsep="0"></colspec>
+									<thead>
+										<row><entry align="left" colname="column1" morerows="0" namest="column1"><bold>During:</bold></entry><entry align="left" colname="column2" morerows="0" namest="column2"><bold>the corresponding
+						percentage is:</bold></entry>
+										</row>
+									</thead>
+									<tbody>
+										<row><entry colname="column1" rowsep="0" stub-definition="txt-clr" stub-hierarchy="1">the initial applicable 1-year
+						period</entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">1
+						percent.</entry>
+										</row>
+										<row><entry colname="column1" leader-modify="force-ldr-bottom" rowsep="0" stub-definition="txt-ldr" stub-hierarchy="1">each of the succeeding
+						11 1-year periods </entry><entry colname="column2" leader-modify="clr-ldr" rowsep="0">1.25 percent.</entry>
+										</row>
+									</tbody>
+								</tgroup></table>
+							<after-quoted-block>;</after-quoted-block></quoted-block>
+						<continuation-text continuation-text-level="clause">and</continuation-text></clause><clause id="HAD77FEF5B5CD478F980BAC1B0EB2AC95"><enum>(iii)</enum><text>in
+			 the flush text, by striking <quote>the last day of the fifth applicable 1-year
+			 period</quote> and inserting <quote>December 19, 2018</quote>.</text>
+					</clause></subparagraph></paragraph></section><section id="H7391619C706E4D49AA003056DB5D9534"><enum>8.</enum><header>Wire
+			 harnesses</header><text display-inline="no-display-inline">Section 213A(c) of
+			 the Caribbean Basin Economic Recovery Act (<external-xref legal-doc="usc" parsable-cite="usc/19/2703A">19 U.S.C. 2703A(c)</external-xref>) is amended by
+			 striking <quote>5-year period</quote> and inserting <quote>10-year
+			 period</quote>.</text>
+		</section><section id="H0A4A434DA13949FAADAB68F83929CA1A"><enum>9.</enum><header>Customs support
+			 services</header>
+			<subsection id="H0048FCB40F544EFCBF702D369C0EEE09"><enum>(a)</enum><header>In
+			 general</header>
+				<paragraph id="H89379ED6076B4A57A511CBEA6CA08F0F"><enum>(1)</enum><header>Rapid response
+			 team</header><text>The Commissioner responsible for United States Customs and
+			 Border Protection (in this section referred to as the
+			 <quote>Commissioner</quote>) shall, in consultation with the United States
+			 Coast Guard, the Drug Enforcement Agency, and other Federal agencies, as
+			 appropriate, seek to send a rapid response team to Haiti—</text>
+					<subparagraph id="H489C5886A2DD48F987266450030638A5"><enum>(A)</enum><text>to assess the
+			 short-term and long-term technical, capacity-building, and training needs of
+			 the authorities of the Government of Haiti responsible for customs services;
+			 and</text>
+					</subparagraph><subparagraph id="H84DBB671F5ED4353953A33C20B14B8FC"><enum>(B)</enum><text>to provide
+			 immediate assistance, as warranted, particularly with respect to—</text>
+						<clause id="H75BD85E8A5B34A3886949F6303BD13C9"><enum>(i)</enum><text>reestablishing
+			 full capacity for commercial port operations at the seaport at
+			 Port-au-Prince;</text>
+						</clause><clause id="H9D4E6AD5E7BC49B7B7902B5DA801E497"><enum>(ii)</enum><text>facilitating
+			 trade between the United States and Haiti under the Caribbean Basin Economic
+			 Recovery Act, as amended by this Act;</text>
+						</clause><clause id="H8353334505B54FD0AE10E0AC44BA89AA"><enum>(iii)</enum><text>preventing
+			 unlawful transshipment of goods through Haiti to the United States; and</text>
+						</clause><clause id="H796DC89058454C6F82941B3527EF14F1"><enum>(iv)</enum><text>otherwise
+			 strengthening cooperation between the customs authorities of the United States,
+			 Haiti, and the Dominican Republic with respect to trade facilitation and
+			 economic development, customs compliance and law enforcement, and efforts to
+			 combat unlawful trafficking in narcotic drugs and psychotropic
+			 substances.</text>
+						</clause></subparagraph></paragraph><paragraph id="H774F8251854146809A40DED46468E568"><enum>(2)</enum><header>Report</header><text>Not
+			 later than 75 days after the date of the enactment of this Act, the
+			 Commissioner shall prepare and submit to the Committee on Finance of the Senate
+			 and the Committee on Ways and Means of the House of Representatives a
+			 nonconfidential report summarizing the results of the assessment required by
+			 paragraph (1)(A), including—</text>
+					<subparagraph id="HDADF0D81621A422D9BA49DD383A17392"><enum>(A)</enum><text>a description of
+			 the short-term and long-term technical, capacity-building, and training needs
+			 of the authorities of the Government of Haiti responsible for customs services,
+			 including a prioritization of immediate infrastructure needs;</text>
+					</subparagraph><subparagraph id="H9AF3BDCD5C424F45B8642783C41E61AD"><enum>(B)</enum><text>a multi-year plan
+			 for supplying technical, capacity-building, and training assistance to those
+			 authorities, including specific responsibilities to be undertaken by the
+			 support team authorized by subsection (b); and</text>
+					</subparagraph><subparagraph id="H568DC5B5740143F9888C47A8652F705E"><enum>(C)</enum><text>a statement of the
+			 amount and purpose for which any funds were expended by the rapid response team
+			 in Haiti to administer the provisions of this section, including any
+			 expenditure of funds authorized to be appropriated pursuant to subsection
+			 (c)(1).</text>
+					</subparagraph></paragraph></subsection><subsection id="H786208A26C1C4AD686D6F3AA7A588327"><enum>(b)</enum><header>Support
+			 team</header>
+				<paragraph id="H0C179A7CE1864F61BA3B6B154FDCEBE5"><enum>(1)</enum><header>In
+			 general</header><text>The Commissioner shall, in consultation with other
+			 Federal agencies, as appropriate, seek to establish a support team in Haiti for
+			 the purpose of helping to meet the short-term and long-term technical,
+			 capacity-building, and training needs of the authorities of the Government of
+			 Haiti responsible for customs services, as described in this section.</text>
+				</paragraph><paragraph id="H53A393FDB0D24E1CB85EAE37FE8C4F44"><enum>(2)</enum><header>Termination</header><text>The
+			 support team authorized by paragraph (1) shall terminate on September 30,
+			 2020.</text>
+				</paragraph></subsection><subsection id="HFE2328F4F878414082CA32D644676165"><enum>(c)</enum><header>Authorization of
+			 appropriations</header>
+				<paragraph id="HDFE42BE8EF6D4A5DA3B853F4E40E01E8"><enum>(1)</enum><header>In
+			 general</header><text>There are authorized to be appropriated to the United
+			 States Customs and Border Protection Agency, to remain available until
+			 expended—</text>
+					<subparagraph id="H53F7FEF79ED7483EAE8CBA7EE775026B"><enum>(A)</enum><text>$100,000 to help
+			 meet the immediate infrastructure needs of the authorities of the Government of
+			 Haiti responsible for customs services for the purpose of facilitating trade
+			 between the United States and Haiti under the Caribbean Basin Economic Recovery
+			 Act, as amended by this Act; and</text>
+					</subparagraph><subparagraph commented="no" id="H7E2AEBDCCC0147568ED2A6F339177F89"><enum>(B)</enum><text>$750,000 for each
+			 of the fiscal years 2011 through 2020 for the purpose of maintaining the
+			 support team authorized by subsection (b).</text>
+					</subparagraph></paragraph><paragraph id="HF3C5325ABEBA4A869BF8EB31071811C9"><enum>(2)</enum><header>Supplement and
+			 not supplant</header><text>The amounts authorized to be appropriated by
+			 paragraph (1) shall supplement and not supplant any other funds authorized to
+			 be appropriated to the Department of Homeland Security.</text>
+				</paragraph></subsection></section><section id="H8DCE19824E354F93BCEDA1AB8C19E087"><enum>10.</enum><header>Sense of
+			 Congress</header>
+			<subsection id="H0A0BE5E0215D4048A6AC21E8DAA21790"><enum>(a)</enum><header>Regional
+			 cooperation</header><text>It is the sense of Congress that the United States
+			 Trade Representative should seek to enter into consultations with
+			 representatives of countries with which the United States has a trading
+			 relationship for the purpose of encouraging those countries to establish
+			 bilateral trade preference programs with respect to textile and apparel
+			 articles produced in Haiti.</text>
+			</subsection><subsection commented="no" id="H4BF221746F414177B0F9618DFEF3064B"><enum>(b)</enum><header>Transshipment</header><text>It
+			 is the sense of Congress that the Commissioner responsible for United States
+			 Customs and Border Protection should, in consultation with the United States
+			 Trade Representative and the Secretary of Commerce, seek to enter into
+			 consultations with representatives of countries with which the United States
+			 has a trading relationship for the purpose of preventing the unlawful
+			 transshipment of textile and apparel articles from those countries through
+			 Haiti.</text>
+			</subsection></section><section id="H43B5F594616846C7AFC014DBCDB404B7"><enum>11.</enum><header>Customs user
+			 fees</header><text display-inline="no-display-inline">Section 13031(j)(3) of
+			 the Consolidated Omnibus Reconciliation Act of 1985 (<external-xref legal-doc="usc" parsable-cite="usc/19/58c">19 U.S.C. 58c(j)(3)</external-xref>) is
+			 amended—</text>
+			<paragraph id="HA9D6706B05AA435E86CD961E735C9923"><enum>(1)</enum><text>in subparagraph
+			 (A), by striking <quote>May 14, 2018</quote> and inserting <quote>November 10,
+			 2018</quote>; and</text>
+			</paragraph><paragraph id="H18D1B3F7642E46268EA1FBB36886C519"><enum>(2)</enum><text>in subparagraph
+			 (B)(i), by striking <quote>June 7, 2018</quote> and inserting <quote>August 17,
+			 2018</quote>.</text>
+			</paragraph></section><section id="H7DB1F749F3254DA8BF16EA0B44CE0367" section-type="subsequent-section"><enum>12.</enum><header>Time for payment of
+			 corporate estimated taxes</header>
+			<subsection id="H311A4DB5A540434EAE2E838C66207112"><enum>(a)</enum><header>Shift from 2015
+			 to 2014</header><text display-inline="yes-display-inline">The percentage under
+			 paragraph (1) of section 202(b) of the Corporate Estimated Tax Shift Act of
+			 2009 in effect on the date of the enactment of this Act is increased by 0.75
+			 percentage points.</text>
+			</subsection><subsection id="H2953578EFCE947A88F29E52E138DE68F"><enum>(b)</enum><header>Shift from 2016
+			 to 2015</header><text display-inline="yes-display-inline">The percentage under
+			 paragraph (2) of section 561 of the Hiring Incentives to Restore Employment Act
+			 in effect on the date of the enactment of this Act is increased by 0.75
+			 percentage points.</text>
+			</subsection></section><section id="H34E700924BB04308999C7CBBF75E334F"><enum>13.</enum><header>Budget
+			 compliance</header><text display-inline="no-display-inline">The budgetary
+			 effects of this Act, for the purpose of complying with the Statutory
+			 Pay-As-You-Go Act of 2010, shall be determined by reference to the latest
+			 statement titled <quote>Budgetary Effects of PAYGO Legislation</quote> for this
+			 Act, submitted for printing in the Congressional Record by the Chairman of the
+			 House Budget Committee, provided that such statement has been submitted prior
+			 to the vote on passage.</text>
+		</section></legis-body>
+	<attestation>
+		<attestation-group>
+			<role>Speaker of the House of Representatives.</role>
+		</attestation-group>
+		<attestation-group>
+			<role>Vice President of the United States and President of the
+			 Senate.</role>
+		</attestation-group>
+	</attestation>
+</bill>
+
+

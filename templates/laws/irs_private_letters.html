@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}IRS Private Letters{% endblock %}
+{% block content %}
+<div id="main_big">
+  <h1>IRS Private Letters</h1>
+  {% autoescape off %}
+  {% for r in page.object_list %}
+  <div class="list_item" id="item-{{ r.id }}">
+    <a href="{{ r.get_absolute_url }}">{{ r.section }} - {{ r.text|striptags|truncatewords:"8" }}</a>
+  </div>
+  {% endfor %}
+  {% endautoescape %}
+  {% include "paginator.html" %}
+
+</div>
+{% endblock %}

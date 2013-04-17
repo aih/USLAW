@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% load references %}
+{% block title %}US Code Title  {{ section }}. (U.S.C. The Code of Laws of the United States of America){% endblock %}
+{% block extrahead %}
+<script>
+$(document).ready(function(){
+  $('#top-information').mouseleave(function() {
+    $('#top-information').hide();
+  });
+});
+
+
+</script>
+{% endblock %}
+{% if section %}
+{% block menu_extra %}
+<div id="id_print" class="pointer panel_item width150" onmouseover="$('#id_print').addClass('browse-menu-over');" onmouseout="$('#id_print').removeClass('browse-menu-over');"><a target="_blank" href="{{ section.get_print_url }}" class="menu_link" style="text-decoration:none;">Print  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="Print" title="Print section" src="{{ MEDIA_URL }}img/print.png" width="20px" /></a>
+</div>
+{% endblock %}
+{% endif %}
+
+{% block right_panel_add  %}
+<div style="width:100%; padding-top:20px; float:left;">
+  <form action="{% url goto_section %}" method="post" id="goto_form">{% csrf_token %}Go to Section:
+    <input style="font-size:14px;" type="text" name="section_id" id="section_input" size="4" />
+    <input type="hidden" name="top_title_id" id="title_input" value="{{ section.top_title_id }}"/>
+    <input style="font-size:14px;" class="pointer" type="submit" value=" Ok " /> 
+  </form>   
+</div>
+
+{% if section %}
+<div id="references_external" style="width:100%;">
+  <h3>Related resources:</h3>
+  <div class="panel_item left res pointer" onclick="$('#publaws').toggle('slow');">  
+    Leg. Updates
+  </div>
+  <div id="publaws" class="panel_item res_info2" >
+    {% for p in publaws %}
+    <a href="{% url view_publaw p.pl.id %}#{{ p.sectionid }}">{{ p.pl }} Sec. {{ p.plsection }}</a><br />
+    {% empty %}
+    Nothing found
+    {% endfor %}
+  </div>
+
+
+  <div class="panel_item left res pointer" onclick="$('#t_reg').load('{% url load_regulations %}?section={{ section.id }}&source_type=0'); $('#t_reg').toggle('slow');">  
+    Treasury Regulations
+  </div>
+  <div id="t_reg" class="panel_item res_info2" >
+    <img src='{{ MEDIA_URL }}/img/spinner.gif' alt='spinner' />
+  </div>
+
+  <div class="panel_item left res pointer" onclick="$('#irs_r').load('/laws/load_rulings/?section={{ section.id }}&source_type=1'); $('#irs_r').toggle('slow');"> 
+    IRS Revenue Rulings
+  </div>
+  <div id="irs_r" class="panel_item res_info2" >
+    <img src='{{ MEDIA_URL }}/img/spinner.gif' alt='spinner' />
+  </div>
+
+  <div class="panel_item left res pointer" onclick="toggle_comments();">Comments ({{ comments|length }})</div>
+  <div id="comments_block" class="panel_item res_info2" >
+    {% include "comment/comments.html" %}
+    {% include "comment/add_comment.html" %}
+  </div>
+
+
+  <div class="panel_item left res pointer" onclick="$('#references_block').toggle('slow');" id="references">References:</div>
+  <div id="references_block" class="panel_item res_info2" >
+    <ul>
+      {% for r in section.reference_section.all %}
+      <li>
+	<a href="{{ r.get_absolute_url }}">{{ r }}</a>,
+      </li>
+      {% endfor %}
+      <!--<div class="width100 left" style="margin-top:20px;">
+	<a href="/laws/tax-map/?sections={{ section.id }}&link_type=map">View at tax map</a>
+      </div>-->
+    </ul>
+  </div>
+</div>
+
+<div class="additional_content">
+  <span id="tags" style="font-size:16px; font-weight:bold;">Tags:</span>
+  {% include "tags/tags_list.html" %}
+  {% include "tags/add_tag.html" %}
+</div>
+
+
+<div class="additional_content" id="flag_as_outdated">
+  {% if not section.is_outdated %}
+  {% if user.is_authenticated %}  
+  {% if outdated_by_user %}
+  You marked this document as outdated<br />
+  {% else %}
+  <a class="pointer vote" onclick="flag_as_outdated({{ section.id }}, {{ content_type.id }});">Flag as outdated</a><br />
+  {% endif %}
+  {% endif %}
+
+  {% if outdated %}
+  <br />
+  <span style="color:red; font-weight:bold;">{{ outdated }} users already mark this document as outdated.</span>
+  {% endif %}
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+<div class="content">
+  {% if section.is_outdated  %}
+  <div class="outdated width100 big22 left">This document is outdated</div>
+  {% endif %}
+  {% include "laws/breadcrumbnav.html" %}
+  <div id="main_text" style="margin-top:5px;">
+
+    <div class="small" id="top-information" class="pointer">
+      <b>Document information:</b><br />
+      Current Through: <b>{{ section.current_through }}</b><br />
+      Last checked: <b>{{ section.last_update }}</b><br />
+      {% if section.source %} Source: <a target="_blank" href="{{ section.source }}">{{ section.source }}</a>{% endif %}
+        {% for na in namedacts %}
+          {% if forloop.counter0 == 0 %}
+          <br />This section also known as:
+          {% endif %}
+          <span title="{{ na.description }}"><b>{{ na.title }}</b></span> <br />
+        {% endfor %}
+      <br />
+    </div>
+    <div style="float:right; cursor:help;" onmouseover="$('#top-information').show('slow');">
+      <img src="{{ MEDIA_URL }}img/question.png" />
+    </div>
+    {% if subsections.0.text == section.header %} 
+    {% else %}
+    <div class="jlevel0 sub2 subsection">{{ section.header }}</div>
+    {% endif %}
+
+    {% for s in subsections %}
+    <div class="width100 left" >
+       <div title="{{ s.subsection }}" id="{{ s.subsection }}" class="jlevel{{ s.level }} sub{{ s.s_type }} subsection">
+      {% if s.subsection != '' %}
+      {% if user.is_authenticated and user.username != 'Anonymous' %}
+	<div class="right" style="margin-right:-15px;"><a style="font-size:12px;" href="#{{ s.subsection }}" name="#{{ s.subsection }}"><img src="{{ MEDIA_URL }}img/arrow.png" width="10px;"/></a></div>
+      {% endif %}
+      {% endif %} {{ s.text|safe }}
+       </div>
+    </div>
+    {% endfor %}
+
+    <div id="additional_sections" class="left">
+      {% for a in additional_sections %}
+      {% if a.sa_type == 1 %}
+      <a name="a-{{ a.id }}"></a>
+      <h4 style="width:100%; text-align:center;">{{ a.text|safe }}</h4>
+      {% else %}
+      <div class="psection addsection mono small" id="a-{{ a.id }}">
+	{{ a.text|safe }}
+	<br />	
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="small left" id="information">
+      <b>Document information:</b><br />
+      Current Through: <b>{{ section.current_through }}</b><br />
+      Last checked: <b>{{ section.last_update }}</b><br />
+      {% if section.source %} Source: <a target="_blank" href="{{ section.source }}">{{ section.source }}</a>{% endif %}
+        {% for na in namedacts %}
+          {% if forloop.counter0 == 0 %}
+          <br />This section also known as:
+          {% endif %}
+          <span title="{{ na.description }}"><b>{{ na.title }}</b></span> <br />
+        {% endfor %}
+    </div>
+
+
+</div>
+
+  <div style="float:left; margin-top:5px;">
+
+  </div>
+
+  
+</div>
+
+{% if section %}
+<div id="navigation-bottom">
+  <br />  <br />
+  {% if section.get_previous_url %}<a href="{{ section.get_previous_url }}">&lt;&lt; Previous</a>&nbsp&nbsp&nbsp&nbsp{% endif %}
+  {% if section.get_next_url %}<a href="{{ section.get_next_url }}">Next &gt;&gt;</a>{% endif %}
+</div>
+{% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ title.name }}{% endblock %}
+{% block content %}
+<div id="main_big">
+  <h3>Multiple sections found:</h3>
+
+  <div class="width100">
+  {% for s in sections %}
+  <div class="list_item" id="item-{{ s.id }}">
+    <a href="{{ s.get_absolute_url }}">{{ s }} </a><br />
+  </div>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

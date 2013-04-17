@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}IRS Rulings (Revenue Rulings){% endblock %}
+{% block content %}
+<div id="main_big">
+  <h1>IRS Rulings</h1>
+  {% autoescape off %}
+  {% for r in page.object_list %}
+  <div class="list_item" id="item-{{ r.id }}">
+    <a href="{{ r.get_absolute_url }}">{{ r.text|striptags|truncatewords:"10" }}</a>
+    {% comment %} 
+    TODO: Decide whether to keep; r.title includes section number already;
+    <a href="{{ r.get_absolute_url }}">{{ r.section }} {{ r.title }}</a>
+    {% endcomment %}
+  </div>
+  {% endfor %}
+  {% endautoescape %}
+  {% include "paginator.html" %}
+
+</div>
+{% endblock %}

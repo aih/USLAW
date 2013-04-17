@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}US Code Title 26 Topics{% endblock %}
+{% block extrahead %}
+<script type="text/javascript">
+ 
+function load_topic(id){
+    var url = "{% url load_topic %}"+"?pk="+id;
+    $("#subtitles-"+id).show();
+    $("#subtitles-"+id).load(url);
+ 
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<h4>Internal Revenue Code: Grouped By Topic</h4>
+
+<ul>
+  {% for t in topics %}
+  <div class="left width100">
+    <div id="plus-{{ t.id }}" onclick="load_topic('{{ t.id }}'); $('#minus-{{ t.id }}').show(); $('#plus-{{ t.id }}').hide();" class="left" style="cursor:pointer; font-size:14px;">+</div>
+    <div id="minus-{{ t.id }}" onclick="$('#subtitles-{{ t.id }}').hide(); $('#minus-{{ t.id }}').hide(); $('#plus-{{ t.id }}').show();" class="left" style="cursor:pointer; font-size:20px; display:none;"> - </div>&nbsp;&nbsp;
+    <div style="width:100px; float:left; padding-left:10px;">§{{ t.first_section.section }} &mdash; §{{ t.last_section.section }}</div>
+    <b>{{ t }}</b>
+  </div>
+  <div id="subtitles-{{ t.id }}" style="display:none; padding-left:10px;"><img src="{{ MEDIA_URL }}img/spinner.gif" /></div>
+  {% endfor %}
+
+  <br/><br/>
+  <div id='credit'>
+      Topic areas are borrowed from <a href = 'http://en.wikipedia.org/wiki/Internal_Revenue_Code'>Wikipedia</a> and have no legal significance. These are licenced under the <a href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike</a> License.
+  </div>
+{% endblock content %}
+

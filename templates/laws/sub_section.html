@@ -1,0 +1,4 @@
+{% load references %}
+    {% for s in subsections %}
+    <a name="{{ s.subsection }}"></a><div id="{{ s.id }}" class="jlevel{{ s.level }} sub{{ s.s_type }} subsection" onclick="location.hash='#{{ s.id }}';">{{ s.text|safe }}</div>
+    {% endfor %}

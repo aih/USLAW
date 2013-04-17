@@ -1,0 +1,38 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/print.css" media="all"/>
+ 
+<style>
+body {
+  background: white;
+}
+h1,h2,h3, a:visited, a, a.sec, a.psec {
+  color:black;
+}
+</style>
+</head>
+<body onload="window.print();">
+<div id="main">
+    {% for s in subsections %}
+      {% if forloop.counter == 1 %}
+      <div style="font-size:18px;">{{ s.text|safe }}</div>
+      {% else %}
+      <div id="{{ s.id }}" class="jlevel{{ s.level }} sub{{ s.s_type }} subsection">{{ s.text|safe }}</div>
+      {% endif %}
+    {% endfor %}
+
+      {% for a in additional_sections %}
+      {% if a.sa_type == 1 %}
+      <a name="a-{{ a.id }}"></a>
+      <h4 style="width:100%; text-align:center;">{{ a.text|safe }}</h4>
+      {% else %}
+      <div class="psection addsection mono small" id="a-{{ a.id }}">
+	{{ a.text|safe }}
+	<br />	
+      </div>
+      {% endif %}
+      {% endfor %}
+
+</div>
+</body>
+</html>

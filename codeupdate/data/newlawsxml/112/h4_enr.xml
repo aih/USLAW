@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?xml-stylesheet href="\billres.xsl" type="text/xsl"?>-->
+<!--<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://xml.house.gov/bill.dtd">-->
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://thomas.loc.gov/dtd/bill.dtd">
+<bill bill-stage="Enrolled-Bill" bill-type="olc" dms-id="HF647033D778548D4B664A2C1F8A58394" public-private="public" stage-count="1"> 
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HR 4 ENR: Comprehensive 1099 Taxpayer Protection and Repayment of Exchange Subsidy Overpayments Act of 2011</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="no">IB</distribution-code> 
+<congress display="yes">One Hundred Twelfth Congress of the United States of America</congress> <session display="yes">At the First Session</session><enrolled-dateline>Begun and held at the City of Washington on Wednesday, the fifth day of January, two thousand and eleven</enrolled-dateline> 
+<legis-num>H. R. 4</legis-num> 
+<current-chamber display="no"></current-chamber> 
+<legis-type>AN ACT</legis-type> 
+<official-title display="yes">To repeal the expansion of information reporting requirements for payments of $600 or more to corporations, and for other purposes.</official-title> 
+</form> 
+<legis-body id="H93142AA0709242D9BA290E2B2C5BB60F" style="OLC"> 
+<section id="H46CE8909BB2A457AA164E4C2E3C3939D" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>Comprehensive 1099 Taxpayer Protection and Repayment of Exchange Subsidy Overpayments Act of 2011</short-title></quote>.</text></section> 
+<section id="HF2B6CCAEEC204790972839C2A4AE7B2B"><enum>2.</enum><header>Repeal of expansion of information reporting requirements to payments made to corporations and to payments for property and other gross proceeds</header> 
+<subsection id="H05735D1B71A74A00A3CE175AF83697C0"><enum>(a)</enum><header>Application to corporations</header><text display-inline="yes-display-inline"><external-xref legal-doc="usc" parsable-cite="usc/26/6041">Section 6041</external-xref> of the Internal Revenue Code of 1986 is amended by striking subsections (i) and (j).</text> </subsection> 
+<subsection id="H87F450E9AB96467DA9F4C34E956A5556"><enum>(b)</enum><header>Payments for property and other gross proceeds</header><text>Subsection (a) of section 6041 of such Code is amended—</text> 
+<paragraph id="H39938A72627644EEB1F6B3F9081CD7D8"><enum>(1)</enum><text>by striking <quote>amounts in consideration for property,</quote>, and</text> </paragraph> 
+<paragraph id="H4847B417B71B447C87F8FC4A2D8345C2"><enum>(2)</enum><text>by striking <quote>gross proceeds,</quote> both places it appears.</text> </paragraph></subsection> 
+<subsection id="H6B3CA24324FB411886A2628D41CA0C6C"><enum>(c)</enum><header>Effective date</header><text>The amendments made by this section shall apply to payments made after December 31, 2011.</text> </subsection></section> 
+<section display-inline="no-display-inline" id="H5822935E060C4BB589167C215A1397AE" section-type="subsequent-section"><enum>3.</enum><header>Repeal of expansion of information reporting requirements for rental property expense payments</header> 
+<subsection id="H102926B610894D65B01ECDBD298C6B59"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline"><external-xref legal-doc="usc" parsable-cite="usc/26/6041">Section 6041</external-xref> of the Internal Revenue Code of 1986 is amended by striking subsection (h).</text> </subsection> 
+<subsection id="H80ED96F8A4A14FD39594C2B4CA2392EC"><enum>(b)</enum><header>Effective date</header><text>The amendment made by this section shall apply to payments made after December 31, 2010.</text> </subsection></section> 
+<section display-inline="no-display-inline" id="H00653D5338214E7FBE4FF3F154B0B2BF" section-type="subsequent-section"><enum>4.</enum><header>Increase in amount of overpayment of health care credit which is subject to recapture</header> 
+<subsection id="H63C116DA441D4B689844044802CF896B"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Clause (i) of <external-xref legal-doc="usc" parsable-cite="usc/26/36B">section 36B(f)(2)(B)</external-xref> of the Internal Revenue Code of 1986 is amended to read as follows:</text> 
+<quoted-block display-inline="no-display-inline" id="H9A4DB0D335424AA7BC369E8FD3C1BD9D" style="OLC"> 
+<clause id="HBE5D7613A6764E578CB07950D3C81C16"><enum>(i)</enum><header>In general</header><text display-inline="yes-display-inline">In the case of a taxpayer whose household income is less than 400 percent of the poverty line for the size of the family involved for the taxable year, the amount of the increase under subparagraph (A) shall in no event exceed the applicable dollar amount determined in accordance with the following table (one-half of such amount in the case of a taxpayer whose tax is determined under section 1(c) for the taxable year):</text> 
+<table table-type="" table-template-name="Generic: 2 text, even cols" align-to-level="section" frame="topbot" colsep="1" rowsep="0" blank-lines-before="1" line-rules="hor-ver" rule-weights="4.4.4.0.0.0">
+<tgroup cols="2" rowsep="0" thead-tbody-ldg-size="8.8.9" grid-typeface="1.1"><colspec colname="column1" rowsep="0" coldef="txt" min-data-value="150" colwidth="164pts"/><colspec colname="column2" colsep="1" rowsep="0" coldef="txt-no-ldr" min-data-value="150" colwidth="164pts"/><thead>
+<row><entry namest="column1" morerows="0" rowsep="1" align="center" colname="column1">If the household income (expressed as a percent of poverty line) is:</entry><entry namest="column2" morerows="0" rowsep="1" align="center" colname="column2">The applicable dollar amount is:</entry></row></thead>
+<tbody>
+<row><entry rowsep="0" align="left" stub-definition="txt-ldr" stub-hierarchy="1" leader-modify="force-ldr" colname="column1">Less than 200%</entry><entry rowsep="0" align="left" leader-modify="clr-ldr" colname="column2">$600</entry></row>
+<row><entry rowsep="0" align="left" stub-definition="txt-ldr" stub-hierarchy="1" leader-modify="force-ldr" colname="column1">At least 200% but less than 300%</entry><entry rowsep="0" align="left" leader-modify="clr-ldr" colname="column2">$1,500</entry></row>
+<row><entry rowsep="0" align="left" stub-definition="txt-ldr" stub-hierarchy="1" leader-modify="force-ldr" colname="column1">At least 300% but less than 400%</entry><entry rowsep="0" align="left" leader-modify="clr-ldr" colname="column2">$2,500.</entry></row></tbody></tgroup></table> </clause><after-quoted-block>.</after-quoted-block></quoted-block> </subsection> 
+<subsection id="H99466528FA474929A38916A0064B6607"><enum>(b)</enum><header>Effective date</header><text>The amendment made by this section shall apply to taxable years ending after December 31, 2013.</text> </subsection></section> 
+</legis-body> <attestation><attestation-group><role>Speaker of the House of Representatives.</role></attestation-group><attestation-group><role>Vice President of the United States and President of the Senate.</role></attestation-group></attestation> 
+</bill> 
+
+

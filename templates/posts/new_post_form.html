@@ -1,0 +1,56 @@
+<div class="block">
+  <div class="border_block left"> </div>
+  <div class="left padding5 width100">
+    <div class="big22 left"><a class="expand_button pointer">{% if post %} Edit {% else %}Add{% endif %} Post</a></div>
+    <div class="big14 right" style="margin-top:5px; padding-right:10px;"><div id="id_expand" class="left expand_button" style="cursor:pointer;">Click here to expand <img src='{{ MEDIA_URL }}img/icons/arrow_down.png' /></div>
+    </div>
+  </div>
+  <div id="id_post_form_div" style="{% if not form.errors %}{% if post %}{% else %}display:none;{% endif %}{% endif %} float:left; width:100%">
+    <div class="border_block left"> </div>
+    <div class="left padding5 width100">
+
+      {% if form.errors %}
+      <!--<div class="error">Error occured</div>-->
+      {% endif %}
+
+      <form action="/posts/edit/{% if post %}{{ post.id }}/{% endif %}" method="post" id="id_post_form">{% csrf_token %}
+	  {{ form.profile }}
+	{{ form.npost_type }}
+	  
+	  
+	<div class="post_form_left left">
+	<!--  <div class="post_btn_field">{{ form.post_type }}</div>-->
+	    <div class="left error">{{ form.post_type.errors }}</div>
+
+	  <div class="left error">{{ form.profile.errors }}</div>
+	  <div class="post_btn_field">
+            <div id="id_title_error" style="display:none; color:red;"></div>
+	    {{ form.title }}
+	    <div class="left error">{{ form.title.errors }}</div>
+	  </div>
+	  
+	  <div class="post_btn_field">
+            <div id="id_reference_link_error" style="display:none; color:red;"></div>
+	    {{ form.reference_link }}
+	    <div class="left error">{{ form.reference_link.errors }}</div>
+	  </div>
+	  <div class="post_btn_field" style="padding-bottom:0px;">Tags:</div>
+          <div id="id_tags_error" style="display:none; color:red;"></div>
+	  <div class="post_btn_field">{{ form.tags }}
+	    <div class="left error">{{ form.tags.errors }}</div>
+	  </div>
+	  <div class="post_btn_field">
+	    <div class="left"><input onclick="$('#id_post_form_div').hide('slow');" type ="reset" value= " Cancel " class="post_btn find_btn" style="width:120px;" /></div>
+	    <div class="right"><input type ="submit" value= " Post " class="post_btn find_btn" style="width:120px;" /></div>
+	  </div>
+	</div>
+	<div class="post_form_right right">
+           <div id="id_text_error" style="display:none; color:red;"></div>
+	  {{ form.text }}
+	  <div class="left error">{{ form.text.errors }}</div>
+	</div>
+
+      </form>
+    </div>
+  </div>
+</div>

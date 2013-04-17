@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?xml-stylesheet href="\billres.xsl" type="text/xsl"?>-->
+<!--<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://xml.house.gov/bill.dtd">-->
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://thomas.loc.gov/dtd/bill.dtd">
+<bill bill-stage="Enrolled-Bill" dms-id="HE72EDF938D3E4F8BA14A375069D2BFBB" public-private="public" key="H" bill-type="olc" stage-count="1"> 
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HR 6190 ENR: Airport and Airway Extension Act of 2010, Part III</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="no">I</distribution-code> 
+<congress>One Hundred Eleventh Congress of the United States of America</congress> <session>At the Second Session</session><enrolled-dateline>Begun and held at the City of Washington on Tuesday, the fifth day of January, two thousand and ten</enrolled-dateline> 
+<legis-num>H. R. 6190</legis-num> 
+<current-chamber display="no"></current-chamber> 
+<legis-type>AN ACT</legis-type> 
+<official-title display="yes">To amend the Internal Revenue Code of 1986 to extend the funding and expenditure authority of the Airport and Airway Trust Fund, to amend title 49, United States Code, to extend the airport improvement program, and for other purposes.</official-title> 
+</form> 
+<legis-body id="H441F34F484E64DDEA9FB1F6C069D39ED" style="OLC"> 
+<section id="H0CCC07C92D4E4C7E9197CB717C84478F" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>Airport and Airway Extension Act of 2010, Part III</short-title></quote>.</text></section> 
+<section commented="no" display-inline="no-display-inline" id="HBEFF4FAF1CAA4DBDBE966E3EF95CF590" section-type="subsequent-section"><enum>2.</enum><header display-inline="yes-display-inline">Extension of taxes funding Airport and Airway Trust Fund</header> 
+<subsection commented="no" display-inline="no-display-inline" id="H2A7697DB6376459DA145407B69E80C82"><enum>(a)</enum><header display-inline="yes-display-inline">Fuel taxes</header><text display-inline="yes-display-inline">Subparagraph (B) of <external-xref legal-doc="usc" parsable-cite="usc/26/4081">section 4081(d)(2)</external-xref> of the Internal Revenue Code of 1986 is amended by striking <quote>September 30, 2010</quote> and inserting <quote>December 31, 2010</quote>.</text></subsection> 
+<subsection commented="no" display-inline="no-display-inline" id="H419B6247E1EA4C4F80EF74690ED35635"><enum>(b)</enum><header display-inline="yes-display-inline">Ticket taxes</header> 
+<paragraph commented="no" display-inline="no-display-inline" id="HD7CE61F0919E4438B27DF0E76672FF90"><enum>(1)</enum><header display-inline="yes-display-inline">Persons</header><text display-inline="yes-display-inline">Clause (ii) of <external-xref legal-doc="usc" parsable-cite="usc/26/4261">section 4261(j)(1)(A)</external-xref> of the Internal Revenue Code of 1986 is amended by striking <quote>September 30, 2010</quote> and inserting <quote>December 31, 2010</quote>.</text></paragraph> 
+<paragraph commented="no" display-inline="no-display-inline" id="HCBFD1C921B804DE18D4B212BB7B9BD14"><enum>(2)</enum><header display-inline="yes-display-inline">Property</header><text display-inline="yes-display-inline">Clause (ii) of section 4271(d)(1)(A) of such Code is amended by striking <quote>September 30, 2010</quote> and inserting <quote>December 31, 2010</quote>.</text></paragraph></subsection> 
+<subsection commented="no" display-inline="no-display-inline" id="H58B0162FB0D0483EA033C27521A16934"><enum>(c)</enum><header display-inline="yes-display-inline">Effective date</header><text display-inline="yes-display-inline">The amendments made by this section shall take effect on October 1, 2010.</text></subsection></section> 
+<section commented="no" display-inline="no-display-inline" id="HF7F0683D344C412B94C6D4AB458FDB4D" section-type="subsequent-section"><enum>3.</enum><header display-inline="yes-display-inline">Extension of Airport and Airway Trust Fund expenditure authority</header> 
+<subsection commented="no" display-inline="no-display-inline" id="HCF9603A79ED8435E855AEA03E8EE4111"><enum>(a)</enum><header display-inline="yes-display-inline">In general</header><text display-inline="yes-display-inline">Paragraph (1) of <external-xref legal-doc="usc" parsable-cite="usc/26/9502">section 9502(d)</external-xref> of the Internal Revenue Code of 1986 is amended—</text> 
+<paragraph commented="no" display-inline="no-display-inline" id="H572F4E7E3CDA420CA27A62515BC6AA99"><enum>(1)</enum><text display-inline="yes-display-inline">by striking <quote>October 1, 2010</quote> and inserting <quote>January 1, 2011</quote>; and</text></paragraph> 
+<paragraph commented="no" display-inline="no-display-inline" id="HEE6360B2425645CBB0B0FBD21928A77D"><enum>(2)</enum><text display-inline="yes-display-inline">by inserting <quote>or the <short-title>Airport and Airway Extension Act of 2010, Part III</short-title></quote> before the semicolon at the end of subparagraph (A).</text></paragraph></subsection> 
+<subsection commented="no" display-inline="no-display-inline" id="H8E11B407CDDE4B00A31028E48F24D986"><enum>(b)</enum><header display-inline="yes-display-inline">Conforming amendment</header><text display-inline="yes-display-inline">Paragraph (2) of section 9502(e) of such Code is amended by striking <quote>October 1, 2010</quote> and inserting <quote>January 1, 2011</quote>.</text></subsection> 
+<subsection commented="no" display-inline="no-display-inline" id="H51EF8A2FC5C64FC08986B323022DA5D0"><enum>(c)</enum><header display-inline="yes-display-inline">Effective date</header><text display-inline="yes-display-inline">The amendments made by this section shall take effect on October 1, 2010.</text></subsection></section> 
+<section commented="no" display-inline="no-display-inline" id="HC74745FAD95B403FA47B78D20F05B4CF" section-type="subsequent-section"><enum>4.</enum><header display-inline="yes-display-inline">Extension of airport improvement program</header> 
+<subsection id="H38508B77C1DF479384251D7B092655B5" display-inline="no-display-inline"><enum>(a)</enum><header>Authorization of appropriations</header> 
+<paragraph id="H4EBA79AC61804AC385AB5C1209610EE6"><enum>(1)</enum><header>In general</header><text display-inline="yes-display-inline"><external-xref legal-doc="usc" parsable-cite="usc/49/48103">Section 48103</external-xref> of title 49, United States Code, is amended—</text> 
+<subparagraph id="HD397E3693B4A4A09B44258631B578A88"><enum>(A)</enum><text>by striking <quote>and</quote> at the end of paragraph (6);</text></subparagraph> 
+<subparagraph id="H1DC32F401EBB479A9D21F2520F8A3FD5"><enum>(B)</enum><text>by striking the period at the end of paragraph (7) and inserting <quote>; and</quote>; and</text></subparagraph> 
+<subparagraph id="HEA7B2A5D960C47B88928A9961D9D71CA"><enum>(C)</enum><text>by inserting after paragraph (7) the following:</text> 
+<quoted-block display-inline="no-display-inline" id="H071ADD649A4B427CAAC9E712412EDF68" style="OLC"> 
+<paragraph id="H53FD9E8502CB4EE482FF636AEA7EA7D7"><enum>(8)</enum><text display-inline="yes-display-inline">$925,000,000 for the 3-month period beginning on October 1, 2010.</text></paragraph><after-quoted-block>.</after-quoted-block></quoted-block></subparagraph></paragraph> 
+<paragraph commented="no" id="H08BF3D1534394680A7624C7D2A27F4AC"><enum>(2)</enum><header>Obligation of amounts</header><text>Subject to limitations specified in advance in appropriation Acts, sums made available pursuant to the amendment made by paragraph (1) may be obligated at any time through September 30, 2011, and shall remain available until expended.</text></paragraph></subsection> 
+<subsection id="HEFDCE9A2797A43498E35702E201C7902" display-inline="no-display-inline"><enum>(b)</enum><header>Project grant authority</header><text>Section 47104(c) of such title is amended by striking <quote>September 30, 2010,</quote> and inserting <quote>December 31, 2010,</quote>.</text></subsection></section> 
+<section id="HC3B2827F87D84C0E95722CC4F3FBA518" display-inline="no-display-inline" section-type="subsequent-section"><enum>5.</enum><header>Extension of expiring authorities</header> 
+<subsection id="HB1A25F154BFC4197889EC797200B66BD"><enum>(a)</enum><text display-inline="yes-display-inline"><external-xref legal-doc="usc" parsable-cite="usc/49/40117">Section 40117(l)(7)</external-xref> of title 49, United States Code, is amended by striking <quote>October 1, 2010.</quote> and inserting <quote>January 1, 2011.</quote>.</text></subsection> 
+<subsection id="HBD33AB43B2D9481F9A278B5AA468004C"><enum>(b)</enum><text>Section 41743(e)(2) of such title is amended by striking <quote>2010</quote> and inserting <quote>2011</quote>.</text></subsection> 
+<subsection id="H90CF9DFDA5AB40D585675C73741D7D65"><enum>(c)</enum><text>Section 44302(f)(1) of such title is amended—</text> 
+<paragraph id="H2DC4AF3B4112407D88B269B15B755F29"><enum>(1)</enum><text>by striking <quote>September 30, 2010,</quote> and inserting <quote>December 31, 2010,</quote>; and</text></paragraph> 
+<paragraph id="H0B00E4CEBC5D4F3AAFF027104FC7259C"><enum>(2)</enum><text>by striking <quote>December 31, 2010,</quote> and inserting <quote>March 31, 2011,</quote>.</text></paragraph></subsection> 
+<subsection id="HF3EB38F098034E91AD862BF40F4E6CC2"><enum>(d)</enum><text>Section 44303(b) of such title is amended by striking <quote>December 31, 2010,</quote> and inserting <quote>March 31, 2011,</quote>.</text></subsection> 
+<subsection id="HBF48D574D54D43D58D79D2B26C1805DB"><enum>(e)</enum><text>Section 47107(s)(3) of such title is amended by striking <quote>October 1, 2010.</quote> and inserting <quote>January 1, 2011.</quote>.</text></subsection> 
+<subsection id="H8E4860E038D040C5A2AD587EF2B7BB4E"><enum>(f)</enum><text>Section 47115(j) of such title is amended by inserting <quote>and for the portion of fiscal year 2011 ending before January 1, 2011,</quote> after <quote>2010,</quote>.</text></subsection> 
+<subsection id="HBA7BCDF88C7E4173A391E6D83FF95F39"><enum>(g)</enum><text>Section 47141(f) of such title is amended by striking <quote>September 30, 2010.</quote> and inserting <quote>December 31, 2010.</quote>.</text></subsection> 
+<subsection id="H432FEA6480E742E98568BC1AFA03048A"><enum>(h)</enum><text>Section 49108 of such title is amended by striking <quote>September 30, 2010,</quote> and inserting <quote>December 31, 2010,</quote>.</text></subsection> 
+<subsection id="HED8B8477772D4528BDB29C684FAA558E"><enum>(i)</enum><text>Section 161 of the Vision 100—Century of Aviation Reauthorization Act (<external-xref legal-doc="usc" parsable-cite="usc/49/47109">49 U.S.C. 47109</external-xref> note) is amended by inserting <quote>, or in the portion of fiscal year 2011 ending before January 1, 2011,</quote> after <quote>fiscal year 2009 or 2010</quote>.</text></subsection> 
+<subsection id="HA191E1A819FD4BC782BFB9B24D65A842"><enum>(j)</enum><text>Section 186(d) of such Act (117 Stat. 2518) is amended by inserting <quote>and for the portion of fiscal year 2011 ending before January 1, 2011,</quote> after <quote>October 1, 2010,</quote>.</text></subsection> 
+<subsection id="HCDF8F5693E294C8CA8BE16B84EAF88BA" commented="no"><enum>(k)</enum><text>Section 409(d) of such Act (<external-xref legal-doc="usc" parsable-cite="usc/49/41731">49 U.S.C. 41731</external-xref> note) is amended by striking <quote>September 30, 2010.</quote> and inserting <quote>September 30, 2011.</quote>.</text></subsection> 
+<subsection id="H511806D5F2974DE9A6594ADA56FB0270"><enum>(l)</enum><text>The amendments made by this section shall take effect on October 1, 2010.</text></subsection></section> 
+<section id="H4E007D4029C34B2CB02A4719181F6B28" section-type="subsequent-section" display-inline="no-display-inline"><enum>6.</enum><header>Technical corrections</header><text display-inline="no-display-inline">Effective as of August 1, 2010, and as if included therein as enacted, the Airline Safety and Federal Aviation Administration Extension Act of 2010 (<external-xref legal-doc="public-law" parsable-cite="pl/111/216">Public Law 111–216</external-xref>) is amended as follows:</text> 
+<paragraph id="H2CFF2946099446DD9772E784CEB48F09"><enum>(1)</enum><text>In section 202(a) (124 Stat. 2351) by inserting <quote>of title 49, United States Code,</quote> before <quote>is amended</quote>.</text></paragraph> 
+<paragraph id="H5A9789E181D14E238DE45B272C42BF0F"><enum>(2)</enum><text display-inline="yes-display-inline">In section 202(b) (124 Stat. 2351) by inserting <quote>of such title</quote> before <quote>is amended</quote>.</text></paragraph> 
+<paragraph id="HBD4C9496211E45A696953E041748F1B4"><enum>(3)</enum><text display-inline="yes-display-inline">In section 203(c)(1) (124 Stat. 2356) by inserting <quote>of such title</quote> before <quote>(as redesignated</quote>.</text></paragraph> 
+<paragraph id="H3E4173564F4B447D87AB9E3455E49AEA"><enum>(4)</enum><text display-inline="yes-display-inline">In section 203(c)(2) (124 Stat. 2357) by inserting <quote>of such title</quote> before <quote>(as redesignated</quote>.</text></paragraph></section> 
+</legis-body> <attestation><attestation-group><role>Speaker of the House of Representatives.</role></attestation-group><attestation-group><role>Vice President of the United States and President of the Senate.</role></attestation-group></attestation>
+</bill> 
+
+

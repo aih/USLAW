@@ -1,0 +1,88 @@
+<script type="text/javascript">
+  function update_avatars(){
+      $('.avatar').each(function(index) {
+	  var id = $(this).attr('id');
+	  var text = $(this).attr('qtitle');
+	  var qtip_options = {
+			     content: text,
+			     show: 'mouseover',
+			     hide: 'mouseout',
+			     position:
+				{
+				corner: {
+				 target: 'topMiddle',
+				 tooltip: 'bottomMiddle'
+				 }
+
+			     },
+			     style: { 
+				 textAlign: 'center',
+				 tip: true ,//"topMiddle",
+				 //width: 150,
+				 color:'#fff',
+				 background: '#395571',
+				 name: 'dark',
+				 padding: 0,
+				 border: {
+				    width: 2,
+				    radius: 5,
+				    color: '#395571'
+				 }
+			     }
+			 }
+	  $('#'+id).qtip(qtip_options);
+	});
+   }
+
+
+  $(document).ready(function() { 
+   update_avatars();
+   $( "#id_tags" ).autocomplete({
+			source: "/tags/suggestion/",
+			minLength: 0
+		});
+   $( "#id_qtags" ).autocomplete({
+			source: "/tags/suggestion/",
+			minLength: 0
+		});
+
+    $('#posts_form').ajaxForm({ 
+        //dataType:  'html', 
+        beforeSubmit: function (){
+             $('#spinner').show();
+        },
+        target: '#newsfeed',
+        success:function() {
+           var last_page = parseInt($('#page_id').val());
+           $('#page_id').val(last_page+1);
+           $('#spinner').hide();
+           $("#newsfeed").attr("id",'#newsfeed'+last_page);
+           $("#newsfeed-container").append("<div id='newsfeed' style='margin-top:-16px' class='block'></div>");
+           update_avatars();
+        }
+    }); 
+
+    $('#question_form').ajaxForm({ 
+        //dataType:  'html', 
+        beforeSubmit: function (){
+             $('#question_spinner').show();
+        },
+        target: '#questionfeed',
+        success: function() {
+          var last_page = parseInt($('#question_page_id').val());
+          $('#question_page_id').val(last_page+1);
+          $('#question_spinner').hide();
+          $("#questionfeed").attr("id",'#questionfeed'+last_page);
+          $("#questionfeed-container").append("<div id='questionfeed' style='margin-top:-16px' class='block'></div>");
+          update_avatars();
+        }
+    }); 
+
+    $('#page_id').val('1');
+    $('#question_page_id').val('1');
+    $('#question_form').submit();
+    $('#posts_form').submit();
+     
+});
+
+</script>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?xml-stylesheet href="\billres.xsl" type="text/xsl"?>-->
+<!--<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://xml.house.gov/bill.dtd">-->
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://thomas.loc.gov/dtd/bill.dtd">
+<bill bill-stage="Enrolled-Bill" dms-id="H2E4EBC00D83B4FA48166A2A68F81BD43" public-private="public" key="H" bill-type="olc" stage-count="1"> 
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HR 5623 ENR: Homebuyer Assistance and Improvement Act of 2010</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="no">I</distribution-code> 
+<congress>One Hundred Eleventh Congress of the United States of America</congress> <session>At the Second Session</session><enrolled-dateline>Begun and held at the City of Washington on Tuesday, the fifth day of January, two thousand and ten</enrolled-dateline> 
+<legis-num>H. R. 5623</legis-num> 
+<current-chamber display="no"></current-chamber> 
+<legis-type>AN ACT</legis-type> 
+<official-title display="yes">To amend the Internal Revenue Code of 1986 to extend the homebuyer tax credit for the purchase of a principal residence before October 1, 2010, in the case of a written binding contract entered into with respect to such principal residence before May 1, 2010, and for other purposes.</official-title> 
+</form> 
+<legis-body id="H4C9E097F9E834066B39F565ADE7AFCB6" style="OLC"> 
+<section id="H73D44EF9DA594D12A86FC88E7C9AFAE8" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>Homebuyer Assistance and Improvement Act of 2010</short-title></quote>. </text></section>
+<section id="H66B81EE5C48546848C37367380D4EA26"><enum>2.</enum><header>Extension of homebuyer credit for certain purchases pursuant to binding contracts</header>
+<subsection id="HD8BA3737C0D24CBB8CEC5FA7AAAD1246"><enum>(a)</enum><header>In general</header><text>Paragraph (2) of <external-xref legal-doc="usc" parsable-cite="usc/26/36">section 36(h)</external-xref> of the Internal Revenue Code of 1986 is amended by striking <quote>paragraph (1) shall be applied by substituting <quote>July 1, 2010</quote></quote> and inserting <quote>and who purchases such residence before October 1, 2010, paragraph (1) shall be applied by substituting <quote>October 1, 2010</quote></quote>.</text></subsection>
+<subsection id="H10858D2CB0F24C3190E65FBC2F19A440"><enum>(b)</enum><header>Conforming amendment</header><text>Subparagraph (B) of section 36(h)(3) of such Code is amended by inserting <quote>, and for <quote>October 1, 2010</quote></quote> after <quote>for <quote>July 1, 2010</quote></quote>.</text></subsection>
+<subsection id="H38F8AF3385D14EFA99E55CC98E5C5F0A"><enum>(c)</enum><header>Effective date</header><text>The amendments made by this section shall apply to residences purchased after June 30, 2010.</text></subsection></section>
+<section id="HB2608904FD8344F1BD65E79D395FA7B8" display-inline="no-display-inline" section-type="subsequent-section"><enum>3.</enum><header>Application of bad checks penalty to electronic payments</header>
+<subsection id="H0A742A8CE9784D3A9C9E3172323A8EC6"><enum>(a)</enum><header>In general</header><text><external-xref legal-doc="usc" parsable-cite="usc/26/6657">Section 6657</external-xref> of the Internal Revenue Code of 1986 is amended—</text>
+<paragraph id="H02BAC4A92A1F424D99C64609F54089E9"><enum>(1)</enum><text>by striking <quote>If any check or money order in payment of any amount</quote> and inserting <quote>If any instrument in payment, by any commercially acceptable means, of any amount</quote>, and</text></paragraph>
+<paragraph id="H35B7627DBFA54496872A797EB5BA0E30"><enum>(2)</enum><text>by striking <quote>such check</quote> each place it appears and inserting <quote>such instrument</quote>.</text></paragraph></subsection>
+<subsection commented="no" display-inline="no-display-inline" id="H0000AFE75627415B9EA16456511598EF"><enum>(b)</enum><header>Effective dates</header><text>The amendments made by this section shall apply to instruments tendered after the date of the enactment of this Act.</text></subsection></section>
+<section id="H55B9024E98394C829C13765194FAB44B"><enum>4.</enum><header>Disclosure of prisoner return information to State prisons</header>
+<subsection id="HCF307797B9714244B1F657FC2692F431"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Subparagraph (A) of <external-xref legal-doc="usc" parsable-cite="usc/26/6103">section 6103(k)(10)</external-xref> of the Internal Revenue Code of 1986 is amended—</text>
+<paragraph id="HF4A32D5C9CBE41229BBF4F5E30B163BB"><enum>(1)</enum><text>by inserting <quote>and the head of any State agency charged with the responsibility for administration of prisons</quote> after <quote>the head of the Federal Bureau of Prisons</quote>, and</text></paragraph>
+<paragraph id="HC4A88CCE7D314C0299A2F6558CE41C99"><enum>(2)</enum><text>by striking <quote>Federal prison</quote> and inserting <quote>Federal or State prison</quote>.</text></paragraph></subsection>
+<subsection id="H59D44AFD2B1C48F7BEF70E613E5A5054"><enum>(b)</enum><header>Restriction on redisclosure</header><text display-inline="yes-display-inline">Subparagraph (B) of section 6103(k)(10) of such Code is amended—</text>
+<paragraph id="H188AD7A5C7CC4641AFFF63CA99F2DEF4"><enum>(1)</enum><text>by inserting <quote>and the head of any State agency charged with the responsibility for administration of prisons</quote> after <quote>the head of the Federal Bureau of Prisons</quote>, and</text></paragraph>
+<paragraph id="H69AA0FA0BBD74347811DC72C3C857CA7"><enum>(2)</enum><text>by inserting <quote>or agency</quote> after <quote>such Bureau</quote>.</text></paragraph></subsection>
+<subsection id="H470C1B3E6FA4494096EA7491948B0004"><enum>(c)</enum><header>Recordkeeping</header><text>Paragraph (4) of section 6103(p) of such Code is amended by inserting <quote>(k)(10),</quote> before <quote>(l)(6),</quote> in the matter preceding subparagraph (A). </text></subsection>
+<subsection id="H569AA3F9C0E641AC91E7C62977F55536"><enum>(d)</enum><header>Clerical amendment</header><text>The heading of paragraph (10) of section 6103(k) of such Code is amended by striking <quote><header-in-text level="paragraph" style="OLC">of prisoners to federal bureau of prisons</header-in-text></quote> and inserting <quote><header-in-text level="paragraph" style="OLC">to certain prison officials</header-in-text></quote>.</text></subsection>
+<subsection id="HAEE142852CEF43B49FE290541A05A588"><enum>(e)</enum><header>Effective date</header><text>The amendments made by this section shall apply to disclosures made after the date of the enactment of this Act.</text></subsection></section>
+<section id="H332AFF1F16E7435391F335B69A48A66C" display-inline="no-display-inline" section-type="subsequent-section"><enum>5.</enum><header>Amendment of Travel Promotion Act of 2009</header>
+<subsection id="H822B6AAFEC314B4599CC72D19AC40DBD"><enum>(a)</enum><header>Travel promotion fund fees</header><text>Section 217(h)(3)(B) of the <act-name parsable-cite="INA">Immigration and Nationality Act</act-name> (<external-xref legal-doc="usc" parsable-cite="usc/8/1187">8 U.S.C. 1187(h)(3)(B)</external-xref>) is amended—</text>
+<paragraph id="H5AFD316BCB794F82914C58216330FF40"><enum>(1)</enum><text>by striking <quote>subsection (d) of section 11 of the Travel Promotion Act of 2009.</quote> in clause (ii) and inserting <quote>subsection (d) of the Travel Promotion Act of 2009 (<external-xref legal-doc="usc" parsable-cite="usc/22/2131">22 U.S.C. 2131(d)</external-xref>).</quote>; and</text></paragraph>
+<paragraph id="H37CDA9087D364C35A98C15D7569AD7C1"><enum>(2)</enum><text>by striking <quote>September 30, 2014.</quote> in clause (iii) and inserting <quote>September 30, 2015.</quote>.</text></paragraph></subsection>
+<subsection id="H8D3705E97EF9434CB3F5F244897CB7C7"><enum>(b)</enum><header>Implementation beginning in fiscal year 2011</header><text>Subsection (d) of the Travel Promotion Act of 2009 (<external-xref legal-doc="usc" parsable-cite="usc/22/2131">22 U.S.C. 2131(d)</external-xref>) is amended—</text>
+<paragraph id="H2A1AF41664DB44179B45712CE86576A6"><enum>(1)</enum><text>by striking <quote>For fiscal year 2010, the</quote> in paragraph (2)(A) and inserting <quote>The</quote>;</text></paragraph>
+<paragraph id="HEE22C127619F46B9B4160E2CE46F6A1A"><enum>(2)</enum><text>by striking <quote>quarterly, beginning on January 1, 2010,</quote> in paragraph (2)(A) and inserting <quote>monthly, immediately following the collection of fees under section 217(h)(3)(B)(i)(I) of the <act-name parsable-cite="INA">Immigration and Nationality Act</act-name> (<external-xref legal-doc="usc" parsable-cite="usc/8/1187">8 U.S.C. 1187(h)(3)(B)(i)(I)</external-xref>),</quote>;</text></paragraph>
+<paragraph id="H3AFC711A93AF454D978CEDAB5B26655E"><enum>(3)</enum><text>by striking <quote>fiscal years 2011 through 2014,</quote> in paragraph (2)(B) and inserting <quote>fiscal years 2012 through 2015,</quote>;</text></paragraph>
+<paragraph id="HACE1279D6860459CA903857B8D2C8EED"><enum>(4)</enum><text>by striking <quote>fiscal year 2010,</quote> in paragraph (3)(A) and inserting <quote>fiscal year 2011,</quote>;</text></paragraph>
+<paragraph id="H17C6D081A86C4FDCAED2D46B1817CFC3"><enum>(5)</enum><text>by striking <quote>fiscal year 2011,</quote> each place it appears in paragraph (3)(A) and inserting <quote>fiscal year 2012,</quote>; and</text></paragraph>
+<paragraph id="HE49EC28009004F2384EE68C68AC373F6"><enum>(6)</enum><text>by striking <quote>fiscal year 2010, 2011, 2012, 2013, or 2014</quote> in paragraph (4)(B) and inserting <quote>fiscal year 2011, 2012, 2013, 2014, or 2015</quote>.</text></paragraph></subsection></section>
+<section id="HE6028334F7384DD485F1347E5270CC8D"><enum>6.</enum><header>Paygo compliance</header><text display-inline="no-display-inline">The budgetary effects of this Act, for the purpose of complying with the Statutory Pay-As-You-Go Act of 2010, shall be determined by reference to the latest statement titled <quote>Budgetary Effects of PAYGO Legislation</quote> for this Act, submitted for printing in the Congressional Record by the Chairman of the House Budget Committee, provided that such statement has been submitted prior to the vote on passage.</text></section> 
+</legis-body> <attestation><attestation-group><role>Speaker of the House of Representatives.</role></attestation-group><attestation-group><role>Vice President of the United States and President of the Senate.</role></attestation-group></attestation>
+</bill> 
+
+

@@ -1,0 +1,22 @@
+<div class="breadcrumb">
+  <a href="{% url laws_index %}">Table of Contents</a> ->
+  {% if title.parent.parent.parent.parent %}
+  <a href="{{ title.parent.parent.parent.parent.get_absolute_url }}">{{ title.parent.parent.parent.parent }}</a> ->
+  {% endif %}
+  {% if title.parent.parent.parent %}
+  <a href="{{ title.parent.parent.parent.get_absolute_url }}">{{ title.parent.parent.parent }}</a> ->
+  {% endif %}
+  {% if title.parent.parent %}
+  <a href="{{ title.parent.parent.get_absolute_url }}">{{ title.parent.parent }}</a> ->
+  {% endif %}
+  {% if title.parent %}
+  <a href="{{ title.parent.get_absolute_url }}">{{ title.parent }}</a> ->
+  {% endif %}
+  {% if title %}
+  <a href="{{ title.get_absolute_url }}"><b>{{ title }}</b></a>
+  {# removing this for  while: <span style="cursor:pointer; font-size:14px;" onclick="$('#title_text').load('{% url title_text title_id=title.id %}').show();">+</span>#}
+  {% endif %}
+
+  {% if title.title == '26' %}<br /><a href="{% url laws_topics %}">Browse by Topic</a>{% endif %}
+</div>
+

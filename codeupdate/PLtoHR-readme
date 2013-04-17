@@ -1,0 +1,18 @@
+XML of Bills:
+http://www.thomas.gov/home/gpoxmlc111/
+http://www.thomas.gov/home/gpoxmlc112/
+
+List of Public laws, with corresponding bill []:
+http://frwebgate.access.gpo.gov/cgi-bin/browse?DB=111_cong_public_laws&template=plaws.tpl&sortoption=alphabetical
+http://frwebgate.access.gpo.gov/cgi-bin/browse?DB=112_cong_public_laws&template=plaws.tpl&sortoption=alphabetical
+--------------------
+1. Copied and pasted the list of Public Laws, then parsed to correspond bills to PL:
+ssed -R -i 's/.*(\d{3}-\d{3}).*(\[.*\]).*/\1 ; \2/;' data/PLtoHRlist
+
+2. Get the list of enrolled (final) bills from gpoxml (above) for 112 and 111 Congresses. Now in 'data/enr_bills_111_112'
+
+3. Download all enrolled bills in XML that correspond to a PL on the list of new laws affecting 26 USC. (now in file 'data/Classtables_PL'). Script for doing this is at downloadxml.py
+
+4.
+
+

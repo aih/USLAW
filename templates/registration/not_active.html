@@ -1,0 +1,10 @@
+<div class="center">
+  <p> This account is inactive. You need to confirm your email address before login.</p>
+  <p> <form id="resend_email_form" action="/users/resend-email/" method="post">
+      <span id="resend_text">Did not get an email? Click {% csrf_token %}
+	<input type="hidden" name="profile_id" value="{{ p.id }}" <a href="#" style="text-decoration:underline;" onclick="$('#resend_email_form').submit();">here</a> to resend confirmation email.</span>
+	       </form>
+  </p>
+  <br />
+  <br />
+</div>

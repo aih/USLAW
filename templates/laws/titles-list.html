@@ -1,0 +1,13 @@
+<div style="padding-left:15px;">
+  {% for title in titles %} {% if title.islast %} {% endif %}
+  <div class="left width100">
+    <div id="plus-{{ title.id }}" onclick="load('{{ title.id }}'); $('#minus-{{ title.id }}').show(); $('#plus-{{ title.id }}').hide();" class="left" style="cursor:pointer; font-size:14px;">+</div>&nbsp;&nbsp;
+    <div id="minus-{{ title.id }}" onclick="$('#subtitles-{{ title.id }}').hide(); $('#minus-{{ title.id }}').hide(); $('#plus-{{ title.id }}').show();" class="left" style="cursor:pointer; font-size:20px; display:none;"> - </div>&nbsp;&nbsp;
+    <a href='{{ title.get_absolute_url }}'><b>{{ title|safe }}</b></a>
+    
+  </div>
+  <div id="subtitles-{{ title.id }}" style="display:none;"><img src="{{ MEDIA_URL }}img/spinner.gif" /></div>
+  {% endfor %}
+
+{% include "laws/section-list.html" %}
+</div>

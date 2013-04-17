@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Title 26: Internal Revenue Code: index{% endblock %}
+{% block content %}
+<div id="main_text" style="padding:5px; float:left;">
+  <h1>Most referenced sections</h1>
+  <div class="left width100" style="padding:10px; padding-bottom:100px;">Sort by <a href="?sort=true" style="text-decoration:underline;">references</a> <a href="?random" style="text-decoration:underline;">random</a></div>
+  <br/>
+  <br/>
+  {% for row in rows %}
+   <div class="left" style="padding:10px;" title='{{ row.2 }}'><a href="/laws/section/26/{{ row.0 }}/" class="tag_link" style="font-size:{{ row.3 }}px;">§{{ row.1 }}</a></div>
+  {% endfor %}
+
+</div>
+    <div class="left width100" style="margin-top:10px;">
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style ">
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	<a class="addthis_button_tweet"></a>
+	<a class="addthis_button_linkedin" title="LinkedIn"><img src="{{ MEDIA_URL }}img/linkedin-share.png" width="60" border="0" alt="LinkedIn" /></a>
+	<a class="addthis_counter addthis_pill_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+      <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=aih26"></script>
+      <!-- AddThis Button END -->
+    </div>
+
+{% endblock %}
+
+

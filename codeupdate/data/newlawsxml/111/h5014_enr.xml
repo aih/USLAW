@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?xml-stylesheet href="\billres.xsl" type="text/xsl"?>-->
+<!--<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://xml.house.gov/bill.dtd">-->
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://thomas.loc.gov/dtd/bill.dtd">
+<bill bill-stage="Enrolled-Bill" bill-type="olc" dms-id="HE829A17CCF27447A86821B81CD4084B1" public-private="public" stage-count="1"> 
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HR 5014 ENR: To clarify the health care provided by the Secretary of Veterans Affairs that constitutes minimum essential coverage.</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="no">I</distribution-code> 
+<congress>One Hundred Eleventh Congress of the United States of America</congress> <session>At the Second Session</session><enrolled-dateline>Begun and held at the City of Washington on Tuesday, the fifth day of January, two thousand and ten</enrolled-dateline> 
+<legis-num>H. R. 5014</legis-num> 
+<current-chamber display="no"></current-chamber> 
+<legis-type>AN ACT</legis-type> 
+<official-title display="yes">To clarify the health care provided by the Secretary of Veterans Affairs that constitutes minimum essential coverage.</official-title> 
+</form> 
+<legis-body id="HB886152C0EA8416395DC642A778FDCEF" style="OLC"> 
+<section commented="no" display-inline="no-display-inline" id="H86A5A6A6A2E544A289373EA47BD97476" section-type="section-one"><enum>1.</enum><header display-inline="yes-display-inline">Clarification of health care provided by the Secretary of Veterans Affairs that constitutes minimum essential coverage</header> 
+<subsection commented="no" display-inline="no-display-inline" id="HADE995D98D0B494F9FA4893C70F72E23"><enum>(a)</enum><header display-inline="yes-display-inline">In general</header><text display-inline="yes-display-inline">Clause (v) of <external-xref legal-doc="usc" parsable-cite="usc/26/5000A">section 5000A(f)(1)(A)</external-xref> of the Internal Revenue Code of 1986, as added by section 1501(b) of the Patient Protection and Affordable Care Act, is amended to read as follows:</text> 
+<quoted-block display-inline="no-display-inline" id="HC831B3FC6B064654B4392DDCB20CD6E0" style="OLC"> 
+<clause commented="no" display-inline="no-display-inline" id="H6E79FBFA952246EEB21A1EE105C7C6BC"><enum>(v)</enum><text display-inline="yes-display-inline">a health care program under chapter 17 or 18 of title 38, United States Code, as determined by the Secretary of Veterans Affairs, in coordination with the Secretary of Health and Human Services and the Secretary,</text> </clause><after-quoted-block>.</after-quoted-block></quoted-block> </subsection> 
+<subsection commented="no" display-inline="no-display-inline" id="HFD05FCAFCA63487A9FBF8CFEA295BF7E"><enum>(b)</enum><header display-inline="yes-display-inline">Effective date</header><text display-inline="yes-display-inline">The amendment made by subsection (a) shall take effect as if included in section 1501(b) of the Patient Protection and Affordable Care Act.</text> </subsection></section> 
+</legis-body> <attestation><attestation-group><role>Speaker of the House of Representatives.</role></attestation-group><attestation-group><role>Vice President of the United States and President of the Senate.</role></attestation-group></attestation>
+</bill> 
+
+

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load references %}
+{% block title %}Title 26: Internal Revenue Code: {{ section }}{% endblock %}
+{% block extrahead %}
+{% include "js.html" %}
+<link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/publaw.css?id=1" />
+{% endblock %}
+
+{% block right_panel_add  %}
+<div style="width:100%; padding-top:20px; float:left;">
+  <form action="{% url goto_section %}" method="post" id="goto_form">{% csrf_token %}Go to Section:
+    <input style="font-size:14px;" type="text" name="section_id" id="section_input" size="4" />
+    <input type="hidden" name="top_title_id" id="title_input" value="{{ section.top_title_id }}"/>
+    <input style="font-size:14px;" type="submit" value=" Ok " /> 
+  </form>   
+</div>
+
+<div id="references_external" style="width:100%;">
+  <h3>Related resources:</h3>
+
+  <div class="panel_item left"> <a class="res pointer" onclick="toggle_comments();">Comments ({{ comments|length }})</a></div>
+  <div id="comments_block" class="panel_item res_info2" >
+    {% include "comment/comments.html" %}
+    {% include "comment/add_comment.html" %}
+  </div>
+</div>
+
+<div class="additional_content">
+  <span id="tags" style="font-size:16px; font-weight:bold;">Tags:</span>
+  {% include "tags/tags_list.html" %}
+  {% include "tags/add_tag.html" %}
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content">
+  <div id="main_text" style="margin-top:5px;">
+    {{ pl.html|safe }}
+  </div>
+</div>
+
+{% endblock %}
+

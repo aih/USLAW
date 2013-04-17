@@ -1,0 +1,75 @@
+<script>
+$(function() {
+    $(".expand_button").click(function () {
+     $("#id_post_form_div").animate({opacity: 'toggle'}, 'slow'); 
+
+     var text = $('#id_expand').html().substr(0, 18);
+     if (text == 'Click here to hide'){
+         text = 'Click here to expand <img src="{{ MEDIA_URL }}img/icons/arrow_down.png" />';}
+        else {text= 'Click here to hide <img src="{{ MEDIA_URL }}img/icons/arrow.png" />';}
+     $('#id_expand').html(text);
+        
+   });
+
+    $(".question_expand_button").click(function () {
+     $("#id_question_form_div").animate({opacity: 'toggle'}, 'slow'); 
+
+     var text = $('#id_question_expand').html().substr(0, 18);
+     if (text == 'Click here to hide'){
+         text = 'Click here to expand <img src="{{ MEDIA_URL }}img/icons/arrow_down.png" />';}
+        else {text= 'Click here to hide <img src="{{ MEDIA_URL }}img/icons/arrow.png" />';}
+     $('#id_question_expand').html(text);
+        
+   });
+
+
+  $("#id_post_form").submit(function(){
+    if ($("#id_reference_link").val()== "Add hyperlink..." ){
+        $("#id_reference_link").val('');
+    }
+
+    var title = $("#id_title").val();
+    var text = $("#id_text").val();
+    var tags = $("#id_tags").val().split(',');
+    var rlink = $("#id_reference_link").val();
+    if (rlink.length>200) {
+       $("#id_reference_link_error").text('Maximum size for this field is 200 characters').show().fadeOut(2500);
+       return false;
+
+    }
+
+    if (rlink!=''){
+        if(/^([a-z]([a-z]|\d|\+|-|\.)*):(\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?((\[(|(v[\da-f]{1,}\.(([a-z]|\d|-|\.|_|~)|[!\$&'\(\)\*\+,;=]|:)+))\])|((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=])*)(:\d*)?)(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*|(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)){0})(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(rlink)) {
+        //
+       } else {
+         $("#id_reference_link_error").text('You must enter a valid URL').show().fadeOut(2500);
+         return false;
+       }
+    }
+    if (rlink!=''){
+      rlink_start = rlink.substr(0,7).toLowerCase();
+      if (rlink_start != 'http://' && rlink.substr(0,8).toLowerCase() != 'https://'){
+           $("#id_reference_link_error").text('You must enter a valid URL').show().fadeOut(2500);
+           return false;
+      }
+    }
+
+    if ( title.length > 250 ) {
+       $("#id_title_error").text('Maximum size for this field is 250 characters').show().fadeOut(2500);
+       return false;
+    }
+    if ( (title.length == 0 ) || ( title == "Title:") ) {
+       $("#id_title_error").text('This field is required').show().fadeOut(3000);
+       return false;
+    }
+    for (t in tags){
+        if (tags[t].length>50){
+          $("#id_tags_error").text('Maximum size for tag is 50 characters.').show().fadeOut(3000);
+          return false;
+        }
+    }
+
+  });
+
+});
+</script>

@@ -1,0 +1,15 @@
+{% for p in page.object_list %}
+<div class="feed_container">
+  <div class="feed_avatar">
+    <a href="{% url feed feed_name=p.emailfeed.name %}"><img src="{{ p.emailfeed.gravatar_url }}" width="40px;" /></a>
+    <br /><a href="{% url feed feed_name=p.emailfeed.name %}">{{ p.emailfeed }}</a>
+  </div>
+  <div class="feed_subject"><a href="{% url feed_post post_id=p.pk %}">{{ p.subject }}</a>
+    <div class="feed_info">
+      {{ p.human_date }}
+    </div>
+  </div>
+  <div class="feed_text">{{ p.text|safe|truncatewords:20 }}</div>
+
+</div>
+{% endfor %}

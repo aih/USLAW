@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load usc_links %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block extrahead %}
+<script>
+$(document).ready(function(){
+    $('.avatar').each(function(index) {
+      var id = $(this).attr('id');
+      var text = $(this).attr('qtitle');
+      var qtip_options = {
+			 content: text,
+			 show: 'mouseover',
+			 hide: 'mouseout',
+			 position:
+                            {
+                            corner: {
+                             target: 'topMiddle',
+                             tooltip: 'bottomMiddle'
+                             }
+
+			 },
+			 style: { 
+                             textAlign: 'center',
+                             tip: true ,//"topMiddle",
+                             //width: 150,
+                             color:'#fff',
+                             background: '#395571',
+                             name: 'dark',
+                             padding: 0,
+			     border: {
+			        width: 2,
+			        radius: 5,
+                                color: '#395571'
+			     }
+			 }
+		     }
+      $('#'+id).qtip(qtip_options);
+    });
+  });
+  </script>
+{% endblock %}
+
+{% block content %}
+
+<div class="block">
+  <div class="border_block left"> </div>
+  <div class="left big18" style="padding:15px; font-style:italic;" title="{% if post.post_type.name == 'Question' %}{{ comments_count }} {% if comments_count == 1 %}Answer{% else %}Answers{% endif %}{% endif %}">
+     {{ post.title }}
+  </div> 
+  <div class="right padding5">
+      <div class="right big24" id="id_post_rate-{{ post.id }}" style="padding-top:10px;">
+	{{ post.rate }}
+	<a class="pointer vote" onclick="postvoteup({{ post.id }});"><img src="{{ MEDIA_URL }}img/thumbs_up.png" width="20px" /></a><!--<br /> <a class="pointer vote" onclick="postvotedown({{ post.id }});">↓</a>-->
+      </div>
+      <div class="right big14">
+
+      </div>    
+  </div>
+  <div class="border_block left"> </div>
+
+  <div id="avatar-post-{{ post.id }}" class="left avatar" qtitle="{{ post.profile }}" style="width:70px; padding:5px; padding-left:15px;">
+    <a href="{{ post.profile.get_absolute_url }}">{% if post.profile.avatar %}<img class="profile_image" src="{{ post.profile.avatar }}" width="60px;"/>{% endif %}</a>
+    <div class="left"><a href="{{ post.profile.get_user_posts_url }}">{{ post.user.first_name }} {{ post.user.last_name }}</a> </div>
+</div>
+<div class="left" style="width:150px; padding:5px; padding-left:15px;">
+         <i> {% if post.source %}{% if post.source != ' ' %}From {{ post.source }}.{% endif %}{% endif %}</i></div>
+  <div class="left" style="width:590px; padding:1px;">
+    {% autoescape off %}{{ post.text|removetags:"pre"|linebreaks|usc_links|safe }}{% endautoescape %}
+
+    {% if post.reference_link and post.reference_link != "" %}
+    <a href="{{ post.reference_link }}">more...</a>
+    {% endif %}
+
+    <div class="border_block left" style="width:590px;"> </div>    
+
+    <div class="left width100">
+      {% include "tags/tags_list.html" %}
+    </div>
+    {% if post.profile = profile %}
+    {% if post.profile.user.username != 'Anonymous' %}
+    <div class="right width100" style="margin:0px; margin-top:20px; text-align:right; font-style:8px;">
+      <form action="/posts/delete/{{ post.id }}/" id="id_delete">
+	This is your 
+      {% if post.post_type.name == 'Question' %}
+	question.
+      {% else %}
+	post. 
+      {% endif %}
+	You can
+	{% if not cant_delete %}<a style="text-decoration:underline; cursor:pointer;" onclick= "if (confirm('Are you sure you want to delete this Post?')) {$('#id_delete').submit();}">delete</a> or {% endif %}  <a href="/posts/edit/{{ post.id }}/" style="text-decoration:underline; cursor:pointer;">edit it</a>.
+      </form>
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <div class="left width100">
+
+      {% if post.source %}{% if post.source != ' ' %}From {{ post.source }}.{% endif %}{% endif %}
+      {% if user.username != 'Anonymous' %}
+      <div class="right" style="text-align:right; font-style:8px;">
+	{{ post.human_date }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+
+    <div class="right" style="margin-top:10px;">
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style ">
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	<a class="addthis_button_tweet"></a>
+	<a class="addthis_button_linkedin" title="LinkedIn"><img src="{{ MEDIA_URL }}img/linkedin-share.png" width="60" border="0" alt="LinkedIn" /></a>
+	<a class="addthis_counter addthis_pill_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+      <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=aih26"></script>
+      <!-- AddThis Button END -->
+    </div>
+    {% if user.username != 'Anonymous' %}
+    {% if follow %}
+    <div id="unfollow"><span id="unfollow_span" onclick="follow({{ post.id }}, '{{ content_type.id }}', 'unfollow', 'unfollow');" onmouseover="$('#unfollow_span').text(' Unfollow ');" onmouseout="$('#unfollow_span').text('Following');">Following</span></div>
+    {% else %}
+    <div id="follow"><span onclick="follow({{ post.id }}, '{{ content_type.id }}', 'follow', 'follow');">Follow updates</span></div>
+    {% endif %}
+    {% endif %}
+
+    <div class="width100">
+       {% include "comment/comments.html" %}
+       {% include "comment/add_comment.html" %}
+    </div>
+<br />
+
+{% endblock %}
+
+{% block search %}
+{% endblock %}
+
+{% block right_panel_add  %}
+{% if related_posts %}
+ <div class="width100 big14 left" style="padding-bottom:10px;">
+  Related {% if post.post_type.name == 'News' %} News{% endif %}{% if post.post_type.name == 'Question' %} Questions{% endif %}:
+ </div>
+     {% for p in related_posts %}
+ <div class="width100 left" >
+   <div class="left padding5" style="width:20px; padding-top:10px;">
+     <a href="{{ p.profile.get_absolute_url }}"><img class="avatar" id="avatar-{{ p.id }}-{{ p.profile.id }}" qtitle = "{{ p.profile }}" src="{{ p.profile.avatar }}" width="20px;" /></a>
+   </div>
+   <div class="post_item_line left padding5">
+     <div class="left" style="width:100px;"><a href="{{ p.get_absolute_url }}">{{ p.title|truncatewords:5 }}</a></div>
+   </div>
+ </div>
+     {% endfor %}
+
+{% endif %}
+{% endblock %}

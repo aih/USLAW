@@ -1,0 +1,6 @@
+<h1>{{ r.title }}</h1>
+{{ r.description }}
+{% if r.section %}
+<br />Related section: <a href="{{ r.section.get_absolute_url }}">Section {{ r.section }} of Title §{{ r.section.top_title.title }}</a>.
+{% endif %}
+

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block extra_head %}
+{% if user.is_authenticated %}
+{% if profile.user.username != 'Anonymous' %}
+<script>
+  location.href.replace("/users/home/");
+</script>
+{% endif %}
+{% endif %}
+
+{% endblock %}
+{% block content %}
+
+<div class="content" style="width:900px;">
+ <p id="index_text"> ...is a collaborative research
+  platform for tax professionals. </p>
+ 
+ <div class="left width100">
+   <div class="login_element" style="width:50%;">
+     <div style="float:left; width:100%;"><a class="sign_up big22 pointer" onclick="$('#login_form').toggle('slow');" id="id_signin">Sign in</a></div>
+
+     <div id="login_form" style="display:none; border:1px solid #606C82; border-right:2px solid #606C82; border-bottom:2px solid #606C82; float:left; width:265px; padding:15px; margin:2px;">
+       {% include "registration/login_form.html" %}
+     </div>
+   </div>
+
+   <div class="login_element" style="width:35%;">
+     <div style="float:left; width:100%;"><a href="/users/registration/" class="sign_up big22 pointer" id="id_signup">...or Sign up</a></div>
+   </div>
+ </div>
+
+ <div class="left" style="padding:10px; width:85%;">
+   <h2>Email Message Board:</h2>
+   Send your message for the ABA Midyear meeting to aba at tax26 dot com.
+   {% include "emailfeed/post_list.html" %}
+ </div>
+
+ <div class="left width100" style="padding:50px;">
+   <p id="where_to_start"> Where to start?&nbsp;&nbsp;Try our analysis tools:</p>
+
+   <div id="tax_map_link" class="left padding10" style="width:50%;"><a href="/laws/tax-map/?sections=4&link_type=map"><img title="Interactive Tax map" src="{{ MEDIA_URL }}img/tax-map.png" width="300px;" /></a></div>
+   <div id="referenced_sections_link" class="left padding10" style="width:50%;"><a href="/laws/most_referenced/?sort=true"><img title="Most referenced sections" src="{{ MEDIA_URL }}img/most-referenced.png" width="300px;" /></a></div>
+   
+   <br />
+ </div>
+
+
+ <div class="left width100" style="padding:10px;">
+   <h2>Latest News:</h2>
+   <ul>
+     {% for p in news %}
+     <li><a href="{{ p.get_absolute_url }}">{{ p }}</a></li>
+     {% endfor %}
+   </ul>
+ </div>
+</div>
+{% endblock %}
+
+{% block search %}
+{% endblock %}

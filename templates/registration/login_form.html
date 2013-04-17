@@ -1,0 +1,33 @@
+  <div id="login">
+    <form method="post" action="/users/login/">{% csrf_token %}
+      <div style="padding-top:0px;">
+	 <div class="error">{{ form.email.errors }}</div>
+	<div class="login_element"><label for="id_email">Email:</label></div>
+	<div class="login_element">
+
+	  <input class="login_input" id="id_email" type="text" name="email" maxlength="30" style="width:250px;" value="Enter email address:" onfocus="$('#id_email').val('');" />
+	</div>
+      </div>
+
+      <div style="padding-top:20px;">
+	<div class="login_element">
+	  <div class="error">{{ form.password.errors }}</div>
+	  <label for="id_password">Password:</label>
+	</div>
+	<div class="login_element">
+	  <input class="login_input" type="password" name="password" id="id_password" style="width:250px;" value="" /><br /> <a href="/users/password-reset/" style="font-size:12px;">Forgot password?</a>
+	</div>
+      </div>
+      <div class="login_element">
+	<input type="submit" value="Continue" class="text login_btn find_btn" />
+	<input type="hidden" name="next" value="/" />
+
+	<div class="left" style="width:260px;">
+	  <div class="login_element" style="padding-top:20px;">
+	    <div style="padding-top:4px; color:gray; font-size:18px; font-weight:bold; float:left;">OR</div>
+	    <div id="id_linkedin_login" style="float:right;"><a href="/users/linkedinlogin/"><img src="{{ MEDIA_URL }}img/log-in-linkedin-small.png" alt="Using LinkedIn profile" /></a> </div>
+	  </div>
+	</div>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>{% block title %}Title 26: Internal Revenue Code{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{ MEDIA_URL }}css/builded.css?id=5" />
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/builded.js"></script>
+    <link href="{{ MEDIA_URL }}img/favicon.png" rel='shortcut icon'/> 
+    <link href="{{ MEDIA_URL }}img/favicon.png" rel='icon'/> 
+    {% block extrahead %}
+    {% endblock %}
+  </head>
+  <body>
+    <div id="main">
+      <div id="container">
+	<div id="header">
+	  {% block header %}
+	    <div id="header_left" ><a href="/" class="head">TAX26.COM</a></div>
+	    <div id="header_right" class="big22 a_color" style="font-spacing:10px;">
+	      {% if user.is_authenticated %}Welcome {{ user.first_name }}<br />    <a class="big14 a_color" href="/users/logout/">Logout</a>{% endif %}
+	  </div>
+	  {% endblock %}
+	</div>
+
+	<div id="content" style="height:520px; background-color:#E5EAEE; padding-top:100px; padding-left:100px; width:930px;" class="big18">
+	{% block content %}
+	{% endblock %}	  
+	</div>
+	{% block footer %}
+	{% include "footer.html" %}
+	{% include "reformal.html" %}
+	{% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

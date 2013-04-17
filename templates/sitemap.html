@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for c in flatpages %}
+   <url>
+      <loc>{{ SITE_URL }}{{ c.url }}</loc>
+      <changefreq>daily</changefreq>
+      <priority>0.6</priority>
+   </url>
+{% endfor %}
+{% for c in page.object_list %}
+   <url>
+      <loc>{{ SITE_URL }}{{ c.get_absolute_url }}</loc>
+      <changefreq>daily</changefreq>
+      <priority>0.6</priority>
+   </url>
+{% endfor %}
+</urlset> 
+

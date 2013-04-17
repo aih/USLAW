@@ -1,0 +1,25 @@
+<!-- template for browsing user's comments -->
+{% for comment in comments %}
+<div class="comment">
+  <div class="comment_left_part">
+    {% if comment.profile.avatar %}<a href="{{ comment.profile.get_absolute_url }}"><img src="{{ comment.profile.avatar }}" width="30px" /></a>{% endif %}<br />
+    <a href="{{ comment.get_absolute_url }}">{{ comment.profile.user.first_name }}   {{ comment.profile.user.last_name }}</a>
+  </div>
+
+  <div class="comment_right_part">
+    <div class="comment_header">
+      <a name="{{ comment.id }}" href="#{{ comment.id }}">#{{ comment.id }}</a> 
+      {% if user.is_staff %}
+      <a href="/comment/del-comment/{{ comment.id }}">[del]</a>:
+      {% endif %}
+      {{ comment.human_date }} 
+    </div>
+    <div class="comment_text">{{ comment.text|linebreaks }}</div>
+  </div>
+</div>
+
+{% empty %}
+{% endfor %}
+<br />
+
+

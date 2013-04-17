@@ -1,0 +1,15 @@
+<!-- Regulations and Rulings-->
+<!--<div style="width:100%; text-align:right;">
+  <a class="pointer" onclick="$('.res_info2').hide('slow');"><img width="15px;" src="{{ MEDIA_URL }}img/delete.png" alt="Close" title="Close" /></a>
+</div>-->
+<div style="margin:0px;  width:100%;">
+  {% for r in rs %}
+  <div class="list_item" id="item-{{ r.id }}">
+    <a href="{{ r.get_absolute_url }}">{{ r|safe|truncatewords:"10" }}</a>
+  </div>
+{% empty %}
+Nothing found
+{% endfor %}
+</div>
+
+

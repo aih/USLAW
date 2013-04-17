@@ -1,0 +1,196 @@
+<script type="text/javascript" src="{{ MEDIA_URL }}markitup/jquery.markitup.js"></script>
+<script type="text/javascript" >
+   $(document).ready(function() {
+myHtmlSettings = {
+    nameSpace:       "html", // Useful to prevent multi-instances CSS conflict
+    onShiftEnter:    {keepDefault:false, replaceWith:'<br />\n'},
+    onCtrlEnter:     {keepDefault:false, openWith:'\n<p>', closeWith:'</p>\n'},
+    onTab:           {keepDefault:false, openWith:'     '},
+    markupSet:  [
+      //  {name:'Heading 1', key:'1', openWith:'<h1(!( class="[![Class]!]")!)>', closeWith:'</h1>', placeHolder:'Your title here...' },
+      //  {name:'Heading 2', key:'2', openWith:'<h2(!( class="[![Class]!]")!)>', closeWith:'</h2>', placeHolder:'Your title here...' },
+      //  {name:'Heading 3', key:'3', openWith:'<h3(!( class="[![Class]!]")!)>', closeWith:'</h3>', placeHolder:'Your title here...' },
+      //  {name:'Paragraph', openWith:'<p(!( class="[![Class]!]")!)>', closeWith:'</p>'  },
+     //   {separator:'---------------' },
+        {name:'Bold', key:'B', openWith:'<strong>', closeWith:'</strong>' },
+        {name:'Italic', key:'I', openWith:'<em>', closeWith:'</em>'  },
+        {name:'Stroke through', key:'S', openWith:'<del>', closeWith:'</del>' },
+        {name:'Heading 1', key:'1', openWith:'<h1(!( class="[![Class]!]")!)>', closeWith:'</h1>', placeHolder:'Your title here...' },
+        {name:'Heading 2', key:'2', openWith:'<h2(!( class="[![Class]!]")!)>', closeWith:'</h2>', placeHolder:'Your title here...' },
+        {name:'Heading 3', key:'3', openWith:'<h3(!( class="[![Class]!]")!)>', closeWith:'</h3>', placeHolder:'Your title here...' },
+
+ //       {separator:'---------------' },
+   //     {name:'Ul', openWith:'<ul>\n', closeWith:'</ul>\n' },
+     //   {name:'Ol', openWith:'<ol>\n', closeWith:'</ol>\n' },
+     //   {name:'Li', openWith:'<li>', closeWith:'</li>' },
+     //   {separator:'---------------' },
+     //   {name:'Clean', replaceWith:function(h) { return h.selection.replace(/<(.*?)>/g, "") } },
+     //   {name:'Preview', call:'preview', className:'preview' }
+    ]
+}
+      $("#editor").markItUp(myHtmlSettings);
+   });
+</script>
+
+<style type="text/css">
+
+.html .markItUpButton {
+  width:40px;
+}
+.html .markItUpButton1 a {
+	background-image:url({{ MEDIA_URL }}img/icons/b.png); 
+     
+}
+.html .markItUpButton2 a {
+	background-image:url({{ MEDIA_URL }}img/icons/i.png); 
+}
+.html .markItUpButton3 a {
+	background-image:url({{ MEDIA_URL }}img/icons/s.png); 
+}
+.html .markItUpButton4 a {
+	background-image:url({{ MEDIA_URL }}img/icons/h1.png); 
+}
+
+.html .markItUpButton5 a {
+	background-image:url({{ MEDIA_URL }}img/icons/h2.png); 
+}
+.html .markItUpButton6 a {
+	background-image:url({{ MEDIA_URL }}img/icons/h3.png); 
+
+}
+/*
+.html .markItUpButton7 a {
+	background-image:url({{ MEDIA_URL }}markitup/images/stroke.png);
+	background-image:url({{ MEDIA_URL }}markitup/images/h5.png); 
+}
+*/
+.markItUp * {
+	margin:0px; padding:0px;
+	outline:none;
+}
+.markItUp a:link,
+.markItUp a:visited {
+	color:#000;
+	text-decoration:none;
+}
+.markItUp  {
+	width:400px;
+	margin:5px 0 5px 0;
+	border:1px solid #D2D9DF;	
+}
+.markItUpContainer  {
+
+	border:1px solid #D2D9DF;	
+
+        background-color:#F1F5F8;
+	padding:5px 5px 2px 5px;
+	font:12px Verdana, Arial, Helvetica, sans-serif;
+}
+.markItUpEditor {
+	font:12px 'Courier New', Courier, monospace;
+	padding:5px 5px 5px 5px;
+	border:1px solid #D2D9DF;
+	width:373px;
+	height:200px;
+        background-color:#F1F5F8;
+	clear:both;
+	line-height:18px;
+	overflow:auto;
+}
+.markItUpPreviewFrame	{
+	overflow:auto;
+	background-color:#FFFFFF;
+	border:1px solid #3C769D;
+	width:99.9%;
+	height:300px;
+	margin:5px 0;
+}
+.markItUpFooter {
+	width:100%;
+	cursor:n-resize;
+}
+.markItUpResizeHandle {
+	overflow:hidden;
+	width:22px; height:5px;
+	margin-left:auto;
+	margin-right:auto;
+
+	cursor:n-resize;
+}
+/***************************************************************************************/
+/* first row of buttons */
+.markItUpHeader ul li	{
+	list-style:none;
+	float:left;
+	position:relative;
+}
+.markItUpHeader ul li ul{
+	display:none;
+}
+.markItUpHeader ul li:hover > ul{
+	display:block;
+}
+.markItUpHeader ul .markItUpDropMenu {
+/*	background:transparent url({{ MEDIA_URL }}markitup/images/menu.png) no-repeat 115% 50%;*/
+	margin-right:5px;
+}
+.markItUpHeader ul .markItUpDropMenu li {
+	margin-right:0px;
+}
+.markItUpHeader ul .markItUpSeparator {
+	margin:0 15px;
+	width:1px;
+	height:16px;
+	overflow:hidden;
+	background-color:#CCC;
+}
+.markItUpHeader ul ul .markItUpSeparator {
+	width:auto; height:1px;
+	margin:0px;
+}
+/* next rows of buttons */
+.markItUpHeader ul ul {
+	display:none;
+	position:absolute;
+	top:18px; left:0px;	
+	background:#F5F5F5;
+	border:1px solid #3C769D;
+	height:inherit;
+}
+.markItUpHeader ul ul li {
+	float:none;
+	border-bottom:1px solid #3C769D;
+}
+.markItUpHeader ul ul .markItUpDropMenu {
+	background:#F5F5F5 url({{ MEDIA_URL }}markitup/images/submenu.png) no-repeat 100% 50%;
+}
+/* next rows of buttons */
+.markItUpHeader ul ul ul {
+	position:absolute;
+	top:-1px; left:150px;
+}
+.markItUpHeader ul ul ul li {
+	float:none;
+}
+.markItUpHeader ul a {
+	display:block;
+	width:40px; height:16px;
+	text-indent:-10000px;
+	background-repeat:no-repeat;
+	padding:3px;
+}
+.markItUpHeader ul ul a {
+	display:block;
+	padding-left:0px;
+	text-indent:0;
+	width:120px; 
+	padding:5px 5px 5px 5px;
+	background-position:2px 50%;
+}
+.markItUpHeader ul ul a:hover  {
+	color:#FFF;
+	background-color:#3C769D;
+}
+/***************************************************************************************/
+
+</style>

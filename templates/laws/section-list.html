@@ -1,0 +1,7 @@
+  <div style="padding-left:15px;">
+    {% for s in sections %}
+    <div class="left width100">
+      <a href='{{ s.get_absolute_url }}'>{{ s }}</a>
+    </div>
+    {% endfor %}
+  </div>

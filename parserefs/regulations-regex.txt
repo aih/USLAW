@@ -1,0 +1,11 @@
+# USC citation
+(\d+)\sU\.S\.C\.\s(\d\w*(?:\(\w+\))*)#<a class="usc-cite" href="/laws/target/\1/">\1</a> U.S.C. <a class="sec" href="/laws/target/\1/\2">\2</a>
+
+# References not captured previously--do not link
+([^@]{2}[Ss]ection\s)(\d+\w*(?:\(\w+\))*(&mdash;|&ndash;|-|–)?\d*\sof)#\1@@\2
+
+# Sections alone
+([^@]{2}[Ss]ection\s)(\d+\w*(?:\(\w+\))*(&mdash;|&ndash;|-|–)?\d*)#\1<a href="/laws/target/ref-title-26/\2" class="sec">\2</a>
+
+# Regulation sections
+&sect;(\d+\.\d+(&mdash;|&ndash;|-|–)?\w*(\(\w{,2}\))*)#&sect<a href="/regulations/target/\1" class="reg">\1</a>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+        <head>
+                <title>Tax26 API Documentation (Beta)</title>
+                <style type="text/css">
+                        body {
+                                background: #fffff0;
+                                font: 1em "Helvetica Neue", Verdana;
+                                padding: 0 0 0 25px;
+                        }
+			h3 {
+			        background-color: #191970;
+			        padding:3px;
+			        color: #fff;
+			}
+                </style>
+        </head>
+        <body>
+                <h1>Tax26 API Documentation</h1>
+                
+		<h3>Formats</h3>
+		<p>
+		  All read methods are accessed via the ?format GET argument (optional), e.g. '/api/user/?format=json'. <br />
+		  Supported formats are: json, xml, django (default format - json).
+		</p>
+                {% for doc in docs %}
+                
+                        <h3>{{ doc.name|cut:"Handler" }}:</h3>
+
+                        <p>
+                                {{ doc.get_doc|default:"" }}
+                        </p>
+                        <p>
+			      Returned fields: <b>[{% for f in doc.handler.fields %}{{ f }}{% if not forloop.last %}, {% endif %}{% endfor %}]</b>
+			</p> 
+                        <p> 
+                                URL: <b>{{ doc.get_resource_uri_template }}</b>
+                        </p>
+                        
+                        <p>
+                                Accepted methods: {% for meth in doc.allowed_methods %}<b>{{ meth }}</b>{% if not forloop.last %}, {% endif %}{% endfor %}
+                        </p>
+                                        
+                        <dl>
+                                {% for method in doc.get_all_methods %}
+                                {% if method.stale %}
+				{% else %}
+                                        <dt>
+                                                method <i>{{ method.name }}</i>({{ method.signature }}) 
+                                                
+                                        </dt>                           
+				{% endif %}
+                                                                                
+                                        {% if method.get_doc %}
+                                                <dd>
+                                                       <pre> {{ method.get_doc|linebreaksbr|default:"" }}</pre>
+                                                <dd>
+                                        {% endif %}
+                                
+                                {% endfor %}
+                        </dl>
+                
+                {% endfor %}
+        </body>
+</html>

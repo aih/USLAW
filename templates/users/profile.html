@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="block">
+  <div class="border_block left"> </div>
+  <div class="left padding5 width100">
+
+    <div style="float:left; width:120px; border:0px dashed gray; "><img src="{{ p.avatar }}" alt="Avatar" width="80px" /></div>
+    <div style="float:left; width:350px;  border:0px dashed gray; padding-top:30px; font-weight:bold;">
+      <a href="{{ p.get_user_posts_url }}">{{ p.user.first_name }}    {{ p.user.last_name }}</a>
+      <br />
+      {{ profile.headline }}
+      <br />
+    </div>
+    <div style="float:right; width:150px;">
+      <a class="under big18" href="/users/settings/">Change Settings</a>
+    </div>
+  </div>
+
+  <div class="border_block left"> </div>
+  <div class="left width100" style="padding:10px;">
+    <a class="tag_link" href="/users/user_posts/{{ p.id }}/?type=News">Browse User News ({{ news }})</a>     
+    <a class="tag_link" href="/users/user_posts/{{ p.id }}/?type=Question">Browse User Questions ({{ questions }})</a> 
+    <a class="tag_link" href="#">Browse User Comments ({{ comments }})</a> 
+    <div class="right"> <b>Rate:</b> &nbsp;&nbsp;<span class="big24"><b>{{ p.rate }}</b>&nbsp;&nbsp;&nbsp;</span></div>
+    <br />
+  </div>
+
+  {% if p.public_profile or p.location or p.industry or p.summary or p.interests or p.honors %}    
+  <div class="border_block left"> </div>
+  <div class="left width100" style="padding:10px;">
+  {% endif %}
+
+    {% if p.public_profile %}
+    <div style="width:30%; float:left;">
+      LinkedIn public profile: 
+    </div>
+    <div style="width:60%; float:left;">
+      <a href="{{ p.public_profile }}" target="_blank">{{ p.public_profile }}</a>&nbsp;
+    </div>
+    {% endif %}
+
+    {% if p.location %}
+    <div style="width:30%; float:left;">
+      Location: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ p.location }}</b>
+    </div>
+    {% endif %}
+
+    {% if p.industry %}
+    <div style="width:30%; float:left;">
+      Industry: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ p.industry }}</b>
+    </div>
+    {% endif %}
+    
+    {% if p.summary %}
+    <div style="width:30%; float:left;">
+      Summary: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ p.summary }}</b>
+    </div>
+    {% endif %}
+    
+    {% if p.specialties %}
+    <div style="width:30%; float:left;">
+      Specialties: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ p.specialties }}</b>
+    </div>
+    {% endif %}
+    
+    {% if p.interests %}
+    <div style="width:30%; float:left;">
+      Interests: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ p.interests }}</b>
+    </div>
+    {% endif %}
+    
+    {% if p.honors %}
+    <div style="width:30%; float:left;">
+      Honors : 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ p.honors }}</b>
+    </div>
+    {% endif %}
+
+  {% if p.public_profile or p.location or p.industry or p.summary or p.interests or p.honors %}    
+  </div>
+  {% endif %}
+
+  {% for pos in p.position.all %}
+  {% if forloop.counter0 == 0 %}
+  <div class="border_block left"> </div>
+  <div class="left width100" style="padding:10px;">
+    <h2>Positions</h2>
+  {% endif %}
+  {% endfor %}  
+    {% for pos in p.position.all %}
+    <div style="width:100%; float:left;">
+      <h3>{{ pos.title }} in {{ pos.company }}. </h3>
+    </div>
+    
+    {% if pos.company_type %}
+    <div style="width:30%; float:left;">
+      Industry: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ pos.company_type }}</b>
+    </div>
+    {% endif %}
+    
+    {% if pos.company_size %}
+    <div style="width:30%; float:left;">
+      Industry: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ pos.company_size }}</b>
+    </div>
+    {% endif %}
+    
+    {% if pos.company_industry %}
+    <div style="width:30%; float:left;">
+      Industry: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ pos.company_industry }}</b>
+    </div>
+    {% endif %}
+    
+    {% if pos.summary %}
+    <div style="width:30%; float:left;">
+      Summary: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ pos.summary }}</b>
+    </div>
+    
+    {% endif %}
+    
+    {% if pos.start_date %}
+    <div style="width:30%; float:left;">
+      Dates: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>From {{ pos.start_date }} to {% if pos.end_date %}{{ pos.end_date }}{% else %} Now {% endif %}</b>
+    </div>
+    {% endif %}
+    {% endfor %}
+  
+  {% for pos in p.position.all %}
+  {% if forloop.counter0 == 0 %}
+  </div>
+  {% endif %}
+  {% endfor %}
+  <!-- Education block -->
+
+  {% for test in p.education.all %}
+  {% if forloop.counter0 == 0 %}
+  <div class="border_block left"> </div>
+  <div class="left width100" style="padding:10px;">
+    <h2>Education</h2>
+    
+    {% for e in p.education.all %}
+    <div style="width:90%; float:left;">
+      <b> {{ e.school_name }}</b>
+    </div>
+
+    {% if e.start_date %}
+    <div style="width:30%; float:left;">
+      Dates: 
+    </div>
+    <div style="width:60%; float:left;">
+      <b>From {{ e.start_date }} to {% if e.end_date %}{{ e.end_date }}{% else %} Now {% endif %}</b>
+    </div>
+    {% endif %}
+
+    {% if e.degree %}
+    <div style="width:30%; float:left;">
+      Degree:
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ e.degree }}</b>
+    </div>
+    {% endif %}
+    
+    {% if e.activities %}
+    <div style="width:30%; float:left;">
+      Activities:
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ e.activities }}</b>
+    </div>
+    {% endif %}
+    
+    {% if e.notes %}
+    <div style="width:30%; float:left;">
+      Notes:
+    </div>
+    <div style="width:60%; float:left;">
+      <b>{{ e.notes }}</b>
+    </div>
+    {% endif %}
+    
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endfor %}
+    
+  <!-- /Education block End -->
+
+  
+  <div style="float:right; width:30%; padding-top:20px;">
+    Member since: <i>{{ profile.user.date_joined }}</i>, Last login: <i>{{ profile.user.last_login }}</i>
+    <a href="{{ p.get_user_posts_url }}">Browse all posts by {{ p.user.first_name }}    {{ p.user.last_name }}</a>
+    <br />      <br />
+
+  </div>
+</div>
+
+{% endblock %}
+{% block search %}
+{% endblock %}

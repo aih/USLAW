@@ -1,0 +1,1 @@
+--ALTER TABLE laws_law ADD INDEX (`title`, `section`, `order`);

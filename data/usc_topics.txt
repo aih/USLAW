@@ -1,0 +1,51 @@
+1-15    Tax rates
+21-54   Credits (refundable and nonrefundable)
+55-59A  Alternative Minimum Tax & environmental tax
+61-90   Definition of gross income (before deductions), including items specifically taxable
+101-140 Specific exclusions from gross income
+141-149 Private activity bonds
+151-153 Personal exemptions; dependent defined
+161-199 Deductions, including interest, taxes, losses, and business related items
+211-224 Itemized deductions for individuals
+241-250 Deductions unique to corporations
+261-291 Nondeductible items, including special rules limiting or deferring deductions
+301-386 Corporate transactions, including formation, distributions, reorganizations, liquidations (Subchapter C)
+401-436 Pension and benefit plans: treatment of plans, employers, & beneficiaries
+441-483 Accounting methods & tax years
+501-530 Exempt organizations (charitable and other)
+531-565 Accumulated earnings tax and personal holding companies
+581-597 Banks: special rules for certain items
+611-638 Natural resources provisions: depletion, etc.
+641-692 Trusts & estates: definitions, income tax on same & beneficiaries
+701-777 Partnerships: definitions, treatment of entities and members, special rules (Subchapter K)
+801-858 Insurance companies: special rules, definitions
+851-860 Regulated investment companies (mutual funds)
+861-865 Source of income (for international tax)
+871-898 Tax on foreign persons/corporations; inbound international rules
+901-908 Foreign tax credit
+911-943 Exclusions of foreign income (mostly repealed)
+951-965 Taxation of U.S. shareholders of controlled foreign corporations (Subpart F)
+971-999 Other international tax provisions
+1001-1092       Gains: definitions, characterization, and recognition; special rules
+1201-1298       Capital gains: separate taxation and special rules
+1301-1359       Interperiod adjustments; certain special rules
+1361-1388       S Corporations and cooperative associations: flow-through rules
+1391-1400T      Empowerment, enterprise, and other special zones
+1401-1403       Self employment tax (like social security, below)
+1441-1465       Withholding of tax on nonresidents
+1501-1564       Consolidated returns and affiliated groups (corporations)
+2001-2210       Estate tax on transfers at death
+2501-2704       Gift tax and tax on generation skipping transfers
+3101-3241       Social security and railroad retirement taxes
+3301-3322       Unemployment taxes
+3401-3510       Income tax withholding; payment of employment taxes
+4001-5000       Excise taxes on specific goods, transactions, and industries
+5001-5891       Alcohol, tobacco and firearms taxes and special excise tax rules
+6001-6167       Tax returns: requirements, procedural rules, payments, settlements, extensions
+6201-6533       Assessment, collection, and abatement; limitations on collection & refund
+6601-6751       Interest and non-criminal penalties on underpayments or failures
+6801-7124       Other procedural rules
+7201-7344       Crimes, other offences, forfeitures, tax evasion
+7401-7493       Judicial proceedings
+7501-8023       Miscellaneous rules
+9001-9833       Special taxes & funds (presidential election, highway, black lung, etc.)

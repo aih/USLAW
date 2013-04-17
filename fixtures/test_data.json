@@ -1,0 +1,269 @@
+[
+  {
+    "pk": 2,
+    "model": "laws.title",
+    "fields": {
+      "name": "Subtitle A - Income Taxes",
+      "parent": 1,
+      "title": "",
+      "url": "subtitle-a-income-taxes",
+      "text": null,
+      "debug": null,
+      "int_title": 2
+    }
+  },
+  {
+    "pk": 3,
+    "model": "laws.title",
+    "fields": {
+      "name": "Subtitle B - Estate and Gift Taxes",
+      "parent": 1,
+      "title": "",
+      "url": "subtitle-b-estate-and-gift-taxes",
+      "text": null,
+      "debug": null,
+      "int_title": 4
+    }
+  },
+  {
+    "pk": 1,
+    "model": "laws.title",
+    "fields": {
+      "name": "TITLE 26 - INTERNAL REVENUE CODE",
+      "parent": null,
+      "title": "26",
+      "url": "title-26-internal-revenue-code",
+      "text": null,
+      "debug": null,
+      "int_title": 52
+    }
+  },
+  {
+    "pk": 1,
+    "model": "laws.subsection",
+    "fields": {
+      "hash": "",
+      "level": 0,
+      "text": "(a) Married individuals \nfiling joint returns and surviving spouses",
+      "section": 1,
+      "is_active": true,
+      "s_type": 0,
+      "source": null,
+      "subsection": "(a)",
+      "part_id": 0,
+      "is_outdated": false,
+      "raw_text": null
+    }
+  },
+  {
+    "pk": 2,
+    "model": "laws.subsection",
+    "fields": {
+      "hash": "",
+      "level": 0,
+      "text": "There is hereby imposed \non the taxable income of\u2014",
+      "section": 1,
+      "is_active": true,
+      "s_type": 0,
+      "source": null,
+      "subsection": "",
+      "part_id": 1,
+      "is_outdated": false,
+      "raw_text": null
+    }
+  },
+  {
+    "pk": 3,
+    "model": "laws.subsection",
+    "fields": {
+      "hash": "",
+      "level": 0,
+      "text": "There is hereby imposed on the taxable\nincome of every individual (other than a surviving spouse as defined in section\n<a href=\"/laws/target/26/2(a)\" class=\"sec\">2(a)</a> or the head of a household\nas defined in section <a href=\"/laws/target/26/2(b)\" class=\"sec\">2(b)</a>) who \nis not a married individual (as defined in section \n<a href=\"/laws/target/26/7703\" class=\"sec\">7703</a>) a tax determined in \naccordance with the following table: ",
+      "section": 1,
+      "is_active": true,
+      "s_type": 0,
+      "source": null,
+      "subsection": "",
+      "part_id": 2,
+      "is_outdated": false,
+      "raw_text": null
+    }
+  },
+  {
+    "pk": 4,
+    "model": "laws.subsection",
+    "fields": {
+      "hash": "",
+      "level": 1,
+      "text": "(1) every married individual \n(as defined in section <a href=\"/laws/target/26/7703\" class=\"sec\">7703</a>) \nwho makes a single return jointly with his spouse under section \n<a href=\"/laws/target/26/6013\" class=\"sec\">6013</a>, and ",
+      "section": 1,
+      "is_active": true,
+      "s_type": 0,
+      "source": null,
+      "subsection": "",
+      "part_id": 3,
+      "is_outdated": false,
+      "raw_text": null
+    }
+  },
+  {
+    "pk": 1,
+    "model": "laws.section",
+    "fields": {
+      "is_outdated": false,
+      "reference_subsection": [],
+      "title": 2,
+      "url": "1-tax-imposed",
+      "section": "1",
+      "is_active": true,
+      "header": "\u00a71. Tax imposed",
+      "reference_section": [],
+      "top_title": 1,
+      "int_section": 1,
+      "reference_title": []
+    }
+  },
+  {
+    "pk": 2,
+    "model": "laws.section",
+    "fields": {
+      "is_outdated": false,
+      "reference_subsection": [],
+      "title": 3,
+      "url": "2-definitions-and-special-rules",
+      "section": "2",
+      "is_active": true,
+      "header": "\u00a72. Definitions and special rules",
+      "reference_section": [],
+      "top_title": 1,
+      "int_section": 2,
+      "reference_title": []
+    }
+  },
+  {
+    "pk": 1,
+    "model": "laws.regulation",
+    "fields": {
+      "browsable": true,
+      "title": "Internal Revenue Code of 1954 and regulations.",
+      "text": "\n(a) Enactment of law. The Internal Revenue Code of 1954 which became law upon \nenactment of Public Law 591, 83d Congress, approved August 16, 1954, provides \nin part as follows:",
+      "section": "1.0-1",
+      "is_active": true,
+      "is_outdated": false,
+      "rate": 0,
+      "link": null,
+      "publication_date": "2011-12-20 10:26:29",
+      "document": "",
+      "sections": [],
+      "main_section": 1
+    }
+  },
+  {
+    "pk": 2,
+    "model": "laws.regulation",
+    "fields": {
+      "browsable": true,
+      "title": " Computation of gain or loss.",
+      "text": "\n(a) General rule. Except as otherwise provided in subtitle A of the Code, \nthe gain or loss realized from the conversion of property into cash, or from \nthe exchange of property for other property differing materially either in \nkind or in extent, is treated as income or as loss sustained. ",
+      "section": "1.1001-1",
+      "is_active": true,
+      "is_outdated": false,
+      "rate": 0,
+      "link": null,
+      "publication_date": "2011-12-20 10:26:29",
+      "document": "",
+      "sections": [],
+      "main_section": 1
+    }
+  },
+  {
+    "pk": 1,
+    "model": "laws.irsrevenuerulings",
+    "fields": {
+      "browsable": true,
+      "title": "Rev. Rul. 2010-1: Section \n1274.--Determination of Issue Price in the Case of Certain Debt \nInstruments Issued for Property",
+      "text": "Determination of Issue \nPrice in the Case of Certain Debt Instruments Issued for Property \n(Also Sections 42, 280G, 382, 412, 467, 468, 482, 483, 642, 807, \n846, 1288, 7520, 7872.)",
+      "section": "Rev. Rul. 2010-1: S",
+      "is_active": true,
+      "is_outdated": false,
+      "rate": 0,
+      "link": null,
+      "publication_date": "2011-12-20 10:26:29",
+      "document": "",
+      "sections": [
+        1
+      ]
+    }
+  },
+  {
+    "pk": 2,
+    "model": "laws.irsrevenuerulings",
+    "fields": {
+      "browsable": true,
+      "title": "Rev. Rul. 2010-2: Section \n1274A Special Rules for Certain Transactions Where Stated Principal \nAmount Does Not Exceed $2,800,000",
+      "text": "Rev. Rul. 2000-1 This revenue \nruling provides various prescribed rates for federal income tax purposes \nfor January 2000 (the current month.) Table 1 contains the short-term, \nmid-term, and long-term applicable federal rates (AFR) for the current \nmonth for purposes of section 1274(d) of the Internal Revenue Code. Table 2",
+      "section": "Rev. Rul. 2010-2: S",
+      "is_active": true,
+      "is_outdated": false,
+      "rate": 0,
+      "link": null,
+      "publication_date": "2011-12-20 10:26:29",
+      "document": "",
+      "sections": [
+        1
+      ]
+    }
+  },
+  {
+    "pk": 1,
+    "model": "laws.publaw",
+    "fields": {
+      "plnum": "112-28",
+      "html": "Publaw 1 Test text",
+      "billnum": "H.R.2715",
+      "congress": "112",
+      "text": null
+    }
+  },
+  {
+    "pk": 2,
+    "model": "laws.publaw",
+    "fields": {
+      "plnum": "112-4",
+      "html": "Publaw 2 Test text",
+      "billnum": "H.J.RES.44",
+      "congress": "112",
+      "text": null
+    }
+  },
+  {
+    "pk": 1,
+    "model": "laws.classification",
+    "fields": {
+      "plsection": "(2)",
+      "section": 1,
+      "pl": 1,
+      "sectionid": "H1FCA634A622C4818970E191FB1013D7F"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "laws.classification",
+    "fields": {
+      "plsection": "(1)",
+      "section": 2,
+      "pl": 2,
+      "sectionid": "H648BD9ACD38744158E020A96A0D7881C"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "laws.usctopic",
+    "fields": {
+      "last_section": 2,
+      "order": 0,
+      "name": "Tax rates",
+      "first_section": 1
+    }
+  }
+]

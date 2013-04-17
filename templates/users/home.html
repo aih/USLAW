@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% block extrahead %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.form.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/tiny_mce/tiny_mce.js"></script>
+{% include "posts/post_validation.html" %}
+{% include "users/home_js.html" %}
+<script>
+function questions_click(){
+  $('#questionfeed_block').show();
+  $('#newsfeed_block').hide(); 
+  $('#a_questionfeed').css('font-weight','bold'); 
+  $('#a_newsfeed').css('font-weight','normal');
+  $('#id_news_form').hide();
+  $('#id_question_form').show(); 
+  $('#newsfeed').show(); 
+  location.hash = "#questions";
+}
+function news_click(){
+  $('#questionfeed_block').hide();
+  $('#newsfeed_block').show(); 
+  $('#id_news_form').show();
+  $('#id_question_form').hide(); 
+  
+  $('#a_questionfeed').css('font-weight','normal'); 
+  $('#a_newsfeed').css('font-weight','bold');
+  location.hash = "#news";
+}
+
+$(document).ready(function(){
+    if( location.hash == "" ){
+       location.hash = "#news";
+    }
+
+    if( location.hash == "#news" ){
+      news_click();
+    }
+    if( location.hash == "#questions" ){
+      questions_click();
+    }
+});
+
+
+</script>
+{% endblock %}
+{% block newsfeed %}
+{% endblock %}
+ 
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div id="id_news_form">
+  {% include "posts/new_post_form.html" %}
+</div>
+<div id="id_question_form" style="display:none;">
+  {% include "posts/new_question_form.html" %}
+</div>
+
+{% endif %}
+
+<div class="block">
+  <div class="border_block left"> </div>
+  <div class="left padding5 width100">
+    <div class="big22 left">
+      <a id="a_questionfeed" onclick="questions_click();" class="pointer" style="font-weight:bold;">Questions</a> /
+      <a id="a_newsfeed" onclick="news_click();" class="pointer">NewsFeed</a></div>
+  </div>
+</div>
+
+<div id="questionfeed_block">
+  <div id="questionfeed-container">
+    <div id="questionfeed" class="block" style="margin-top:-16px;">
+    </div>
+  </div>
+  <div class="block width100" id="question_spinner" style="text-align:center; display:none;">
+    <img src="{{ MEDIA_URL }}img/spinner2.gif" />
+  </div>
+  <div class="block width100 question" id="question_form_block_id" style="text-align:center;">
+    <form id="question_form" action="/posts/get-posts/" method="post">{% csrf_token %}
+      <input type="hidden" name="page_id" id="question_page_id" value="1" />
+      <input type="hidden" name="post_type" id="question_post_type_id" value="Question" />
+      <a class="pointer width100" onclick="$('#question_form').submit();">More</a>
+    </form>
+  </div>
+</div>
+
+<div id="newsfeed_block" style="display:none;">
+  <div id="newsfeed-container">
+    <div id="newsfeed" class="block" style="margin-top:-16px;">
+    </div>
+  </div>
+  <div class="block width100" id="spinner" style="text-align:center; display:none;">
+    <img src="{{ MEDIA_URL }}img/spinner2.gif" />
+  </div>
+  <div class="block width100" id="form_block_id" style="text-align:center;">
+    <form id="posts_form" action="/posts/get-posts/" method="post">{% csrf_token %}
+      <input type="hidden" name="page_id" id="page_id" value="1" />
+      <input type="hidden" name="post_type" id="post_type_id" value="News" />
+      <a class="pointer width100" onclick="$('#posts_form').submit();">More</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block right_panel_add  %}
+
+<!-- Top News block -->
+<div class="width100 left" >
+  <div class="left big18" style="padding-top:10px;">
+    Top&nbsp;News:
+  </div>
+</div>
+{% for p in best_news %}
+<div class="width100 left" >
+  <div class="left padding5" style="width:20px; padding-top:10px;">
+    <a href="{{ p.profile.get_absolute_url }}"><img class="avatar" id="avatar-{{ p.id }}-{{ p.profile.id }}" qtitle = "{{ p.profile }}" src="{{ p.profile.avatar }}" width="20px;" /></a>
+  </div>
+  <div class="post_item_line left padding5">
+    <div class="left" style="width:100px;"><a href="{{ p.get_absolute_url }}">{{ p.title|truncatewords:5 }}</a></div>
+  </div>
+</div>
+{% endfor %}
+<!-- /END:Top News block -->
+
+<!-- Top Questions block -->
+<div class="width100 left" >
+  <div class="left big18" style="padding-top:10px;">
+    Top&nbsp;questions:
+  </div>
+</div>
+{% for p in best_questions %}
+<div class="width100 left" >
+  <div class="left padding5" style="width:20px; padding-top:10px;">
+    <a href="{{ p.profile.get_absolute_url }}"><img class="avatar" id="avatar-{{ p.id }}-{{ p.profile.id }}" qtitle = "{{ p.profile }}" src="{{ p.profile.avatar }}" width="20px;" /></a>
+  </div>
+  <div class="post_item_line left padding5">
+    <div class="left" style="width:100px;"><a href="{{ p.get_absolute_url }}">{{ p.title|truncatewords:5 }}</a></div>
+  </div>
+</div>
+{% endfor %}
+<!-- /END:Top Questions block -->
+
+{% endblock %}
+{% block search %}
+{% endblock %}

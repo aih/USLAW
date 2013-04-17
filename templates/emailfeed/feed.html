@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include "emailfeed/post_list.html" %}
+
+<div class="right"><a href="{% url feed_index %}">All feeds</a></div>
+<div style="float:left; width:100%; margin-top:20px; border-top:1px solid #E5EAEF;">
+  {% include "paginator.html" %}
+</div>
+{% endblock %}
+

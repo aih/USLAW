@@ -1,0 +1,45 @@
+<script type="text/javascript" charset="UTF8">
+//<![CDATA[
+
+function do_search(search_query, page) {
+
+  $('#search_results').fadeIn('slow');
+  $('#search_results').load("/laws/ajah_search/?query="+encodeURIComponent(search_query)+"&page="+page);
+  $('#search_query').val(search_query);
+  setCookie('seach_query', search_query, null); 
+  return false;
+}
+
+function last_search() {
+  $("#search_results").load("/users/last_search/?id=1"); 
+  $('#search_results').fadeIn('slow'); 
+  return false;
+}
+$(document).ready(function() {
+    var q = readCookie('seach_query');
+    if (q!='' && q!='null'){
+
+     // if ($('#search_query').val()==""){
+     // } else {
+       $('#search_query').val(unescape(q));
+	do_search(unescape(q), 1);
+      //}
+     } else {
+      $('#search_results').hide();
+    }
+});
+
+  //]]>
+</script>
+<br />
+  <form onsubmit="return do_search(document.getElementById('search_query').value, 1);">
+  <input type="text" value = "{{ query }}" size="17" id="search_query" onEnter="do_search(document.getElementById('search_query').value, 1);" />
+<br />
+<input type="submit" onclick="do_search(document.getElementById('search_query').value, 1);" value="Search" />
+</form>
+
+<span id="search_results"><img src='{{ MEDIA_URL }}img/spinner.gif' alt='spinner' /></span>
+
+<script type="text/javascript" charset="UTF8">//<![CDATA[
+    $('#search_results').hide();
+//]]></script>

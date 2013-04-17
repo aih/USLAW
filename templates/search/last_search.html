@@ -1,0 +1,17 @@
+{% autoescape off %} 
+{% for r in search %}
+<span class="search_item">
+  <a href="#" onclick="do_search('{{ r.text }}', 1);">{{ r.text }}</a>
+  <br />
+</span>
+  <br />
+{% empty %}
+<p>No results found.</p>
+{% endfor %}
+{% endautoescape %}
+
+  <br />
+<div style="border-top: 1px solid gray; width:100%;">
+  <a href="#" onclick="$('#search_results').fadeOut('slow');">Close</a>
+  <a href="#" onclick="last_search();">Recent Searches</a>
+</div>

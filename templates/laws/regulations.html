@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Browse Treasury (Tax) Regulations (Federal tax regulations){% endblock %}
+{% block content %}
+<div id="main_big">
+  <h1>Treasury (Tax) Regulations</h1>
+  {% autoescape off %}
+  {% for r in page.object_list %}
+  <div class="list_item" id="item-{{ r.id }}">
+    <a href="{{ r.get_absolute_url }}">{{ r }}</a>
+  </div>
+  {% endfor %}
+  {% endautoescape %}
+  {% include "paginator.html" %}
+
+</div>
+{% endblock %}

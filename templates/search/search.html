@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block search %}
+{% endblock %}
+{% block right_panel %}
+<div style="width:100%; padding-top:20px; float:left;">
+  <h3>Select site section:</h3>
+  <ul>
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('statute'); $('#id_search_form').submit();">Statutes {% if main_query1_count %}({{ main_query1_count }}){% endif %}</a>
+    </li>
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('regulation'); $('#id_search_form').submit();">Regulations {% if main_query2_count %}({{ main_query2_count }}){% endif %}</a>
+    </li>
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('irsruling'); $('#id_search_form').submit();">Rev. Rulings {% if main_query3_count %}({{ main_query3_count }}){% endif %}</a>
+    </li>
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('wdeterminations'); $('#id_search_form').submit();">Written Determinations</a>
+    </li>
+
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('title'); $('#id_search_form').submit();">Heading Titles {% if main_query7_count %}({{ main_query7_count }}){% endif %}</a>
+    </li>
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('forms'); $('#id_search_form').submit();">Forms And Instructions {% if main_query8_count %}({{ main_query8_count }}){% endif %}</a>
+    </li>
+
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('publications'); $('#id_search_form').submit();">Publications {% if main_query10_count %}({{ main_query10_count }}){% endif %}</a>
+    </li>
+
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('decision'); $('#id_search_form').submit();">Actions on Decisions {% if main_query11_count %}({{ main_query11_count }}){% endif %}</a>
+    </li>
+
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('iletters'); $('#id_search_form').submit();">Information Letters {% if main_query11_count %}({{ main_query11_count }}){% endif %}</a>
+    </li>
+
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('namedacts'); $('#id_search_form').submit();">Named Acts {% if main_query9_count %}({{ main_query9_count }}){% endif %}</a>
+    </li>
+
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('post'); $('#id_search_form').submit();">News / Questions {% if main_query6_count %}({{ main_query6_count }}){% endif %}</a>
+    </li>
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('comment'); $('#id_search_form').submit();">Comments {% if main_query5_count %}({{ main_query5_count }}){% endif %}</a>
+    </li> 
+
+    <li>
+      <a class="pointer bold" onclick="$('#id_where').val('everywhere'); $('#id_search_form').submit();">Search everywhere</a>
+    </li>
+
+  </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div id="search_main">
+  <div style="padding:5px; border-bottom:1px dashed gray; margin-bottom:20px;">
+    <h1>Search:</h1><!--{% csrf_token %}-->  
+    <form method="GET" action="{% url laws_search %}" id="id_search_form" onsubmit="if ($('#id_query').val()=='Search...') {return false;}">
+      {{ searchform.query }}{{ searchform.query.errors }} {{ searchform.where }}  {{ searchform.where.errors }} 
+      {{ searchform.date_sort }}
+      <input type="hidden" name="p" value = "1" id="id_page" /> 
+      <input type="submit" value="Find" class="right_btn find_btn" style="width:100px;"/>  
+    </form>
+  </div>
+  {% autoescape off %} 
+
+  {% if main_query %}
+  <div class="left" style="width:720px; text-align:right;">Sort by: 
+    <a href="{% url laws_search %}?query={{ query }}&p=1&where={{ where }}&date_sort=none">{% if date_sort == 'none' %}<b>Relevance &darr;</b>{% else %}Relevance{% endif %}</a> | 
+    <a href="{% url laws_search %}?query={{ query }}&p=1&where={{ where }}&date_sort={% if date_sort == 'desc' %}asc{% else %}desc{% endif %}">Date {% if date_sort == 'desc' %}&darr;{% else %}{% if date_sort == 'asc' %}&uarr;{% endif %}{% endif %}</a>
+  </div>
+      {% for r in page_obj.object_list %}
+      <div class="list_item" id="item-{{ r.id }}-{{ forloop.counter }}">
+	<a href="{{ r.get_absolute_url }}" >{{ r }}</a><br /> 
+	<div style="width:250px; float:left;">{{ r.get_name }}</div>
+	<div title="Current through" style="float:right; width:90px;">{% if r.get_ext_date %} {{ r.get_ext_date|date:"M. d, Y" }}{% endif %}</div>
+	<div style="float:right; width:40px;">
+	  {% if r.document %}
+	  <img src="{{ MEDIA_URL }}img/preview.png" width="15px;" style="cursor:pointer;" onclick="$('#pdf_preview-{{ forloop.counter }}').toggle();  $('#ifr-{{ forloop.counter }}').attr('src', 'http://docs.google.com/viewer?url={{ MEDIA_URL }}{{ r.document }}');"/>
+	  <div id="pdf_preview-{{ forloop.counter }}" style="width:950px; display:none; z-index: 19000; position:fixed; top:50px; left:50%; background-color:#E3EBF3; padding:10px; border:1px solid gray; margin-left:-500px;">
+	    <div id="pdf_panel" style="width:950px; height:40px;"><b>{{ r }}</b>
+	      <div style="float:right; cursor:pointer;" onclick="$('#pdf_preview-{{ forloop.counter }}').toggle();">
+		<img src="{{ MEDIA_URL }}img/close.png" width="30px;"/>
+	      </div>
+	    </div>
+	    <iframe id="ifr-{{ forloop.counter }}" width="950px;" height="900px;" src=""></iframe>
+	  </div>
+	  {% endif %}
+	</div>
+      </div>
+
+      {% empty %}
+      {% if query %} <p>No results found.</p>{% endif %}
+      {% endfor %}
+
+  {% endif %}
+  {% endautoescape %}
+
+  {% include "search/paginator.html" %}
+
+</div>
+{% endblock %}

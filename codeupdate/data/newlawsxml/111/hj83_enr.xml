@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?xml-stylesheet href="\billres.xsl" type="text/xsl"?>-->
+<!--<!DOCTYPE resolution PUBLIC "-//US Congress//DTDs/res v2.8 20020720//EN" "http://xml.house.gov/res.dtd">-->
+<!DOCTYPE resolution PUBLIC "-//US Congress//DTDs/res v2.8 20020720//EN" "http://thomas.loc.gov/dtd/res.dtd">
+<resolution dms-id="HD3CA2391D757485FAF27A03F8A940F5D" key="H" public-private="public" resolution-stage="Enrolled-Bill" resolution-type="house-joint" star-print="no-star-print" stage-count="1"> 
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HJ 83 ENR: Approving the renewal of import restrictions contained in the Burmese Freedom and Democracy Act of 2003, and for other purposes.</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="no">IA</distribution-code> 
+<congress display="yes">One Hundred Eleventh Congress of the United States of America</congress> 
+<session display="yes">At the Second Session</session><enrolled-dateline>Begun and held at the City of Washington on Tuesday, the fifth day of January, two thousand and ten</enrolled-dateline> 
+<legis-num>H. J. RES. 83</legis-num> 
+<current-chamber display="no"></current-chamber> 
+<legis-type>JOINT RESOLUTION</legis-type> 
+<official-title display="yes">Approving the renewal of import restrictions contained in the Burmese Freedom and Democracy Act of 2003, and for other purposes.</official-title> 
+</form> 
+<resolution-body id="HA39DDB5079A44541830E0FACF5A7F080" style="OLC"> 
+<section id="H12F93429EB9847D48E68AD054EE6E835" section-type="section-one"><enum>1.</enum><header>Renewal of import restrictions under Burmese Freedom and Democracy Act of 2003</header> 
+<subsection id="H5F08052B60494F44B4F87106286F05CD"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Congress approves the renewal of the import restrictions contained in section 3(a)(1) and section 3A (b)(1) and (c)(1) of the Burmese Freedom and Democracy Act of 2003.</text></subsection> 
+<subsection id="H3A4C0FA156D840DF90321175EFC04782"><enum>(b)</enum><header>Rule of construction</header><text display-inline="yes-display-inline">This joint resolution shall be deemed to be a <quote>renewal resolution</quote> for purposes of section 9 of the Burmese Freedom and Democracy Act of 2003.</text></subsection></section> 
+<section id="HC4FC627C42934CA6BAF0FF7D00C95DD5"><enum>2.</enum><header>Customs user fees</header><text display-inline="no-display-inline">Section 13031(j)(3)(B)(i) of the Consolidated Omnibus Budget Reconciliation Act of 1985 (<external-xref legal-doc="usc" parsable-cite="usc/19/58c">19 U.S.C. 58c(j)(3)(B)(i)</external-xref>) is amended by striking <quote>August 17, 2018</quote> and inserting <quote>August 24, 2018</quote>.</text></section> 
+<section id="HFF0ECAAB9CC443F38F312DF3BA8B61C9"><enum>3.</enum><header>Time for payment of corporate estimated taxes</header><text display-inline="no-display-inline">The percentage under paragraph (2) of section 561 of the Hiring Incentives to Restore Employment Act in effect on the date of the enactment of this Act is increased by 0.25 percentage points. </text></section> 
+<section id="H7FC3386C251B4AC3A5042887BCA62E62"><enum>4.</enum><header>PAYGO compliance</header><text display-inline="no-display-inline">The budgetary effects of this Act, for the purpose of complying with the Statutory Pay-As-You-Go Act of 2010, shall be determined by reference to the latest statement titled <quote>Budgetary Effects of PAYGO Legislation</quote> for this Act, submitted for printing in the Congressional Record by the Chairman of the House Budget Committee, provided that such statement has been submitted prior to the vote on passage. </text></section> 
+<section id="H1213E542A8924E379FFF0D7295E87622"><enum>5.</enum><header>Effective date</header><text display-inline="no-display-inline">This joint resolution and the amendments made by this joint resolution shall take effect on the date of the enactment of this joint resolution or July 26, 2010, whichever occurs earlier.</text></section> 
+</resolution-body> 
+<attestation><attestation-group><role>Speaker of the House of Representatives.</role></attestation-group><attestation-group><role>Vice President of the United States and President of the Senate.</role></attestation-group></attestation>
+</resolution> 
+
+

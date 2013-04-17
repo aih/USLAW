@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Written Determinations{% endblock %}
+{% block content %}
+<div id="main_big">
+  <h1>Written Determinations</h1>
+  {% autoescape off %}
+  {% for r in page.object_list %}
+  <div class="list_item" id="item-{{ r.id }}">
+    <a href="{{ r.get_absolute_url }}">{{ r }}</a>
+  </div>
+  {% endfor %}
+  {% endautoescape %}
+  {% include "paginator.html" %}
+</div>
+{% endblock %}

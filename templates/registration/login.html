@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<script>
+{% if user.is_authenticated %}
+   location.href="/users/home/";
+{% endif %}
+</script>
+
+<div class="content">
+  <div class="error width100 left">
+  {% if login_error %}
+     Username or password is incorrect.
+  {% endif %}
+  {% if user_inactive %}
+  {% include "registration/not_active.html" %}
+  {% endif %}
+  </div>
+
+  {% if user.is_authenticated %}
+  <div class="info_text">
+    You are already registered. Please go to <a href="/users/home/">profile page</a>.
+  </div>
+  {% else %}
+  {% if not user_inactive %}
+  <div style="width:950px; margin-left:auto; margin-right:auto; text-align:center;">
+    <div class="left" style="width:280px; border:4px solid #fff; text-align:left; margin:80px; margin-top:5px; margin-left:250px; padding:40px; padding-top:5px;">
+    <h1>Sign in:</h1>
+    {% include "registration/login_form.html" %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+{% endif %}
+{% endblock %}
+
+{% block search %}
+{% endblock %}

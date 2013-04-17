@@ -1,0 +1,31 @@
+<script type="text/javascript">
+//<![CDATA[
+  $(document).ready(function(){
+  var qtip_options_ = {
+       content: "{{ notice|safe }}",
+       show: 'mouseover',
+       hide: 'mouseout',
+       position: {
+	  corner: "topMiddle"
+       },
+       style: { 
+	   textAlign: 'center',
+	   tip: false,
+	   width: 1050,
+	   background: '#FFFFF0',
+	   color:'black',
+	   name: 'green',
+	   padding: 1,
+	   border: {
+	      width: 0,
+	      radius: 0,
+	      color: '#606E7B'
+	   }
+       }
+  }
+  {% if notice %}
+    $('body').qtip(qtip_options_).show();
+  {% endif %}
+});
+//]]>
+</script>

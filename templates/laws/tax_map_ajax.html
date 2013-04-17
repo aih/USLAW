@@ -1,0 +1,59 @@
+{% autoescape off %}
+{% load remove_new_lines %}
+<!--<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/graph.js"></script>-->
+<script type="text/javascript">
+//<![CDATA[
+    function init_graph(data) {
+    {% if no_sections %}
+    $("#id_title_error").text('There are no reference links between selected sections');
+    {% else %}
+    $("#id_title_error").text('');
+    {% endif %}
+
+ //   $('#graph').html(''); // Add canvas to document body
+    g = new Graph(document.getElementById("_ctx")); // Creating new Graph object
+
+    {% for section in sections %} // Loop over sections reference sections
+       g.addNode({{ section.id }}, {weighted:false, radius:15, label: '§ {{ section.section }} {% for p in profiles %}{% if section.id == p.0 %}#{{ p.1 }} <img src="{{ p.2 }}" width="30px" />{% endif %}{% endfor %}', {% if link_type == 'map' %}href:'javascript:update_map({{ section.id }}); ' {% else %} 'target':'_blank', href:'{{ section.get_absolute_url }}{% if profiles %}#comments{% endif %}' {% endif %}, 'title': '{{ section|remove_newlines }}' {% if display_bubble  %}, 'bubble':'1' {% endif %} });
+
+      {% if not display_selected_sections %}
+        {% for s in section.reference_section.all %}
+         g.addNode({{ s.id }}, {weighted:false, radius:7, label: '§ {{ s.section }} {% for p in profiles %}{% if s.id == p.0 %}#{{ p.1 }} <img src="{{ p.2 }}" width="30px" />{% endif %}{% endfor %}', {% if link_type == 'map' %}href:'javascript:update_map({{ s.id }});' {% else %} 'target':'_blank', href:'{{ s.get_absolute_url }}{% if profiles %}#comments{% endif %}' {% endif %}, 'title': '{{ s|remove_newlines }}'{% if display_bubble  %}, 'bubble':'1', {% endif %} });
+         g.addEdge({{ section.id }}, {{ s.id }}, {length:5, weighted:false, pack:false} );
+        {% endfor %}
+
+        {% for s in section.reference_subsection.all %}
+         g.addNode({{ s.section.id }}, {weighted:false, radius:6,label: '§ {{ s.section.section }} {% for p in profiles %}{% if s.section.id == p.0 %}#{{ p.1 }} <img src="{{ p.2 }}" width="30px" />{% endif %}{% endfor %}', {% if link_type == 'map' %}href:'javascript:update_map({{ s.section.id }}); ' {% else %} 'target':'_blank', href:'{{ s.get_absolute_url }}{% if profiles %}#comments{% endif %}' {% endif %}, 'title': '{{ s|remove_newlines }}' {% if display_bubble  %}, 'bubble':'1' {% endif %} });
+         g.addEdge({{ section.id }}, {{ s.section.id }}, {length:15, weighted:false, pack:false} );
+        {% endfor %}
+      {% endif %}
+     {% endfor %}
+
+
+       {% for b in back_ref %} // Back references
+          g.addNode({{ b.0 }}, {weighted:false, radius:6, label: '§ {{ b.2 }} {% for p in profiles %}{% if b.0 == p.0 %}#{{ p.1 }} <img src="{{ p.2 }}" width="30px" />{% endif %}{% endfor %}', {% if link_type == 'map' %}href:'javascript:update_map({{ b.0 }});' {% else %} 'target':'_blank', href:'/laws/section/26/{{ b.0 }}{% if profiles %}#comments{% endif %}'{% endif %},  'title':'{{ b.3|remove_newlines }}' {% if display_bubble %}, 'bubble':'1' {% endif %} });
+          g.addEdge({{ b.0 }}, {{ b.1 }}, {length:10, weighted:false, pack:false} );
+        {% endfor %}
+
+        {% for b in back_subref %} // Back references subsections
+        g.addNode({{ b.0 }}, {weighted:false, radius:6, label: '§ {{ b.2 }} {% for p in profiles %}{% if b.0 == p.0 %}#{{ p.1 }} <img src="{{ p.2 }}" width="30px" />{% endif %}{% endfor %}', {% if link_type == 'map' %}href:'javascript:update_map({{ b.0 }});' {% else %} 'target':'_blank', href:'/laws/section/26/{{ b.0 }}{% if profiles %}#comments{% endif %}'{% endif %},  'title': '{{ b.3|remove_newlines }}' {% if display_bubble %}, 'bubble':'1' {% endif %} });
+        g.addEdge({{ b.0 }}, {{ b.1 }}, {length:10, weighted:false, pack:false} );
+      {% endfor %}
+  
+      //g.prune(0);
+      //g.betweennessCentrality();
+      //g.eigenvectorCentrality();
+      g.loop({frames:50, fps:20, ipf:2, directed:true, weighted:false, title:'Referenced map'});
+   }    
+
+    $(document).ready(function() {
+      init_graph();
+      $('title').text('Map of References For Sections: {% for s in sections %}{% if forloop.counter < 15 %}§ {{ s.section }}{% if not forloop.last %}, {% endif %}{% else %}{% if forloop.counter == 15 %} ...{% endif %}{% endif %}{% endfor %}');
+      $('#id_title').text('Map of References For Sections: {% for s in sections %}{% if forloop.counter < 15 %}§ {{ s.section }}{% if not forloop.last %}, {% endif %}{% endif %}{% if forloop.counter == 15 %} ...{% endif %}{% endfor %}');
+    
+    });
+//]]>
+</script>  
+{% endautoescape %}
+<canvas id="_ctx" width="1000" height="600"></canvas>

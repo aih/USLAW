@@ -1,0 +1,18 @@
+{% extends "base_2.html" %}
+{% block content %}
+
+
+<div class="center">
+{% if error == 'user_refused' %}
+<h2>To complete registration procces you need to allow linkedin connection with TAX26.COM.</h2>
+Please go to <a href="/">home page</a> and try again.
+{% else %}
+<h2>Something went wrong. Please try again.</h2>
+{% endif %}
+<br /><br /><br /><br /><br />
+</div>
+
+{% endblock %}
+
+{% block search %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% if searchform %}
+<div class="left" style="margin-bottom:20px;">
+  <form method="get" action="{% url laws_search %}/" id="id_search_form" onSubmit="if ($('#id_query').val()=='{{ searchform.query.label }}') {return false;}">
+    <div class="left">    
+      {{ searchform.query }} {{ searchform.query.errors }}  
+    </div>
+    <div class="left" style="padding-top:5px;">
+      <div class="left">
+	{{ searchform.where }} {{ searchform.where.errors }}
+      </div>
+      <div class="left">
+	<input type="submit" value="Find" class="right_btn find_btn" style="width:57px;" />  
+      </div>
+      <input type="hidden" name="page" value = "1" id="id_page"/>
+    </div>
+  </form>
+</div>
+{% endif %}
+<!--<div class="research left">
+  <div class="big18 left">Browse</div>
+</div>-->
+
+
+<!--	<li><a href="#" class="menu_link">IRS&nbsp;Private&nbsp;Rulings</a></li>-->

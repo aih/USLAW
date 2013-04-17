@@ -1,0 +1,17 @@
+<html>
+<title></title>
+<body>
+  <h1>API documentation. (Beta)</h1>
+  <hr />
+  <p>
+    Any API request support optional argument - format.<br />
+    Format are accessed via the ?format GET argument, e.g. '/api/titles/?format=xml'<br />
+    Default format is json. <br />
+    Supported formats are: "xml", "json", "pickle", "django".
+  </p>
+  {% for d in documentation %}
+  <h2>{{ d.main|linebreaks }}</h2>
+  {{ d.read|linebreaks }}
+  {% endfor %}
+</body>
+</html>

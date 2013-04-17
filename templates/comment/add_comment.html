@@ -1,0 +1,38 @@
+{% if user.is_authenticated %}
+{% if profile.user.username != 'Anonymous' %}
+<div class="comment">
+      <div class="comment_header">
+	<div class="left">
+	  <a class="a_color" href="{{ profile.get_absolute_url }}">{{ profile.user.first_name }}   {{ profile.user.last_name }}</a>
+	</div>
+	<div class="right" style="font-style:italic;">
+	  &nbsp;
+	</div>
+      </div>
+
+  <div class="comment_left_part">
+    <img src="{{ profile.avatar }}" width="40px" alt="Avatar" /><br />
+  </div>
+
+  <div class="comment_right_part">
+    <form action="/comment/add-comment/" method="post">{% csrf_token %}
+      <fieldset>
+      {{ comment_form.text }}
+      </fieldset>
+      <fieldset>
+      {{ comment_form.content_type }}
+      <input type="hidden" name="object_id" value="{{ object_.id }}" />
+      <input type="hidden" name="parent" value="" />
+      <input type="hidden" name="next" value="{{ object_.get_absolute_url }}" />
+      {% if post.post_type.name == 'News' %}
+      <input type="submit" value="Add comment" class="post_btn find_btn"/>
+      {% else %}
+      <input type="submit" value="Answer" class="post_btn find_btn"/>
+      {% endif %}
+      </fieldset>
+      <p class="panel_off"><input type="text" name="email" value="" size="1" /></p>
+    </form>
+    </div>
+</div>
+{% endif %}
+{% endif %}

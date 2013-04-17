@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+{% if errors %}
+     {% for error in errors %}
+          <span class="error"> {{ error }}</span> <br />
+     {% endfor %}
+{% endif %}
+<script>
+{% if user.is_authenticated %}
+  {% if user.is_active %}
+     location.href="/users/home/"; 
+  {% endif %}
+{% endif %}
+</script>
+
+{% if registered and not not_active %}
+<div class="center">
+  <div style="padding-left:20px; padding-top:20px; font-size:20px;">Welcome! 
+    </div>
+  <div style="padding-left:20px; padding-top:5px;">
+   <p> We will send you a link shortly.  Please click on that link to confirm your address.  We confirm email addresses as a way of preventing spam and other activities that might reduce the quality of the service for site members.</p>
+    <br />
+    <br />
+    
+  </div>
+</div>
+{% endif %} 
+
+{% if not_active %}
+{% include "registration/not_active.html" %}
+{% endif %}
+
+{% if not registered and not not_active %}
+<div class="content width100">
+  <div class="login_element big22" style="text-align:left;">
+    Please fill in these fields to sign up: <!--{{ profile.first_name }} {{ profile.last_name }}. -->
+  </div>
+  <!--<div class="login_element">
+    To complete registration please fill these fields:<br />
+  </div>-->
+
+  <div style="width:950px; margin-left:auto; margin-right:auto; text-align:center;">
+    <div class="left" style="width:100%; border:4px solid #fff; text-align:left; margin:5px; margin-top:5px; padding:10px; padding-top:0px; margin-left:0px;">
+  <div class="left width100" style="padding-top:10px;">
+    <form method="post" action="/users/registration/">{% csrf_token %}
+      <div class="left" style="width:45%">
+	<div class="login_element">E-mail: <span class="error">{{ form.email.errors }}</span></div>
+	<div class="login_element" title="{{ form.email.label }}">{{ form.email }} </div>
+
+	<div style="padding-top:40px;">
+	  <div class="login_element">First Name: <span class="error">{{ form.first_name.errors }}</span></div>
+	  <div class="login_element" title="{{ form.first_name.label }}">{{ form.first_name }}</div>
+	</div>
+	<div style="padding-top:40px;">
+	  <div class="login_element">Last Name: <span class="error">{{ form.last_name.errors }}</span></div>
+	  <div class="login_element" title="{{ form.last_name.label }}">{{ form.last_name }}</div>
+	</div>
+
+	<div style="padding-top:40px;">
+	  <div class="login_element">Password: <span class="error">{{ form.password.errors }}</span></div>
+	  <div class="login_element" title="{{ form.password.label }}">{{ form.password }}</div>
+	</div>
+
+	<div style="padding-top:40px;">
+	  <div class="login_element">Repeat password: <span class="error">{{ form.rpassword.errors }}</span></div>
+	  <div class="login_element" title="{{ form.rpassword.label }}">{{ form.rpassword }}</div>
+	</div>
+
+      <div class="left" style="padding-top:20px;">
+	<input class="text login_btn find_btn" type="submit" value="Continue" />
+	<input type="hidden" name="next" value="/" />
+	<input type="hidden" name="form" value="reg" />
+      </div>
+
+      </div>
+      <div class="left" style="width:55%;" title="You can choose your areas of interest later">
+	  <div class="login_element">Choose your areas of interest: <span class="error">{{ form.areaofinterest.errors }}</span></div>
+	  <div class="login_element width100" style="overflow:scroll; overflow-x: hidden; height:400px;">{{ form.areaofinterest }}</div>
+      </div>
+
+
+    </form>
+  </div>
+</div>
+    </div>
+
+</div>
+
+{% endif %}
+{% endblock %}
+
+{% block search %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base_2.html" %}
+{% block extrahead %}
+<script>
+$(document).ready(function() {
+   
+});
+</script>
+{% endblock %}
+{% block content %}
+{% if errors %}
+     {% for error in errors %}
+      <b>  {{ error }}</b> <br />
+    {% endfor %}
+{% endif %}
+
+<div class="center">
+  <div style="padding-left:20px; padding-top:20px; font-size:20px;">
+    Thank you, {{ profile.user.first_name }} {{ profile.user.last_name }}. 
+    Your email is confirmed now
+    <br />
+  </div>
+  <div style="padding-left:20px; padding-top:5px; ">
+    Please login using link below:<br />
+    <a href="/users/login/" style="text-decoration:underline;">Login</a>
+    <br />    <br />    <br />    <br />
+  </div>
+</div>
+{% endblock %}
+
+{% block search %}
+{% endblock %}

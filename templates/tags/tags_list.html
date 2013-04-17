@@ -1,0 +1,7 @@
+<div class="tags">
+  {% for t in tags %}
+  <div class="tag left">
+    <a class="tag_link" href="{{ t.tag.get_absolute_url }}">{{ t.tag.name }}</a>{% if not forloop.last %} {% endif %}
+  </div>
+  {% endfor %}
+</div>

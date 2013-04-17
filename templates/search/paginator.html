@@ -1,0 +1,29 @@
+<div class="paginator">
+<!--<div class="title">  Page {{ page_id }} of {{ paginator.num_pages }}</div> -->
+  <div class="pagenav" >
+    {% if page_obj.has_previous  %}
+    <div class="pageno">
+      <a onclick="$('#id_page').val({{ page_obj.previous_page_number }}); $('#id_search_form').submit();">&laquo; Prev</a> &nbsp;
+    </div>
+    {% endif %}
+    {% if page_obj.has_other_pages %}
+    {% for p in page_range %} 
+    {% ifequal page_id p %}
+    <div class="pageno current_page">
+      {{ p }}
+    </div>
+    {% else %}
+    <div class="pageno">
+      <a onclick="$('#id_page').val({{ p }}); $('#id_search_form').submit();">{{ p }}</a>
+    </div>
+    {% endifequal %}
+    {% endfor %}
+    {% endif %}
+    {% if page_obj.has_next %}
+    <div class="pageno">
+        <a onclick="$('#id_page').val({{ page_obj.next_page_number }}); $('#id_search_form').submit();">Next&nbsp;&raquo;</a>
+    </div>
+    {% endif %}
+  </div>
+<div class="paginator_info">[Total <b>{{ paginator.count }}</b> results found, Page {{ page_id }} of {{ paginator.num_pages }} pages]</div>
+</div>

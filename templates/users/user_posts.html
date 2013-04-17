@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Posts by {{ user_profile.user.first_name }} {{ user_profile.user.last_name }}{% endblock %}
+{% block content %}
+
+<div style="padding:5px;">
+  <h1>Browse posts by <a href="{{ user_profile.get_absolute_url }}">{{ user_profile.user.first_name }} {{ user_profile.user.last_name }}</a></h1>
+</div>
+{% for p in page.object_list %}
+  <div class="list_item pointer" id="item-{{ p.id }}" onmouseover="$('#item-{{ p.id }}').addClass('selected_item'); " onmouseout="$('#item-{{ p.id }}').removeClass('selected_item');" onclick="location.href='{{ p.get_absolute_url }}';">
+  <a style="font-size:18px;" href="{{ p.get_absolute_url }}">{{ p }} </a>
+  <br />
+  {% autoescape off %}  {{ p.text|striptags|truncatewords:50 }} {% endautoescape %}
+</div>
+
+{% endfor %}
+<div style="padding:5px;">
+  {% if page.has_previous %}
+  <a href='?p={{ page.previous_page_number }}'>&lt;&lt; Previous</a>
+  {% endif %}
+  Page {{ page.number }} of {{ page.paginator.num_pages }}
+  {% if page.has_next %}
+  <a href='?p={{ page.next_page_number }}'>Next &gt;&gt;</a>
+  {% endif %}
+</div>
+
+{% endblock %}
+

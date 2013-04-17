@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?xml-stylesheet href="\billres.xsl" type="text/xsl"?>-->
+<!--<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://xml.house.gov/bill.dtd">-->
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://thomas.loc.gov/dtd/bill.dtd">
+<bill bill-stage="Enrolled-Bill" dms-id="HEADBC8AD1CC04073A768EF987DCCBE02" public-private="public" key="H" bill-type="olc" stage-count="1"> 
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HR 4887 ENR: TRICARE Affirmation Act</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="no">I</distribution-code> 
+<congress>One Hundred Eleventh Congress of the United States of America</congress> <session>At the Second Session</session><enrolled-dateline>Begun and held at the City of Washington on Tuesday, the fifth day of January, two thousand and ten</enrolled-dateline> 
+<legis-num>H. R. 4887</legis-num> 
+<current-chamber display="no"></current-chamber> 
+<legis-type>AN ACT</legis-type> 
+<official-title display="yes">To amend the Internal Revenue Code of 1986 to ensure that health coverage provided by the Department of Defense is treated as minimal essential coverage.</official-title> 
+</form> 
+<legis-body id="HAE9FC05A7DA3460EAAD8FBAACCED60DE" style="OLC"> 
+<section id="HEDB7407441F14CB48F75B3313D60861A" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>TRICARE Affirmation Act</short-title></quote>. </text></section> 
+<section id="HE1DAA8794E8648D4AB20FFB817AA0A86"><enum>2.</enum><header>Treatment of Department of Defense health coverage as minimal essential coverage</header> 
+<subsection id="H76032924D865431987BC2D9E3326F220"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline"><external-xref legal-doc="usc" parsable-cite="usc/26/5000A">Section 5000A(f)(1)(A)</external-xref> of the Internal Revenue Code of 1986, as added by section 1501(b) of the Patient Protection and Affordable Care Act, is amended—</text> 
+<paragraph id="H10B7FFD5AC9E48DEA0C34738C212E21C"><enum>(1)</enum><text>by striking clause (iv) and inserting the following new clause:</text> 
+<quoted-block style="OLC" id="H45558A4396C145E685E322D5760504BE" display-inline="no-display-inline"> 
+<clause id="H7CBB703E2E5A49388C34B3AF1934C844"><enum>(iv)</enum><text display-inline="yes-display-inline">medical coverage under <external-xref legal-doc="usc-chapter" parsable-cite="usc-chapter/10/55">chapter 55</external-xref> of title 10, United States Code, including coverage under the TRICARE program;</text></clause><after-quoted-block>;</after-quoted-block></quoted-block></paragraph> 
+<paragraph id="H52F171179C2D4750853E1A3AFF863AE3"><enum>(2)</enum><text>by striking <quote>or</quote> at the end of clause (v);</text></paragraph> 
+<paragraph id="H85E7C2D325DC4191BA278901E3F3E6C4"><enum>(3)</enum><text>by striking the period at the end of clause (vi) and inserting <quote>; or</quote>; and</text></paragraph> 
+<paragraph id="HBBC2ED89BF814DF48A23FB1B7CC859F0"><enum>(4)</enum><text>by inserting after clause (vi) the following new clause: </text> 
+<quoted-block style="OLC" id="HA726B9B350314D2894C6E00ED125A17B" display-inline="no-display-inline"> 
+<clause id="H493E0E8296D043E38C06391352862C00"><enum>(vii)</enum><text display-inline="yes-display-inline">the Nonappropriated Fund Health Benefits Program of the Department of Defense, established under section 349 of the National Defense Authorization Act for Fiscal Year 1995 (<external-xref legal-doc="public-law" parsable-cite="pl/103/337">Public Law 103–337</external-xref>; <external-xref legal-doc="usc" parsable-cite="usc/10/1587">10 U.S.C. 1587</external-xref> note). </text></clause><after-quoted-block>.</after-quoted-block></quoted-block></paragraph></subsection> 
+<subsection id="H6CE92C1D2DBA41F2B95A36641764598B"><enum>(b)</enum><header>Effective date</header><text>The amendments made by this section shall take effect as if included in section 1501(b) of the Patient Protection and Affordable Care Act and shall be executed immediately after the amendments made by such section 1501(b).</text> </subsection></section> 
+</legis-body> <attestation><attestation-group><role>Speaker of the House of Representatives.</role></attestation-group><attestation-group><role>Vice President of the United States and President of the Senate.</role></attestation-group></attestation>
+</bill> 
+
+

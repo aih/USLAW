@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?xml-stylesheet href="\billres.xsl" type="text/xsl"?>-->
+<!--<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://xml.house.gov/bill.dtd">-->
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill v2.8 20020720//EN" "http://thomas.loc.gov/dtd/bill.dtd">
+<bill bill-stage="Enrolled-Bill" bill-type="olc" dms-id="HE08F1DB673E8428F8EDF60770BE55247" public-private="public" stage-count="1">  
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title> HR 5552 ENR: Firearms Excise Tax Improvement Act of 2010</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date></dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+<distribution-code display="no">I</distribution-code> 
+<congress>One Hundred Eleventh Congress of the United States of America</congress> <session>At the Second Session</session><enrolled-dateline>Begun and held at the City of Washington on Tuesday, the fifth day of January, two thousand and ten</enrolled-dateline> 
+<legis-num>H. R. 5552</legis-num> 
+<current-chamber display="no"></current-chamber> 
+<legis-type>AN ACT</legis-type> 
+<official-title display="yes">To amend the Internal Revenue Code of 1986 to require that the payment of the manufacturers’ excise tax on recreational equipment be paid quarterly and to provide for the assessment by the Secretary of the Treasury of certain criminal restitution.</official-title> 
+</form> 
+<legis-body id="H15961A9EE961494BB887B3E3493A6270" style="OLC"> 
+<section id="HACA5B8949B4E41018AE37544F0688E4F" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>Firearms Excise Tax Improvement Act of 2010</short-title></quote>.</text> </section> 
+<section id="HFEF731921FE5464680F693F7CC9C4BCE" section-type="subsequent-section"><enum>2.</enum><header>Time for payment of manufacturers’ excise tax on recreational equipment</header> 
+<subsection id="H79FC5C88386C462E8086453448B75C5F"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Subsection (d) of <external-xref legal-doc="usc" parsable-cite="usc/26/6302">section 6302</external-xref> of the Internal Revenue Code of 1986 (relating to mode or time of collection) is amended to read as follows:</text> 
+<quoted-block display-inline="no-display-inline" id="H01E8B3968377488DAA81390C2D2AD628" style="OLC"> 
+<subsection id="HCAAE6C8F9C1349D3834CE81BEC51519E"><enum>(d)</enum><header>Time for payment of manufacturers’ excise tax on recreational equipment</header><text display-inline="yes-display-inline">The taxes imposed by subchapter D of <external-xref legal-doc="usc-chapter" parsable-cite="usc-chapter/26/32">chapter 32</external-xref> of this title (relating to taxes on recreational equipment) shall be due and payable on the date for filing the return for such taxes.</text> </subsection><after-quoted-block>.</after-quoted-block></quoted-block> </subsection> 
+<subsection id="H1322F6D6C0954BCBAAB49D1869565706"><enum>(b)</enum><header>Effective date</header><text>The amendment made by subsection (a) shall apply to articles sold by the manufacturer, producer, or importer after the date of the enactment of this Act.</text> </subsection></section> 
+<section id="H048CABA682354B8EBDD58DEE35284E32" section-type="subsequent-section"><enum>3.</enum><header>Assessment of certain criminal restitution</header> 
+<subsection id="H5EE4C69E34F04A7F83CFC18DB5ED8128"><enum>(a)</enum><header>In general</header><text>Subsection (a) of <external-xref legal-doc="usc" parsable-cite="usc/26/6201">section 6201</external-xref> of the Internal Revenue Code of 1986 is amended by adding at the end the following new paragraph:</text> 
+<quoted-block display-inline="no-display-inline" id="H3DF44B7956A244A2A5E943E5E1A9329B" style="OLC"> 
+<paragraph id="H38E3EEB8BF4E4163ACE3D26D89C8EE54"><enum>(4)</enum><header>Certain orders of criminal restitution</header> 
+<subparagraph id="H0B89A99548354FC691D0ED6A1A94F3D3"><enum>(A)</enum><header>In general</header><text>The Secretary shall assess and collect the amount of restitution under an order pursuant to <external-xref legal-doc="usc" parsable-cite="usc/18/3556">section 3556</external-xref> of title 18, United States Code, for failure to pay any tax imposed under this title in the same manner as if such amount were such tax.</text> </subparagraph> 
+<subparagraph id="H37681E200C0A466D98169106204EB4AB"><enum>(B)</enum><header>Time of assessment</header><text>An assessment of an amount of restitution under an order described in subparagraph (A) shall not be made before all appeals of such order are concluded and the right to make all such appeals has expired.</text> </subparagraph> 
+<subparagraph id="HCFB11A07700B4AD4B1845F66C9C704BA"><enum>(C)</enum><header>Restriction on challenge of assessment</header><text>The amount of such restitution may not be challenged by the person against whom assessed on the basis of the existence or amount of the underlying tax liability in any proceeding authorized under this title (including in any suit or proceeding in court permitted under section 7422).</text> </subparagraph></paragraph><after-quoted-block>.</after-quoted-block></quoted-block> </subsection> 
+<subsection id="H0A4E3A348FE6442F817F65B55E233E1A"><enum>(b)</enum><header>Exception from certain restrictions on assessment and collection</header> 
+<paragraph id="H48DEFE1B15544CE9975026A0CD47C380"><enum>(1)</enum><header>No petition to tax court, no restriction on further deficiency letters, etc</header><text>Subsection (b) of section 6213 of such Code is amended by adding at the end the following new paragraph:</text> 
+<quoted-block display-inline="no-display-inline" id="HCE62C3EDE6484150B04CCFBDCDE9B54C" style="OLC"> 
+<paragraph id="HDFAE52502736433FBEF78BAE2744ECB3"><enum>(5)</enum><header>Certain orders of criminal restitution</header><text display-inline="yes-display-inline">If the taxpayer is notified that an assessment has been or will be made pursuant to section 6201(a)(4)—</text> 
+<subparagraph id="HCF8276753F2A4248B9A3C523FCDAB29E"><enum>(A)</enum><text>such notice shall not be considered as a notice of deficiency for the purposes of subsection (a) (prohibiting assessment and collection until notice of the deficiency has been mailed), section 6212(c)(1) (restricting further deficiency letters), or section 6512(a) (prohibiting credits or refunds after petition to the Tax Court), and</text> </subparagraph> 
+<subparagraph id="H69E4F86011EC4C0C906ADDF87902E563"><enum>(B)</enum><text display-inline="yes-display-inline">subsection (a) shall not apply with respect to the amount of such assessment.</text> </subparagraph></paragraph><after-quoted-block>.</after-quoted-block></quoted-block> </paragraph> 
+<paragraph id="HD1141CF635BB46CB899E56B3D593602A"><enum>(2)</enum><header>Time limitations on assessment and collection</header><text>Subsection (c) of section 6501 of such Code is amended by adding at the end the following new paragraph:</text> 
+<quoted-block display-inline="no-display-inline" id="HA90AEBF8EB7C4DD7976D450D93362968" style="OLC"> 
+<paragraph id="H833382680A2746B3855CB6C9B6D21F74"><enum>(11)</enum><header>Certain orders of criminal restitution</header><text display-inline="yes-display-inline">In the case of any amount described in section 6201(a)(4), such amount may be assessed, or a proceeding in court for the collection of such amount may be begun without assessment, at any time.</text> </paragraph><after-quoted-block>.</after-quoted-block></quoted-block> </paragraph></subsection> 
+<subsection id="H8D7542E756F34A419F846F768C5D7586"><enum>(c)</enum><header>Effective date</header><text>The amendments made by this section shall apply to restitution ordered after the date of the enactment of this Act.</text></subsection></section> 
+<section id="H678F28FA676042ABB7963ADB18D44E08"><enum>4.</enum><header>Budgetary provisions</header> 
+<subsection id="H89B28337E6354F9B87B13138FC0D63C8"><enum>(a)</enum><header>Time for payment of corporate estimated taxes</header><text>The percentage under paragraph (2) of section 561 of the Hiring Incentives to Restore Employment Act in effect on the date of the enactment of this Act is increased by 0.25 percentage points.</text> </subsection> 
+<subsection id="H1C9E605DAAE04AB6B23D75E7F1D8FA8D"><enum>(b)</enum><header>Paygo compliance</header><text display-inline="yes-display-inline">The budgetary effects of this Act, for the purpose of complying with the Statutory Pay-As-You-Go Act of 2010, shall be determined by reference to the latest statement titled <quote>Budgetary Effects of PAYGO Legislation</quote> for this Act, submitted for printing in the Congressional Record by the Chairman of the House Budget Committee, provided that such statement has been submitted prior to the vote on passage.</text></subsection></section> 
+</legis-body> <attestation><attestation-group><role>Speaker of the House of Representatives.</role></attestation-group><attestation-group><role>Vice President of the United States and President of the Senate.</role></attestation-group></attestation>
+</bill> 
+
+

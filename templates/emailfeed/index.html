@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include "emailfeed/post_list.html" %}
+
+<div style="float:left; width:100%; margin-top:20px; border-top:1px solid #E5EAEF;">
+  {% include "paginator.html" %}
+</div>
+{% endblock %}
+

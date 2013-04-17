@@ -1,0 +1,19 @@
+Dependencies:
+ * django
+ * lxml
+
+Installation of U.S. code display:
+ * create database: mysql -e 'create database uslaw charset utf8'
+ * copy settings_local.py.template to settings_local.py and adjust
+   your database setting
+ * Run: python manage.py syncdb
+ * Create var/xml directory
+ * Fetch XML files. Simply run command ./fetch.sh. It fetches required tgz
+   files to var/xml directory and unpack them
+ * Run python manage.py runserver 0.0.0.0:8000 and try to see the site in browser
+ * Ok, now it is time to parse XML files. Run following command:
+   python manage import_us_code_xml.
+ * Wait some hours...
+ * Done.
+
+alter table auth_user alter  "username" type varchar(100);
