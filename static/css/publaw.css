@@ -1,0 +1,853 @@
+a {
+ /*   color: blue;
+    text-decoration: none;*/
+}
+.allcap {
+    text-transform:uppercase;
+		
+}
+allcapDiv {
+    text-transform:uppercase;
+    font-size: 16pt;
+		
+}
+.largecap				{
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 18pt;
+}
+.mediumcap				{
+		font-variant: small-caps;
+		font-weight: bold;
+		font-size: 16pt;
+		}				
+.smallcap				{
+		font-variant: small-caps;
+		font-weight: bold;																				
+		}	
+.allcapnormal				{
+
+		font-size: 12pt;
+		text-transform: uppercase;																				
+		}				
+.iscap					{
+		font-variant: small-caps;
+		font-weight: bold;
+		text-transform: capitalize;
+		}	
+.simplecap				{
+		font-variant: small-caps;
+		}
+.simplecapEx 
+                            {
+                                font-size: 12pt;
+                                text-transform: uppercase;
+                            }
+.initialcap				{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: small-caps;
+		font-weight: bold;
+		text-transform: capitalize;
+		}								
+.hang					{
+		text-indent: -2em;		
+		}
+.indent					{
+		text-indent: 2em;
+		}
+		
+.indentSubsection			{
+		text-indent: 2em;
+		margin-left: 0em;
+		text-align:justify;
+		}	
+.indentParagraph			{
+		text-indent: 2em;
+		margin-left: 2em;
+		text-align:justify;
+		}
+.indentSubpar                                                {
+		text-indent: 2em;
+		margin-left: 4em;
+		text-align:justify;
+		}
+.indentClause                                                   {
+		text-indent: 2em;
+		margin-left: 6em;
+		text-align:justify;
+		}
+.indentSubclause                                         {
+		text-indent: 2em;
+		margin-left: 8em;
+		text-align:justify;
+		}
+.indentItem                                                      {
+		text-indent: 2em;
+		margin-left: 10em;
+		text-align:justify;
+		}
+.indentSubItem				{
+		text-indent: 2em;
+		margin-left: 12em;
+		text-align:justify;
+		}
+indentSubsection			{
+		text-indent: 2em;	
+		text-align:justify;
+		}	
+		
+.nonIndentSubsection                                {
+                            text-indent:0em;
+                            margin-left:0em;
+                            text-align:justify;
+                            }
+.noindentParagraph			{
+		text-indent: 0em;
+		margin-left: 2em;
+		text-align:justify;
+		}
+.noindentSubpar                                                {
+		text-indent: 0em;
+		margin-left: 4em;
+		text-align:justify;
+		}
+.noindentClause                                                   {
+		text-indent: 0em;
+		margin-left: 6em;
+		text-align:justify;
+		}
+.noindentSubclause                                         {
+		text-indent: 0em;
+		margin-left: 8em;
+		text-align:justify;
+		}
+.noindentItem                                                      {
+		text-indent: 0em;
+		margin-left: 10em;
+		text-align:justify;
+		}
+.noindentSubItem				{
+		text-indent: 0em;
+		margin-left: 12em;
+		text-align:justify;
+		}
+.
+.indentTax				{
+		text-indent: 2em;
+		font-weight: normal;
+		font-size:13pt;		
+		}
+.legisnum				{ 
+		font-size: 37pt;
+		font-weight: bold;
+		}
+.legisnumAvg			{						
+		font-size: 36pt;						
+		font-weight: bold;
+		letter-spacing: -2;							
+		}		
+.legisnumlrg			{				
+		font-size: 37pt;
+		font-weight: bold;	
+		letter-spacing: -3;				
+		}
+.legisnumSml			{				
+		font-size: 17pt;
+		font-weight: bold;											
+		}
+.legistype				{
+		font-size: 30pt;
+		}
+.chamber				{
+		font-size: 15pt;
+		}
+.chamberEngrHouse		{
+		font-size: 20pt;
+		font-weight: bold;
+		font: italic;
+		}
+.congressEnrolled		{
+		font-size: 30pt;
+		font-weight: bold;
+		font-family: Monotype Corsiva;
+		}
+.legisEnrolled			{
+		font-size: 30pt;
+		font-weight: bold;
+		font-family: Monotype Corsiva;
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;						
+		text-transform: capitalize;
+		}
+.legisEngrossed			{
+		font-size: 30pt;
+		font-weight: bold;
+		font-family: Monotype Corsiva;
+		word-spacing: 2;
+		letter-spacing: 1;						
+		text-transform: capitalize;
+		}
+.sessionEnrolled		{
+		font-size: 12pt;
+		font-weight: bold;						
+		}
+.dateEnrolled		{
+		font-size: 10pt;						
+		font: italic;
+		font-weight: bold;
+		}							
+.biglevel				{
+		font-size: 26pt;
+		font-weight: bold;
+		}				
+.leftjustify 			{
+		text-indent: 0em;					
+		text-align: justify;
+		}
+.leftjustifyct 			{
+		text-indent: 0em;
+		}
+.thinspace				{
+		word-spacing: -5;
+		}
+.nSpace				{
+		word-spacing: -1;
+		}
+.ommitedTextSpace				{
+		word-spacing: 60;
+		}
+.initialcapArchaic		{
+		font-variant: normal;
+		text-transform: capitalize;
+		}
+.sectionlevelOLC		{						
+		font-size:12pt;
+		font-weight:bold;		
+		}
+.boldfacesectionlevelOLC{
+		font-size:14pt;
+		font-weight:bold;				
+		}
+.sectionlevelOLCBold	{
+		font-size:14pt;
+		font-weight:bold;						
+		}				
+.divisionlevelOLC		{		
+		font-size:18pt;
+		font-weight:bold;
+		}				
+.titlelevelOLC			{
+		font-size:18pt;
+		font-weight:bold;
+		}
+.subtitlelevelOLC		{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:18pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}	
+.subtitlelevelOLCBold	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:20pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}
+.chapterlevelOLC		{		
+		font-size:16pt;
+		font-weight:bold;				
+		}
+.chapterlevelOLCBold	{		
+		font-size:20pt;
+		font-weight:bold;
+		}
+.subchapterlevelOLC		{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:16pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}
+.subchapterlevelOLCBold	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:20pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}
+.chapterlevelOLCnuclear		{		
+		font-size:16pt;						
+		}
+.sectionlevelOLCnuclear		{		
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: small-caps;						
+		text-transform: capitalize;
+		}
+.partlevelOLC			{		
+		font-size:14pt;
+		font-weight:bold;
+		}
+.partlevelOLCBold		{		
+		font-size:20pt;
+		font-weight:bold;
+		}
+.subpartlevelOLC		{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:14pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}
+.subpartlevelOLCBold	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:20pt;
+		font-weight:bold;
+		text-transform: capitalize;
+}
+.tocsectionOLC			{		
+		font-size: 80%;						
+		text-indent: -2em;
+		margin-left: 2em;						
+		}
+.tocdivisionOLC			{			
+		font-size: 11pt;
+		}
+.tocsubdivisionOLC		{			
+		font-size: 10pt;
+		font-variant: small-caps;
+		text-transform: capitalize;
+		}
+.tocsubdivisionwithEnumOLC	{			
+		font-size: 10pt;		
+		}
+.toctitleOLC			{
+		font-size: 11pt;
+		}
+.tocsubtitleOLC			{
+		font-variant: normal;
+		text-transform: capitalize;
+		font-size: 11pt;
+		}		
+.tocsubtitlewithenumOLC			{
+		font-variant: normal;		
+		font-size: 11pt;
+		}
+.tocchapterOLC			{
+		font-size: 11pt;
+		}
+.tocsubchapterOLC		{						
+		font-size: 9pt;
+		}
+.tocpartOLC			{						
+		font-size: 11pt;
+		}
+.tocsubpartOLC     		{
+		font-variant: small-caps;
+		font-size: 9pt;
+		}				
+.mediumcapTrad			{				
+		font-variant: small-caps;
+		font-weight: bold;
+		font-size: 14pt;
+		}	
+.smallcapTrad			{	
+		font-variant: small-caps;						
+		font-size: 12pt;
+		}
+.initialcapTrad			{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-size: 14pt;
+		font-variant: small-caps;
+		text-transform: capitalize;
+
+		}
+.largecapTrad			{						
+		font-variant: small-caps;						
+		font-size: 16pt;
+		}
+.sectionlevelTrad		{			
+		font-size:12pt;
+		}
+.sectionTitleTrad 		{
+		font-variant: small-caps;
+		text-transform: capitalize;
+		}
+.sectionlevelTradBold	{			
+		font-size:14pt;
+		}
+.titlelevelTrad			{
+		font-size:16pt;
+		font-variant: small-caps;
+		text-transform: capitalize;
+		}		
+		
+.titlelevelTradIn			{
+		font-size:16pt;
+		text-transform: uppercase;
+		font-weight:bold;
+		}		
+.titlelevelTradEx
+                            {
+                            font-size:16pt;		
+		text-transform: uppercase;
+                            }
+.titlelevelTradBold		{
+		font-size:18pt;
+		}
+.subtitlelevelTrad		{
+		font-size:16pt;
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		text-transform: capitalize;
+		}
+.subtitlelevelTradBold	{
+		font-size:16pt;
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		text-transform: capitalize;
+}
+.partlevelTrad			{
+    		font-size:16pt;
+    		font-variant: small-caps;
+    		text-transform: capitalize;
+    		}
+.partlevelTradBold		{
+		font-size:18pt;
+		}
+.subpartlevelTrad		{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:16pt;
+		text-transform: capitalize;
+		}
+.subpartlevelTradBold	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:18pt;
+		text-transform: capitalize;
+		}
+.chapterlevelTrad		{
+		word-spacing: 2;
+		letter-spacing: 1;						
+		text-transform: uppercase; 
+		font-size:16pt;
+		font-weight:bold;
+		}
+.chapterlevelTradBold	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		text-transform: capitalize;
+		font-size:16pt;
+		font-weight:bold;
+		}
+.subchapterlevelTrad	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: small-caps;
+		text-transform: capitalize;
+		font-size:16pt;
+		}
+.subchapterlevelTradEx
+                            {
+                            word-spacing: 2;
+		letter-spacing: 1;		
+		text-transform: uppercase;
+		font-size:16pt;
+                            }
+.subchapterlevelTradInline	{
+		word-spacing: 2;
+		letter-spacing: 1;	
+		font-variant: small-caps;
+		font-size:16pt;			
+		}
+.subchapterlevelTradBold {
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: small-caps;
+		text-transform: capitalize;
+		font-size:18pt;
+		}
+.tocsectionTrad			{		
+	
+		font-size: 80%;
+		text-indent: -2em;
+		margin-left: 2em;
+		}
+.toctitleTrad			{												
+		font-size: 11pt;
+		font-variant: normal;			
+		}
+.tocsubtitleTrad		{		
+		font-size: 11pt;					
+		}
+.tocchapterTrad     	{						
+		font-variant: small-caps;						
+		text-transform: capitalize;
+		font-size: 11pt;	
+		}
+.tocsubchapterTrad		{
+		font-variant: normal;
+		
+		font-size: 11pt;
+		}
+.tocpartTrad     		{				
+		font-variant: small-caps;
+		font-size: 10pt;
+		}
+.tocsubpartTrad     	{
+		font-variant: normal;		
+		font-size: 10pt;
+		}
+.sectionlevelIRC		 {				
+            	               font-size:12pt;
+                    	font-weight:bold;				
+    		}
+.sectionlevelIRCEx		{				
+        	                font-size:12pt;
+        	                font-weight:bold;
+        	                text-transform: uppercase;
+		}
+.sectionlevelIRCBold	{
+		font-size:14pt;
+		font-weight:bold;
+		}				
+.titlelevelIRC			{
+		font-size:18pt;
+		font-weight:bold;
+		}
+.titlelevelIRCEx			{
+		font-size:18pt;
+		font-weight:bold;
+		text-transform: uppercase;	
+		}
+.subtitlelevelIRC		{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:18pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}
+.subtitlelevelIRCBold	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:22pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}
+.chapterlevelIRC		{
+		font-size:16pt;
+		font-weight:bold;
+		}
+		
+.chapterlevelIRCEx		{
+		font-size:16pt;
+		font-weight:bold;
+		text-transform: uppercase;	
+		}
+		
+.chapterlevelIRCBold	{
+		font-size:20pt;
+		font-weight:bold;
+		}
+.subchapterlevelIRC		{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:16pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}
+.subchapterlevelIRCBold	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:20pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}
+.partlevelIRC			{
+		font-size:14pt;
+		font-weight:bold;
+		}
+.partlevelIRCEx			{
+		font-size:14pt;
+		font-weight:bold;		
+		text-transform: uppercase;
+		}
+.partlevelIRCBold		{		
+		font-size:20pt;
+		font-weight:bold;
+		}
+.subpartlevelIRC		{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:14pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}	
+.subpartlevelIRCBold	{
+		word-spacing: 2;
+		letter-spacing: 1;
+		font-variant: normal;
+		font-size:20pt;
+		font-weight:bold;
+		text-transform: capitalize;
+		}														
+.tocsectionIRC			{							
+		font-size:11pt;
+		}
+.tocsectionIRCTax		{			
+							
+		font-size:11pt;
+		font-variant: normal;
+		text-transform: capitalize;
+		}
+.tocsectionIRCBold		{
+	font-size:12pt;
+		}
+.toclowercaseIRC		{							
+		font-size:11pt;						
+		}
+.toclowercaseIRCBold	{							
+		font-size:12pt;						
+		}
+.tocchapterIRC			{			
+		font-size: 11pt;
+		}
+.tocBigcapsLowcapsIRC	{
+		font-size:11pt;
+		font-variant: small-caps;
+		text-transform: capitalize;
+		}
+.tocBigcapsLowcapsIRCBold{
+		font-size:12pt;
+		font-variant: small-caps;
+		text-transform: capitalize;
+		}
+.tocpartIRC			{
+		font-variant: normal;
+		text-transform: capitalize;
+		font-size: 11pt;
+		}
+.tocpartIRCTax			{
+		font-variant: normal;
+		font-size: 11pt;
+		}
+.tocpartIRCBold			{
+		font-variant: normal;
+		text-transform: capitalize;
+		font-size: 12pt;
+		}
+.tocsubpartIRC			{
+		font-variant: normal;
+		text-transform: capitalize;
+		font-size: 11pt;
+		}
+.tocsubpartIRCBold		{
+		font-variant: normal;
+		text-transform: capitalize;
+		font-size: 12pt;
+		}
+.initialcapIRC			{
+		word-spacing: 2;
+		font-variant: small-caps;
+		text-transform: capitalize;
+		}
+.sectionlevelUSC		{		
+	
+		font-size:14pt;
+		font-weight:bold;
+		}
+.smallcapUSC			{							
+		font-size: 12pt;
+		}
+.initialcapUSC			{	
+		font-variant: small-caps;						
+		font-size: 14pt;
+		}
+.titlelevelUSC			{						
+		font-size:18pt;
+		font-weight:bold;
+		}
+.subtitlelevelUSC		{		
+		font-size:12pt;
+		font-weight:bold;
+		font-variant: normal;
+		text-transform: capitalize;
+		}				
+.chapterlevelUSC		{		
+		font-size:14pt;
+		font-weight:bold;
+		}
+.subchapterlevelUSC		{		
+		font-size:14pt;									
+		}
+.subchapterlevelUSCEx		{		
+		font-size:14pt;	
+		text-transform:uppercase;
+		}
+.partlevelUSC			{		
+		font-size:14pt;
+		font-weight:bold;
+		}
+.tocsectionUSC			{		
+	
+		font-size: 80%;						
+		text-indent: -2em;
+		margin-left: 2em;				
+		}					
+.dot-leader				{			
+		vertical-align:bottom;
+		background-image:url(dot_line1.gif);
+		background-repeat:repeat-x;
+		background-position: bottom;
+		}
+.td						{
+		/*background-color: #FFFFFF;*/
+		font-size:90%;
+		}	
+.calendarOLC			{
+		font-size:24pt;
+		font-weight:bold;
+		letter-spacing: -1;						
+		}	
+.calendarOLCLongTitle			{
+		font-size:24pt;
+		font-weight:bold;
+		letter-spacing: -1;
+				
+						
+		}	
+.associatedDocOLC		{
+		font-size:14pt;
+		font-weight:bold;
+		}
+.hangtable				{
+		text-indent: -3em;
+		font-size:10pt;											
+		}
+.EndsmtHead				{
+		font-size:12pt;
+		font-weight:bold;
+		}
+.EndsmtSimpleCap		{
+		font-size:10pt;						
+		font-variant: small-caps;
+		}
+.EndsmtMediumCap		{
+		font-size:20pt;
+		font-weight:bold;
+		}
+.EndsmtLargeCap			{
+		font-size:28pt;
+		font-weight:bold;						
+		}
+.PageBreakAfter			{
+		page-break-before: always;
+		}
+.smtlegisnum			{				
+		font-size: 28pt;
+		font-weight: bold;
+		}
+.smtlegisnumAvg			{
+		font-size: 28pt;
+		font-weight: bold;
+		letter-spacing: -2;
+		}
+.smtlegisnumlrg			{
+		font-size: 28pt;
+		font-weight: bold;
+		letter-spacing: -3;
+		}
+.bold				{
+		font-weight: bold;
+		}	
+.brakets			{
+		font-size: 16pt;
+		font-weight: bold;
+		font-family: Arial;						
+		}
+sub				{
+		font-size: 10pt				
+		}	
+sup			{
+		font-size: 10pt
+		}
+.Attest				{
+		font-size: 13pt
+		}
+	
+.headerAppropMajor {
+                             font-size: 16pt; 		
+		text-transform: uppercase;		
+		}	
+.headerAppropMajorItalic {
+                             font-size: 16pt; 		
+		text-transform: uppercase;	
+		font:italic;
+		}
+.headerAppropIntermediate {
+     		font-size:16pt;
+    		font-variant: small-caps;
+    		text-transform: capitalize;    		
+    		}
+.headerAppropIntermediateItalic {
+     		font-size:16pt;
+    		font-variant: small-caps;
+    		text-transform: capitalize;    
+    		font:italic;
+    		}
+.headerAppropSmall {
+		font-variant: small-caps;
+		text-transform:lowercase;		
+		}
+.headerAppropSmallItalic {
+		font-variant: small-caps;
+		text-transform:lowercase;		
+		font:italic;
+		}
+.subheaderApprop {
+ 		font-variant: small-caps;
+ 		text-transform: lowercase;
+		}
+.subheaderAppropItalic {
+ 		font-variant: small-caps;
+ 		text-transform: lowercase;
+ 		font:italic;
+		}
+		
+.allnormal  {
+                            font-variant: normal;
+                            text-transform: lowercase;
+                     }   
+		
+P.breakhere {page-break-before: always}
+			
+		
+
+body					{
+/*    font-size: 14pt;
+    margin-left: 40pt;
+    margin-right: 40pt;						*/
+}																									
+						
