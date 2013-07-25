@@ -14,7 +14,7 @@ from django.core.mail import send_mail, EmailMessage
 
 from djangosphinx.models import SphinxSearch
 from utils.utils import humanizeTimeDiff
-from uslaw.users.models import Profile, EmailTemplate
+from users.models import Profile, EmailTemplate
 
 from local_settings import from_email, SITE_URL, MEDIA_URL
 

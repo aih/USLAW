@@ -6,7 +6,7 @@
   {% autoescape off %}
   {% for r in page.object_list %}
   <div class="list_item" id="item-{{ r.id }}">
-    <a href="{% url view_formsandinstructions r.id %}">{{ r.product_number }} - {{ r.title|safe }}</a>
+    <a href="{% url 'view_formsandinstructions' r.id %}">{{ r.product_number }} - {{ r.title|safe }}</a>
   </div>
   {% endfor %}
   {% endautoescape %}

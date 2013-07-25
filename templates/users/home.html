@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block extrahead %}
-<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.form.js"></script>
-<script type="text/javascript" src="{{ MEDIA_URL }}js/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.form.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/tiny_mce/tiny_mce.js"></script>
 {% include "posts/post_validation.html" %}
 {% include "users/home_js.html" %}
 <script>
@@ -73,7 +73,7 @@ $(document).ready(function(){
     </div>
   </div>
   <div class="block width100" id="question_spinner" style="text-align:center; display:none;">
-    <img src="{{ MEDIA_URL }}img/spinner2.gif" />
+    <img src="{{ STATIC_URL }}img/spinner2.gif" />
   </div>
   <div class="block width100 question" id="question_form_block_id" style="text-align:center;">
     <form id="question_form" action="/posts/get-posts/" method="post">{% csrf_token %}
@@ -90,7 +90,7 @@ $(document).ready(function(){
     </div>
   </div>
   <div class="block width100" id="spinner" style="text-align:center; display:none;">
-    <img src="{{ MEDIA_URL }}img/spinner2.gif" />
+    <img src="{{ STATIC_URL }}img/spinner2.gif" />
   </div>
   <div class="block width100" id="form_block_id" style="text-align:center;">
     <form id="posts_form" action="/posts/get-posts/" method="post">{% csrf_token %}

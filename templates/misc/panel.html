@@ -1,6 +1,6 @@
 {% if searchform %}
 <div class="left" style="margin-bottom:20px;">
-  <form method="get" action="{% url laws_search %}/" id="id_search_form" onSubmit="if ($('#id_query').val()=='{{ searchform.query.label }}') {return false;}">
+  <form method="get" action="{% url 'laws_search' %}/" id="id_search_form" onSubmit="if ($('#id_query').val()=='{{ searchform.query.label }}') {return false;}">
     <div class="left">    
       {{ searchform.query }} {{ searchform.query.errors }}  
     </div>

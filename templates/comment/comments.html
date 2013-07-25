@@ -7,7 +7,7 @@
 	{% if user.is_staff %}
 	<b>&nbsp;Admin: <a href="/admin/comment/comment/{{ comment.id }}/delete/">[Del]</a> <a href="/admin/comment/comment/{{ comment.id }}/">[Edit]</a>:</b>
 	{% else %}
-	  {% if user == comment.profile.user %}&nbsp; <b><a href="{% url del_comment comment.id %}">[Del]</a> <a href="{% url edit_comment comment.id %}">[Edit]</a>:</b> {% endif %} 
+	  {% if user == comment.profile.user %}&nbsp; <b><a href="{% url 'del_comment' comment.id %}">[Del]</a> <a href="{% url 'edit_comment' comment.id %}">[Edit]</a>:</b> {% endif %} 
 	{% endif %}
 	<div class="left">
 	  <a class="a_color" href="{{ comment.get_absolute_url }}"></a> <a href="{{ comment.profile.get_absolute_url }}">{{ comment.profile.user.first_name }}   {{ comment.profile.user.last_name }}</a>
@@ -26,7 +26,7 @@
 
       <div class="left" title="{% if comment.rate > 0 %}{{ comment.rate }} people like this comment{% endif %}">{{ comment.text|linebreaks|usc_links|safe }}</div> 
       <div title="{{ comment.rate }} people like this comment" class="right big24" id="id_comment_rate-{{ comment.id }}" style="padding-top:10px;">
-	{{ comment.rate }} <a class="pointer vote" onclick="voteup({{ comment.id }});"><img title="I like this!" src="{{ MEDIA_URL }}img/thumbs_up.png" width="20px" /></a><!--<br /> <a class="pointer vote" onclick="votedown({{ comment.id }});">↓</a>-->
+	{{ comment.rate }} <a class="pointer vote" onclick="voteup({{ comment.id }});"><img title="I like this!" src="{{ STATIC_URL }}img/thumbs_up.png" width="20px" /></a><!--<br /> <a class="pointer vote" onclick="votedown({{ comment.id }});">↓</a>-->
       </div>
 	<div class="right big14">
 	   

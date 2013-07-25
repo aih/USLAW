@@ -10,8 +10,8 @@ from djangosphinx.models import SphinxSearch
 from django.db import models
 from django import forms
 
-from uslaw.utils.utils import humanizeTimeDiff
-from uslaw.users.models import Profile
+from utils.utils import humanizeTimeDiff
+from users.models import Profile
 from tags.models import Tag
 
 class PostType(models.Model):

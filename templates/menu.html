@@ -7,17 +7,17 @@
           {% else %}
 	  <div class="menu_item{% if active_section == 'home' %} active{% endif %}" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">Home</a></div>
           {% endif %}
-	  <div class="menu_item" id="id_page_help" style="display:none;"><img src="{{ MEDIA_URL }}img/help.png" alt="?" /></div>
+	  <div class="menu_item" id="id_page_help" style="display:none;"><img src="{{ STATIC_URL }}img/help.png" alt="?" /></div>
 
 	  <div class="menu_item" onmouseover="$('#settings_menu').show();" onmouseout="$('#settings_menu').hide();">
-	    <a class="pointer"><img src="{{ MEDIA_URL }}img/options.png" width="18px;" /></a>
+	    <a class="pointer"><img src="{{ STATIC_URL }}img/options.png" width="18px;" /></a>
 	    <div id="settings_menu">
 	      <div class="dropmenu">
-		<div id="tools_tax_map" class="pointer panel_item width150" onclick="location.href='{% url tax_map %}';">
-		  <a href="{% url tax_map %}" class="menu_link">Tax Map</a>
+		<div id="tools_tax_map" class="pointer panel_item width150" onclick="location.href='{% url 'tax_map' %}';">
+		  <a href="{% url 'tax_map' %}" class="menu_link">Tax Map</a>
 		</div>
 		<div id="tools_most_referenced" class="pointer panel_item width150" onclick="location.href='/laws/most_referenced/?sort=true';">
-		  <a href="{% url most_referenced %}?sort=true" class="menu_link">Statutes Cloud</a>
+		  <a href="{% url 'most_referenced' %}?sort=true" class="menu_link">Statutes Cloud</a>
 		</div>
   
 		{% if user.is_authenticated %}
@@ -56,7 +56,7 @@
 		</div>
 		{% else %}
 		<div id="profile_signout" class="pointer panel_item width150">
-		  <a href="{% url login %}">Please sign in to use this feature.</a>
+		  <a href="{% url 'login' %}">Please sign in to use this feature.</a>
 		</div>
 		{% endif %}
 		{% endif %}
@@ -68,32 +68,32 @@
 	    <div id="browse_menu">
 	      <div class="dropmenu">
 		<div id="browse_statutes" class="pointer panel_item width150">
-		  <a href="{% url laws_title_redirect 26 %}" class="menu_link">Statutes</a>
+		  <a href="{% url 'laws_title_redirect' 26 %}" class="menu_link">Statutes</a>
 		</div>
 		<div id="browse_regulations" class="pointer panel_item width150">
-		  <a href="{% url regulations %}">Regulations</a>
+		  <a href="{% url 'regulations' %}">Regulations</a>
 		</div>
 		<div id="browse_revenue" class="pointer panel_item width150">
-		  <a href="{% url irsrulings %}" class="menu_link">IRS&nbsp;Revenue&nbsp;Rulings</a>
+		  <a href="{% url 'irsrulings' %}" class="menu_link">IRS&nbsp;Revenue&nbsp;Rulings</a>
 		</div>
 		<div id="browse_letters" class="pointer panel_item width150">
-		  <a href="{% url written_determinations %}" class="menu_link">Written Determinations</a>
+		  <a href="{% url 'written_determinations' %}" class="menu_link">Written Determinations</a>
 		</div>
 		<div id="browse_forms" class="pointer panel_item width150">
-		  <a href="{% url formsandinstructions %}" class="menu_link">Forms And Instructions</a>
+		  <a href="{% url 'formsandinstructions' %}" class="menu_link">Forms And Instructions</a>
 		</div>
 		<div id="browse_publications" class="pointer panel_item width150">
-		  <a href="{% url publications %}" class="menu_link">Publications</a>
+		  <a href="{% url 'publications' %}" class="menu_link">Publications</a>
 		</div>
 		<div id="browse_aod" class="pointer panel_item width150">
-		  <a href="{% url decisions %}" class="menu_link">Actions on Decisions</a>
+		  <a href="{% url 'decisions' %}" class="menu_link">Actions on Decisions</a>
 		</div>
 		<div id="browse_iletters" class="pointer panel_item width150">
-		  <a href="{% url iletters %}" class="menu_link">Information Letters</a>
+		  <a href="{% url 'iletters' %}" class="menu_link">Information Letters</a>
 		</div>
 	      </div>
 	    </div>
 	  </div> 
-	  <div class="menu_item{% if active_section == 'search' %} active{% endif %}"><a href="{% url laws_search %}">Search</a></div>  
+	  <div class="menu_item{% if active_section == 'search' %} active{% endif %}"><a href="{% url 'laws_search' %}">Search</a></div>  
 	  {% endblock %} 
 	</div>

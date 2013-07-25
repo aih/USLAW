@@ -1,10 +1,10 @@
 {% autoescape off %}
 <div class="left big18 padding5 width100">My Documents:</div>
 <br /><br />
-<span id="user_document_list"><img width="20px;" src="{{ MEDIA_URL }}img/spinner.gif" /></span>
-<span id="tmp-{{ object_.id }}" style="display:none;"><img width="20px;" src="{{ MEDIA_URL }}img/spinner.gif" /></span>
+<span id="user_document_list"><img width="20px;" src="{{ STATIC_URL }}img/spinner.gif" /></span>
+<span id="tmp-{{ object_.id }}" style="display:none;"><img width="20px;" src="{{ STATIC_URL }}img/spinner.gif" /></span>
 <hr />
-<div class="left"  style="width:80%; border-right:1px solid gray;">{% if object_ %}<a onclick="$('#tmp-{{ object_.id }}').show().load('/document/save/?object_id={{ object_.id }}&content_type_id={{ content_type.id }}');" class="pointer green"><img src="{{ MEDIA_URL }}img/save.png" width="10px" /> Save </a>{{ object_|truncatewords:5 }}{% endif %}</div>
-<div class="right"><a href="#" onclick="$('#user_panel').hide();"><img src="{{ MEDIA_URL }}img/close.png" width="12px" /> Close</a></div>
+<div class="left"  style="width:80%; border-right:1px solid gray;">{% if object_ %}<a onclick="$('#tmp-{{ object_.id }}').show().load('/document/save/?object_id={{ object_.id }}&content_type_id={{ content_type.id }}');" class="pointer green"><img src="{{ STATIC_URL }}img/save.png" width="10px" /> Save </a>{{ object_|truncatewords:5 }}{% endif %}</div>
+<div class="right"><a href="#" onclick="$('#user_panel').hide();"><img src="{{ STATIC_URL }}img/close.png" width="12px" /> Close</a></div>
 
 {% endautoescape %}

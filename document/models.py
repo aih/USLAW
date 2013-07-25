@@ -9,7 +9,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django import forms
 
-from uslaw.users.models import Profile
+from users.models import Profile
 
 
 class Document(models.Model):

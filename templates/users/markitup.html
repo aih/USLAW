@@ -1,4 +1,4 @@
-<script type="text/javascript" src="{{ MEDIA_URL }}markitup/jquery.markitup.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}markitup/jquery.markitup.js"></script>
 <script type="text/javascript" >
    $(document).ready(function() {
 myHtmlSettings = {
@@ -38,30 +38,30 @@ myHtmlSettings = {
   width:40px;
 }
 .html .markItUpButton1 a {
-	background-image:url({{ MEDIA_URL }}img/icons/b.png); 
+	background-image:url({{ STATIC_URL }}img/icons/b.png); 
      
 }
 .html .markItUpButton2 a {
-	background-image:url({{ MEDIA_URL }}img/icons/i.png); 
+	background-image:url({{ STATIC_URL }}img/icons/i.png); 
 }
 .html .markItUpButton3 a {
-	background-image:url({{ MEDIA_URL }}img/icons/s.png); 
+	background-image:url({{ STATIC_URL }}img/icons/s.png); 
 }
 .html .markItUpButton4 a {
-	background-image:url({{ MEDIA_URL }}img/icons/h1.png); 
+	background-image:url({{ STATIC_URL }}img/icons/h1.png); 
 }
 
 .html .markItUpButton5 a {
-	background-image:url({{ MEDIA_URL }}img/icons/h2.png); 
+	background-image:url({{ STATIC_URL }}img/icons/h2.png); 
 }
 .html .markItUpButton6 a {
-	background-image:url({{ MEDIA_URL }}img/icons/h3.png); 
+	background-image:url({{ STATIC_URL }}img/icons/h3.png); 
 
 }
 /*
 .html .markItUpButton7 a {
-	background-image:url({{ MEDIA_URL }}markitup/images/stroke.png);
-	background-image:url({{ MEDIA_URL }}markitup/images/h5.png); 
+	background-image:url({{ STATIC_URL }}markitup/images/stroke.png);
+	background-image:url({{ STATIC_URL }}markitup/images/h5.png); 
 }
 */
 .markItUp * {
@@ -131,7 +131,7 @@ myHtmlSettings = {
 	display:block;
 }
 .markItUpHeader ul .markItUpDropMenu {
-/*	background:transparent url({{ MEDIA_URL }}markitup/images/menu.png) no-repeat 115% 50%;*/
+/*	background:transparent url({{ STATIC_URL }}markitup/images/menu.png) no-repeat 115% 50%;*/
 	margin-right:5px;
 }
 .markItUpHeader ul .markItUpDropMenu li {
@@ -162,7 +162,7 @@ myHtmlSettings = {
 	border-bottom:1px solid #3C769D;
 }
 .markItUpHeader ul ul .markItUpDropMenu {
-	background:#F5F5F5 url({{ MEDIA_URL }}markitup/images/submenu.png) no-repeat 100% 50%;
+	background:#F5F5F5 url({{ STATIC_URL }}markitup/images/submenu.png) no-repeat 100% 50%;
 }
 /* next rows of buttons */
 .markItUpHeader ul ul ul {

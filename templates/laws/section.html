@@ -14,14 +14,14 @@ $(document).ready(function(){
 {% endblock %}
 {% if section %}
 {% block menu_extra %}
-<div id="id_print" class="pointer panel_item width150" onmouseover="$('#id_print').addClass('browse-menu-over');" onmouseout="$('#id_print').removeClass('browse-menu-over');"><a target="_blank" href="{{ section.get_print_url }}" class="menu_link" style="text-decoration:none;">Print  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="Print" title="Print section" src="{{ MEDIA_URL }}img/print.png" width="20px" /></a>
+<div id="id_print" class="pointer panel_item width150" onmouseover="$('#id_print').addClass('browse-menu-over');" onmouseout="$('#id_print').removeClass('browse-menu-over');"><a target="_blank" href="{{ section.get_print_url }}" class="menu_link" style="text-decoration:none;">Print  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="Print" title="Print section" src="{{ STATIC_URL }}img/print.png" width="20px" /></a>
 </div>
 {% endblock %}
 {% endif %}
 
 {% block right_panel_add  %}
 <div style="width:100%; padding-top:20px; float:left;">
-  <form action="{% url goto_section %}" method="post" id="goto_form">{% csrf_token %}Go to Section:
+  <form action="{% url 'goto_section' %}" method="post" id="goto_form">{% csrf_token %}Go to Section:
     <input style="font-size:14px;" type="text" name="section_id" id="section_input" size="4" />
     <input type="hidden" name="top_title_id" id="title_input" value="{{ section.top_title_id }}"/>
     <input style="font-size:14px;" class="pointer" type="submit" value=" Ok " /> 
@@ -36,25 +36,25 @@ $(document).ready(function(){
   </div>
   <div id="publaws" class="panel_item res_info2" >
     {% for p in publaws %}
-    <a href="{% url view_publaw p.pl.id %}#{{ p.sectionid }}">{{ p.pl }} Sec. {{ p.plsection }}</a><br />
+    <a href="{% url 'view_publaw' p.pl.id %}#{{ p.sectionid }}">{{ p.pl }} Sec. {{ p.plsection }}</a><br />
     {% empty %}
     Nothing found
     {% endfor %}
   </div>
 
 
-  <div class="panel_item left res pointer" onclick="$('#t_reg').load('{% url load_regulations %}?section={{ section.id }}&source_type=0'); $('#t_reg').toggle('slow');">  
+  <div class="panel_item left res pointer" onclick="$('#t_reg').load('{% url 'load_regulations' %}?section={{ section.id }}&source_type=0'); $('#t_reg').toggle('slow');">  
     Treasury Regulations
   </div>
   <div id="t_reg" class="panel_item res_info2" >
-    <img src='{{ MEDIA_URL }}/img/spinner.gif' alt='spinner' />
+    <img src='{{ STATIC_URL }}/img/spinner.gif' alt='spinner' />
   </div>
 
   <div class="panel_item left res pointer" onclick="$('#irs_r').load('/laws/load_rulings/?section={{ section.id }}&source_type=1'); $('#irs_r').toggle('slow');"> 
     IRS Revenue Rulings
   </div>
   <div id="irs_r" class="panel_item res_info2" >
-    <img src='{{ MEDIA_URL }}/img/spinner.gif' alt='spinner' />
+    <img src='{{ STATIC_URL }}/img/spinner.gif' alt='spinner' />
   </div>
 
   <div class="panel_item left res pointer" onclick="toggle_comments();">Comments ({{ comments|length }})</div>
@@ -128,7 +128,7 @@ $(document).ready(function(){
       <br />
     </div>
     <div style="float:right; cursor:help;" onmouseover="$('#top-information').show('slow');">
-      <img src="{{ MEDIA_URL }}img/question.png" />
+      <img src="{{ STATIC_URL }}img/question.png" />
     </div>
     {% if subsections.0.text == section.header %} 
     {% else %}
@@ -140,7 +140,7 @@ $(document).ready(function(){
        <div title="{{ s.subsection }}" id="{{ s.subsection }}" class="jlevel{{ s.level }} sub{{ s.s_type }} subsection">
       {% if s.subsection != '' %}
       {% if user.is_authenticated and user.username != 'Anonymous' %}
-	<div class="right" style="margin-right:-15px;"><a style="font-size:12px;" href="#{{ s.subsection }}" name="#{{ s.subsection }}"><img src="{{ MEDIA_URL }}img/arrow.png" width="10px;"/></a></div>
+	<div class="right" style="margin-right:-15px;"><a style="font-size:12px;" href="#{{ s.subsection }}" name="#{{ s.subsection }}"><img src="{{ STATIC_URL }}img/arrow.png" width="10px;"/></a></div>
       {% endif %}
       {% endif %} {{ s.text|safe }}
        </div>

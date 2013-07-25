@@ -38,7 +38,7 @@ $(document).ready(function() {
 <input type="submit" onclick="do_search(document.getElementById('search_query').value, 1);" value="Search" />
 </form>
 
-<span id="search_results"><img src='{{ MEDIA_URL }}img/spinner.gif' alt='spinner' /></span>
+<span id="search_results"><img src='{{ STATIC_URL }}img/spinner.gif' alt='spinner' /></span>
 
 <script type="text/javascript" charset="UTF8">//<![CDATA[
     $('#search_results').hide();

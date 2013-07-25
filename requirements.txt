@@ -1,19 +1,19 @@
 lxml
-psycopg2==2.4.1
-django==1.3.1
+psycopg2
+django
 stemming
 django_extensions
 django-sphinx
 django-tinymce
 django-piston
-python2.7
+#python2.7
 PIL
 feedparser
 oauth2
 flup
-stemming
-eautifulSoup
-https://github.com/apresta/tagger
+BeautifulSoup
+-e git+https://github.com/pi11/tagger#egg=tagger
 simplejson
 oauth
-http://python-bitly.googlecode.com/svn/trunk/
+hg+https://bitbucket.org/pi11/python-linkedin#egg=linkedin
+#http://python-bitly.googlecode.com/svn/trunk/
