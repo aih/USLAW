@@ -24,6 +24,7 @@ from django.core import serializers
 from django.db.models import Q
 from django.core.urlresolvers import NoReverseMatch
 from djangosphinx.models import SphinxQuerySet
+from django.shortcuts import render
 
 from laws.models import *
 from laws.forms import *
@@ -35,19 +36,16 @@ from posts.models import Post
 
 #@login_required
 
-@render_to("laws/title_text_ajax.html")
 def title_text_ajax(request, title_id):
     """Load Title object trough  ajah"""
     title = get_object_or_404(Title, pk=title_id)
-    return locals()
+    return render(request, "laws/title_text_ajax.html", {"title":title})
 
-@render_to("laws/topics.html")
 def topics(request):
     """UCS Topics view"""
     topics = USCTopic.objects.all().order_by("order")
-    return locals()
+    return render(request, "laws/title_text_ajax.html", {"topics":topics})
 
-@render_to("laws/section-list.html")
 def load_topic(request):
     """Load topic object"""
     pk = int(request.GET.get("pk", False))
@@ -57,13 +55,15 @@ def load_topic(request):
         int_section__gte=topic.first_section.int_section, 
         int_section__lte=topic.last_section.int_section, 
         top_title=title)
-    return locals()
+    return render(request, "laws/section-list.html", {"pk":pk, "topic":topic,
+                                                      "title":title,
+                                                      "sections":sections})
 
 def section_redirect_map (request, title, pk):
     """Redirect for links from Tax-Map to sections"""
     s = get_object_or_404(Section, pk=pk)
     try:
-        url = s.get_absolute_url()
+        url = s.get_absolute_url() # FIXME
     except:
         raise Http404
     return HttpResponseRedirect(url)
@@ -87,13 +87,13 @@ def section_redirect(request, title, section):
                                   'section':section})
             return HttpResponseRedirect(url)
         else:
-            return HttpResponseRedirect(s.get_absolute_url())
+            return HttpResponseRedirect(s.get_absolute_url()) # FIXME: use reverse
     raise Http404
 
 def title_redirect(request, title):
     """Redirect to Title object using title name (like Title='26')"""
     title = get_object_or_404(Title, title=title, parent=None)
-    return HttpResponseRedirect(title.get_absolute_url())
+    return HttpResponseRedirect(title.get_absolute_url()) # FIXME use reverse
 
 
 def target_to_section(target):
@@ -272,7 +272,6 @@ def hoverbubble(request):
                                   {"subsection":subsection,'section':section},  
                                   context_instance=RequestContext(request))
 
-@render_to("laws/print.html")
 def print_it(request, section_url, section_id, psection=None):
     """View for printing sections"""
     section = get_object_or_404(Section, url=section_url, pk=section_id)
@@ -283,9 +282,11 @@ def print_it(request, section_url, section_id, psection=None):
     subsections = Subsection.objects.filter(section=section).order_by("part_id")
     additional_sections = SectionAdditional.objects.filter( \
                              section=section).order_by('order')
-    return locals()
+    return render(request, "laws/print.html",
+                  {"section":section,
+                   "subsections":subsections,
+                   "additional_sections":additional_sections})
 
-@render_to("laws/preview_section.html")
 def preview_section(request, section_id):
     """Preview section"""
     try:
@@ -295,7 +296,10 @@ def preview_section(request, section_id):
     except Section.DoesNotExist, Subsection.DoesNotExist:
         section = False
         
-    return locals()
+    return render(request, "laws/preview_section.html",
+                  {"section": section,
+                   "subsection":subsection})
+                                                         
 
 def section(request, title, section, section_id, psection=None):
     """Section View"""
@@ -337,11 +341,9 @@ def section(request, title, section, section_id, psection=None):
     tagsform = TaggedItemForm(initial={"next":section_url, 
                                        "content_type":content_type.id, 
                                        "object_id":object_.id})
-    return render_to_response("laws/section.html", locals(),
-                       context_instance=RequestContext(request))
+    return render(request, "laws/section.html", locals())
 
-#@login_required
-@render_to('laws/index.html')
+
 def title_index(request, title_url, title_id):
     """Title Index - list of Titles"""
     active_section = 'browse'
@@ -353,10 +355,8 @@ def title_index(request, title_url, title_id):
     parts = Section.objects.filter(title=title).order_by('int_section')
     nexttitles = Title.objects.filter(parent=title)
     paginator, page, page_range, page_id = prepeare_pagination(parts, request)
-    return locals() 
+    return render(request, "laws/index.html", locals())
 
-#@login_required
-@render_to("laws/index.html")
 def index(request):
     """Laws Index page"""
     active_section = 'browse'
@@ -367,9 +367,8 @@ def index(request):
         profile = Profile.objects.get(user=user)
     except Profile.DoesNotExist:
         pass
-    return locals()
+    return render(request, "laws/index.html", locals())
 
-#@login_required
 def ajah_search(request):  # TODO: Not used view. Maybe remove it?
     """Ajax search"""
     if request.method == u'GET':
@@ -402,28 +401,7 @@ def ajah_search(request):  # TODO: Not used view. Maybe remove it?
     return render_to_response("search/search_ajah.html", locals(),
                               context_instance=RequestContext(request))
 
-# TODO: remove this old views:
-#@login_required
-#def save_document(request, section_id):
-#    section = get_object_or_404(Section, pk=section_id)
-#    l,c = MyLaws.objects.get_or_create(user=get_user_object(request), 
-#                                       section=section)
-#    if c:
-#        return HttpResponse('Saved')
-#    else:
-#        return HttpResponse('Already saved')
 
-#@login_required
-#def delete_document(request, section_id):
-#    section = get_object_or_404(Section, pk=section_id)
-#    l = get_object_or_404(MyLaws, user=get_user_object(request), 
-#                          section=section)
-#    l.delete()
-#    return HttpResponse('Deleted')
-
-
-#@login_required
-@render_to("search/search.html")
 def search(request):
     """Search Page"""
     active_section = 'search'
@@ -573,9 +551,10 @@ def search(request):
         searchform.fields['where'].widget = forms.Select( \
                           choices=SearchForm.SEARCH_CHOICES, 
                           attrs={"class":"right_btn", "style":""})
-    return locals()
 
-@render_to('laws/resources.html')
+    return render(request, "laws/search.html", locals())
+
+
 def load_regulations(request):
     """Regulations ajah view"""
     try:
@@ -587,9 +566,10 @@ def load_regulations(request):
     rs = Regulation.objects.filter(Q(sections=section) \
                                    | Q(main_section =section)
                                    ).distinct().order_by("-rate", "section")
-    return locals()
+    return render(request, "laws/resources.html", {"section_id":section_id,
+                                                   "section":section,
+                                                   "rs":rs})
 
-@render_to('laws/resources.html')
 def load_rulings(request):
     """Rulings ajah view"""
     try:
@@ -600,10 +580,11 @@ def load_rulings(request):
     section = get_object_or_404(Section, pk=section_id)
     rs = IRSRevenueRulings.objects.filter( \
                         sections=section).order_by("-rate")
-    return locals()
+    return render(request, "laws/resources.html", {"section_id":section_id,
+                                                   "section":section,
+                                                   "rs":rs})
 
 
-@render_to("laws/view_regulation.html")
 def view_regulation(request, section):
     """Regulation view"""
     active_section = 'browse'
@@ -633,9 +614,8 @@ def view_regulation(request, section):
     tagsform = TaggedItemForm(initial={"next":r.get_absolute_url(), 
                                        "content_type":content_type.id, 
                                        "object_id":object_.id})
-    return locals()
+    return render(request, "laws/view_regulation.html", locals())
 
-@render_to("laws/view_ruling.html")
 def view_ruling(request, section):
     """Ruling view"""
     active_section = 'browse'
@@ -667,9 +647,8 @@ def view_ruling(request, section):
     tagsform = TaggedItemForm(initial={"next":r.get_absolute_url(), 
                                        "content_type":content_type.id, 
                                        "object_id":object_.id})
-    return locals()
+    return render(request, "laws/view_ruling.html", locals())
 
-@render_to("laws/view_irsprivateletter.html")
 def view_private_letter(request, irs_id):
     """Private letter view"""
     active_section = 'browse'
@@ -696,9 +675,9 @@ def view_private_letter(request, irs_id):
     tagsform = TaggedItemForm(initial={"next":r.get_absolute_url(), 
                                        "content_type":content_type.id, 
                                        "object_id":object_.id})
-    return locals()
+    return render(request, "laws/view_irsprivateletter.html", locals())
+                 
 
-@render_to("laws/irs_private_letters.html")
 def irs_private_letters(request):
     """IRS private letters"""
     active_section = 'browse'
@@ -710,15 +689,13 @@ def irs_private_letters(request):
         pass
     irs = IRSPrivateLetter.objects.filter().order_by("section")
     paginator, page, page_range, page_id = prepeare_pagination(irs, request)
-    return locals()
+    return render(request, "laws/irs_private_letters.html", locals())
 
-@render_to("laws/preview_resource.html")
 def preview_resource(request, r_id):
     """Resource preview"""
     r = get_object_or_404(Resource, pk=r_id)
-    return locals()
+    return render(request, "laws/preview_resource.html", {"r":r})
 
-@render_to("laws/vote.html")
 def vote(request, r_id, v):
     """Vote for resource"""
     r = get_object_or_404(Resource, pk=r_id)
@@ -728,9 +705,8 @@ def vote(request, r_id, v):
     if v == "1":
         r.rate = r.rate + 1
         r.save()
-    return locals()
+    return render(request, "laws/vote.html", {"r":r, "v":v, "r_id":r_id})
 
-@render_to("laws/regulations.html")
 def regulations(request):
     """View regulations list"""
     active_section = 'browse'
@@ -742,9 +718,8 @@ def regulations(request):
         avatar = False
     regulations = Regulation.objects.filter().order_by("order_1", "order_2", "order_3")
     paginator, page, page_range, page_id = prepeare_pagination(regulations, request)
-    return locals()
+    return render(request, "laws/regulations.html", locals())
 
-@render_to("laws/irsrulings.html")
 def irsrulings(request):
     """IRS rulings list"""
     active_section = 'browse'
@@ -757,10 +732,9 @@ def irsrulings(request):
    
     rulings = IRSRevenueRulings.objects.filter().order_by("section")
     paginator, page, page_range, page_id = prepeare_pagination(rulings, request)
-    return locals()
+    return render(request, "laws/irsrulings.html", locals())
 
 
-@render_to("laws/formsandinstructions.html")
 def formsandinstructions(request):
     """View forms and instructions list"""
     active_section = 'browse'
@@ -772,9 +746,8 @@ def formsandinstructions(request):
         avatar = False
     forms = FormAndInstruction.objects.filter().order_by("-product_number")
     paginator, page, page_range, page_id = prepeare_pagination(forms, request)
-    return locals()
+    return render(request, "laws/formsandinstructions.html", locals())
 
-@render_to("laws/view_formsandinstructions.html")
 def view_formsandinstructions(request, pk):
     active_section = 'browse'
     r = get_object_or_404(FormAndInstruction, pk=pk)
@@ -800,9 +773,8 @@ def view_formsandinstructions(request, pk):
     tagsform = TaggedItemForm(initial={"next": r.get_absolute_url(), 
                                        "content_type": content_type.id, 
                                        "object_id": object_.id})
-    return locals()
+    return render(request, "laws/view_formsandinstructions.html", locals())
 
-@render_to("laws/publications.html")
 def publications(request):
     """View publications list"""
     active_section = 'browse'
@@ -814,9 +786,8 @@ def publications(request):
         avatar = False
     publications = Publication.objects.filter().order_by("-product_number")
     paginator, page, page_range, page_id = prepeare_pagination(publications, request)
-    return locals()
+    return render("laws/publications.html", locals())
 
-@render_to("laws/view_publication.html")
 def view_publication(request, pk):
     """View Publication"""
     active_section = 'browse'
@@ -843,10 +814,9 @@ def view_publication(request, pk):
     tagsform = TaggedItemForm(initial={"next": r.get_absolute_url(), 
                                        "content_type": content_type.id, 
                                        "object_id": object_.id})
-    return locals()
+    return render(request, "laws/view_publication.html", locals())
 
 
-@render_to("laws/decisions.html")
 def decisions(request):
     """View decisions list"""
     active_section = 'browse'
@@ -858,9 +828,8 @@ def decisions(request):
         avatar = False
     decisions = Decision.objects.filter().order_by("-product_number")
     paginator, page, page_range, page_id = prepeare_pagination(decisions, request)
-    return locals()
+    return render(request, "laws/decisions.html", locals())
 
-@render_to("laws/view_decision.html")
 def view_decision(request, pk):
     """View Decision"""
     active_section = 'browse'
@@ -887,10 +856,9 @@ def view_decision(request, pk):
     tagsform = TaggedItemForm(initial={"next": r.get_absolute_url(), 
                                        "content_type": content_type.id, 
                                        "object_id": object_.id})
-    return locals()
+    return render(request, "laws/view_decision.html", locals())
 
 
-@render_to("laws/iletters.html")
 def iletters(request):
     """View information letters list"""
     active_section = 'browse'
@@ -902,9 +870,8 @@ def iletters(request):
         avatar = False
     letters = InformationLetter.objects.filter().order_by("-product_number")
     paginator, page, page_range, page_id = prepeare_pagination(letters, request)
-    return locals()
+    return render(request, "laws/iletters.html", locals())
 
-@render_to("laws/view_iletter.html")
 def view_iletter(request, pk):
     """View Information Letter"""
     active_section = 'browse'
@@ -930,10 +897,9 @@ def view_iletter(request, pk):
     tagsform = TaggedItemForm(initial={"next": r.get_absolute_url(), 
                                        "content_type": content_type.id, 
                                        "object_id": object_.id})
-    return locals()
+    return render(request, "laws/view_iletter.html", locals())
 
 
-@render_to("laws/written_determinations.html")
 def written_determinations(request):
     """View written determinations list"""
     active_section = 'browse'
@@ -945,9 +911,8 @@ def written_determinations(request):
         avatar = False
     wds = WrittenDetermination.objects.filter().order_by("-product_number")
     paginator, page, page_range, page_id = prepeare_pagination(wds, request)
-    return locals()
+    return render(request, "laws/written_determinations.html", locals())
 
-@render_to("laws/view_written_determination.html")
 def view_wdetermination(request, pk):
     """View Information Letter"""
     active_section = 'browse'
@@ -973,10 +938,9 @@ def view_wdetermination(request, pk):
     tagsform = TaggedItemForm(initial={"next": r.get_absolute_url(), 
                                        "content_type": content_type.id, 
                                        "object_id": object_.id})
-    return locals()
+    return render(request, "laws/view_written_determination.html", locals())
 
 
-@render_to("laws/most_referenced.html")
 def most_referenced(request):
     """Draw tags cloud of the most referenced sections in Title 26 """
     user = get_user_object(request)
@@ -1019,7 +983,7 @@ def most_referenced(request):
     rows = cursor.fetchmany(size=500)
     if not request.GET.has_key('sort'):
         random.shuffle(rows)
-    return locals()
+    return render(request, "laws/most_referenced.html", locals())
 
 def my404(request):
     """We need this handler to populate some variables for flatpages """
@@ -1030,7 +994,6 @@ def my404(request):
     response.status_code = 404
     return response
 
-@render_to('laws/tax_map.html')
 def tax_map(request):
     """ Draw taxmap"""
     active_section = "tools"
@@ -1038,9 +1001,11 @@ def tax_map(request):
     form = SectionsForm(initial={'link_type':'map',}) 
     #display_bubble = False
     #link_type = "map"
-    return locals()
+    return render(request, "laws/tax_map.html",
+                  {"active_section":active_section,
+                   "form":form})
 
-@render_to('laws/tax_map_ajax.html')
+
 def tax_map_ajax(request):
     """Draw ajax taxmap. 
     We use raw SQL because django ORM generate
@@ -1160,11 +1125,11 @@ def tax_map_ajax(request):
             if display_selected_sections and \
                len(back_subref) == 0 and len(back_ref) == 0:
                 no_sections = True
-            return locals()
+            return render(request, "laws/tax_map_ajax.html", locals())
 
         else:
             errors = form.errors
-    return locals()
+    return render(request, "laws/tax_map_ajax.html", locals())
 
 def goto_section(request):
     """Redirect to section"""
@@ -1205,7 +1170,6 @@ def goto_section(request):
     else:
         raise Http404
 
-@render_to("laws/publaw.html")
 def view_publaw(request, publaw):
     """Public Law view"""
     pl = get_object_or_404(PubLaw, pk=publaw)
@@ -1235,25 +1199,24 @@ def view_publaw(request, publaw):
     tagsform = TaggedItemForm(initial={"next":object_.get_absolute_url(), 
                                        "content_type":content_type.id, 
                                        "object_id":object_.id})
-    return locals()
+    return render(request, "laws/publaw.html", locals())
 
-@render_to("laws/titles-list.html")
 def load_subtitles(request):
     """Load subtitles (ajah)"""
     pk = request.GET.get("pk", 0)
     titles = Title.objects.filter(parent=pk)
     sections = Section.objects.filter(title__id=pk)
-    return locals()
+    return render(request, "laws/titles-list.html", {"pk":pk, "titles":titles,
+                                                     "sections":sections})
 
-@render_to("laws/mutliple-sections.html")
 def multiple_sections(request, title, section):
     title = get_object_or_404(Title, title=title, parent=None)
     sections = Section.objects.filter(section=section, top_title=title)
     if len(sections) < 2:
         raise Http404
-    return locals()
+    return render(request, "laws/mutliple-sections.html", {"title":title,
+                                                           "sections":sections})
 
-@render_to("laws/view_named_act.html")
 def view_named_act(request, pk):
 
     active_section = 'browse'
@@ -1282,9 +1245,9 @@ def view_named_act(request, pk):
                                        "content_type":content_type.id, 
                                        "object_id":object_.id})
 
-    return locals()
+    return render(request, "laws/view_named_act.html", locals())
 
-@render_to("laws/named-acts.html")
+
 def named_acts(request):
     """Named Acts list"""
     active_section = 'browse'
@@ -1297,4 +1260,4 @@ def named_acts(request):
   
     ns = NamedStatute.objects.filter().order_by("title")
     paginator, page, page_range, page_id = prepeare_pagination(ns, request)
-    return locals()
+    return render(request, "laws/named-acts.html", locals())
