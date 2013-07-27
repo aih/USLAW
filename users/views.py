@@ -135,7 +135,7 @@ def reg(request):
                 p.save()
 
                 for t in tags:  # Adding tags to users profile
-                    tag,c = Tag.objects.get_or_create(name=t)
+                    tag, c = Tag.objects.get_or_create(name=t)
                     to = TaggedItem(tag=tag, content_object=p)
                     to.save()
                 
@@ -148,7 +148,6 @@ def reg(request):
         return locals()
     else:
         form = RegForm()
-        return locals()
     return locals()
 
 @render_to('search/last_search.html')

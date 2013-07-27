@@ -1,6 +1,4 @@
 # Django settings for Tax26 project.
-import os
-
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
@@ -8,8 +6,6 @@ ADMINS = (
      ('Serge', 'userge@list.ru'),
 )
 
-SETTINGS_ROOT = os.path.abspath(os.path.dirname(__file__))
-MEDIA_ROOT = SETTINGS_ROOT+ "/site_media/"
 
 MANAGERS = ADMINS
 
@@ -54,7 +50,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(SETTINGS_ROOT, "templates"),
+    ("templates"),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

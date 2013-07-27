@@ -55,18 +55,22 @@ class BasePlugin():
 
     def pdftotext(self, full_filename, text_path, data):
         """Extract text from PDF file"""
-
         f = open(full_filename, mode="wb")
         try:
             f.write(data)
             f.close()
         except (IOError, OSError):
-            print "Something wrong..."
+            print "Can't convert file %s to text" % full_filename
             print traceback.format_exc()
+        except:
+            print "Can't convert file %s to text" % full_filename
+            print traceback.format_exc()
+            
 
         p1 = Popen(["pdftotext", "-layout", "-enc", "UTF-8", 
                     full_filename, text_path], stdout=PIPE)
         output = p1.communicate()[0]
+        print output
         data = ""
         with codecs.open(text_path, "r", encoding="utf-8") as f:
             data = f.read()

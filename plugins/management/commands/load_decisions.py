@@ -8,6 +8,7 @@ try:
 except ImportError:
     import re
 from datetime import datetime
+import traceback
 
 from django.core.management.base import BaseCommand
 from django.conf import settings
@@ -66,10 +67,12 @@ from http://www.irs.gov/app/picklist/list/formsPublications.html"""
                     f.write(data)
                     f.close()
                 except:
-                    print "Something wrong..."
+                    print "Something wrong... file %s " % full_filename
                     print traceback.format_exc()
                     
                 data = self.pdftotext(full_filename, text_path, data)
+                if not data:
+                    continue
                 data = parse(texttohtml(data))[0]
                 data = self.replace_this_links(data)
 
