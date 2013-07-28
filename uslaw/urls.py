@@ -9,7 +9,7 @@ from laws.views import my404
 
 admin.autodiscover()
 
-handler404 = 'uslaw.laws.views.my404'
+handler404 = 'laws.views.my404'
 
 urlpatterns = patterns('',
     (r'^storeserver/', include('storeserver.urls')),

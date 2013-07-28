@@ -18,7 +18,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.utils import simplejson
-from django.conf import settings
+from django.conf import settings as django_settings
 
 from utils.utils import render_to
 from posts.models import PostForm, Post, PostType, QuestionForm
@@ -29,10 +29,6 @@ from laws.forms import SearchForm
 from comment.models import Comment
 from emailfeed.models import FeedPost
 
-print settings.LinkedInAPIKey
-consumer_key = settings.LinkedInAPIKey
-consumer_secret = settings.LinkedInSecretKey
-callback_url = settings.callbackurl 
 
 @render_to("users/home.html")
 def home(request):
@@ -164,6 +160,10 @@ def start_reg(request):
 
 @render_to('registration/start_reg.html')
 def linkedinlogin(request, request_type = 0):
+    consumer_key = settings.LinkedInAPIKey
+    consumer_secret = settings.LinkedInSecretKey
+    callback_url = settings.callbackurl 
+
     request_token_url =	'https://api.linkedin.com/uas/oauth/requestToken'
     authorize_url = 	'https://www.linkedin.com/uas/oauth/authenticate'
     api = linkedin.LinkedIn(consumer_key, consumer_secret, callback_url)
@@ -187,6 +187,10 @@ def linkedin_callback(request):
     oauth_verifier = request.GET['oauth_verifier']
     oauth_token = request.GET['oauth_token']
     t = TmpToken.objects.get(token=oauth_token)
+    consumer_key = settings.LinkedInAPIKey
+    consumer_secret = settings.LinkedInSecretKey
+    callback_url = settings.callbackurl 
+
     api = linkedin.LinkedIn(consumer_key, consumer_secret, callback_url)
     result = api.accessToken(t.token, t.token_secret, oauth_verifier)
     if result==False or result==None:

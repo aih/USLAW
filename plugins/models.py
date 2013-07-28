@@ -71,7 +71,8 @@ def plugin_error_notify(sender, instance, **kwargs):
     """
     Send email to ADMINS when plugin fails
     """
-    from local_settings import ADMINS
+    #from django.conf import settings
+    
     if instance.error and instance.error != "" and len(instance.error) > 1:
         try:
             #for a in ADMINS:
