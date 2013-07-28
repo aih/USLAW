@@ -16,7 +16,7 @@ from urlparse import urlparse
 #from urllib2 import Request, urlopen, URLError, HTTPError
 
 from utils.load_url import load_url
-from local_bot_settings import BASE_URL, BASE_SAVE_URL, SECRET_KEY, DEBUG
+from uslaw.local_bot_settings import BASE_URL, BASE_SAVE_URL, SECRET_KEY, DEBUG
 
 
 def main():
