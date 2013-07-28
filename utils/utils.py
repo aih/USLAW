@@ -8,11 +8,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.http import Http404
-
-#from django.contrib.auth.models import User
-
-from local_settings import LOG_FILE,DEBUG
-#from uslaw.users.models import Profile
+from django.conf import settings #LOG_FILE, DEBUG
 
 def usc_repl(matchobj):
 
@@ -31,7 +27,7 @@ def usc_add_links(value):
 
 def getlogger():
     logger = logging.getLogger()
-    hdlr = logging.FileHandler(LOG_FILE)
+    hdlr = logging.FileHandler(settings.LOG_FILE)
     formatter = logging.Formatter('[%(asctime)s]%(levelname)-8s"%(message)s"','%Y-%m-%d %a %H:%M:%S') 
     
     hdlr.setFormatter(formatter)
@@ -41,7 +37,7 @@ def getlogger():
     return logger
 
 def debug(msg):
-    if DEBUG:
+    if settings.DEBUG:
         logger = getlogger()
         logger.debug(msg)
 

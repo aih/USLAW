@@ -18,9 +18,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.utils import simplejson
+from django.conf import settings
 
 from utils.utils import render_to
-from settings import LinkedInAPIKey, LinkedInSecretKey, callbackurl
 from posts.models import PostForm, Post, PostType, QuestionForm
 from tags.models import TaggedItem, Tag
 from users.models import *
@@ -29,9 +29,10 @@ from laws.forms import SearchForm
 from comment.models import Comment
 from emailfeed.models import FeedPost
 
-consumer_key = LinkedInAPIKey
-consumer_secret = LinkedInSecretKey
-callback_url = callbackurl 
+print settings.LinkedInAPIKey
+consumer_key = settings.LinkedInAPIKey
+consumer_secret = settings.LinkedInSecretKey
+callback_url = settings.callbackurl 
 
 @render_to("users/home.html")
 def home(request):

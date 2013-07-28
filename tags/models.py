@@ -12,8 +12,8 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core.mail import mail_admins
 from django.db.models.signals import post_save
+from django.conf import settings
 
-from local_settings import from_email, SITE_URL
 
 class Tag(models.Model):
     """Tags dictionary
@@ -81,13 +81,14 @@ class OutdatedResource(models.Model):
     content_type = models.ForeignKey(ContentType)
     object_id = models.PositiveIntegerField()
     content_object = generic.GenericForeignKey('content_type', 'object_id')
-    publication_date = models.DateTimeField(default = datetime.now())
+    publication_date = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return unicode(self.content_object)
 
     def count(self):
-        return OutdatedResource.objects.filter(object_id=self.object_id, content_type=self.content_type).count()
+        return OutdatedResource.objects.filter(object_id=self.object_id,
+                                               content_type=self.content_type).count()
         
             
 class OutdatedResourceForm(forms.Form):
@@ -105,10 +106,11 @@ def outdatedresource_handler(sender, instance, **kwargs):
     View all outdated resources here: %s/admin/tags/outdatedresource/
 
     http://tax26.com/
-    """ % (instance.user.username, SITE_URL, instance.user.id, SITE_URL, instance.content_object.get_absolute_url(), instance.count(), SITE_URL)
+    """ % (instance.user.username, settings.SITE_URL, instance.user.id, settings.SITE_URL, instance.content_object.get_absolute_url(), instance.count(), settings.SITE_URL)
     #print text
     #try:
-    mail_admins('[TAX26.COM:INFO] Resource marked as outdated',text, fail_silently=True)            
+    mail_admins('[TAX26.COM:INFO] Resource marked as outdated',
+                text, fail_silently=True)
     #except SMTPException:
         # TODO add debug information
     #    pass
@@ -117,4 +119,6 @@ def outdatedresource_handler(sender, instance, **kwargs):
     #    pass
     return instance
 
-post_save.connect(outdatedresource_handler, sender=OutdatedResource, dispatch_uid="outdatedresource_uid")
+post_save.connect(outdatedresource_handler,
+                  sender=OutdatedResource,
+                  dispatch_uid="outdatedresource_uid")

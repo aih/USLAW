@@ -11,12 +11,11 @@ from django import forms
 from django.db.models.signals import post_save
 from django.template import Context, Template
 from django.core.mail import send_mail, EmailMessage
+from django.conf import settings
 
 from djangosphinx.models import SphinxSearch
 from utils.utils import humanizeTimeDiff
 from users.models import Profile, EmailTemplate
-
-from local_settings import from_email, SITE_URL, MEDIA_URL
 
 class Comment(models.Model):
     """Comments model.
@@ -126,11 +125,11 @@ def follow_handler(sender, instance, **kwargs):
             email_template.template= "<html><body>New updates on {{ site_url }}, \r\n click here to see: {{ URL }}</body></html>"#
             email_template.save()
         et = email_template
-        site_url = SITE_URL
+        site_url = settings.SITE_URL
         t = Template(et.template)
         c = Context(locals())
         message =  t.render(c)
-        msg = EmailMessage(et.subject, message, from_email, (f.profile.user.email,))
+        msg = EmailMessage(et.subject, message, settings.from_email, (f.profile.user.email,))
         msg.content_subtype = "html"
         msg.send()
 

@@ -10,12 +10,10 @@ from django.http import HttpResponse
 from django.db.models import Q
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 from storeserver.models import Store, Link
 from plugins.models import Plugin
-from local_bot_settings import SECRET_KEY as skey
-from local_settings import DEBUG
-
 
 def index(request):
     """
@@ -34,7 +32,7 @@ def save(request):
     if request.method == 'POST':
         p = request.POST
         secret_key = p['secret_key']
-        if secret_key != skey and DEBUG == False:  # Ok, somebody with wrong secret key.
+        if secret_key != settings.SECRET_KEY and settings.DEBUG == False:  # Ok, somebody with wrong secret key.
             raise Exception, "Internal server error"
         
         url = p['url']
@@ -65,7 +63,7 @@ def get_urls(request, url_type, secret_key):
     
     """
 
-    if secret_key.replace('/','') != skey and DEBUG == False:  # Ok, somebody with wrong secret key.
+    if secret_key.replace('/','') != settings.SECRET_KEY and settings.DEBUG == False:  # Ok, somebody with wrong secret key.
         raise Exception, "Internal server error"
 
     urls = []

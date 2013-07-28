@@ -1,3 +1,0 @@
-SECRET_KEY = "25nf2805hf7824h5f80274sadcfdfc"
-BASE_URL = "http://localhost:8000/storeserver/get/0/"+SECRET_KEY+"/"
-BASE_SAVE_URL = "http://localhost:8000/storeserver/save/"
