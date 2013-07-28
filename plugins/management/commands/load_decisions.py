@@ -25,7 +25,7 @@ _DEBUG = True
 
 class Command(BaseCommand, BasePlugin):
     help = """Load and parse Actionsondecisions
-from http://www.irs.gov/app/picklist/list/formsPublications.html"""
+from http://apps.irs.gov/app/picklist/list/actionsOnDecisions.html"""
     sender = "Actionsondecisions parser"
 
     def process_page(self, page):
@@ -107,5 +107,5 @@ from http://www.irs.gov/app/picklist/list/formsPublications.html"""
         return new_urls
 
     def handle(self, *args, **options):
-        _START_URLS = ["http://www.irs.gov/app/picklist/list/actionsOnDecisions.html",]
+        _START_URLS = ["http://apps.irs.gov/app/picklist/list/actionsOnDecisions.html",]
         self.run(_START_URLS, _PLUGIN_ID)
