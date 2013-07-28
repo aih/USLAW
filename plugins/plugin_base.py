@@ -11,6 +11,8 @@ import traceback
 from datetime import datetime
 from subprocess import Popen, PIPE
 
+from django.conf import settings
+
 from storeserver.models import Store, Link
 from plugins.models import Plugin
 from laws.models import Title
@@ -70,7 +72,9 @@ class BasePlugin():
         p1 = Popen(["pdftotext", "-layout", "-enc", "UTF-8", 
                     full_filename, text_path], stdout=PIPE)
         output = p1.communicate()[0]
-        print output
+        if settings.DEBUG:
+            if output != "":
+                print "Pdftotext output: [%s]" % output
         data = ""
         with codecs.open(text_path, "r", encoding="utf-8") as f:
             data = f.read()

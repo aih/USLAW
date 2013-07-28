@@ -57,7 +57,13 @@ from http://www.irs.gov/app/picklist/list/formsPublications.html"""
                     print "Processing: %s " % d[2].strip()
                 except (UnicodeEncodeError, UnicodeDecodeError):
                     pass
-                external_publication_date = datetime.strptime(d[4].strip(), '%m/%d/%Y')
+                try:
+                    external_publication_date = datetime.strptime(d[4].strip(), '%m/%d/%Y')
+                except ValueError:
+                    print "Can't found external date - %s" % d[4]
+                    print "FIX it mannualy!"
+                    external_publication_date = datetime.strptime('01/01/1900', '%m/%d/%Y')
+                    
                 if settings.DEBUG:
                     print "Loading %s" % d[0]
                 data, a, b = load_url(d[0], do_quote=True) #  We load url again because django do not support blob fields
