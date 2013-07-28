@@ -4,14 +4,21 @@
 import sys
 import urllib
 from urllib2 import Request, urlopen, URLError, HTTPError
+from urlparse import urlparse, urlunparse
 
 DEBUG = False
 #BOT_SIGNATURE = "Tax26.com bot"
 BOT_SIGNATURE = "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13"
-def load_url(url, post_data=None, return_charset=False):
+def load_url(url, post_data=None, return_charset=False, do_quote=False):
     user_agent = BOT_SIGNATURE
     headers = { 'User-Agent' : user_agent }
     url = url.replace('`', urllib.quote('`'))
+    if do_quote:
+        o = urlparse(url)
+        scheme, netloc, path, params, query, fragment = o
+        path = urllib.quote(path)
+        url = urlunparse([scheme, netloc, path, params, query, fragment])
+        print url
     req = Request(url, post_data, headers) # POST data
     try:
         urlh = urlopen(req, data=post_data, timeout=180)

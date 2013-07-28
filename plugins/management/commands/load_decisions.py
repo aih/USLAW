@@ -58,7 +58,13 @@ from http://www.irs.gov/app/picklist/list/formsPublications.html"""
                 except (UnicodeEncodeError, UnicodeDecodeError):
                     pass
                 external_publication_date = datetime.strptime(d[4].strip(), '%m/%d/%Y')
-                data, a, b = load_url(d[0]) #  We load url again because django do not support blob fields
+                if settings.DEBUG:
+                    print "Loading %s" % d[0]
+                data, a, b = load_url(d[0], do_quote=True) #  We load url again because django do not support blob fields
+                if not data:
+                    print "Can't download %s" % d[0] # FIXME: add some logs here, etc
+                    print a
+                    print b
                 filename = d[0].split('/')[-1].split('#')[0].split('?')[0]
                 full_filename = '%suploads/%s' % (settings.MEDIA_ROOT, filename)
                 text_path = "%s.txt" % full_filename

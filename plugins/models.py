@@ -76,14 +76,14 @@ def plugin_error_notify(sender, instance, **kwargs):
     if instance.error and instance.error != "" and len(instance.error) > 1:
         try:
             #for a in ADMINS:
-            mail_admins('Plugin error', instance.error , fail_silently=False) 
+            mail_admins('Plugin error', instance.error , fail_silently=True) 
         except SMTPException:
             pass
         except:
             print traceback.format_exc()
             addlog("Error sending email", sender="Plugin_error_notify", level=2)
         else:
-            instance.error=""
+            instance.error = ""
     return instance
 
 pre_save.connect(plugin_error_notify, sender=Plugin, dispatch_uid="plugin_notifier_uid")
