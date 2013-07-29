@@ -43,7 +43,7 @@ class Command(BaseCommand, BasePlugin):
                     nu = "%s%s" % (_BASE_URL, p.attr('href'))
                     #print nu
                     new_urls.append([nu, 1])
-            dates_re = re.compile(r'<td align="right">\s{2,20}(\d{2})-(\w{2,5})-(\d{4})')
+            dates_re = re.compile(r'<td align="right">(\d{2})-(\w{2,5})-(\d{4})')
             dates = dates_re.findall(page.page)
             max_date = False
             for d in dates:

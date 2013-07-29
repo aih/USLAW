@@ -31,7 +31,7 @@ from http://www.irs.gov/app/picklist/list/formsPublications.html"""
         """
         Extract publications and process page
         """
-        _BASE_URL = "http://www.irs.gov/"
+        _BASE_URL = "http://app.irs.gov/"
         new_urls = []
 
         #  Level 0. This plugin have only 1 level
@@ -89,6 +89,6 @@ from http://www.irs.gov/app/picklist/list/formsPublications.html"""
         return new_urls
 
     def handle(self, *args, **options):
-        _START_URLS = ["http://www.irs.gov/app/picklist/list/formsPublications.html",
-                       "http://www.irs.gov/app/picklist/list/publicationsNoticesPdf.html"]
+        _START_URLS = ["http://apps.irs.gov/app/picklist/list/publicationsNoticesPdf.html",
+                       "http://apps.irs.gov/app/picklist/list/formsPublications.html"]
         self.run(_START_URLS, _PLUGIN_ID)
