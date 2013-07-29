@@ -23,7 +23,7 @@ _DEBUG = True
 
 class Command(BaseCommand, BasePlugin):
     help = """Load and parse Information Letters 
-    from http://www.irs.gov/app/picklist/list/informationLetters.html"""
+    from http://apps.irs.gov/app/picklist/list/informationLetters.html"""
     sender = "InformationLetters parser"
 
     def process_page(self, page):
@@ -54,7 +54,13 @@ class Command(BaseCommand, BasePlugin):
                     print "Processing: %s " % d[2].strip()
                 except (UnicodeEncodeError, UnicodeDecodeError):
                     pass
-                external_publication_date = datetime.strptime(d[4].strip(), '%m/%d/%Y')
+                try:
+                    external_publication_date = datetime.strptime(d[4].strip(), '%m/%d/%Y')
+                except ValueError:
+                    if settings.DEBUG:
+                        print "Can't extract date from %s" % d[4]
+                        print d[1].strip()[:4]
+                    external_publication_date = datetime.strptime(d[1].strip()[:4], '%Y')
                 data, a, b = load_url(d[0]) #  
                 filename = d[0].split('/')[-1].split('#')[0].split('?')[0]
                 full_filename = '%suploads/%s' % (settings.MEDIA_ROOT, filename)
@@ -82,5 +88,5 @@ class Command(BaseCommand, BasePlugin):
         return new_urls
 
     def handle(self, *args, **options):
-        _START_URLS = ["http://www.irs.gov/app/picklist/list/informationLetters.html",]
+        _START_URLS = ["http://apps.irs.gov/app/picklist/list/informationLetters.html",]
         self.run(_START_URLS, _PLUGIN_ID)
