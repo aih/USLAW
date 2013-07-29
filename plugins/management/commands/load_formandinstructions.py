@@ -31,7 +31,7 @@ class Command(BaseCommand, BasePlugin):
         """
         Extract forms from page and process page
         """
-        _BASE_URL = "http://www.irs.gov/"
+        _BASE_URL = "http://apps.irs.gov/"
         new_urls = []
 
         #  Level 0. This plugin have only 1 level
@@ -84,5 +84,5 @@ class Command(BaseCommand, BasePlugin):
         return new_urls
 
     def handle(self, *args, **options):
-        _START_URLS = ["http://www.irs.gov/app/picklist/list/formsInstructions.html",]
+        _START_URLS = ["http://apps.irs.gov/app/picklist/list/formsInstructions.html",]
         self.run(_START_URLS, _PLUGIN_ID)

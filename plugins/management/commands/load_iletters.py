@@ -30,7 +30,7 @@ class Command(BaseCommand, BasePlugin):
         """
         Extract letters and process page
         """
-        _BASE_URL = "http://www.irs.gov/"
+        _BASE_URL = "http://apps.irs.gov/"
         new_urls = []
 
         #  Level 0. This plugin have only 1 level
