@@ -34,21 +34,24 @@ class Command(BaseCommand, BasePlugin):
 
         #  Level 0
         if page.plugin_level == 0: #  Top page
-            pdf_re = re.compile(r'<A HREF="rr(.*?).pdf"')
+            pdf_re = re.compile(r'<a href="rr(.*?).pdf"')
             pdfs = pdf_re.findall(page.page)
             for p in pdfs:
                 new_urls.append(["%srr%s.pdf" % (_BASE_URL, p), 1])
-            dates_re = re.compile(r'</A>\s{2,20}(\d{2})-(\w{2,5})-(\d{4})')
+            dates_re = re.compile(r'<td align="right">(\d{2})-(\w{2,5})-(\d{4})')
             dates = dates_re.findall(page.page)
             max_date = False
             for d in dates:
+                #print d
                 new_date = datetime.strptime("%s-%s-%s" % (d[0], d[1], d[2]), '%d-%b-%Y')
                 if max_date:
                     if new_date > max_date:
                         max_date = new_date
                 else:
                     max_date = new_date
-            #print "Current_Through: %s " % max_date
+            
+            if settings.DEBUG:
+                print "Current_Through: %s " % max_date
             IRSRevenueRulings.objects.all().update(current_through=max_date)
             return new_urls
 
