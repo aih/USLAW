@@ -791,8 +791,12 @@ class USCTopic(models.Model):
     """
     US Code topics list
     """
-    first_section = models.ForeignKey(Section, limit_choices_to ={"top_title__title":"26",}, related_name="first_section") # First section of the Topic
-    last_section = models.ForeignKey(Section, limit_choices_to ={"top_title__title":"26",}, related_name="last_section")  # Last section of the Topic
+    first_section = models.ForeignKey(Section,
+                                      limit_choices_to={"top_title__title":"26",},
+                                      related_name="first_section") # First section of the Topic
+    last_section = models.ForeignKey(Section,
+                                     limit_choices_to={"top_title__title":"26",},
+                                     related_name="last_section")  # Last section of the Topic
     name = models.CharField(max_length=350, unique=True)
     order = models.IntegerField(default=0)
 

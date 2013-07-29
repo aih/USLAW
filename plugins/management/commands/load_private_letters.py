@@ -1,4 +1,4 @@
-n# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # Uslaw Project
 # Load rulings from http://www.irs.gov/pub/irs-wd/
 # 
@@ -8,7 +8,8 @@ try:
 except ImportError:
     import re
 from datetime import datetime
-
+from pyquery import PyQuery as pq
+            
 from django.core.management.base import BaseCommand
 from django.conf import settings
 
@@ -35,11 +36,14 @@ class Command(BaseCommand, BasePlugin):
 
         #  Level 0
         if page.plugin_level == 0: #  Top page
-            pdf_re = re.compile(r'<A HREF="(.*?).pdf"')
-            pdfs = pdf_re.findall(page.page)
+            parsed = pq(page.page)
+            pdfs = parsed.items('td a')
             for p in pdfs:
-                new_urls.append(["%s%s.pdf" % (_BASE_URL, p), 1])
-            dates_re = re.compile(r'</A>\s{2,20}(\d{2})-(\w{2,5})-(\d{4})')
+                if p.attr('href').endswith(".pdf"):
+                    nu = "%s%s" % (_BASE_URL, p.attr('href'))
+                    #print nu
+                    new_urls.append([nu, 1])
+            dates_re = re.compile(r'<td align="right">\s{2,20}(\d{2})-(\w{2,5})-(\d{4})')
             dates = dates_re.findall(page.page)
             max_date = False
             for d in dates:
@@ -49,7 +53,8 @@ class Command(BaseCommand, BasePlugin):
                         max_date = new_date
                 else:
                     max_date = new_date
-            #print "Current_Through: %s " % max_date
+            if settings.DEBUG:
+                print "Current_Through: %s " % max_date
             IRSPrivateLetter.objects.all().update(current_through=max_date)
             return new_urls
 
