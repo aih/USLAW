@@ -29,7 +29,7 @@ class Command(BaseCommand, BasePlugin):
         """
         Extract letters and process page
         """
-        _BASE_URL = "http://www.irs.gov/"
+        _BASE_URL = "http://app.irs.gov/"
         new_urls = []
 
         #  Level 0. This plugin have only 1 level
@@ -51,12 +51,13 @@ class Command(BaseCommand, BasePlugin):
             documents_re = re.compile(r'<tr class="[\w]+">[\s]*<td class="LeftCellSpacer">[\s]*<a href="(?P<url>.*?)">(?P<product_number>.*?)</a>[\s]*</td>[\s]*[\s]*<td class="MiddleCellSpacer">(?P<uilc>.*?)</td>[\s]*<td class="MiddleCellSpacer">(?P<title>.*?)</td>[\s]*<td class="EndCellSpacer">(?P<external_publication_date>.*?)</td>[\s]*</tr>', re.DOTALL)
             documents = documents_re.findall(page.page)
             for d in documents:
+                #print d
                 try:
                     print "Processing: %s " % d[2].strip()
                 except (UnicodeEncodeError, UnicodeDecodeError):
                     pass
                 external_publication_date = datetime.strptime(d[4].strip(), '%m/%d/%Y')
-                data, a, b = load_url(d[0]) #  
+                data, a, b = load_url(d[0], do_quote=True) #  
                 filename = d[0].split('/')[-1].split('#')[0].split('?')[0]
                 full_filename = '%suploads/%s' % (settings.MEDIA_ROOT, filename)
                 text_path = "%s.txt" % full_filename
@@ -64,6 +65,7 @@ class Command(BaseCommand, BasePlugin):
                 data = self.pdftotext(full_filename, text_path, data)
                 data = parse(texttohtml(data))[0]
                 data = self.replace_this_links(data)
+                print data
 
                 document = "uploads/%s" % filename
 
@@ -89,6 +91,6 @@ class Command(BaseCommand, BasePlugin):
         return new_urls
 
     def handle(self, *args, **options):
-        _START_URLS = ["http://www.irs.gov/app/picklist/list/writtenDeterminations.html",]
+        _START_URLS = ["http://apps.irs.gov/app/picklist/list/writtenDeterminations.html",]
         self.run(_START_URLS, _PLUGIN_ID)
 
