@@ -18,3 +18,6 @@ Notes to restore from Amazon EC2/EB2
 * 
 * Restart Nginx
 * go to the uslaw directory and run: $ sudo ./fcgi.sh
+
+
+New setup procedure: INSTALL.md
