@@ -4,6 +4,7 @@ Setup USLAW project
 Here is commands to setup uslaw server
 
 First install software:
+
     sudo apt-get install nginx uwsgi python-virtualenv python-pip postgresql-9.1 postgresql-server-dev-9.1 mercurial git python-all-dev libxslt1-dev
 
 Make directories:
@@ -16,6 +17,7 @@ Clone project:
     git clone https://pi11@github.com/aih/USLAW src # don't forget to switch necessary branch 
 
 We use virtualenv:
+
     virtualenv ../ve/
     source ../ve/bin/activate
     cd src
@@ -26,6 +28,7 @@ Install python libraries and dependencies:
 
 
 Now create role and database with commands:
+
     sudo su postgres
     psql
 
@@ -60,10 +63,12 @@ Start nginx and uwsgi:
 
 Now perform some postgresql tuning:
 Add these 2 lines at the end of /etc/sysctl.conf
+
     kernel.shmmax=2717986918
     kernel.shmall=1619430
 
 Reboot server or execute commands:
+    
     sysctl -n kernel.shmmax=2717986918
     sysctl -n kernel.shmall=1619430
 
