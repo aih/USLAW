@@ -5,7 +5,7 @@ Here is commands to setup uslaw server
 
 First install software:
 
-    sudo apt-get install nginx uwsgi python-virtualenv python-pip postgresql-9.1 postgresql-server-dev-9.1 mercurial git python-all-dev libxslt1-dev
+    sudo apt-get install nginx uwsgi python-virtualenv python-pip postgresql-9.1 postgresql-server-dev-9.1 mercurial git python-all-dev libxslt1-dev uwsgi-plugin-python
 
 Make directories:
 
@@ -53,13 +53,14 @@ Copy and edit example configs for nginx and uwsgi:
 
     cp example-configs/nginx-site.conf /etc/nginx/sites-available/beta.linkedlegislation.com.conf
     ln -s /etc/nginx/sites-available/beta.linkedlegislation.com.conf /etc/nginx/sites-enabled/beta.linkedlegislation.com.conf
-    cp example-configs/uwsgi-site.conf /etc/uwsgi/apps-available/beta.linkedlegislation.com.conf
-    ln -s /etc/uwsgi/apps-available/beta.linkedlegislation.com.conf /etc/uwsgi/apps-enabled/beta.linkedlegislation.com.conf
+    cp example-configs/uwsgi-site.conf /etc/uwsgi/apps-available/beta.linkedlegislation.com.ini
+    ln -s /etc/uwsgi/apps-available/beta.linkedlegislation.com.ini /etc/uwsgi/apps-enabled/beta.linkedlegislation.com.ini
+    cp example-configs/uwsgi.conf /etc/init/
 
 Start nginx and uwsgi:
 
     sudo /etc/init.d/nginx start
-    sudo /etc/init.d/uwsgi start
+    sudo start uwsgi
 
 Now perform some postgresql tuning:
 Add these 2 lines at the end of /etc/sysctl.conf
