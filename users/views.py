@@ -8,7 +8,7 @@ import urlparse
 import hashlib
 from random import randint
 import oauth2 as oauth
-from linkedin.linkedin import linkedin
+import linkedin
 
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
