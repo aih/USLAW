@@ -5,9 +5,9 @@ import sys
 from datetime import datetime
 from string import ascii_uppercase as ABC
 from djangosphinx.models import SphinxSearch
+import hashlib
 
 from django.db import models
-from django.utils.hashcompat import sha_constructor
 from django.db import IntegrityError
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
@@ -315,7 +315,7 @@ class Subsection(models.Model):
             hh = unicode('%s-%s-%s-%s') % (self.section, self.subsection, self.text, self.level)
             #print hh
             hh = hh.encode('utf-8')
-            self.hash = sha_constructor(hh).hexdigest()
+            self.hash = hashlib.sha224(hh).hexdigest()
             new = True
             if self.hash == "":
                 print "Empty hash"
