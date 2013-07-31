@@ -5,7 +5,7 @@ Here is commands to setup uslaw server
 
 First install software:
 
-    sudo apt-get install nginx uwsgi python-virtualenv python-pip postgresql-9.1 postgresql-server-dev-9.1 mercurial git python-all-dev libxslt1-dev uwsgi-plugin-python
+    sudo apt-get install nginx uwsgi python-virtualenv python-pip postgresql-9.1 postgresql-server-dev-9.1 mercurial git python-all-dev libxslt1-dev uwsgi-plugin-python poppler-utils
 
 Make directories:
 
