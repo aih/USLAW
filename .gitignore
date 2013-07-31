@@ -24,3 +24,6 @@ site_media/map/*
 parserefs/data/*
 sitemap/
 media/
+fixtures/laws.subsection.json
+fixtures/laws.section.json
+fixtures/laws.title.json
