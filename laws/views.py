@@ -786,7 +786,8 @@ def publications(request):
         avatar = False
     publications = Publication.objects.filter().order_by("-product_number")
     paginator, page, page_range, page_id = prepeare_pagination(publications, request)
-    return render("laws/publications.html", locals())
+    
+    return render(request, "laws/publications.html", locals())
 
 def view_publication(request, pk):
     """View Publication"""
