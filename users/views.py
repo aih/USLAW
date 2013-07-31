@@ -18,7 +18,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.utils import simplejson
-from django.conf import settings as django_settings
+from django.conf import settings
 
 from utils.utils import render_to
 from posts.models import PostForm, Post, PostType, QuestionForm
@@ -160,9 +160,9 @@ def start_reg(request):
 
 @render_to('registration/start_reg.html')
 def linkedinlogin(request, request_type = 0):
-    consumer_key = settings.LinkedInAPIKey
-    consumer_secret = settings.LinkedInSecretKey
-    callback_url = settings.callbackurl 
+    consumer_key = settings.LINKEDINAPIKEY
+    consumer_secret = settings.LINKEDINSECRETKEY
+    callback_url = settings.CALLBACKURL 
 
     request_token_url =	'https://api.linkedin.com/uas/oauth/requestToken'
     authorize_url = 	'https://www.linkedin.com/uas/oauth/authenticate'
@@ -187,10 +187,11 @@ def linkedin_callback(request):
     oauth_verifier = request.GET['oauth_verifier']
     oauth_token = request.GET['oauth_token']
     t = TmpToken.objects.get(token=oauth_token)
-    consumer_key = settings.LinkedInAPIKey
-    consumer_secret = settings.LinkedInSecretKey
-    callback_url = settings.callbackurl 
+    consumer_key = settings.LINKEDINAPIKEY
+    consumer_secret = settings.LINKEDINSECRETKEY
+    callback_url = settings.CALLBACKURL 
 
+  
     api = linkedin.LinkedIn(consumer_key, consumer_secret, callback_url)
     result = api.accessToken(t.token, t.token_secret, oauth_verifier)
     if result==False or result==None:
