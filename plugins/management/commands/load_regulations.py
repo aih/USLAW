@@ -41,7 +41,7 @@ class Command(BaseCommand, BasePlugin):
             print "Parsing regulation, url: %s " % sub_url
         
         title = Title.objects.get(title='26')
-        content_re = re.compile(r'<a name="_top"></a>()(.*?)<!-- endDynamic -->', re.DOTALL+re.IGNORECASE)
+        content_re = re.compile(r'<a name="_top"></a>(.*?)<!-- endDynamic -->', re.DOTALL+re.IGNORECASE)
         content = content_re.findall(sub_data)
         content_founded = False
 
