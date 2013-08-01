@@ -82,7 +82,7 @@
 	<div title="Current through" style="float:right; width:90px;">{% if r.get_ext_date %} {{ r.get_ext_date|date:"M. d, Y" }}{% endif %}</div>
 	<div style="float:right; width:40px;">
 	  {% if r.document %}
-	  <img src="{{ STATIC_URL }}img/preview.png" width="15px;" style="cursor:pointer;" onclick="$('#pdf_preview-{{ forloop.counter }}').toggle();  $('#ifr-{{ forloop.counter }}').attr('src', 'http://docs.google.com/viewer?url={{ STATIC_URL }}{{ r.document }}');"/>
+	  <img src="{{ STATIC_URL }}img/preview.png" width="15px;" style="cursor:pointer;" onclick="$('#pdf_preview-{{ forloop.counter }}').toggle();  $('#ifr-{{ forloop.counter }}').attr('src', 'http://docs.google.com/viewer?url={{ MEDIA_URL }}{{ r.document }}');"/>
 	  <div id="pdf_preview-{{ forloop.counter }}" style="width:950px; display:none; z-index: 19000; position:fixed; top:50px; left:50%; background-color:#E3EBF3; padding:10px; border:1px solid gray; margin-left:-500px;">
 	    <div id="pdf_panel" style="width:950px; height:40px;"><b>{{ r }}</b>
 	      <div style="float:right; cursor:pointer;" onclick="$('#pdf_preview-{{ forloop.counter }}').toggle();">
