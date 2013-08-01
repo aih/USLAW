@@ -1020,7 +1020,7 @@ class WrittenDetermination(models.Model):
     last_update = models.DateTimeField(blank=True, null=True)
 
     def __unicode__(self):
-        return "%s - %s" % (self.product_number, self.title)
+        return "%s - %s - %s" % (self.product_number, self.uilc, self.title)
 
     @models.permalink
     def get_absolute_url(self):

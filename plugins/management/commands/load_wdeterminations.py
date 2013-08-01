@@ -29,7 +29,7 @@ class Command(BaseCommand, BasePlugin):
         """
         Extract letters and process page
         """
-        _BASE_URL = "http://app.irs.gov/"
+        _BASE_URL = "http://apps.irs.gov/"
         new_urls = []
 
         #  Level 0. This plugin have only 1 level
@@ -43,8 +43,11 @@ class Command(BaseCommand, BasePlugin):
             except IndexError:
                 if _DEBUG:
                     print "Looks like this is last page"
+                    
             else:
                 next_page = "%s%s" % (_BASE_URL, next_page_link.replace("&amp;", "&"))
+                if settings.DEBUG:
+                    print "Next page: %s" % next_page
                 new_urls.append([next_page, 0])
                 """
                 """
@@ -65,7 +68,7 @@ class Command(BaseCommand, BasePlugin):
                 data = self.pdftotext(full_filename, text_path, data)
                 data = parse(texttohtml(data))[0]
                 data = self.replace_this_links(data)
-                print data
+                #print data
 
                 document = "uploads/%s" % filename
 
