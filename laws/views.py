@@ -552,7 +552,7 @@ def search(request):
                           choices=SearchForm.SEARCH_CHOICES, 
                           attrs={"class":"right_btn", "style":""})
 
-    return render(request, "laws/search.html", locals())
+    return render(request, "search/search.html", locals())
 
 
 def load_regulations(request):
