@@ -36,50 +36,19 @@ class Command(BaseCommand, BasePlugin):
         1-st type is regulations like 1.xxx -
         2-nd - all others
         """
-
+        
         if settings.DEBUG:
             print "Parsing regulation, url: %s " % sub_url
+        
         title = Title.objects.get(title='26')
-        content_re = re.compile(r'<h5>(.*?)</p>[ ]*</p>[ ]*<span>', re.DOTALL+re.IGNORECASE)
+        content_re = re.compile(r'<a name="_top"></a>()(.*?)<!-- endDynamic -->', re.DOTALL+re.IGNORECASE)
         content = content_re.findall(sub_data)
         content_founded = False
 
         if len(content) == 1:
-            content = "<h5>"+content[0]+"</p></p>"
             content_founded = True
-        if not content_founded:
-            content_re = re.compile(r'<h5>(.*?)</EDNOTE></p>', re.DOTALL+re.IGNORECASE)
-            content = content_re.findall(sub_data)
-            if len(content)==1:
-                content = "<h5>"+content[0]+"</EDNOTE></p>"
-                content_founded = True
-        if not content_founded:
-            content_re = re.compile(r'<h5>(.*?)</p>[ ]*</font></p>', re.DOTALL+re.IGNORECASE)
-            content = content_re.findall(sub_data)
-            if len(content) == 1:
-                content = "<h5>"+content[0]+"</p></font></p>"
-                content_founded = True            
-        if not content_founded:
-            content_re = re.compile(r'<h5>(.*?)</DIV></DIV></p>', re.DOTALL+re.IGNORECASE)
-            content = content_re.findall(sub_data)
-            if len(content) == 1:
-                content = "<h5>"+content[0]+"</div></div></p>"
-                content_founded = True            
-
-        if not content_founded:
-            content_re = re.compile(r'<h5>(.*?)</p>[ ]*</p><br>', re.DOTALL+re.IGNORECASE)
-            content = content_re.findall(sub_data)
-            if len(content) == 1:
-                content = "<h5>"+content[0]+"</p></p>"
-                content_founded = True            
-
-        if not content_founded:
-            content_re = re.compile(r'<h5>(.*?)</PSPACE></font></p>', re.DOTALL+re.IGNORECASE)
-            content = content_re.findall(sub_data)
-            if len(content) == 1:
-                content = "<h5>"+content[0]+"</PSPACE></font></p>"
-                content_founded = True            
-
+            content = content[0]
+       
         if not content_founded:
             print "Can't extract content - %s" % sub_url
             #print sub_data[0]
@@ -88,14 +57,14 @@ class Command(BaseCommand, BasePlugin):
             print
             return False
 
-        header_re = re.compile(r'<h5>(.*?)</h5>')
+        header_re = re.compile(r'<h2(.*?)>(.*?)</h2>')
         headers = header_re.findall(content)
 
         if len(headers) == 0:
             print "Can't find header %s" % sub_url
             print content[:20]
             sys.exit(2)
-        header = headers[0]
+        header = headers[0][1]
         #print "Header - %s"%header
         regulation_re = re.compile(r'&#167;&nbsp;(.*?)&nbsp;')
         regulation = regulation_re.findall(header)
@@ -120,7 +89,7 @@ class Command(BaseCommand, BasePlugin):
         else:
             r.shortlink = bitly_short(sub_url)
                 
-        current_through_re = re.compile(r'<STRONG>e-CFR Data is current as of (.*?)</STRONG>')
+        current_through_re = re.compile(r'e-CFR Data is current as of (.*?)</p>', re.DOTALL)
 
         try:
             current_through_data = current_through_re.findall(sub_data)[0].strip()
@@ -278,6 +247,6 @@ class Command(BaseCommand, BasePlugin):
         return new_urls
 
     def handle(self, *args, **options):
-        _START_URLS = ["http://ecfr.gpoaccess.gov/cgi/t/text/text-idx?c=ecfr&tpl=/ecfrbrowse/Title26/26tab_02.tpl",]
+        _START_URLS = ["http://ecfr.gov/cgi/t/text/text-idx?c=ecfr&tpl=/ecfrbrowse/Title26/26tab_02.tpl",]
         self.run(_START_URLS, _PLUGIN_ID)
 

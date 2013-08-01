@@ -108,7 +108,7 @@ $(document).ready(function(){
     {% endif %}
     
     <div id="main_text" style="padding:5px; float:left; ">
-      <h2{% if r.description %} title={{ r.description }}{% endif %}>{{ r|safe }}</h2>
+      {% block document_body_title %}<h2{% if r.description %} title={{ r.description }}{% endif %}>{{ r|safe }}</h2>{% endblock %}
       {% block document_body %}
       {% autoescape off %}
       {{ r.text }}
