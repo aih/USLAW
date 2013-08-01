@@ -7,6 +7,8 @@ from string import ascii_uppercase as ABC
 from djangosphinx.models import SphinxSearch
 import hashlib
 
+from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.db import IntegrityError
 from django.template.defaultfilters import slugify
@@ -1037,3 +1039,32 @@ class WrittenDetermination(models.Model):
         verbose_name_plural = "Written Determinations"    
 
 
+class PdfHash(models.Model):
+    """We store all hashes for objects with PDF documents,
+    so we can find duplicates"""
+    
+    pdfhash = models.CharField(max_length=512)
+    content_type = models.ForeignKey(ContentType)
+    object_id = models.PositiveIntegerField()
+    content_object = generic.GenericForeignKey('content_type', 'object_id')
+
+    
+    def __unicode__(self):
+        return self.pdfhash[:20]
+
+    class Meta:
+        unique_together = (("object_id", "content_type"),)
+
+class DuplicateDocument(models.Model):
+    """Here we store duplicate documents
+    we store them separately from PdfHash for performance"""
+    
+    duplicate_from = models.ForeignKey(PdfHash, related_name="duplicate_from")
+    duplicate_to =  models.ForeignKey(PdfHash, related_name="duplicate_to")
+    
+    def __unicode__(self):
+        return self.duplicate_from.pdfhash[:20]
+
+    class Meta:
+        unique_together = (("duplicate_from", "duplicate_to"),)
+        
