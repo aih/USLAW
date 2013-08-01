@@ -81,7 +81,7 @@ $(document).ready(function(){
       Revision Date: <b>{{ r.revision_date }}</b><br />
       {% endif %}
       {% if r.external_publication_date %}
-      Posted date: <b>{{ r.external_publication_date }}</b><br />
+      <span title="Note: this date ">Posted date: <b>{{ r.external_publication_date }}</b><br /></span>
       {% endif %}
 
       {% if r.shortlink %}Source: <a target="_blank" title="{{ r.link }}" href="{{ r.shortlink }}">{{ r.shortlink }}</a>{% else %}
@@ -93,7 +93,7 @@ $(document).ready(function(){
     <div style="float:right; margin-top:10px;">
        {% if r.document %}
        <img title="Preview PDF document" onclick="$('#pdf_preview').toggle(); $('#main_text').toggle();" style="cursor:pointer;" src="{{ STATIC_URL }}img/preview.png" width="20px;" /> &nbsp;&nbsp;
-	<a title="Download document" target="_blank" href="{{ STATIC_URL }}{{ r.document }}"><img src="{{ STATIC_URL }}img/download.png" /></a>&nbsp;&nbsp;
+	<a title="Download document" target="_blank" href="{{ MEDIA_URL }}{{ r.document }}"><img src="{{ STATIC_URL }}img/download.png" /></a>&nbsp;&nbsp;
       {% endif %}
       <img style="cursor:help;" src="{{ STATIC_URL }}img/question.png" onmouseover="$('#top-information').show('slow');" />
     </div>
@@ -103,7 +103,7 @@ $(document).ready(function(){
       <div id="pdf_panel" style="width:950px; height:40px;"><b>{{ r.title }} - {{ r.product_number }}</b>
 	<div style="float:right; cursor:pointer;" onclick="$('#pdf_preview').toggle(); $('#main_text').toggle();"><img src="{{ STATIC_URL }}img/close.png" width="30px;"/></div>
       </div>
-      <iframe width="950px;" height="900px;" src="http://docs.google.com/viewer?url={{ STATIC_URL }}{{ r.document }}"></iframe>
+      <iframe width="950px;" height="900px;" src="http://docs.google.com/viewer?url={{ MEDIA_URL }}{{ r.document }}"></iframe>
     </div>
     {% endif %}
     
