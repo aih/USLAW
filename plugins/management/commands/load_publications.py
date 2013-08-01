@@ -31,7 +31,7 @@ from http://www.irs.gov/app/picklist/list/formsPublications.html"""
         """
         Extract publications and process page
         """
-        _BASE_URL = "http://app.irs.gov/"
+        _BASE_URL = "http://apps.irs.gov/"
         new_urls = []
 
         #  Level 0. This plugin have only 1 level
