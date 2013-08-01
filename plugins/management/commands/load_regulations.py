@@ -10,6 +10,7 @@ except ImportError:
 from datetime import datetime
 import sys
 import traceback
+from pyquery import PyQuery as pq
 
 from django.core.management.base import BaseCommand
 from django.conf import settings
@@ -36,7 +37,8 @@ class Command(BaseCommand, BasePlugin):
         2-nd - all others
         """
 
-        #print "Parsing regulation, url: %s " % sub_url
+        if settings.DEBUG:
+            print "Parsing regulation, url: %s " % sub_url
         title = Title.objects.get(title='26')
         content_re = re.compile(r'<h5>(.*?)</p>[ ]*</p>[ ]*<span>', re.DOTALL+re.IGNORECASE)
         content = content_re.findall(sub_data)
@@ -91,7 +93,7 @@ class Command(BaseCommand, BasePlugin):
 
         if len(headers) == 0:
             print "Can't find header %s" % sub_url
-            print content
+            print content[:20]
             sys.exit(2)
         header = headers[0]
         #print "Header - %s"%header
@@ -213,14 +215,20 @@ class Command(BaseCommand, BasePlugin):
         Extract regulations links from page and process page
         """
 
-        _BASE_URL = "http://ecfr.gpoaccess.gov"
+        _BASE_URL = "http://www.ecfr.gov/"
+        if settings.DEBUG:
+            print "Processing: %s" % page.url
+            print "level: %s" % page.plugin_level
         data = page.page
         base_re = re.compile(r'<td ALIGN="right" VALIGN="top"><a href="(.*?)"')
         new_urls = []
         if page.plugin_level == 0: # On this level goes links!
-            urls = base_re.findall(data)
+            d = pq(data)
+            urls = d.items('td a.tpl')
+            #urls = base_re.findall(data)
             for u in urls:
-                url = _BASE_URL + u
+                #print u
+                url = "%s%s" % (_BASE_URL, u.attr('href'))
                 new_urls.append([url, 1])
             #print "New urls founded ", new_urls
             page.status = 1
@@ -228,30 +236,36 @@ class Command(BaseCommand, BasePlugin):
             return new_urls
 
         if page.plugin_level == 1: #suburls
-            sub_urls_re = re.compile(r'<td>[ \r\n]+<a href="(.*?)"')
-            sub_urls = sub_urls_re.findall(data)
+            d = pq(data)
+            sub_urls = d.items('td a.tpl')
+            
             tpl = False
             for s in sub_urls:
-                if s[-3:] == "tpl": # url with a list of urls =)
-                    tpl = True
-            if tpl:
-                for s in sub_urls:
-                    url = _BASE_URL + s
+                if s.attr('href') is None:
+                    #if settings.DEBUG:
+                        #print "Skiping %s" % s
+                    continue # skip some empty links
+                print "S>", s
+                url = "%s%s" % (_BASE_URL, s.attr('href'))
+                if s.attr('href')[-3:] == "tpl": # url with a list of urls =)
                     new_urls.append([url, 1])
-                #print "New urls founded ", new_urls
-                page.status = 1
-                page.save()
-                return new_urls
-
-            else:
-                for s in sub_urls:
-                    url = _BASE_URL + s
+                else:
                     new_urls.append([url, 2])
-                #print "New result urls founded ", new_urls
-                page.status = 1
-                page.save()
-                return new_urls
-        if page.plugin_level == 2: # content   
+            #else:
+            #    print "No new urls founded"
+                
+            page.status = 1
+            page.save()
+            if settings.DEBUG:
+                print new_urls
+            return new_urls
+            
+                
+        if page.plugin_level == 2: # content
+            if settings.DEBUG:
+                print "%" * 20
+                print "processing content"
+                print "%" * 20
             try:
                 self.parse_content(page.page, page.url)
             except:
