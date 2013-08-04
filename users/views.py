@@ -279,8 +279,9 @@ def error(request):
 
 @render_to("index.html")
 def main_index(request):
+    searchform = SearchForm()
     active_section = "home"
-    user= get_user_object(request)
+    user = get_user_object(request)
     post_type = PostType.objects.get(name="News")  # We show only news for bots
     news = Post.objects.filter(post_type=post_type).select_related().order_by("-publication_date")[:5]
 
