@@ -76,9 +76,14 @@ class Command(BaseCommand, BasePlugin):
         regulation = regulation[0]
         #print regulation, reg_name
         content = unicode(content).replace('&#167;', u'§')
+        # print content
+        # parse content for links:
+        content = parse(content)[0]
         r, c = Regulation.objects.get_or_create(section=regulation)
-        print "Regulation: %s " % r.section
-        if c: # New regulation!
+        if settings.DEBUG:
+            print "Regulation: %s " % r.section
+            
+        if c: # New regulation
             plugin = Plugin.objects.get(plugin_id=_PLUGIN_ID)
             #u = Update(plugin=plugin, update_text="New regulation Added -  %s " % r)
             #u.save()
@@ -105,7 +110,7 @@ class Command(BaseCommand, BasePlugin):
         r.section = regulation
         r.title = reg_name
         r.last_update = datetime.now()
-        if r.text != content:
+        if r.text != content: # regulation text changed 
             plugin = Plugin.objects.get(plugin_id=_PLUGIN_ID)
             #u = Update(plugin=plugin, update_text="Regulation text updated -  %s " % r)
             #u.save()
