@@ -217,8 +217,23 @@ def target(request, target):
             "/laws/search/?query=%s&where=everywhere&page=1" % object_) 
 
     if psection:
+        #print "[%s], [%s], [%s]" % (psection, type_, object_)
         subsections = Subsection.objects.filter(section=object_, 
                            subsection__startswith=psection).order_by('part_id')
+        if len(subsections) < 2: #
+            try:
+                first = Subsection.objects.filter(section=object_,
+                                                   subsection=psection).order_by("part_id")[0]
+                last = Subsection.objects.filter(section=object_,
+                                               level=first.level,
+                                              part_id__gt=first.part_id\
+                                              ).exclude(subsection='').order_by("part_id")[0]
+            except IndexError:
+                pass
+            else:
+                subsections = Subsection.objects.filter(section=object_,
+                                          part_id__gte=first.part_id,
+                                          part_id__lt=last.part_id).order_by("part_id")
         if len(subsections) == 0:
             subsections = Subsection.objects.filter(section=object_) 
     else:
