@@ -18,3 +18,4 @@ oauth
 hg+https://bitbucket.org/pi11/python-linkedin#egg=linkedin
 #http://python-bitly.googlecode.com/svn/trunk/
 pyquery
+colorama
