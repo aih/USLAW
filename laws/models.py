@@ -1039,6 +1039,32 @@ class WrittenDetermination(models.Model):
         verbose_name_plural = "Written Determinations"    
 
 
+class InternalRevenueManualToc(models.Model):
+    """IRM table of contents,
+    level = 0 - this is parts, like:
+      Part 1
+	    Organization, Finance and Management
+      Part 2
+	    Information Technology
+    level = 1
+       2.2  Partnership Control System
+       and so on..."""
+    toc = models.CharField(max_length=50)
+    level = models.PositiveIntegerField(default=0)
+    name = models.CharField(max_length=250)
+    parent = models.ForeignKey('self', null=True)
+    order_id = models.PositiveIntegerField(default=0)
+    
+    def __unicode__(self):
+        return "%s - %s" % (self.toc, self.name)
+        
+class InternalRevenueManual(models.Model):
+    toc = models.ForeignKey(InternalRevenueManualToc)
+    text = models.TextField()
+
+    def __unicode__(self):
+        return self.toc
+
 class PdfHash(models.Model):
     """We store all hashes for objects with PDF documents,
     so we can find duplicates"""
