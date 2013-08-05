@@ -1,16 +1,34 @@
 {% extends "base.html" %}
 {% block title %}Internal Revenue Manual{% endblock %}
+{% block extrahead %}
+<script type="text/javascript">
+ 
+function load(id){
+    var url = "{% url 'load_irm_toc' %}"+"?pk="+id;
+    $("#subirms-"+id).show();
+    $("#subirms-"+id).load(url);
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <div id="main_big">
-  <h1>Internal Revenue Manual:</h1>
-  {% autoescape off %}
-  {% for r in page.object_list %}
-  <div class="list_item" id="item-{{ r.id }}">
-    <a href="{% url 'irm_item' item_id=r.id %}">{{ r }} {{ r.order_id }} {{ r.level }}</a>
-  </div>
-  {% endfor %}
-  {% endautoescape %}
-  {% include "paginator.html" %}
+  <a href="{% url 'irm_toc' %}">Internal Revenue Manual</a> 
+  {% if irm_toc %} 
+    {% if irm_toc.parent.parent %}
+    -> <a href="{% url 'irm_item' item_id=irm_toc.parent.parent.pk %}">Part {{ irm_toc.parent.parent.toc }} - {{ irm_toc.parent.parent.name }}</a>
+    {% endif %}
+
+    {% if irm_toc.parent %}
+    -> <a href="{% url 'irm_item' item_id=irm_toc.parent.pk %}"> {% if irm_toc.parent.level == 0 %} Part {% endif %}{{ irm_toc.parent.toc }} - {{ irm_toc.parent.name }}</a>
+    {% endif %}
+
+    -> <a href="{% url 'irm_item' item_id=irm_toc.pk %}">{% if irm_toc.level == 0 %} Part {% endif %} {{ irm_toc.toc }} {{ irm_toc.name }}</a>
+
+
+
+  {% endif %}
+  {% include "laws/irm-list.html" %}
 
 </div>
 {% endblock %}

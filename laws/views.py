@@ -1287,10 +1287,17 @@ def internal_revenue_manual_toc(request):
         profile = Profile.objects.get(user=user)
     except Profile.DoesNotExist:
         pass
-  
-    irm_toc = InternalRevenueManualToc.objects.filter(level=0).order_by("order_id")
-    paginator, page, page_range, page_id = prepeare_pagination(irm_toc, request)
+    irms = InternalRevenueManualToc.objects.filter(level=0).order_by("order_id")
     return render(request, "laws/irm-toc.html", locals())
+
+def internal_revenue_manual_toc_ajax(request):
+    """TOC for IRM (ajax version)"""
+    try:
+        top_irm = int(request.GET.get('pk', ''))
+    except ValueError:
+        raise Http404
+    irms = InternalRevenueManualToc.objects.filter(parent__pk=top_irm).order_by("order_id")
+    return render(request, "laws/irm-list.html", locals())
 
 def irm_item(request, item_id):
     """IRM"""
@@ -1301,11 +1308,9 @@ def irm_item(request, item_id):
         profile = Profile.objects.get(user=user)
     except Profile.DoesNotExist:
         pass
-  
     irm_toc = get_object_or_404(InternalRevenueManualToc, pk=item_id)
     if irm_toc.level < 2:
         irms = InternalRevenueManualToc.objects.filter(parent=irm_toc).order_by("order_id")
-        paginator, page, page_range, page_id = prepeare_pagination(irms, request)
         return render(request, "laws/irm-toc.html", locals())
     else:
         r = InternalRevenueManual.objects.get(toc=irm_toc)

@@ -1,0 +1,15 @@
+<div style="padding-left:15px;">
+  {% for i in irms %} 
+  <div class="left width100">
+    {% if i.level < 2 %}
+    <div id="plus-{{ i.id }}" onclick="load('{{ i.id }}'); $('#minus-{{ i.id }}').show(); $('#plus-{{ i.id }}').hide();" class="left" style="cursor:pointer; font-size:14px;">+</div>&nbsp;&nbsp;
+    <div id="minus-{{ i.id }}" onclick="$('#subirms-{{ i.id }}').hide(); $('#minus-{{ i.id }}').hide(); $('#plus-{{ i.id }}').show();" class="left" style="cursor:pointer; font-size:20px; display:none;"> - </div>
+    {% else %}
+    &nbsp;&nbsp;
+    {% endif %}
+    &nbsp;&nbsp;
+    <a href="{% url 'irm_item' item_id=i.id %}">{% if i.level == 0 %} Part {% endif %} {{ i.toc }} - <b>{{ i.name }}</b></a>
+  </div>
+  <div id="subirms-{{ i.id }}" style="display:none;"><img src="{{ STATIC_URL }}img/spinner.gif" /></div>
+  {% endfor %}
+</div>

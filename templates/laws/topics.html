@@ -15,7 +15,7 @@ function load_topic(id){
 {% block content %}
 <h4>Internal Revenue Code: Grouped By Topic</h4>
 
-<ul>
+
   {% for t in topics %}
   <div class="left width100">
     <div id="plus-{{ t.id }}" onclick="load_topic('{{ t.id }}'); $('#minus-{{ t.id }}').show(); $('#plus-{{ t.id }}').hide();" class="left" style="cursor:pointer; font-size:14px;">+</div>

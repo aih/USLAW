@@ -70,6 +70,9 @@ urlpatterns = patterns(
     url('^internal-revenue-manual-toc/$', 'laws.views.internal_revenue_manual_toc',
         name="irm_toc"),
 
+    url('^load-internal-revenue-manual-toc/$', 'laws.views.internal_revenue_manual_toc_ajax',
+        name="load_irm_toc"),
+
     url('^irm/(?P<item_id>\d+)/$', 'laws.views.irm_item',
         name="irm_item"),
 
