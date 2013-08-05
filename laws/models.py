@@ -1054,13 +1054,17 @@ class InternalRevenueManualToc(models.Model):
     name = models.CharField(max_length=250)
     parent = models.ForeignKey('self', null=True)
     order_id = models.PositiveIntegerField(default=0)
+    source_link = models.CharField(max_length=100, null=True, blank=True)
     
     def __unicode__(self):
         return "%s - %s" % (self.toc, self.name)
+
+    class Meta:
+        ordering = ("order_id",)
         
 class InternalRevenueManual(models.Model):
     toc = models.ForeignKey(InternalRevenueManualToc)
-    text = models.TextField()
+    text = models.TextField(null=True, blank=True)
 
     def __unicode__(self):
         return self.toc

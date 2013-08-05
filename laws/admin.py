@@ -19,6 +19,11 @@ class SectionAdmin(admin.ModelAdmin):
 class SectionAdditionalAdmin(admin.ModelAdmin):
     search_fields = ["section", "text"]
 
+class InternalRevenueManualTocAdmin(admin.ModelAdmin):
+    list_display = ["toc", "name", "level", "source_link"]
+    search_fields = ["name", "toc"]
+    list_filter = ["level"]
+
 
 class RegulationAdmin(admin.ModelAdmin):
     list_display = ["section", "title", "rate", ]
@@ -121,3 +126,4 @@ admin.site.register(NamedStatute, NamedStatuteAdmin)
 admin.site.register(Decision, DecisionAdmin)
 admin.site.register(InformationLetter, InformationLetterAdmin)
 admin.site.register(WrittenDetermination, WrittenDeterminationAdmin)
+admin.site.register(InternalRevenueManualToc, InternalRevenueManualTocAdmin)

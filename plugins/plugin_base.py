@@ -95,7 +95,7 @@ class BasePlugin():
             try:
                 result = self.process_page(l)                    
             except ValueError:
-                print sys.exc_info()
+                print traceback.format_exc()
                 result = False
                 er = str(traceback.format_exc())
                 er = er + "\r\n Store page id: "+str(l.id)
