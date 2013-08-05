@@ -122,11 +122,16 @@ class Command(BaseCommand, BasePlugin):
                         #print href
                         #print i.text()
         if page.plugin_level == 2:
+            data = data.replace('<div></div>', '') # PyQuery bug
             d = pq(data)
-            text = d('div.section:first').html()
-            reletad_toc = InternalRevenueManualToc.objects.get(source_link=page.url)
-            irm, c = InternalRevenueManual.objects.get_or_create(toc=reletad_toc)
-            irm.text = text
+            fname = page.url.split('/')[-1].split('#')[0].split('?')[0]
+            text = d('div.section:first').html().replace(fname, '')
+            related_toc = InternalRevenueManualToc.objects.get(source_link=page.url)
+            if settings.DEBUG:
+                print related_toc.id
+            irm, c = InternalRevenueManual.objects.get_or_create(toc=related_toc)
+            irm.text = text#.replace('<div/>', '<div>')
+            #print text
             irm.save()
             
         page.status = 1
