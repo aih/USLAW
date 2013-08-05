@@ -1089,7 +1089,7 @@ function flag_as_outdated(id,ct){
     }
 
 
-var spinner = "<img src='/site_media/img/spinner.gif' alt='spinner' />";
+var spinner = "<img src='/static/img/spinner.gif' alt='spinner' />";
 function toggle_stick(id){
   var obj = "#"+id;
   if ( $(obj).hasClass('hoverbubble')){
@@ -1097,7 +1097,7 @@ function toggle_stick(id){
      $(obj).draggable('option', 'disabled', true);
      $(obj).children().each(function(){
        if ( $(this).hasClass('panel')){
-         $(this).html("<img width='20px' src='/site_media/img/pinin.png' />");
+         $(this).html("<img width='20px' src='/static/img/pinin.png' />");
        }
      });
      
@@ -1106,7 +1106,7 @@ function toggle_stick(id){
      $(obj).draggable('option', 'disabled', false);
      $(obj).children().each(function(){
        if ( $(this).hasClass('panel')){
-         $(this).html("<img width='20px' src='/site_media/img/pinout.png' />");
+         $(this).html("<img width='20px' src='/static/img/pinout.png' />");
        }
       });
 
@@ -1172,7 +1172,7 @@ function attachHovers(par) {
 	    href = href.replace("#", "");
 	    $.get(href, {'context': 'hoverbubble'}, function(data) {
 		if (div) {
-                    var panel = "<span class='panel' onclick='toggle_stick("+r_id+")'><img width='20px' src='/site_media/img/pinout.png' /></span><br />";
+                    var panel = "<span class='panel' onclick='toggle_stick("+r_id+")'><img width='20px' src='/static/img/pinout.png' /></span><br />";
                     rdata = panel + data
 		    div.html(rdata);
 		    attachHovers(div); 
