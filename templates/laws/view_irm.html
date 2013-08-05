@@ -1,5 +1,5 @@
 {% extends "laws/resource_base.html" %}
-
+{% block title %}{{ r.toc }} - Internal Revenue Manual{% endblock %}
 {% block main_text %}
 <div id="main_text" style="padding:5px; float:left; width:600px;">
   {{ r.text|safe }}
