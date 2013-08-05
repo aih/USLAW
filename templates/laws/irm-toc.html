@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Internal Revenue Manual{% endblock %}
+{% block content %}
+<div id="main_big">
+  <h1>Internal Revenue Manual:</h1>
+  {% autoescape off %}
+  {% for r in page.object_list %}
+  <div class="list_item" id="item-{{ r.id }}">
+    <a href="{% url 'irm_item' item_id=r.id %}">{{ r }} {{ r.order_id }} {{ r.level }}</a>
+  </div>
+  {% endfor %}
+  {% endautoescape %}
+  {% include "paginator.html" %}
+
+</div>
+{% endblock %}

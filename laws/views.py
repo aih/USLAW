@@ -1277,3 +1277,36 @@ def named_acts(request):
     ns = NamedStatute.objects.filter().order_by("title")
     paginator, page, page_range, page_id = prepeare_pagination(ns, request)
     return render(request, "laws/named-acts.html", locals())
+
+def internal_revenue_manual_toc(request):
+    """TOC for IRM"""
+    active_section = 'browse'
+    user = get_user_object(request)
+    searchform = SearchForm()
+    try:
+        profile = Profile.objects.get(user=user)
+    except Profile.DoesNotExist:
+        pass
+  
+    irm_toc = InternalRevenueManualToc.objects.filter(level=0).order_by("order_id")
+    paginator, page, page_range, page_id = prepeare_pagination(irm_toc, request)
+    return render(request, "laws/irm-toc.html", locals())
+
+def irm_item(request, item_id):
+    """IRM"""
+    active_section = 'browse'
+    user = get_user_object(request)
+    searchform = SearchForm()
+    try:
+        profile = Profile.objects.get(user=user)
+    except Profile.DoesNotExist:
+        pass
+  
+    irm_toc = get_object_or_404(InternalRevenueManualToc, pk=item_id)
+    if irm_toc.level < 2:
+        irms = InternalRevenueManualToc.objects.filter(parent=irm_toc).order_by("order_id")
+        paginator, page, page_range, page_id = prepeare_pagination(irms, request)
+        return render(request, "laws/irm-toc.html", locals())
+    else:
+        r = InternalRevenueManual.objects.get(toc=irm_toc)
+        return render(request, "laws/view_irm.html", locals())

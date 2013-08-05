@@ -66,7 +66,13 @@ urlpatterns = patterns(
         name="written_determinations"),
     url('^wd/(\d+)/$', 'laws.views.view_wdetermination',
         name="view_written_determination"),
- 
+
+    url('^internal-revenue-manual-toc/$', 'laws.views.internal_revenue_manual_toc',
+        name="irm_toc"),
+
+    url('^irm/(?P<item_id>\d+)/$', 'laws.views.irm_item',
+        name="irm_item"),
+
     url('^previewresource/(\d+)/', 'laws.views.preview_resource',
         name="preview_resource"),
 
