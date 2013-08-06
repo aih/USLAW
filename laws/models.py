@@ -428,7 +428,7 @@ class Section(models.Model):
 
     def text(self):
         n = Subsection.objects.filter(section=self).order_by('subsection', 'level', 'part_id')
-        if len(n)>0:
+        if len(n) > 0:
             return n[0].text
         return None
 
@@ -1065,9 +1065,49 @@ class InternalRevenueManualToc(models.Model):
 class InternalRevenueManual(models.Model):
     toc = models.ForeignKey(InternalRevenueManualToc)
     text = models.TextField(null=True, blank=True)
+    
+    def __unicode__(self):
+        return self.toc
+
+
+class InternalRevenueBulletinToc(models.Model):
+    """IRB table of contents,
+    level = 0 - this is parts, like:
+      Part 1
+	    Organization, Finance and Management
+      Part 2
+	    Information Technology
+    level = 1
+       2.2  Partnership Control System
+       and so on..."""
+    IRB_DOC_TYPES = (
+        (0, "Toc element"),
+        (1, "Document"),
+        (2, "Section"),
+        )
+    toc = models.CharField(max_length=50)
+    level = models.PositiveIntegerField(default=0)
+    name = models.CharField(max_length=250)
+    parent = models.ForeignKey('self', null=True)
+    order_id = models.PositiveIntegerField(default=0)
+    element_type = models.PositiveIntegerField(choices=IRB_DOC_TYPES)
+    source_link = models.CharField(max_length=100, null=True, blank=True)
+    
+    def __unicode__(self):
+        return "%s - %s" % (self.toc, self.name)
+
+    class Meta:
+        ordering = ("order_id",)
+        
+class InternalRevenueBulletin(models.Model):
+    toc = models.ForeignKey(InternalRevenueBulletinToc)
+    text = models.TextField(null=True, blank=True)
+    document = models.FileField(blank=True, null=True,
+                                upload_to="uploads/documents/")
 
     def __unicode__(self):
         return self.toc
+
 
 class PdfHash(models.Model):
     """We store all hashes for objects with PDF documents,
