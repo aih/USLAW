@@ -1,2 +1,3 @@
 #!/bin/sh
-hg push ssh://hg@bitbucket.org/tabulaw/uslaw
+git push git@github.com:aih/USLAW
+
