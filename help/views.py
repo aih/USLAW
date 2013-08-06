@@ -4,6 +4,7 @@
 
 from django.http import HttpResponse
 from django.utils import simplejson as sjson
+from django.db.models import Q
 
 from users.models import Option, get_user_object
 
@@ -25,11 +26,11 @@ def get_help(request):
     url = request.GET.get('url', False)
     if url:
         res = {}
-        h = Help.objects.filter(url=url)
-        if len(h)==0:
+        h = Help.objects.filter(Q(url=url)|Q(default_help=True))
+        if len(h) < 2:
             new_url = "/".join(url.split('/')[:-2])+"/"
-            h = Help.objects.filter(url=new_url)
-        if len(h)>0:
+            h = Help.objects.filter(Q(url=new_url)|Q(default_help=True))
+        if len(h) > 0:
             one_time_notice_ = False
             for hh in h:
                 if not one_time_notice_ and hh.one_time_notice and user: # We show only one "one time notice" per page view

@@ -17,7 +17,10 @@ class Help(models.Model):
     url = models.CharField(max_length=250)
     widget_id = models.CharField(max_length=100, default="id_page_help")
     text = models.TextField()
-    one_time_notice = models.BooleanField(default=False, verbose_name="Show this notice only once")
+    one_time_notice = models.BooleanField(default=False,
+                                          verbose_name="Show this notice only once")
+    default_help = models.BooleanField(default=False,
+                                       verbose_name="This is default help for all pages")
     publication_date = models.DateTimeField(default=datetime.now())
 
     def __unicode__(self):
