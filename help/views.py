@@ -34,13 +34,18 @@ def get_help(request):
             one_time_notice_ = False
             for hh in h:
                 if not one_time_notice_ and hh.one_time_notice and user: # We show only one "one time notice" per page view
-                    sh, c = ShownHelp.objects.get_or_create(user=user, notice =hh)
+                    sh, c = ShownHelp.objects.get_or_create(user=user,
+                                                            notice=hh)
                     if c:
                         one_time_notice_ = True 
                         res[hh.widget_id] = hh.text
 
-                elif not hh.one_time_notice:
+                elif not hh.one_time_notice and not hh.default_help:
                     res[hh.widget_id] = hh.text
+            for hh in h:
+                if hh.default_help:
+                    if not res.get(hh.widget_id, False):
+                        res[hh.widget_id] = hh.text
         else:
             res = {"text": False }
         json = sjson.dumps(res)
