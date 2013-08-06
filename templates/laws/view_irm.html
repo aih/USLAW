@@ -2,6 +2,22 @@
 {% block title %}{{ r.toc }} - Internal Revenue Manual{% endblock %}
 {% block main_text %}
 <div id="main_text" style="padding:5px; float:left; width:600px;">
+
+  <a href="{% url 'irm_toc' %}">Internal Revenue Manual</a> 
+  {% with r.toc as irm_toc %}
+  {% if irm_toc %} 
+    {% if irm_toc.parent.parent %}
+    -> <a href="{% url 'irm_item' item_id=irm_toc.parent.parent.pk %}">Part {{ irm_toc.parent.parent.toc }} - {{ irm_toc.parent.parent.name }}</a>
+    {% endif %}
+
+    {% if irm_toc.parent %}
+    -> <a href="{% url 'irm_item' item_id=irm_toc.parent.pk %}"> {% if irm_toc.parent.level == 0 %} Part {% endif %}{{ irm_toc.parent.toc }} - {{ irm_toc.parent.name }}</a>
+    {% endif %}
+
+    -> <a href="{% url 'irm_item' item_id=irm_toc.pk %}">{% if irm_toc.level == 0 %} Part {% endif %} {{ irm_toc.toc }} {{ irm_toc.name }}</a>
+   {% endif %}
+   {% endwith %}
+
   {{ r.text|safe }}
 </div>
 {% endblock %}

@@ -10,6 +10,6 @@
     &nbsp;&nbsp;
     <a href="{% url 'irm_item' item_id=i.id %}">{% if i.level == 0 %} Part {% endif %} {{ i.toc }} - <b>{{ i.name }}</b></a>
   </div>
-  <div id="subirms-{{ i.id }}" style="display:none;"><img src="{{ STATIC_URL }}img/spinner.gif" /></div>
+  <div id="subirms-{{ i.id }}" style="display:none;"><img alt="spinner" src="{{ STATIC_URL }}img/spinner.gif" /></div>
   {% endfor %}
 </div>

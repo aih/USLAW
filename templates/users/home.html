@@ -73,7 +73,7 @@ $(document).ready(function(){
     </div>
   </div>
   <div class="block width100" id="question_spinner" style="text-align:center; display:none;">
-    <img src="{{ STATIC_URL }}img/spinner2.gif" />
+    <img alt="spinner" src="{{ STATIC_URL }}img/spinner2.gif" />
   </div>
   <div class="block width100 question" id="question_form_block_id" style="text-align:center;">
     <form id="question_form" action="/posts/get-posts/" method="post">{% csrf_token %}
@@ -90,7 +90,7 @@ $(document).ready(function(){
     </div>
   </div>
   <div class="block width100" id="spinner" style="text-align:center; display:none;">
-    <img src="{{ STATIC_URL }}img/spinner2.gif" />
+    <img alt="spinner" src="{{ STATIC_URL }}img/spinner2.gif" />
   </div>
   <div class="block width100" id="form_block_id" style="text-align:center;">
     <form id="posts_form" action="/posts/get-posts/" method="post">{% csrf_token %}
@@ -113,7 +113,7 @@ $(document).ready(function(){
 {% for p in best_news %}
 <div class="width100 left" >
   <div class="left padding5" style="width:20px; padding-top:10px;">
-    <a href="{{ p.profile.get_absolute_url }}"><img class="avatar" id="avatar-{{ p.id }}-{{ p.profile.id }}" qtitle = "{{ p.profile }}" src="{{ p.profile.avatar }}" width="20px;" /></a>
+    <a href="{{ p.profile.get_absolute_url }}"><img alt="avatar" class="avatar" id="avatar-{{ p.id }}-{{ p.profile.id }}" qtitle = "{{ p.profile }}" src="{{ p.profile.avatar }}" width="20px;" /></a>
   </div>
   <div class="post_item_line left padding5">
     <div class="left" style="width:100px;"><a href="{{ p.get_absolute_url }}">{{ p.title|truncatewords:5 }}</a></div>
@@ -131,7 +131,7 @@ $(document).ready(function(){
 {% for p in best_questions %}
 <div class="width100 left" >
   <div class="left padding5" style="width:20px; padding-top:10px;">
-    <a href="{{ p.profile.get_absolute_url }}"><img class="avatar" id="avatar-{{ p.id }}-{{ p.profile.id }}" qtitle = "{{ p.profile }}" src="{{ p.profile.avatar }}" width="20px;" /></a>
+    <a href="{{ p.profile.get_absolute_url }}"><img alt="avatar" class="avatar" id="avatar-{{ p.id }}-{{ p.profile.id }}" qtitle = "{{ p.profile }}" src="{{ p.profile.avatar }}" width="20px;" /></a>
   </div>
   <div class="post_item_line left padding5">
     <div class="left" style="width:100px;"><a href="{{ p.get_absolute_url }}">{{ p.title|truncatewords:5 }}</a></div>

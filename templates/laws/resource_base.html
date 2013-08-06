@@ -92,16 +92,16 @@ $(document).ready(function(){
     </div>
     <div style="float:right; margin-top:10px;">
        {% if r.document %}
-       <img title="Preview PDF document" onclick="$('#pdf_preview').toggle(); $('#main_text').toggle();" style="cursor:pointer;" src="{{ STATIC_URL }}img/preview.png" width="20px;" /> &nbsp;&nbsp;
-	<a title="Download document" target="_blank" href="{{ MEDIA_URL }}{{ r.document }}"><img src="{{ STATIC_URL }}img/download.png" /></a>&nbsp;&nbsp;
+       <img title="Preview PDF document" alt="Preview" onclick="$('#pdf_preview').toggle(); $('#main_text').toggle();" style="cursor:pointer;" src="{{ STATIC_URL }}img/preview.png" width="20px;" /> &nbsp;&nbsp;
+	<a title="Download document" target="_blank" href="{{ MEDIA_URL }}{{ r.document }}"><img alt="Download" src="{{ STATIC_URL }}img/download.png" /></a>&nbsp;&nbsp;
       {% endif %}
-      <img style="cursor:help;" src="{{ STATIC_URL }}img/question.png" onmouseover="$('#top-information').show('slow');" />
+      <img alt="Help" style="cursor:help;" src="{{ STATIC_URL }}img/question.png" onmouseover="$('#top-information').show('slow');" />
     </div>
 
     {% if r.document %}
     <div id="pdf_preview" style="width:950px; display:none; z-index: 19000; position:absolute; top:40px; background-color:#E3EBF3; padding:10px; border:1px solid gray;">
       <div id="pdf_panel" style="width:950px; height:40px;"><b>{{ r.title }} - {{ r.product_number }}</b>
-	<div style="float:right; cursor:pointer;" onclick="$('#pdf_preview').toggle(); $('#main_text').toggle();"><img src="{{ STATIC_URL }}img/close.png" width="30px;"/></div>
+	<div style="float:right; cursor:pointer;" onclick="$('#pdf_preview').toggle(); $('#main_text').toggle();"><img alt="Close" src="{{ STATIC_URL }}img/close.png" width="30px;"/></div>
       </div>
       <iframe width="950px;" height="900px;" src="http://docs.google.com/viewer?url={{ MEDIA_URL }}{{ r.document }}"></iframe>
     </div>

@@ -2,7 +2,7 @@
 {% for comment in comments %}
 <div class="comment">
   <div class="comment_left_part">
-    {% if comment.profile.avatar %}<a href="{{ comment.profile.get_absolute_url }}"><img src="{{ comment.profile.avatar }}" width="30px" /></a>{% endif %}<br />
+    {% if comment.profile.avatar %}<a href="{{ comment.profile.get_absolute_url }}"><img alt="Avatar" src="{{ comment.profile.avatar }}" width="30px" /></a>{% endif %}<br />
     <a href="{{ comment.get_absolute_url }}">{{ comment.profile.user.first_name }}   {{ comment.profile.user.last_name }}</a>
   </div>
 

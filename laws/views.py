@@ -214,7 +214,7 @@ def target(request, target):
 
     if type_ == "NOTIMPLEMENTED": # redirect such links to search
         return HttpResponseRedirect( \
-            "/laws/search/?query=%s&where=everywhere&page=1" % object_) 
+            "/laws/search/?query=%s&where=everywhere&page=1" % object_) # FIXME
 
     if psection:
         #print "[%s], [%s], [%s]" % (psection, type_, object_)

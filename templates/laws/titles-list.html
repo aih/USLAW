@@ -6,7 +6,7 @@
     <a href='{{ title.get_absolute_url }}'><b>{{ title|safe }}</b></a>
     
   </div>
-  <div id="subtitles-{{ title.id }}" style="display:none;"><img src="{{ STATIC_URL }}img/spinner.gif" /></div>
+  <div id="subtitles-{{ title.id }}" style="display:none;"><img alt="spinner" src="{{ STATIC_URL }}img/spinner.gif" /></div>
   {% endfor %}
 
 {% include "laws/section-list.html" %}

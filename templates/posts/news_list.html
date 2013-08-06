@@ -6,7 +6,7 @@
 <div class="left padding5 width100">
   <div id="question-{{ post.id }}" class="newsfeed_item left padding5">
     <div class="newsfeed_left question-profile-{{ post.profile.id }}">
-      <a href="{{ post.profile.get_absolute_url }}"><img id="avatar-{{ post.id }}-{{ post.profile.id }}" class="avatar" qtitle="{{ post.profile }}" src="{{ post.profile.avatar }}" width="40px;" /></a>
+      <a href="{{ post.profile.get_absolute_url }}"><img alt="Avatar" id="avatar-{{ post.id }}-{{ post.profile.id }}" class="avatar" qtitle="{{ post.profile }}" src="{{ post.profile.avatar }}" width="40px;" /></a>
     </div>
     <div class="newsfeed_text padding5 left">
       <a href="{{ post.get_absolute_url }}" class="big18">{{ post.title }}</a>

@@ -4,7 +4,7 @@
 <div class="left padding5 width100">
   <div id="question-{{ post.id }}" class="newsfeed_item left padding5">
     <div class="newsfeed_left question-profile-{{ post.profile.id }}">
-      <a href="{{ post.profile.get_absolute_url }}"><img id="avatar-{{ post.id }}-{{ post.profile.id }}" class="avatar" qtitle="{{ post.profile }}" src="{{ post.profile.avatar }}" width="40px;" /></a>
+      <a href="{{ post.profile.get_absolute_url }}"><img alt="Avatar" id="avatar-{{ post.id }}-{{ post.profile.id }}" class="avatar" qtitle="{{ post.profile }}" src="{{ post.profile.avatar }}" width="40px;" /></a>
     </div>
     <div class="newsfeed_text padding5 left">
       <a href="{{ post.get_absolute_url }}" class="big18">{{ post.title }}</a>
@@ -29,7 +29,7 @@
 {% for comment in comments %}
 <script>
   var cid = "#post-comments-{{ comment.object_id }}";
-  $(cid).append('<div class="left width100 newsfeed-comment"><div class="left padding5 comment-profile-image-{{ comment.profile.id }}"><a href="/users/profile/{{ comment.profile.id }}/"><img  id="avatar-comment-{{ comment.id }}-{{ comment.profile.id }}" class="avatar" qtitle="{{ comment.profile }}" src="{{ comment.profile.avatar }}" width="20px;" /></a></div><a href="/posts/view/{{ comment.object_id }}/#{{ comment.id }}">{{ comment.text|truncatewords:10 }}</a></div>');
+  $(cid).append('<div class="left width100 newsfeed-comment"><div class="left padding5 comment-profile-image-{{ comment.profile.id }}"><a href="/users/profile/{{ comment.profile.id }}/"><img  alt="Avatar" id="avatar-comment-{{ comment.id }}-{{ comment.profile.id }}" class="avatar" qtitle="{{ comment.profile }}" src="{{ comment.profile.avatar }}" width="20px;" /></a></div><a href="/posts/view/{{ comment.object_id }}/#{{ comment.id }}">{{ comment.text|truncatewords:10 }}</a></div>');
   {% if comment.rate > 0 %}
     $(cid).append('<div class="right rate">{{ comment.rate }} people like this answer</div>');
   {% endif %}

@@ -128,7 +128,7 @@ $(document).ready(function(){
       <br />
     </div>
     <div style="float:right; cursor:help;" onmouseover="$('#top-information').show('slow');">
-      <img src="{{ STATIC_URL }}img/question.png" />
+      <img alt="Help" src="{{ STATIC_URL }}img/question.png" />
     </div>
     {% if subsections.0.text == section.header %} 
     {% else %}
@@ -140,7 +140,7 @@ $(document).ready(function(){
        <div title="{{ s.subsection }}" id="{{ s.subsection }}" class="jlevel{{ s.level }} sub{{ s.s_type }} subsection">
       {% if s.subsection != '' %}
       {% if user.is_authenticated and user.username != 'Anonymous' %}
-	<div class="right" style="margin-right:-15px;"><a style="font-size:12px;" href="#{{ s.subsection }}" name="#{{ s.subsection }}"><img src="{{ STATIC_URL }}img/arrow.png" width="10px;"/></a></div>
+	<div class="right" style="margin-right:-15px;"><a style="font-size:12px;" href="#{{ s.subsection }}" name="#{{ s.subsection }}"><img src="{{ STATIC_URL }}img/arrow.png" width="10px;" alt="arrow"/></a></div>
       {% endif %}
       {% endif %} {{ s.text|safe }}
        </div>

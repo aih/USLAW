@@ -3,7 +3,7 @@
 {% if user.is_authenticated %}
 {% if profile.user.username != 'Anonymous' %}
 <script>
-  location.href.replace("/users/home/");
+  location.href.replace("{% url 'home' %}");
 </script>
 {% endif %}
 {% endif %}
@@ -41,8 +41,8 @@
  <div class="left width100" style="padding:50px;">
    <p id="where_to_start"> Where to start?&nbsp;&nbsp;Try our analysis tools:</p>
 
-   <div id="tax_map_link" class="left padding10" style="width:50%;"><a href="/laws/tax-map/?sections=4&link_type=map"><img title="Interactive Tax map" src="{{ STATIC_URL }}img/tax-map.png" width="300px;" /></a></div>
-   <div id="referenced_sections_link" class="left padding10" style="width:50%;"><a href="/laws/most_referenced/?sort=true"><img title="Most referenced sections" src="{{ STATIC_URL }}img/most-referenced.png" width="300px;" /></a></div>
+   <div id="tax_map_link" class="left padding10" style="width:50%;"><a href="/laws/tax-map/?sections=4&link_type=map"><img title="Interactive Tax map" src="{{ STATIC_URL }}img/tax-map.png" width="300px;" alt="Interactive Tax Map" /></a></div>
+   <div id="referenced_sections_link" class="left padding10" style="width:50%;"><a href="{% url 'most_referenced' %}?sort=true"><img title="Most referenced sections" src="{{ STATIC_URL }}img/most-referenced.png" width="300px;" alt="Most referenced sections" /></a></div>
    
    <br />
  </div>
