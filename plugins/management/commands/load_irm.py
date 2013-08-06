@@ -130,7 +130,9 @@ class Command(BaseCommand, BasePlugin):
             if settings.DEBUG:
                 print related_toc.id
             irm, c = InternalRevenueManual.objects.get_or_create(toc=related_toc)
-            irm.text = text#.replace('<div/>', '<div>')
+            nav_link_re = re.compile(r'<div class="chunkNavigation">(.*?)</div>', re.DOTALL)
+            text = re.sub(nav_link_re, '', text)
+            irm.text = text
             #print text
             irm.save()
             
