@@ -58,19 +58,21 @@ class SearchForm(forms.Form):
     )
     query = forms.CharField(max_length=100, widget=forms.TextInput(\
         attrs={"class":"right_btn", "title":"Query",
-               "onfocus":("$('#id_query').css('background','none'); ")
-               ("var q=$('#id_query').val(); if (q=='Search...') ")
-               ("{$('#id_query').val(''); $('#id_query').css('font-weight','bolder');}"),
-               "onblur": ("var q=$('#id_query').val(); \r\n if (q=='') ")
-               ("{$('#id_query').val('Search...'); $('#id_query').")
-               ("css('font-weight','normal'); $('#id_query').css('background',")
-               (" 'transparent url(/static/img/icons/magnifier.png)")
-               (" no-repeat scroll right center'); } ")
+               "onfocus":
+               ("$('#id_query').css('background','none'); "
+                "var q=$('#id_query').val(); if (q=='Search...') "
+                "{$('#id_query').val(''); $('#id_query').css('font-weight','bolder');}"),
+               "onblur":
+               ("var q=$('#id_query').val(); \r\n if (q=='') "
+                "{$('#id_query').val('Search...'); $('#id_query')."
+                "css('font-weight','normal'); $('#id_query').css('background',"
+                " 'transparent url(/static/img/icons/magnifier.png)"
+                " no-repeat scroll right center'); } ")
                }), initial="Search...", label="Search...")
     where = forms.CharField(widget=forms.Select(choices=SEARCH_CHOICES,
                                                 attrs={"class":"right_btn",
                                                        "style":"width:145px;",
-                                                       "title":"Where"}, label="Where"),
+                                                       "title":"Where"}),
                             required=False)
     p = forms.IntegerField(widget=forms.HiddenInput(), required=False)
     date_sort = forms.CharField(max_length=20, widget=forms.HiddenInput(),
