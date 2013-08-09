@@ -168,12 +168,13 @@ $(document).ready(function(){
       Current Through: <b>{{ section.current_through }}</b><br />
       Last checked: <b>{{ section.last_update }}</b><br />
       {% if section.source %} Source: <a target="_blank" href="{{ section.source }}">{{ section.source }}</a>{% endif %}
-        {% for na in namedacts %}
+        <!--{% for na in namedacts %}
           {% if forloop.counter0 == 0 %}
           <br />This section also known as:
           {% endif %}
           <span title="{{ na.description }}"><b>{{ na.title }}</b></span> <br />
         {% endfor %}
+          -->
     </div>
 
 
