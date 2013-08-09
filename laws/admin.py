@@ -76,6 +76,7 @@ class FormAndInstructionAdmin(admin.ModelAdmin):
               "external_publication_date", "last_update")
 
 class NamedStatuteAdmin(admin.ModelAdmin):
+    search_fields = ["title", "description"]
     list_display = ["title", "description"]
 
 class PublicationAdmin(admin.ModelAdmin):
