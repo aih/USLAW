@@ -316,7 +316,8 @@ provide only_download argument to download all files"""
                         #old_chapter_level = chapter_level
                         
                     if t["class"] == "section-head":
-                        tstring = unicode(local_strip_tags(self_get_string(t.contents)).replace('&mdash;', ' - ').replace(u"—", " - "))#parser.unescape(unicode(t.contents[0]))
+                        tstring = unicode(local_strip_tags(self_get_string(t.contents)).replace('&mdash;',
+                                          ' - ').replace(u"—", " - "))#parser.unescape(unicode(t.contents[0]))
                         
                         #print tstring
                         try:
@@ -335,8 +336,10 @@ provide only_download argument to download all files"""
                                             continue 
                                         print "Can't found section number:"
                                         print tstring
-                                        addlog(text="Can't found section number - %s tag - %s, source - %s. Try another hack." % (tstring, t.name, source), 
-                                               sender="plugin %s" % _PLUGIN_ID, level=1, sobject1="%s" % _PLUGIN_ID, sobject2="")
+                                        addlog(text="Can't found section number - %s tag - %s, source - %s. Try another hack." % (tstring,
+                                                                                                                                  t.name, source), 
+                                               sender="plugin %s" % _PLUGIN_ID, level=1,
+                                               sobject1="%s" % _PLUGIN_ID, sobject2="")
 
                                         tstring = tstring[0].strip()
                                         section_id = section_re.findall(tstring)[0]
@@ -465,7 +468,7 @@ provide only_download argument to download all files"""
                                 sub = sub[0]
                             else:
                                 sub = ""
-                            #print "Sub: %s, iteration: %s, section: %s, level %s old_level %s" %(sub, j, current_section.section, s_level, old_level)
+                            print "Sub: %s, iteration: %s, section: %s, level %s old_level %s" %(sub, j, current_section.section, s_level, old_level)
                             j += 1
                             if sub == "":
                                 current_sub = ""
