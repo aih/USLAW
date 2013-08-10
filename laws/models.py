@@ -1092,6 +1092,12 @@ class InternalRevenueBulletinToc(models.Model):
     order_id = models.PositiveIntegerField(default=0)
     element_type = models.PositiveIntegerField(choices=IRB_DOC_TYPES)
     source_link = models.CharField(max_length=100, null=True, blank=True)
+    pdf_link = models.CharField(max_length=100, null=True, blank=True)
+    current_through = models.DateField(null=True, blank=True)
+    document = models.FileField(blank=True, null=True,
+                                upload_to="uploads/documents/")
+    section_id = models.CharField(max_length=20, null=True, blank=True)
+    note = models.CharField(max_length=512, null=True, blank=True)
     
     def __unicode__(self):
         return "%s - %s" % (self.toc, self.name)
@@ -1102,8 +1108,6 @@ class InternalRevenueBulletinToc(models.Model):
 class InternalRevenueBulletin(models.Model):
     toc = models.ForeignKey(InternalRevenueBulletinToc)
     text = models.TextField(null=True, blank=True)
-    document = models.FileField(blank=True, null=True,
-                                upload_to="uploads/documents/")
 
     def __unicode__(self):
         return self.toc
