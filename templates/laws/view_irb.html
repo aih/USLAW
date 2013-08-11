@@ -21,13 +21,6 @@
    {% endif %}
 
 
-  <div>
-    <ul>
-      {% for r in tocs %}
-      <li><a href="#{{ r.section_id }}">{{ r.name }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
 
   {% for r in irbs %}
   {{ r.text|safe }}

@@ -104,7 +104,7 @@ class Command(BaseCommand, BasePlugin):
                                                                                   name=name,
                                                                                   level=1, element_type=0)
 
-                    irb_toc.part_id = part_id
+                    irb_toc.order_id = part_id
                     irb_toc.save()
                     print "New irb toc: %s" % irb_toc
                     #new_urls.append([url, 2]) # FIXMEE
@@ -115,7 +115,7 @@ class Command(BaseCommand, BasePlugin):
                                                                                   parent=irb_toc,
                                                                                   name=name,
                                                                                   level=2, element_type=1)
-                    sub_irb_toc.part_id = part_id
+                    sub_irb_toc.order_id = part_id
                     sub_irb_toc.save()
                     print "New sub irb toc: %s" % sub_irb_toc
                     new_urls.append([url, 2])
@@ -132,7 +132,7 @@ class Command(BaseCommand, BasePlugin):
                                                                                           level=3, 
                                                                                           section_id=section_id,
                                                                                           element_type=2)
-                    sub_sub_irb_toc.part_id = sub_part_id
+                    sub_sub_irb_toc.order_id = sub_part_id
                     sub_sub_irb_toc.save()
                     print "New sub sub irb toc: %s" % sub_sub_irb_toc
                     #new_urls.append([url, 2])
@@ -150,6 +150,7 @@ class Command(BaseCommand, BasePlugin):
             irb_item = InternalRevenueBulletin.objects.get_or_create(text=subtitle,
                                                                      toc=top_irb_toc,
                                                                      part_id=part_id)
+            article = d('div.article:first').html()
             part_id += 1
             anchor_re = re.compile(r'<a name="(\w+)">')
             for item in d.items('div.sect1'):
@@ -164,7 +165,8 @@ class Command(BaseCommand, BasePlugin):
                 else:
                     sub_irb_toc = InternalRevenueBulletinToc.objects.get(section_id=section_id,
                                                                          parent=top_irb_toc)
-                irb_item = InternalRevenueBulletin.objects.get_or_create(text=item.html(),
+            print top_irb_toc.pk
+            irb_item = InternalRevenueBulletin.objects.get_or_create(text=article,
                                                                          toc=top_irb_toc,
                                                                          part_id=part_id, sub_toc=sub_irb_toc)
                 

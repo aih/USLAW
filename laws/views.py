@@ -1328,8 +1328,6 @@ def internal_revenue_bulletin_toc(request):
     except Profile.DoesNotExist:
         pass
     irbs = InternalRevenueBulletinToc.objects.filter(level=0).order_by("-current_through")
-    for i in irbs:
-        print i.name
     return render(request, "laws/irb-toc.html", locals())
 
 def internal_revenue_bulletin_toc_ajax(request):
@@ -1343,6 +1341,7 @@ def internal_revenue_bulletin_toc_ajax(request):
 
 def irb_item(request, item_id):
     """IRB"""
+    print item_id
     active_section = 'browse'
     user = get_user_object(request)
     searchform = SearchForm()
@@ -1351,12 +1350,13 @@ def irb_item(request, item_id):
     except Profile.DoesNotExist:
         pass
     irb_toc = get_object_or_404(InternalRevenueBulletinToc, pk=item_id)
-    print irb_toc.level
+    print "Level", irb_toc.level
     if irb_toc.level < 2:
         irbs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).order_by("order_id")
         return render(request, "laws/irb-toc.html", locals())
     else:
         irbs = InternalRevenueBulletin.objects.filter(toc=irb_toc).order_by('part_id')
+        
         tocs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).order_by('order_id')
         print len(irbs)
         return render(request, "laws/view_irb.html", locals())
