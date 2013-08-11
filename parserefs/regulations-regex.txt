@@ -9,3 +9,5 @@
 
 # Regulation sections
 &sect;(\d+\.\d+(&mdash;|&ndash;|-|–)?\w*(\(\w{,2}\))*)#&sect<a href="/regulations/target/\1" class="reg">\1</a>
+
+§\s?(\d+\.\d+(&mdash;|&ndash;|-|–)?\w*(\(\w{,2}\))*)#&sect<a href="/regulations/target/\1" class="reg">\1</a>
