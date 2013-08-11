@@ -1085,9 +1085,9 @@ class InternalRevenueBulletinToc(models.Model):
         (1, "Document"),
         (2, "Section"),
         )
-    toc = models.CharField(max_length=50)
+    #toc = models.CharField(max_length=50)
     level = models.PositiveIntegerField(default=0)
-    name = models.CharField(max_length=250)
+    name = models.CharField(max_length=450)
     parent = models.ForeignKey('self', null=True)
     order_id = models.PositiveIntegerField(default=0)
     element_type = models.PositiveIntegerField(choices=IRB_DOC_TYPES)
@@ -1100,15 +1100,18 @@ class InternalRevenueBulletinToc(models.Model):
     note = models.CharField(max_length=512, null=True, blank=True)
     
     def __unicode__(self):
-        return "%s - %s" % (self.toc, self.name)
+        return "%s" % (self.name)
 
     class Meta:
         ordering = ("order_id",)
         
 class InternalRevenueBulletin(models.Model):
     toc = models.ForeignKey(InternalRevenueBulletinToc)
+    sub_toc = models.ForeignKey(InternalRevenueBulletinToc,
+                                null=True, blank=True, related_name="sub_toc")
     text = models.TextField(null=True, blank=True)
-
+    part_id = models.PositiveIntegerField()
+    
     def __unicode__(self):
         return self.toc
 

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Internal Revenue Bulletin{% endblock %}
+{% block extrahead %}
+<script type="text/javascript">
+ 
+function load(id){
+    var url = "{% url 'load_irb_toc' %}"+"?pk="+id;
+    $("#subirbs-"+id).show();
+    $("#subirbs-"+id).load(url);
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div id="main_big">
+  <a href="{% url 'irb_toc' %}">Internal Revenue Bulletin</a> 
+  {% if irb_toc %} 
+    {% if irb_toc.parent.parent %}
+    -> <a href="{% url 'irb_item' item_id=irb_toc.parent.parent.pk %}">{{ irb_toc.parent.parent.name }}</a>
+    {% endif %}
+
+    {% if irb_toc.parent %}
+    -> <a href="{% url 'irb_item' item_id=irb_toc.parent.pk %}"> {{ irm_toc.parent.toc }} - {{ irm_toc.parent.name }}</a>
+    {% endif %}
+
+    -> <a href="{% url 'irb_item' item_id=irb_toc.pk %}">  {{ irb_toc.name }}</a>
+
+
+  {% endif %}
+  {% include "laws/irb-list.html" %}
+
+</div>
+{% endblock %}

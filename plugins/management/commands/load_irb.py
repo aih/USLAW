@@ -139,8 +139,42 @@ class Command(BaseCommand, BasePlugin):
                     
                 
         if page.plugin_level == 2:
-            pass
-            
+            print "Level 2: %s" % page.url
+            top_irb_toc = InternalRevenueBulletinToc.objects.get(source_link=page.url)
+            data = data.replace('<div></div>', '') # PyQuery bug
+            fname = page.url.split('/')[-1].split('#')[0].split('?')[0]
+            data = data.replace(fname, '') # remove filename from html
+            d = pq(data)
+            part_id = 0
+            subtitle = d('h3.subtitle:first').html()
+            irb_item = InternalRevenueBulletin.objects.get_or_create(text=subtitle,
+                                                                     toc=top_irb_toc,
+                                                                     part_id=part_id)
+            part_id += 1
+            anchor_re = re.compile(r'<a name="(\w+)">')
+            for item in d.items('div.sect1'):
+                part_id += 1
+                text = item.html()
+                try:
+                    anchor = anchor_re.findall(text)[0]
+                except IndexError:
+                    print "Can;t found section id"
+                    section_id = ""
+                    sub_irb_toc = None
+                else:
+                    sub_irb_toc = InternalRevenueBulletinToc.objects.get(section_id=section_id,
+                                                                         parent=top_irb_toc)
+                irb_item = InternalRevenueBulletin.objects.get_or_create(text=item.html(),
+                                                                         toc=top_irb_toc,
+                                                                         part_id=part_id, sub_toc=sub_irb_toc)
+                
+            footnote = d('div.footnote').html()
+            if footnote:
+                part_id += 1
+                irb_item = InternalRevenueBulletin.objects.get_or_create(text=footnote,
+                                                                         toc=top_irb_toc,
+                                                                         part_id=part_id)
+
         #page.status = 1
         #page.save()
         print new_urls

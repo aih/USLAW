@@ -74,20 +74,9 @@ $(document).ready(function(){
   {% endif %}
  
     <div class="small" id="top-information" class="pointer">
-      <b>Document information:</b><br />
-      {% if r.current_through %}Current Through: <b>{{ r.current_through }}</b><br />{% endif %}
-      Last checked: <b>{{ r.last_update }}</b><br />
-      {% if r.revision_date %}
-      Revision Date: <b>{{ r.revision_date }}</b><br />
-      {% endif %}
-      {% if r.external_publication_date %}
-      <span title="Note: this date ">Posted date: <b>{{ r.external_publication_date }}</b><br /></span>
-      {% endif %}
-
-      {% if r.shortlink %}Source: <a target="_blank" title="{{ r.link }}" href="{{ r.shortlink }}">{{ r.shortlink }}</a>{% else %}
-      {% if r.link %}Source: <a target="_blank" title="{{ r.link }}" href="{{ r.link }}">{{ r.link }}</a>
-      {% endif %}
-      {% endif %}
+      {% block "top-doc-info" %}
+      {% include "laws/document_information.html" %}
+      {% endblock %}
       <br />
     </div>
     <div style="float:right; margin-top:10px;">
@@ -120,21 +109,8 @@ $(document).ready(function(){
     {% endblock %}
 
     <div class="small" id="information" style="float:left;">
-      <b>Document information:</b><br />
-      {% if r.current_through %}Current Through: <b>{{ r.current_through }}</b><br />{% endif %}
-      Last checked: <b>{{ r.last_update }}</b><br />
-      {% if r.revision_date %}
-      Revision Date: <b>{{ r.revision_date }}</b><br />
-      {% endif %}
-      {% if r.external_publication_date %}
-      Posted date: <b>{{ r.external_publication_date }}</b><br />
-      {% endif %}
-
-      {% if r.shortlink %}Source: <a target="_blank" title="{{ r.link }}" href="{{ r.shortlink }}">{{ r.shortlink }}</a>{% else %}
-      {% if r.link %}Source: <a target="_blank" title="{{ r.link }}" href="{{ r.link }}">{{ r.link }}</a>
-      {% endif %}
-      {% endif %}
+      {% block "bottom-doc-info" %}
+      {% include "laws/document_information.html" %}
+      {% endblock %}
     </div>
-
-
 {% endblock %}
