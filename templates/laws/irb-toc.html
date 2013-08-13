@@ -20,7 +20,7 @@ function load(id){
     {% endif %}
 
     {% if irb_toc.parent %}
-    -> <a href="{% url 'irb_item' item_id=irb_toc.parent.pk %}"> {{ irm_toc.parent.toc }} - {{ irm_toc.parent.name }}</a>
+    -> <a href="{% url 'irb_item' item_id=irb_toc.parent.pk %}"> {{ irb_toc.parent.toc }} - {{ irb_toc.parent.name }}</a>
     {% endif %}
 
     -> <a href="{% url 'irb_item' item_id=irb_toc.pk %}">  {{ irb_toc.name }}</a>
