@@ -102,7 +102,19 @@ def target_to_section(target):
 
     redirect = False
     if "ref-unnamedact-" in target:
-        target = target.replace("ref-unnamedact-", "")
+        target = target.replace("ref-unnamedact-", "").split("/")
+        #target = target.replace("ref-namedact-", "")
+        if len(target) > 1:
+            sub_target = target[1]
+            if "(" in sub_target:
+                psection = sub_target[sub_target.find("("):]
+                sub_target = sub_target[:sub_target.find("(")]
+            else:
+                psection = ""
+        else:
+            sub_target = False
+        target = target[0]
+        
         nas = NamedStatute.objects.filter(title__iexact=target)
         if len(nas) > 0:
             for n in nas:
