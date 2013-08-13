@@ -1327,7 +1327,7 @@ def internal_revenue_bulletin_toc(request):
         profile = Profile.objects.get(user=user)
     except Profile.DoesNotExist:
         pass
-    irbs = InternalRevenueBulletinToc.objects.filter(level=0).order_by("-current_through")
+    irbs = InternalRevenueBulletinToc.objects.filter(level=0).exclude(name__exact='').order_by("-current_through")
     return render(request, "laws/irb-toc.html", locals())
 
 def internal_revenue_bulletin_toc_ajax(request):
@@ -1336,7 +1336,7 @@ def internal_revenue_bulletin_toc_ajax(request):
         top_irb = int(request.GET.get('pk', ''))
     except ValueError:
         raise Http404
-    irbs = InternalRevenueBulletinToc.objects.filter(parent__pk=top_irb).order_by("order_id")
+    irbs = InternalRevenueBulletinToc.objects.filter(parent__pk=top_irb).exclude(name__exact='').order_by("order_id")
     return render(request, "laws/irb-list.html", locals())
 
 def irb_item(request, item_id):
@@ -1352,11 +1352,11 @@ def irb_item(request, item_id):
     irb_toc = get_object_or_404(InternalRevenueBulletinToc, pk=item_id)
     print "Level", irb_toc.level
     if irb_toc.level < 2:
-        irbs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).order_by("order_id")
+        irbs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by("order_id")
         return render(request, "laws/irb-toc.html", locals())
     else:
         irbs = InternalRevenueBulletin.objects.filter(toc=irb_toc).order_by('part_id')
         
-        tocs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).order_by('order_id')
+        tocs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by('order_id')
         print len(irbs)
         return render(request, "laws/view_irb.html", locals())

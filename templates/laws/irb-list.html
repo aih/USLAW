@@ -1,17 +1,21 @@
 <div style="padding-left:15px;">
   {% for i in irbs %} 
   <div class="left width100">
+ 
     {% if i.level < 3 %}
     <div id="plus-{{ i.id }}" onclick="load('{{ i.id }}'); $('#minus-{{ i.id }}').show(); $('#plus-{{ i.id }}').hide();" class="left" style="cursor:pointer; font-size:14px;">+</div>&nbsp;&nbsp;
-    <div id="minus-{{ i.id }}" onclick="$('#subirms-{{ i.id }}').hide(); $('#minus-{{ i.id }}').hide(); $('#plus-{{ i.id }}').show();" class="left" style="cursor:pointer; font-size:20px; display:none;"> - </div>
+    <div id="minus-{{ i.id }}" onclick="$('#subirbs-{{ i.id }}').hide(); $('#minus-{{ i.id }}').hide(); $('#plus-{{ i.id }}').show();" class="left" style="cursor:pointer; font-size:20px; display:none;"> - </div>
     {% else %}
     &nbsp;&nbsp;
     {% endif %}
+    {% if i.level == 4 %}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {% endif %}
     &nbsp;&nbsp;
     {% if i.element_type < 2 %}
-    <a href="{% url 'irb_item' item_id=i.id %}"><b>{{ i.name }} {{ i.element_type }} {{ i.section_id }} {{ i.source_link }}</b></a>
+    <a href="{% url 'irb_item' item_id=i.id %}"><b>{{ i.name }}</b></a>
     {% else %}
-    <a href="{% url 'irb_item' item_id=i.parent.id %}#{{ i.section_id }}"><b>{{ i.name }} {{ i.element_type }} {{ i.section_id }} {{ i.source_link }}</b></a>
+    <a href="{% url 'irb_item' item_id=i.parent.id %}#{{ i.section_id }}">{% if i.level < 4 %}<b>{% endif %}{{ i.name }}{% if i.level < 4 %}</b>{% endif %}</a>
     {% endif %}
   </div>
   <div id="subirbs-{{ i.id }}" style="display:none;"><img alt="spinner" src="{{ STATIC_URL }}img/spinner.gif" /></div>

@@ -92,6 +92,8 @@ class Command(BaseCommand, BasePlugin):
             part_id = 0
             sub_part_id = 0 
             for i in items:
+                #print i.html()
+                #print "====" * 20
                 href = i('a:first').attr('href')
                 name = i('a:first').text().strip()
                 name = ' '.join(name.split())
@@ -106,7 +108,7 @@ class Command(BaseCommand, BasePlugin):
 
                     irb_toc.order_id = part_id
                     irb_toc.save()
-                    print "New irb toc: %s" % irb_toc
+                    #print "New irb toc: %s" % irb_toc
                     #new_urls.append([url, 2]) # FIXMEE
                 elif href.startswith('ar') and not "#" in href: # level=2
                     part_id += 1
@@ -117,25 +119,58 @@ class Command(BaseCommand, BasePlugin):
                                                                                   level=2, element_type=1)
                     sub_irb_toc.order_id = part_id
                     sub_irb_toc.save()
-                    print "New sub irb toc: %s" % sub_irb_toc
+                    #print "New sub irb toc: %s" % sub_irb_toc
                     new_urls.append([url, 2])
                 else:
                     if "#" not in href:
                         raise "Weird link, please fixme"
-                    
+
+                    #if "<ul" in i.html():
+                    #    print "%" * 44
+                    #    print i.html()
+                    #    print "$" * 44
                     sub_part_id += 1
                     #url = urljoin(page.url, href)
                     section_id = href.split('#')[1]
                     sub_sub_irb_toc, c = InternalRevenueBulletinToc.objects.get_or_create(source_link=url,
                                                                                           parent=sub_irb_toc,
                                                                                           name=name,
-                                                                                          level=3, 
                                                                                           section_id=section_id,
                                                                                           element_type=2)
-                    sub_sub_irb_toc.order_id = sub_part_id
+                    if c:
+                        sub_sub_irb_toc.level = 3
+                        sub_sub_irb_toc.order_id = sub_part_id
                     sub_sub_irb_toc.save()
-                    print "New sub sub irb toc: %s" % sub_sub_irb_toc
+                    #print "New sub sub irb toc: %s" % sub_sub_irb_toc
                     #new_urls.append([url, 2])
+
+                    
+                    check_subitems = i.items('ul li')
+                    if "<ul" in i.html():
+                        #print i.html()
+                        #print ">>>" * 33
+                        #print i.items('ul li')
+                        for ch in check_subitems:
+                            #print "ELEMENT:", ch.html()
+                            #print "-" * 30
+                            #print "-" * 30
+                            shref = ch('a:first').attr('href')
+                            sname = ch('a:first').text().strip()
+                            sname = ' '.join(sname.split())
+                            surl = urljoin(page.url, shref)
+
+                            sub_part_id += 1
+                            section_id = shref.split('#')[1]
+                            sub_sub_irb_toc, c = InternalRevenueBulletinToc.objects.get_or_create(source_link=surl,
+                                                                                                  parent=sub_irb_toc,
+                                                                                                  name=sname,
+                                                                                                  section_id=section_id,
+                                                                                                  element_type=2)
+                            sub_sub_irb_toc.order_id = sub_part_id
+                            sub_sub_irb_toc.level = 4
+                            sub_sub_irb_toc.save()
+                            print "New sub sub irb toc: %s, LEVEL: 4" % sub_sub_irb_toc
+
                     
                 
         if page.plugin_level == 2:
@@ -144,6 +179,10 @@ class Command(BaseCommand, BasePlugin):
             data = data.replace('<div></div>', '') # PyQuery bug
             fname = page.url.split('/')[-1].split('#')[0].split('?')[0]
             data = data.replace(fname, '') # remove filename from html
+            def link_repl(mobj):
+                return "<a href='/irb-redirect/?toc=%s&sect=%s'>" % (top_irb_toc.pk,
+                                                                     mobj.group(0))
+            data = re.sub(r'<a href="(\w+).html">', link_repl, data) 
             d = pq(data)
             part_id = 0
             subtitle = d('h3.subtitle:first').html()
@@ -165,7 +204,7 @@ class Command(BaseCommand, BasePlugin):
                 else:
                     sub_irb_toc = InternalRevenueBulletinToc.objects.get(section_id=section_id,
                                                                          parent=top_irb_toc)
-            print top_irb_toc.pk
+            print "NEWDOC:", top_irb_toc.pk
             irb_item = InternalRevenueBulletin.objects.get_or_create(text=article,
                                                                          toc=top_irb_toc,
                                                                          part_id=part_id, sub_toc=sub_irb_toc)
@@ -179,7 +218,7 @@ class Command(BaseCommand, BasePlugin):
 
         #page.status = 1
         #page.save()
-        print new_urls
+        #print new_urls
         return new_urls
 
 
