@@ -103,7 +103,24 @@ def target_to_section(target):
     redirect = False
     if "ref-unnamedact-" in target:
         target = target.replace("ref-unnamedact-", "")
+        nas = NamedStatute.objects.filter(title__iexact=target)
+        if len(nas) > 0:
+            for n in nas:
+                if sub_target and n.top_title: #  There are link to section of the act
+                    try:
+                        section = Section.objects.get(top_title=n.top_title, 
+                                                      section=sub_target)
+                    except (Section.DoesNotExist, Section.MultipleObjectsReturned):
+                        pass
+                    else:
+                        return section, "Section", psection
+                if n.section is not None:
+                    return n.section, "Section", ""
+                if n.top_title is not None:
+                    return n.top_title, "Title", ""
+            return nas[0], "NamedAct", ""
         redirect = True
+
     if "ref-namedact-" in target:
         target = target.replace("ref-namedact-", "").split("/")
         if len(target) > 1:
