@@ -3,7 +3,7 @@
 	  {% endblock %}
 	  {% block menu %}
 
-	  {% if user.is_authenticated %}<div class="menu_item{% if active_section == 'home' %} active{% endif %}" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/users/home/">Home</a></div>
+	  {% if user.is_authenticated %}<div class="menu_item{% if active_section == 'home' %} active{% endif %}" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/users/home/">Home</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/whatsnew/">What's New</a></div>
           {% else %}
 	  <div class="menu_item{% if active_section == 'home' %} active{% endif %}" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/whatsnew/">What's New</a></div>
           {% endif %}
