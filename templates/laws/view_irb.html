@@ -1,0 +1,30 @@
+{% extends "laws/resource_base.html" %}
+{% block title %}{{ r.name }} - Internal Revenue Bulletin{% endblock %}
+{% block "top-doc-info" %}
+<a href="{{ irb_toc.source_link }}">{{ irb_toc.source_link }}</a>
+{% endblock %}
+{% block main_text %}
+<div id="main_text" style="padding:5px; float:left; width:600px;">
+
+  <a href="{% url 'irb_toc' %}">Internal Revenue Bulletin</a> 
+
+  {% if irb_toc %} 
+    {% if irb_toc.parent.parent %}
+    -> <a href="{% url 'irb_item' item_id=irb_toc.parent.parent.pk %}">{{ irb_toc.parent.parent.name }}</a>
+    {% endif %}
+
+    {% if irb_toc.parent %}
+    -> <a href="{% url 'irb_item' item_id=irb_toc.parent.pk %}">  {{ irb_toc.parent.name }}</a>
+    {% endif %}
+
+    -> <a href="{% url 'irb_item' item_id=irb_toc.pk %}"> {{ irb_toc.toc }} {{ irb_toc.name }}</a>
+   {% endif %}
+
+
+  <div id="view_irb">
+  {% for r in irbs %}
+  {{ r.text|safe }}
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

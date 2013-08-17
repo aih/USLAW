@@ -1,0 +1,14 @@
+      <b>Document information:</b><br />
+      {% if r.current_through %}Current Through: <b>{{ r.current_through }}</b><br />{% endif %}
+      Last checked: <b>{{ r.last_update }}</b><br />
+      {% if r.revision_date %}
+      Revision Date: <b>{{ r.revision_date }}</b><br />
+      {% endif %}
+      {% if r.external_publication_date %}
+      <span title="Note: this date ">Posted date: <b>{{ r.external_publication_date }}</b><br /></span>
+      {% endif %}
+
+      {% if r.shortlink %}Source: <a target="_blank" title="{{ r.link }}" href="{{ r.shortlink }}">{{ r.shortlink }}</a>{% else %}
+      {% if r.link %}Source: <a target="_blank" title="{{ r.link }}" href="{{ r.link }}">{{ r.link }}</a>
+      {% endif %}
+      {% endif %}

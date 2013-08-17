@@ -1085,29 +1085,66 @@ class InternalRevenueBulletinToc(models.Model):
         (1, "Document"),
         (2, "Section"),
         )
-    toc = models.CharField(max_length=50)
+    #toc = models.CharField(max_length=50)
     level = models.PositiveIntegerField(default=0)
-    name = models.CharField(max_length=250)
+    name = models.CharField(max_length=450)
     parent = models.ForeignKey('self', null=True)
     order_id = models.PositiveIntegerField(default=0)
     element_type = models.PositiveIntegerField(choices=IRB_DOC_TYPES)
     source_link = models.CharField(max_length=100, null=True, blank=True)
+    pdf_link = models.CharField(max_length=100, null=True, blank=True)
+    current_through = models.DateField(null=True, blank=True)
+    document = models.FileField(blank=True, null=True,
+                                upload_to="uploads/documents/")
+    section_id = models.CharField(max_length=20, null=True, blank=True)
+    note = models.CharField(max_length=512, null=True, blank=True)
     
     def __unicode__(self):
-        return "%s - %s" % (self.toc, self.name)
+        return "%s" % (self.name)
 
     class Meta:
         ordering = ("order_id",)
         
 class InternalRevenueBulletin(models.Model):
     toc = models.ForeignKey(InternalRevenueBulletinToc)
+    sub_toc = models.ForeignKey(InternalRevenueBulletinToc,
+                                null=True, blank=True, related_name="sub_toc")
     text = models.TextField(null=True, blank=True)
-    document = models.FileField(blank=True, null=True,
-                                upload_to="uploads/documents/")
-
+    part_id = models.PositiveIntegerField()
+    
     def __unicode__(self):
         return self.toc
 
+
+class Treties(models.Model):
+    """
+    """
+    #search = SphinxSearch() # optional: defaults to db_table
+    search = SphinxSearch('uslaw_treties')
+    title = models.CharField(max_length=400, null=True, blank=True)
+    document = models.FileField(blank=True, null=True, upload_to="uploads/documents/")
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+    link = models.CharField(max_length=255, null=True, blank=True)
+    rate = models.IntegerField(default=0)
+
+    publication_date = models.DateTimeField(default=datetime.now())
+    is_active = models.BooleanField(default=True)
+    is_outdated = models.BooleanField(default=False)
+    external_publication_date = models.DateField(null=True, blank=True, max_length=20)
+    last_update = models.DateTimeField(blank=True, null=True)
+
+    def __unicode__(self):
+        return "%s" % (self.title)
+
+    def get_ext_date(self):
+        """Return external publication date"""
+        return self.external_publication_date
+
+    def get_name(self):
+        return self._meta.verbose_name_plural
+
+    class Meta:
+        verbose_name_plural = "U.S. Tax Treaties"    
 
 class PdfHash(models.Model):
     """We store all hashes for objects with PDF documents,

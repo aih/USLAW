@@ -68,7 +68,9 @@ def get_urls(request, url_type, secret_key):
 
     urls = []
     for pl in Plugin.objects.filter(status=1):
-        u = Link.objects.filter(url_type=url_type, status=0, plugin_id=pl.plugin_id).order_by("?")[:1]
+        #print pl.plugin_id
+        u = Link.objects.filter(url_type=url_type, status=0,
+                                plugin_id=pl.plugin_id).order_by("?")[:1]
         if len(u) > 0:
             urls.append(u[0])
 
@@ -88,9 +90,9 @@ def get_urls(request, url_type, secret_key):
                         skip = True
 
             if skip == False:
-                links = links+"|||"+u.url+"%%%"+str(u.plugin_id)+"%%%"+str(u.plugin_level)+"%%%"+ u.decode_charset + "%%%" + str(u.category_id)+"|||" 
+                links =  links+"|||"+u.url+"%%%"+str(u.plugin_id)+"%%%"+str(u.plugin_level)+"%%%"+ u.decode_charset + "%%%" + str(u.category_id)+"|||" 
                 u.date, u.date_taken = now, now
-                u.status=1
+                u.status = 1
                 u.save()
                 #print u.date, u.date_taken
     resp = HttpResponse(links, mimetype="text/plain")

@@ -369,3 +369,10 @@ fieldset {
 }
 
 
+#view_irb a{
+    text-decoration:none;
+    color: #202D3A;
+}
+#view_irb a:hover{
+    text-decoration:none;
+}

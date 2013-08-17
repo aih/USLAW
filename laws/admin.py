@@ -25,7 +25,7 @@ class InternalRevenueManualTocAdmin(admin.ModelAdmin):
     list_filter = ["level"]
 
 class InternalRevenueBulletinTocAdmin(admin.ModelAdmin):
-    list_display = ["toc", "name", "level", "source_link"]
+    list_display = [ "name", "level", "source_link"]
     search_fields = ["name", "toc"]
     list_filter = ["level"]
 

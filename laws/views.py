@@ -102,8 +102,37 @@ def target_to_section(target):
 
     redirect = False
     if "ref-unnamedact-" in target:
-        target = target.replace("ref-unnamedact-", "")
+        target = target.replace("ref-unnamedact-", "").split("/")
+        #target = target.replace("ref-namedact-", "")
+        if len(target) > 1:
+            sub_target = target[1]
+            if "(" in sub_target:
+                psection = sub_target[sub_target.find("("):]
+                sub_target = sub_target[:sub_target.find("(")]
+            else:
+                psection = ""
+        else:
+            sub_target = False
+        target = target[0]
+        
+        nas = NamedStatute.objects.filter(title__iexact=target)
+        if len(nas) > 0:
+            for n in nas:
+                if sub_target and n.top_title: #  There are link to section of the act
+                    try:
+                        section = Section.objects.get(top_title=n.top_title, 
+                                                      section=sub_target)
+                    except (Section.DoesNotExist, Section.MultipleObjectsReturned):
+                        pass
+                    else:
+                        return section, "Section", psection
+                if n.section is not None:
+                    return n.section, "Section", ""
+                if n.top_title is not None:
+                    return n.top_title, "Title", ""
+            return nas[0], "NamedAct", ""
         redirect = True
+
     if "ref-namedact-" in target:
         target = target.replace("ref-namedact-", "").split("/")
         if len(target) > 1:
@@ -1315,3 +1344,48 @@ def irm_item(request, item_id):
     else:
         r = InternalRevenueManual.objects.get(toc=irm_toc)
         return render(request, "laws/view_irm.html", locals())
+
+
+
+def internal_revenue_bulletin_toc(request):
+    """TOC for IRB"""
+    active_section = 'browse'
+    user = get_user_object(request)
+    searchform = SearchForm()
+    try:
+        profile = Profile.objects.get(user=user)
+    except Profile.DoesNotExist:
+        pass
+    irbs = InternalRevenueBulletinToc.objects.filter(level=0).exclude(name__exact='').order_by("-current_through")
+    return render(request, "laws/irb-toc.html", locals())
+
+def internal_revenue_bulletin_toc_ajax(request):
+    """TOC for IRB (ajax version)"""
+    try:
+        top_irb = int(request.GET.get('pk', ''))
+    except ValueError:
+        raise Http404
+    irbs = InternalRevenueBulletinToc.objects.filter(parent__pk=top_irb).exclude(name__exact='').order_by("order_id")
+    return render(request, "laws/irb-list.html", locals())
+
+def irb_item(request, item_id):
+    """IRB"""
+    print item_id
+    active_section = 'browse'
+    user = get_user_object(request)
+    searchform = SearchForm()
+    try:
+        profile = Profile.objects.get(user=user)
+    except Profile.DoesNotExist:
+        pass
+    irb_toc = get_object_or_404(InternalRevenueBulletinToc, pk=item_id)
+    print "Level", irb_toc.level
+    if irb_toc.level < 2:
+        irbs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by("order_id")
+        return render(request, "laws/irb-toc.html", locals())
+    else:
+        irbs = InternalRevenueBulletin.objects.filter(toc=irb_toc).order_by('part_id')
+        
+        tocs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by('order_id')
+        print len(irbs)
+        return render(request, "laws/view_irb.html", locals())

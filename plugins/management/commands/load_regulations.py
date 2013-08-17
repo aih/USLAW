@@ -252,6 +252,6 @@ class Command(BaseCommand, BasePlugin):
         return new_urls
 
     def handle(self, *args, **options):
-        _START_URLS = ["http://ecfr.gov/cgi/t/text/text-idx?c=ecfr&tpl=/ecfrbrowse/Title26/26tab_02.tpl",]
+        _START_URLS = ["http://www.ecfr.gov/cgi/t/text/text-idx?c=ecfr&tpl=/ecfrbrowse/Title26/26tab_02.tpl",]
         self.run(_START_URLS, _PLUGIN_ID)
 

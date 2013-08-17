@@ -22,7 +22,9 @@ class Command(BaseCommand):
     help = """load named Statute from http://uscode.house.gov/popularnames/popularnames.htm"""
 
     def handle(self, *args, **options):
-        data, a, b = load_url("http://uscode.house.gov/popularnames/popularnames.htm")
+        url = "http://uscode.house.gov/popularnames/popularnames.htm"
+        print "Loading data: %s " % url
+        data, a, b = load_url(url)
         data = unicode(data.decode("iso-8859-1"))
         item_re = re.compile(r"<div class='popular-name-table-entry(.*?)</div>", re.DOTALL)
         name_re = re.compile(r'<popular-name>(.*?)</popular-name>', re.DOTALL)
@@ -33,7 +35,7 @@ class Command(BaseCommand):
         for item in items:
             i += 1
             name = name_re.findall(item)[0]
-            print "-"*50
+            print "-" * 50
             print "Item: %s" % i
             print "Popular name: %s " % name
             additionals = additional_re.findall(item)

@@ -3,9 +3,9 @@
 	  {% endblock %}
 	  {% block menu %}
 
-	  {% if user.is_authenticated %}<div class="menu_item{% if active_section == 'home' %} active{% endif %}" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/users/home/">Home</a></div>
+	  {% if user.is_authenticated %}<div class="menu_item{% if active_section == 'home' %} active{% endif %}" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/users/home/">Home</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="/whatsnew/">What's New</a></div>
           {% else %}
-	  <div class="menu_item{% if active_section == 'home' %} active{% endif %}" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">Home</a></div>
+	  <div class="menu_item{% if active_section == 'home' %} active{% endif %}" style="float:left;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="/whatsnew/">What's New</a></div>
           {% endif %}
 	  <div class="menu_item" id="id_page_help" style="display:none;"><img src="{{ STATIC_URL }}img/help.png" alt="?" /></div>
 
@@ -94,6 +94,10 @@
 		<div id="browse_irm" class="pointer panel_item width150">
 		  <a href="{% url 'irm_toc' %}" class="menu_link">Internal Revenue Manual</a>
 		</div>
+		<div id="browse_irm" class="pointer panel_item width150">
+		  <a href="{% url 'irb_toc' %}" class="menu_link">Internal Revenue Bulletins</a>
+		</div>
+
 	      </div>
 	    </div>
 	  </div> 

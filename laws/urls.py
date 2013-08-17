@@ -76,6 +76,18 @@ urlpatterns = patterns(
     url('^irm/(?P<item_id>\d+)/$', 'laws.views.irm_item',
         name="irm_item"),
 
+
+    url('^internal-revenue-bulletin-toc/$', 'laws.views.internal_revenue_bulletin_toc',
+        name="irb_toc"),
+
+    url('^load-internal-revenue-bulletin-toc/$', 'laws.views.internal_revenue_bulletin_toc_ajax',
+        name="load_irb_toc"),
+
+    url('^irb/(?P<item_id>\d+)/$', 'laws.views.irb_item',
+        name="irb_item"),
+
+
+
     url('^previewresource/(\d+)/', 'laws.views.preview_resource',
         name="preview_resource"),
 
