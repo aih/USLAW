@@ -85,7 +85,8 @@ urlpatterns = patterns(
 
     url('^irb/(?P<item_id>\d+)/$', 'laws.views.irb_item',
         name="irb_item"),
-
+    url('^irb-redirect/', 'laws.views.irb_redirect',
+        name="irb_redirect"),
 
 
     url('^previewresource/(\d+)/', 'laws.views.preview_resource',

@@ -1370,7 +1370,7 @@ def internal_revenue_bulletin_toc_ajax(request):
 
 def irb_item(request, item_id):
     """IRB"""
-    print item_id
+    #print item_id
     active_section = 'browse'
     user = get_user_object(request)
     searchform = SearchForm()
@@ -1379,7 +1379,7 @@ def irb_item(request, item_id):
     except Profile.DoesNotExist:
         pass
     irb_toc = get_object_or_404(InternalRevenueBulletinToc, pk=item_id)
-    print "Level", irb_toc.level
+    #print "Level", irb_toc.level
     if irb_toc.level < 2:
         irbs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by("order_id")
         return render(request, "laws/irb-toc.html", locals())
@@ -1387,5 +1387,22 @@ def irb_item(request, item_id):
         irbs = InternalRevenueBulletin.objects.filter(toc=irb_toc).order_by('part_id')
         
         tocs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by('order_id')
-        print len(irbs)
+        #print len(irbs)
         return render(request, "laws/view_irb.html", locals())
+
+def irb_redirect(request):
+    try:
+        toc = int(request.GET.get('toc', False))
+    except ValueError:
+        raise Http404
+    sect = request.GET.get('sect', False)
+    if not sect:
+        raise Http404
+    irb_toc = InternalRevenueBulletinToc.objects.get(pk=toc)
+    try:
+        irb_item = InternalRevenueBulletinToc.objects.get(parent=irb_toc.pk,
+                                     source_link__endswith="%s.html" % sect)
+    except InternalRevenueBulletinToc.DoesNotExist:
+        raise Http404
+    url = reverse('irb_item', kwargs={'item_id':irb_item.pk})
+    return HttpResponseRedirect(url)
