@@ -1400,9 +1400,8 @@ def irb_redirect(request):
         raise Http404
     irb_toc = InternalRevenueBulletinToc.objects.get(pk=toc)
     try:
-        irb_item = InternalRevenueBulletinToc.objects.get(parent=irb_toc.pk,
-                                     source_link__endswith="%s.html" % sect)
-    except InternalRevenueBulletinToc.DoesNotExist:
+        irb_item = InternalRevenueBulletinToc.objects.filter(Q(parent=irb_toc.pk)|Q(parent__parent=irb_toc.pk)).filter(source_link__endswith="%s.html" % sect)[0]
+    except IndexError: #InternalRevenueBulletinToc.DoesNotExist:
         raise Http404
     url = reverse('irb_item', kwargs={'item_id':irb_item.pk})
     return HttpResponseRedirect(url)
