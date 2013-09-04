@@ -180,9 +180,7 @@ class Command(BaseCommand, BasePlugin):
             fname = page.url.split('/')[-1].split('#')[0].split('?')[0]
             data = data.replace(fname, '') # remove filename from html
             def link_repl(mobj):
-                #print "==" * 22
-                #print "OLOLO:", mobj.group(0), mobj.group(1)
-                return "<a href='/laws/irb-redirect/?toc=%s&sect=%s'>" % (top_irb_toc.pk,
+                return "<a href='/laws/irb-redirect/?toc=%s&sect=%s'>" % (top_irb_toc.parent.pk,
                                                                      mobj.group(1))
             data = re.sub(r'<a href="(\w+)(.*?)">', link_repl, data) 
             d = pq(data)
