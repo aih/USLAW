@@ -1385,7 +1385,7 @@ def irb_item(request, item_id):
         return render(request, "laws/irb-toc.html", locals())
     else:
         irbs = InternalRevenueBulletin.objects.filter(toc=irb_toc).order_by('part_id')
-        
+        r = irbs[0]
         tocs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by('order_id')
         #print len(irbs)
         return render(request, "laws/view_irb.html", locals())

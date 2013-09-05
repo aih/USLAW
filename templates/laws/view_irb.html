@@ -1,5 +1,5 @@
 {% extends "laws/resource_base.html" %}
-{% block title %}{{ r.name }} - Internal Revenue Bulletin{% endblock %}
+{% block title %}{{ r }} - Internal Revenue Bulletin{% endblock %}
 {% block "top-doc-info" %}
 <a href="{{ irb_toc.source_link }}">{{ irb_toc.source_link }}</a>
 {% endblock %}
@@ -23,7 +23,7 @@
 
   <div id="view_irb">
   {% for r in irbs %}
-  {{ r.text|safe }}
+  {% if r.text %}{{ r.text|safe }}{% endif %}
   {% endfor %}
   </div>
 </div>
