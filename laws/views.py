@@ -1385,7 +1385,10 @@ def irb_item(request, item_id):
         return render(request, "laws/irb-toc.html", locals())
     else:
         irbs = InternalRevenueBulletin.objects.filter(toc=irb_toc).order_by('part_id')
-        r = irbs[0]
+        try:
+            r = irbs[0]
+        except IndexError:
+            r = False
         tocs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by('order_id')
         #print len(irbs)
         return render(request, "laws/view_irb.html", locals())
@@ -1401,6 +1404,15 @@ def irb_redirect(request):
     irb_toc = InternalRevenueBulletinToc.objects.get(pk=toc)
     try:
         irb_item = InternalRevenueBulletinToc.objects.filter(Q(parent=irb_toc.pk)|Q(parent__parent=irb_toc.pk)).filter(source_link__endswith="%s.html" % sect)[0]
+    except IndexError: #InternalRevenueBulletinToc.DoesNotExist:
+        raise Http404
+    url = reverse('irb_item', kwargs={'item_id':irb_item.pk})
+    return HttpResponseRedirect(url)
+
+
+def irb_redirect_source(request, source_link):
+    try:
+        irb_item = InternalRevenueBulletinToc.objects.filter(source_link__endswith="%sindex.html" % source_link)[0]
     except IndexError: #InternalRevenueBulletinToc.DoesNotExist:
         raise Http404
     url = reverse('irb_item', kwargs={'item_id':irb_item.pk})

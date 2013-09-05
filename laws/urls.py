@@ -87,7 +87,8 @@ urlpatterns = patterns(
         name="irb_item"),
     url('^irb-redirect/', 'laws.views.irb_redirect',
         name="irb_redirect"),
-
+    url('^irb/(?P<source_link>.*?)', 'laws.views.irb_redirect_source',
+        name="irb_redirect_source"),
 
     url('^previewresource/(\d+)/', 'laws.views.preview_resource',
         name="preview_resource"),
