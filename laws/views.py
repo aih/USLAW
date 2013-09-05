@@ -1411,8 +1411,9 @@ def irb_redirect(request):
 
 
 def irb_redirect_source(request, source_link):
+    """Redirect links, which was not parsed"""
     try:
-        irb_item = InternalRevenueBulletinToc.objects.filter(source_link__endswith="%sindex.html" % source_link)[0]
+        irb_item = InternalRevenueBulletinToc.objects.filter(source_link__endswith=source_link)[0]
     except IndexError: #InternalRevenueBulletinToc.DoesNotExist:
         raise Http404
     url = reverse('irb_item', kwargs={'item_id':irb_item.pk})
