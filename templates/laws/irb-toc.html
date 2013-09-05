@@ -2,7 +2,13 @@
 {% block title %}Internal Revenue Bulletin{% endblock %}
 {% block extrahead %}
 <script type="text/javascript">
- 
+
+$(document).ready(function(){
+  $('#top-information').mouseleave(function() {
+    $('#top-information').hide();
+  });
+});
+
 function load(id){
     var url = "{% url 'load_irb_toc' %}"+"?pk="+id;
     $("#subirbs-"+id).show();
@@ -12,6 +18,7 @@ function load(id){
 {% endblock %}
 
 {% block content %}
+
 <div id="main_big">
   <a href="{% url 'irb_toc' %}">Internal Revenue Bulletin</a> 
   {% if irb_toc %} 
@@ -27,6 +34,19 @@ function load(id){
 
 
   {% endif %}
+
+    <div class="small" id="top-information" class="pointer">
+      {% block "top-doc-info" %}
+      {{ irb_toc }} <br />
+      Source: <a target="_blank" href="{{ irb_toc.source_link }}">{{ irb_toc.source_link }}</a>
+      {% endblock %}
+      <br />
+    </div>
+    <div style="float:right; margin-top:10px;">
+      <img alt="Help" style="cursor:help;" src="{{ STATIC_URL }}img/question.png" onmouseover="$('#top-information').show('slow');" />
+    </div>
+
+
   {% include "laws/irb-list.html" %}
 
 </div>
