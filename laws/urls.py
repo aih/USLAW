@@ -125,4 +125,10 @@ urlpatterns = patterns(
         name='load_subtitles'),
     url('select-section/(?P<title>\w+)/(?P<section>.*?)/$', 'laws.views.multiple_sections',
         name="multiple_sections_page"),
+
+    url('^irb-documents/(?P<document_type>[\w\s]+)/$', 'laws.views.irb_documents',
+        name="irb_documents"),
+    url('^irb-document/(?P<document_type>[\w\s]+)/(?P<pk>\d+)/$', 'laws.views.view_irb_document',
+        name="view_irb_document"),
+
 )

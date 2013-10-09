@@ -1418,3 +1418,27 @@ def irb_redirect_source(request, source_link):
         raise Http404
     url = reverse('irb_item', kwargs={'item_id':irb_item.pk})
     return HttpResponseRedirect(url)
+
+def check_irb_document_type(document_type):
+    dtypes = IRBDocument.DOCUMENT_TYPES
+    # check document type
+    dt_pk = None
+    for dt in dtypes:
+        if dt[1] == document_type:
+            dt_pk = dt[0]
+    return dt_pk
+
+def irb_documents(request, document_type):
+    print document_type
+    dt_pk = check_irb_document_type(document_type)
+    if dt_pk is None:
+        raise Http404
+    toc = IRBDocument.objects.filter(document_type=dt_pk).order_by("-irb__toc__name")
+    return render(request, "laws/irb-document-toc.html", locals())
+
+def view_irb_document(request, document_type, pk):
+    dt_pk = check_irb_document_type(document_type)
+    if dt_pk is None:
+        raise Http404
+    irbd = get_object_or_404(IRBDocument, pk=pk, document_type=dt_pk)
+    return render(request, "laws/view-irb-document.html", locals())

@@ -148,8 +148,12 @@ class TextStore(models.Model):
     and optimisations.
     For inscreasing access for other tables 
     all texts stored in this model
+
+    raw_text - for for not parsed text
+    
     """
     text = models.TextField(null=True, blank=True)
+    raw_text = models.TextField(null=True, blank=True, default="")
 
 class Title(models.Model):
     """Top level of Statutes tree. """
@@ -1175,3 +1179,42 @@ class DuplicateDocument(models.Model):
     class Meta:
         unique_together = (("duplicate_from", "duplicate_to"),)
         
+
+class IRBDocument(models.Model):
+
+    """A bunch of documents found only in IRB source.
+    - Revenue Procedure
+    - Announcement
+    - Notice
+    - Treasury Decision
+    - Proposed Regulation
+    """
+    #search = SphinxSearch() # optional: defaults to db_table
+
+    DOCUMENT_TYPES = (
+        (0, "Revenue Procedure"),
+        (1, "Announcement"),
+        (2, "Notice"),
+        (3, "Treasury Decision"),
+        (4, "Proposed Regulation"),
+        )
+    search = SphinxSearch('uslaw_irbdocuments')
+    document_type = models.PositiveSmallIntegerField(choices=DOCUMENT_TYPES)
+    irb = models.ForeignKey(InternalRevenueBulletin)
+
+    def __unicode__(self):
+        return "%s" % (self.irb.toc.name)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('laws.views.view_irbdocument', [self.pk])
+
+    def get_ext_date(self):
+        """Return external publication date"""
+        return self.irb.external_publication_date
+
+    def get_name(self):
+        return self._meta.verbose_name_plural
+
+    class Meta:
+        verbose_name_plural = "Documents from IRB" 

@@ -27,11 +27,13 @@ class Command(BaseCommand):
         # First check for long-running plugins
 
         n = datetime.now()-timedelta(seconds=settings.PLUGIN_MAX_WORK_TIME)
-        oldplugins = Plugin.objects.filter(status=True, runing=1, last_start__lt=n)
+        oldplugins = Plugin.objects.filter(status=True, runing=1,
+                                           last_start__lt=n)
         for p in oldplugins:
             print "Plugin running too long: ", p
             try:
-                mail_admins('Attention! Looks like plugin hangs.', "Attention! \r\n Plugin %s running too long, more than %s seconds \n " % (p, settings.PLUGIN_MAX_WORK_TIME), fail_silently=False)
+                mail_admins('Attention! Looks like plugin hangs.',
+                            "Attention! \r\n Plugin %s running too long, more than %s seconds \n " % (p, settings.PLUGIN_MAX_WORK_TIME), fail_silently=False)
             except SMTPException:
                 pass
 
