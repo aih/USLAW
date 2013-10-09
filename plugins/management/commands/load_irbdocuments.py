@@ -51,5 +51,5 @@ class Command(BaseCommand, BasePlugin):
                         irbd, c = IRBDocument.objects.get_or_create(document_type=reg[1],
                                                                     irb=irb)
                         irbd.save()
-                        if c:
-                            print "New IRB Document: %s" % irbd
+                        #if c:
+                            #print "New IRB Document: %s" % irbd
