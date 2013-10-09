@@ -6,10 +6,12 @@
   <a href="{% url 'irb_documents' document_type=document_type %}">{{ document_list }}</a> 
 
   <ul>
-    {% for i in toc %} 
+    {% for i in page.object_list %} 
     <li><a href="{% url 'view_irb_document' document_type=document_type pk=i.pk %}"> {{ i.irb.toc.name }}</a></li>
     {% endfor %}
   </ul>
  
+
+{% include "paginator.html" %}
 </div>
 {% endblock %}

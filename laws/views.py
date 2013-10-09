@@ -1434,6 +1434,7 @@ def irb_documents(request, document_type):
     if dt_pk is None:
         raise Http404
     toc = IRBDocument.objects.filter(document_type=dt_pk).order_by("-irb__toc__name")
+    paginator, page, page_range, page_id = prepeare_pagination(toc, request)
     return render(request, "laws/irb-document-toc.html", locals())
 
 def view_irb_document(request, document_type, pk):
