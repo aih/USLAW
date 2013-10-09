@@ -38,7 +38,7 @@ class Command(BaseCommand, BasePlugin):
             (r'REG\-(\d+)\-(.*?)', dt[4][0]),
             (r'Rev\. Rul\.(.*?)', 5),
             )
-        irbs = InternalRevenueBulletin.objects.filter()
+        irbs = InternalRevenueBulletin.objects.filter(toc__section_id__isnull=True)
         for irb in irbs:
             for reg in document_type_regexps:
                 cr = re.compile(reg[0])

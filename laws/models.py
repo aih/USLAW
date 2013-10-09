@@ -1203,7 +1203,7 @@ class IRBDocument(models.Model):
     irb = models.ForeignKey(InternalRevenueBulletin)
 
     def __unicode__(self):
-        return "%s" % unicode(self.irb.toc.name)
+        return "%s" % self.irb.toc.name
 
     @models.permalink
     def get_absolute_url(self):
