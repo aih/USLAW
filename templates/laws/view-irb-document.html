@@ -1,0 +1,19 @@
+{% extends "laws/resource_base.html" %}
+{% block title %}{{ irbd.irb.toc.name }} {% endblock %}
+{% block "top-doc-info" %}
+{{ r }}<br />
+Source: <a href="{{ irbd.irb.toc.source_link }}">{{ irbd.irb.toc.source_link }}</a>
+{% endblock %}
+{% block main_text %}
+<div id="main_text" style="padding:5px; float:left; width:600px;">
+
+  <a href="{% url 'irb_documents' document_type=document_type %}">{{ document_type }}</a> 
+
+  <div id="view_irb">
+  {{ irbd.irb.text|safe }}
+  </div>
+</div>
+{% endblock %}
+{% block "bottom-doc-info" %}
+Source: <a href="{{ irbd.irb.toc.source_link }}">{{ irbd.irb.toc.source_link }}</a>
+{% endblock %}
