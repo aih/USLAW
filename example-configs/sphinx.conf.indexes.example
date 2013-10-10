@@ -1,3 +1,32 @@
+source uslaw_irbdocuments
+{
+	type = pgsql
+	sql_host = localhost
+	sql_user = uslaw-beta
+	sql_pass = uslaw-beta
+	sql_db = uslaw-beta
+	sql_port =  # optional, default is 3306
+
+        sql_query = select a.id, a.document_type, b.text as text, c.name as title, '' as description, EXTRACT( epoch FROM c.current_through) as ext_date from laws_internalrevenuebulletintoc c, laws_internalrevenuebulletin b, laws_irbdocument a where a.irb_id=b.id and b.toc_id=c.id;
+	sql_attr_bigint             = document_type
+	sql_attr_bigint             = ext_date
+#	sql_attr_timestamp             = last_update
+#        sql_attr_bigint                = content_type
+}
+
+index uslaw_irbdocuments
+{
+	source = uslaw_irbdocuments
+	path = /var/lib/sphinxsearch/data/uslaw_irbdocuments
+	docinfo = extern
+	mlock = 0
+	morphology = stem_en
+	min_word_len = 2
+	charset_type = utf-8
+	html_strip = 1
+}
+
+
 source uslaw_wdeterminations
 {
         type                                    = pgsql
