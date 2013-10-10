@@ -570,18 +570,21 @@ def search(request):
                     index = ("uslaw_section uslaw_decision "
                              "uslaw_publications uslaw_popular_name "
                              "uslaw_title uslaw_forms "
-                             "uslaw_title regulations uslaw_wdeterminations "
+                             "regulations uslaw_wdeterminations "
                              "post comment uslaw_iletters uslaw_irbdocuments"),
                     weights = {
                         'title': 100,
                         'description': 60,
                         'add_field':10,
                         'text': 20,
+
                         },
                     mode = mode,
                     rankmode = 'SPH_RANK_BM25'#SPH_RANK_PROXIMITY
                     )
                 main_query = search.query(query)
+                #print main_query
+                #print len(main_query)
 
             #print "DATE sort %s" % date_sort
             if date_sort == 'asc':

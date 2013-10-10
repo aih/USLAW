@@ -7,11 +7,12 @@ source uslaw_irbdocuments
 	sql_db = uslaw-beta
 	sql_port =  # optional, default is 3306
 
-        sql_query = select a.id, a.document_type, b.text as text, c.name as title, '' as description, EXTRACT( epoch FROM c.current_through) as ext_date from laws_internalrevenuebulletintoc c, laws_internalrevenuebulletin b, laws_irbdocument a where a.irb_id=b.id and b.toc_id=c.id;
-	sql_attr_bigint             = document_type
-	sql_attr_bigint             = ext_date
-#	sql_attr_timestamp             = last_update
-#        sql_attr_bigint                = content_type
+	sql_query = select a.id, a.document_type, (select id from django_content_type where model='irbdocument' and app_label='laws') as content_type, c.name as title, '' as description, '' as add_field, b.text, EXTRACT( epoch FROM c.current_through) as ext_date, NULL as last_update from laws_internalrevenuebulletintoc c, laws_internalrevenuebulletin b, laws_irbdocument a where a.irb_id=b.id and b.toc_id=c.id;
+        sql_attr_bigint             = document_type
+        sql_attr_bigint             = ext_date
+        sql_attr_timestamp             = last_update
+        sql_attr_bigint                = content_type   
+
 }
 
 index uslaw_irbdocuments
