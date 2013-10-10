@@ -40,7 +40,7 @@ class Command(BaseCommand, BasePlugin):
             )
         irbs = InternalRevenueBulletin.objects.filter(toc__section_id__isnull=True)
         for irb in irbs:
-            print irb.toc.section_id
+            print irb.toc.section_id, irb.toc.pk, irb.pk
             for reg in document_type_regexps:
                 cr = re.compile(reg[0])
                 res = cr.match(irb.toc.name)
@@ -49,8 +49,22 @@ class Command(BaseCommand, BasePlugin):
                         # skip for now, we need to deduplication procedure first
                         pass
                     else:
-                        irbd, c = IRBDocument.objects.get_or_create(document_type=reg[1],
-                                                                    irb=irb)
-                        irbd.save()
-                        if c:
+                        try:
+                            irbd = IRBDocument.objects.get(document_type=reg[1], irb__toc=irb.toc)
+                        except IRBDocument.DoesNotExist:
+                            irbd = IRBDocument(document_type=reg[1], irb=irb)
+                            irbd.save()
                             print "New IRB Document: %s" % irbd
+                        else:
+                            
+                            if irbd.irb.text is None:
+                                irbd.irb = irb
+                                irbd.save()
+                                print "Text updated..!!!!."
+                            elif irb.text is not None:
+                                if len(irbd.irb.text) < len(irb.text):
+                                    print "%s - %s " % (len(irbd.irb.text), len(irb.text))
+                                    irbd.irb = irb
+                                    irbd.save()
+                                    print "Text updated..."
+                                
