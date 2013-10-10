@@ -1119,6 +1119,9 @@ class InternalRevenueBulletin(models.Model):
     def __unicode__(self):
         return self.toc
 
+    def get_ext_date(self):
+        return self.toc.current_through
+
 
 class Treties(models.Model):
     """
@@ -1205,13 +1208,14 @@ class IRBDocument(models.Model):
     def __unicode__(self):
         return "%s" % self.irb.toc.name
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('laws.views.view_irbdocument', [self.pk])
+        dt_name = self.DOCUMENT_TYPES[self.document_type][1]
+        url = reverse('view_irb_document', kwargs={'document_type':dt_name, 'pk':self.pk})
+        return url
 
     def get_ext_date(self):
         """Return external publication date"""
-        return self.irb.external_publication_date
+        return self.irb.get_ext_date()
 
     def get_name(self):
         return self._meta.verbose_name_plural

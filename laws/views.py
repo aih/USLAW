@@ -545,6 +545,21 @@ def search(request):
             if where == "wdeterminations":
                 main_query = WrittenDetermination.search.query(query)
 
+            if where == "revenueprocedures":
+                main_query = IRBDocument.search.query(query).filter(document_type=0)
+
+            if where == "announcements":
+                main_query = IRBDocument.search.query(query).filter(document_type=1)
+
+            if where == "notices":
+                main_query = IRBDocument.search.query(query).filter(document_type=2)
+
+            if where == "treasurydecisions":
+                main_query = IRBDocument.search.query(query).filter(document_type=3)
+
+            if where == "proposedregulations":
+                main_query = IRBDocument.search.query(query).filter(document_type=4)
+
             if where == "everywhere":
                 if "/" in query:
                     mode = 'SPH_MATCH_ALL'
@@ -556,7 +571,7 @@ def search(request):
                              "uslaw_publications uslaw_popular_name "
                              "uslaw_title uslaw_forms "
                              "uslaw_title regulations uslaw_wdeterminations "
-                             "post comment uslaw_iletters"),
+                             "post comment uslaw_iletters uslaw_irbdocuments"),
                     weights = {
                         'title': 100,
                         'description': 60,
@@ -574,19 +589,6 @@ def search(request):
             elif date_sort == 'desc':
                 main_query = main_query.order_by('-ext_date')
             
-            """
-            p_main = Paginator(main_query, 20)
-            paginator = None
-            paginator = p_main
-            try:
-                main_result = p_main.page(page_id)
-            except EmptyPage:
-                paginator = None
-            else:
-                page_obj = main_result
-            page_range = get_page_range(paginator, page_id)
-            """
-            #p_main = Paginator(main_query, 20)
             paginator, page_obj, page_range, page_id = prepeare_pagination(main_query, request)
 
 

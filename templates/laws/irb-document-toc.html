@@ -1,17 +1,13 @@
 {% extends "base.html" %}
-{% block title %}{{ document_type }} list{% endblock %}
+{% block title %}{{ document_type }}s list{% endblock %}
 {% block content %}
-
 <div id="main_big">
   <a href="{% url 'irb_documents' document_type=document_type %}">{{ document_list }}</a> 
-
-  <ul>
     {% for i in page.object_list %} 
-    <li><a href="{% url 'view_irb_document' document_type=document_type pk=i.pk %}"> {{ i.irb.toc.name }}</a></li>
+    <div class="list_item" id="item-{{ i.id }}">
+      <a href="{% url 'view_irb_document' document_type=document_type pk=i.pk %}"> {{ i.irb.toc.name }}</a>
+    </div>
     {% endfor %}
-  </ul>
- 
-
 {% include "paginator.html" %}
 </div>
 {% endblock %}
