@@ -7,7 +7,8 @@ Source: <a href="{{ irbd.irb.toc.source_link }}">{{ irbd.irb.toc.source_link }}<
 {% block main_text %}
 <div id="main_text" style="padding:5px; float:left; width:600px;">
 
-  <a href="{% url 'irb_documents' document_type=document_type %}">{{ document_type }}</a> 
+  <a href="{% url 'irb_documents' document_type=document_type %}">{{ document_type }}s</a> ->
+  <a href="{% url 'view_irb_document' document_type=document_type pk=irbd.pk %}">{{ irbd.irb.toc.name }}</a> 
 
   <div id="view_irb">
   {{ irbd.irb.text|safe }}

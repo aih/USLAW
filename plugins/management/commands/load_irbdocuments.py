@@ -40,6 +40,7 @@ class Command(BaseCommand, BasePlugin):
             )
         irbs = InternalRevenueBulletin.objects.filter(toc__section_id__isnull=True)
         for irb in irbs:
+            print irb.toc.section_id
             for reg in document_type_regexps:
                 cr = re.compile(reg[0])
                 res = cr.match(irb.toc.name)
