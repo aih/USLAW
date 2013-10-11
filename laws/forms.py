@@ -52,6 +52,7 @@ class SearchForm(forms.Form):
         ('notices','Notices'),
         ('treasurydecisions','Treasury Decisions'),
         ('proposedregulations','Proposed Regulations'),
+        ('irbs','Internal Revenue Bulletins'),
         ('comment', 'Comments'),
         ('post','News / Questions'),
     )

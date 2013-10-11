@@ -1110,6 +1110,7 @@ class InternalRevenueBulletinToc(models.Model):
         ordering = ("order_id",)
         
 class InternalRevenueBulletin(models.Model):
+    search = SphinxSearch('uslaw_irb')
     toc = models.ForeignKey(InternalRevenueBulletinToc)
     sub_toc = models.ForeignKey(InternalRevenueBulletinToc,
                                 null=True, blank=True, related_name="sub_toc")
@@ -1117,11 +1118,24 @@ class InternalRevenueBulletin(models.Model):
     part_id = models.PositiveIntegerField()
     
     def __unicode__(self):
-        return self.toc
+        u = ""
+        parent = self.toc.parent
+        if parent:
+        #while parent:
+            u = "%s -> %s" % (parent.name, self.toc.name)
+            parent = parent.parent
+            if parent:
+                u = "%s -> %s" % (parent.name, u)
+        else:
+            u = "%s" % (self.toc.name)
+        return u
 
     def get_ext_date(self):
         return self.toc.current_through
 
+    def get_absolute_url(self):
+        url = reverse('irb_item', kwargs={"item_id":self.toc.pk})
+        return url
 
 class Treties(models.Model):
     """

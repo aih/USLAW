@@ -508,59 +508,62 @@ def search(request):
             if where == "statute":
                 main_query = Section.search.query(query)
 
-            if where == "title":
+            elif where == "title":
                 main_query = Title.search.query(query)
                 print main_query
 
-            if where == "regulation":
+            elif where == "regulation":
                 main_query = Regulation.search.query(query)
 
-            if where == "irsruling":
+            elif where == "irsruling":
                 main_query = IRSRevenueRulings.search.query(query)
 
-            if where == "irsprivateletter":
+            elif where == "irsprivateletter":
                 main_query = IRSPrivateLetter.search.query(query)
 
-            if where == "comment":
+            elif where == "comment":
                 main_query = Comment.search.query(query)
 
-            if where == "post":
+            elif where == "post":
                 main_query = Post.search.query(query)
 
-            if where == "forms":
+            elif where == "forms":
                 main_query = FormAndInstruction.search.query(query)
 
-            if where == "namedacts":
+            elif where == "namedacts":
                 main_query = NamedStatute.search.query(query)
 
-            if where == "publications":
+            elif where == "publications":
                 main_query = Publication.search.query(query)
 
-            if where == "decisions":
+            elif where == "decisions":
                 main_query = Decision.search.query(query)
 
-            if where == "iletters":
+            elif where == "iletters":
                 main_query = InformationLetter.search.query(query)
 
-            if where == "wdeterminations":
+            elif where == "wdeterminations":
                 main_query = WrittenDetermination.search.query(query)
 
-            if where == "revenueprocedures":
+            elif where == "revenueprocedures":
                 main_query = IRBDocument.search.query(query).filter(document_type=0)
 
-            if where == "announcements":
+            elif where == "announcements":
                 main_query = IRBDocument.search.query(query).filter(document_type=1)
 
-            if where == "notices":
+            elif where == "notices":
                 main_query = IRBDocument.search.query(query).filter(document_type=2)
 
-            if where == "treasurydecisions":
+            elif where == "treasurydecisions":
                 main_query = IRBDocument.search.query(query).filter(document_type=3)
 
-            if where == "proposedregulations":
+            elif where == "proposedregulations":
                 main_query = IRBDocument.search.query(query).filter(document_type=4)
 
-            if where == "everywhere":
+            elif where == "irbs":
+                main_query = InternalRevenueBulletin.search.query(query)
+
+            elif where == "everywhere":
                 if "/" in query:
                     mode = 'SPH_MATCH_ALL'
                 else:
