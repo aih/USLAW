@@ -376,3 +376,8 @@ fieldset {
 #view_irb a:hover{
     text-decoration:none;
 }
+
+#view_irb a span.bold{
+    text-decoration:underline!important;
+    color: #202D3A;
+}

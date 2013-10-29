@@ -148,8 +148,12 @@ class TextStore(models.Model):
     and optimisations.
     For inscreasing access for other tables 
     all texts stored in this model
+
+    raw_text - for for not parsed text
+    
     """
     text = models.TextField(null=True, blank=True)
+    raw_text = models.TextField(null=True, blank=True, default="")
 
 class Title(models.Model):
     """Top level of Statutes tree. """
@@ -1106,6 +1110,7 @@ class InternalRevenueBulletinToc(models.Model):
         ordering = ("order_id",)
         
 class InternalRevenueBulletin(models.Model):
+    search = SphinxSearch('uslaw_irb')
     toc = models.ForeignKey(InternalRevenueBulletinToc)
     sub_toc = models.ForeignKey(InternalRevenueBulletinToc,
                                 null=True, blank=True, related_name="sub_toc")
@@ -1113,8 +1118,24 @@ class InternalRevenueBulletin(models.Model):
     part_id = models.PositiveIntegerField()
     
     def __unicode__(self):
-        return self.toc
+        u = ""
+        parent = self.toc.parent
+        if parent:
+        #while parent:
+            u = "%s -> %s" % (parent.name, self.toc.name)
+            parent = parent.parent
+            if parent:
+                u = "%s -> %s" % (parent.name, u)
+        else:
+            u = "%s" % (self.toc.name)
+        return u
 
+    def get_ext_date(self):
+        return self.toc.current_through
+
+    def get_absolute_url(self):
+        url = reverse('irb_item', kwargs={"item_id":self.toc.pk})
+        return url
 
 class Treties(models.Model):
     """
@@ -1175,3 +1196,43 @@ class DuplicateDocument(models.Model):
     class Meta:
         unique_together = (("duplicate_from", "duplicate_to"),)
         
+
+class IRBDocument(models.Model):
+
+    """A bunch of documents found only in IRB source.
+    - Revenue Procedure
+    - Announcement
+    - Notice
+    - Treasury Decision
+    - Proposed Regulation
+    """
+    #search = SphinxSearch() # optional: defaults to db_table
+
+    DOCUMENT_TYPES = (
+        (0, "Revenue Procedure"),
+        (1, "Announcement"),
+        (2, "Notice"),
+        (3, "Treasury Decision"),
+        (4, "Proposed Regulation"),
+        )
+    search = SphinxSearch('uslaw_irbdocuments')
+    document_type = models.PositiveSmallIntegerField(choices=DOCUMENT_TYPES)
+    irb = models.ForeignKey(InternalRevenueBulletin)
+
+    def __unicode__(self):
+        return "%s" % self.irb.toc.name
+
+    def get_absolute_url(self):
+        dt_name = self.DOCUMENT_TYPES[self.document_type][1]
+        url = reverse('view_irb_document', kwargs={'document_type':dt_name, 'pk':self.pk})
+        return url
+
+    def get_ext_date(self):
+        """Return external publication date"""
+        return self.irb.get_ext_date()
+
+    def get_name(self):
+        return self._meta.verbose_name_plural
+
+    class Meta:
+        verbose_name_plural = "Documents from IRB" 

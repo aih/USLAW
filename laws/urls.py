@@ -85,8 +85,10 @@ urlpatterns = patterns(
 
     url('^irb/(?P<item_id>\d+)/$', 'laws.views.irb_item',
         name="irb_item"),
-
-
+    url('^irb-redirect/', 'laws.views.irb_redirect',
+        name="irb_redirect"),
+    url('^irb/(?P<source_link>.*?)$', 'laws.views.irb_redirect_source',
+        name="irb_redirect_source"),
 
     url('^previewresource/(\d+)/', 'laws.views.preview_resource',
         name="preview_resource"),
@@ -123,4 +125,10 @@ urlpatterns = patterns(
         name='load_subtitles'),
     url('select-section/(?P<title>\w+)/(?P<section>.*?)/$', 'laws.views.multiple_sections',
         name="multiple_sections_page"),
+
+    url('^irb-documents/(?P<document_type>[\w\s]+)/$', 'laws.views.irb_documents',
+        name="irb_documents"),
+    url('^irb-document/(?P<document_type>[\w\s]+)/(?P<pk>\d+)/$', 'laws.views.view_irb_document',
+        name="view_irb_document"),
+
 )

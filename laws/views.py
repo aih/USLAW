@@ -508,44 +508,62 @@ def search(request):
             if where == "statute":
                 main_query = Section.search.query(query)
 
-            if where == "title":
+            elif where == "title":
                 main_query = Title.search.query(query)
                 print main_query
 
-            if where == "regulation":
+            elif where == "regulation":
                 main_query = Regulation.search.query(query)
 
-            if where == "irsruling":
+            elif where == "irsruling":
                 main_query = IRSRevenueRulings.search.query(query)
 
-            if where == "irsprivateletter":
+            elif where == "irsprivateletter":
                 main_query = IRSPrivateLetter.search.query(query)
 
-            if where == "comment":
+            elif where == "comment":
                 main_query = Comment.search.query(query)
 
-            if where == "post":
+            elif where == "post":
                 main_query = Post.search.query(query)
 
-            if where == "forms":
+            elif where == "forms":
                 main_query = FormAndInstruction.search.query(query)
 
-            if where == "namedacts":
+            elif where == "namedacts":
                 main_query = NamedStatute.search.query(query)
 
-            if where == "publications":
+            elif where == "publications":
                 main_query = Publication.search.query(query)
 
-            if where == "decisions":
+            elif where == "decisions":
                 main_query = Decision.search.query(query)
 
-            if where == "iletters":
+            elif where == "iletters":
                 main_query = InformationLetter.search.query(query)
 
-            if where == "wdeterminations":
+            elif where == "wdeterminations":
                 main_query = WrittenDetermination.search.query(query)
 
-            if where == "everywhere":
+            elif where == "revenueprocedures":
+                main_query = IRBDocument.search.query(query).filter(document_type=0)
+
+            elif where == "announcements":
+                main_query = IRBDocument.search.query(query).filter(document_type=1)
+
+            elif where == "notices":
+                main_query = IRBDocument.search.query(query).filter(document_type=2)
+
+            elif where == "treasurydecisions":
+                main_query = IRBDocument.search.query(query).filter(document_type=3)
+
+            elif where == "proposedregulations":
+                main_query = IRBDocument.search.query(query).filter(document_type=4)
+
+            elif where == "irbs":
+                main_query = InternalRevenueBulletin.search.query(query)
+
+            elif where == "everywhere":
                 if "/" in query:
                     mode = 'SPH_MATCH_ALL'
                 else:
@@ -555,18 +573,21 @@ def search(request):
                     index = ("uslaw_section uslaw_decision "
                              "uslaw_publications uslaw_popular_name "
                              "uslaw_title uslaw_forms "
-                             "uslaw_title regulations uslaw_wdeterminations "
-                             "post comment uslaw_iletters"),
+                             "regulations uslaw_wdeterminations "
+                             "post comment uslaw_iletters uslaw_irbdocuments"),
                     weights = {
                         'title': 100,
                         'description': 60,
                         'add_field':10,
                         'text': 20,
+
                         },
                     mode = mode,
                     rankmode = 'SPH_RANK_BM25'#SPH_RANK_PROXIMITY
                     )
                 main_query = search.query(query)
+                #print main_query
+                #print len(main_query)
 
             #print "DATE sort %s" % date_sort
             if date_sort == 'asc':
@@ -574,19 +595,6 @@ def search(request):
             elif date_sort == 'desc':
                 main_query = main_query.order_by('-ext_date')
             
-            """
-            p_main = Paginator(main_query, 20)
-            paginator = None
-            paginator = p_main
-            try:
-                main_result = p_main.page(page_id)
-            except EmptyPage:
-                paginator = None
-            else:
-                page_obj = main_result
-            page_range = get_page_range(paginator, page_id)
-            """
-            #p_main = Paginator(main_query, 20)
             paginator, page_obj, page_range, page_id = prepeare_pagination(main_query, request)
 
 
@@ -1370,7 +1378,7 @@ def internal_revenue_bulletin_toc_ajax(request):
 
 def irb_item(request, item_id):
     """IRB"""
-    print item_id
+    #print item_id
     active_section = 'browse'
     user = get_user_object(request)
     searchform = SearchForm()
@@ -1379,13 +1387,67 @@ def irb_item(request, item_id):
     except Profile.DoesNotExist:
         pass
     irb_toc = get_object_or_404(InternalRevenueBulletinToc, pk=item_id)
-    print "Level", irb_toc.level
+    #print "Level", irb_toc.level
     if irb_toc.level < 2:
         irbs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by("order_id")
         return render(request, "laws/irb-toc.html", locals())
     else:
         irbs = InternalRevenueBulletin.objects.filter(toc=irb_toc).order_by('part_id')
-        
+        try:
+            r = irbs[0]
+        except IndexError:
+            r = False
         tocs = InternalRevenueBulletinToc.objects.filter(parent=irb_toc).exclude(name__exact='').order_by('order_id')
-        print len(irbs)
+        #print len(irbs)
         return render(request, "laws/view_irb.html", locals())
+
+def irb_redirect(request):
+    try:
+        toc = int(request.GET.get('toc', False))
+    except ValueError:
+        raise Http404
+    sect = request.GET.get('sect', False)
+    if not sect:
+        raise Http404
+    irb_toc = InternalRevenueBulletinToc.objects.get(pk=toc)
+    try:
+        irb_item = InternalRevenueBulletinToc.objects.filter(Q(parent=irb_toc.pk)|Q(parent__parent=irb_toc.pk)).filter(source_link__endswith="%s.html" % sect)[0]
+    except IndexError: #InternalRevenueBulletinToc.DoesNotExist:
+        raise Http404
+    url = reverse('irb_item', kwargs={'item_id':irb_item.pk})
+    return HttpResponseRedirect(url)
+
+
+def irb_redirect_source(request, source_link):
+    """Redirect links, which was not parsed"""
+    try:
+        irb_item = InternalRevenueBulletinToc.objects.filter(source_link__endswith=source_link)[0]
+    except IndexError: #InternalRevenueBulletinToc.DoesNotExist:
+        raise Http404
+    url = reverse('irb_item', kwargs={'item_id':irb_item.pk})
+    return HttpResponseRedirect(url)
+
+def check_irb_document_type(document_type):
+    dtypes = IRBDocument.DOCUMENT_TYPES
+    # check document type
+    dt_pk = None
+    for dt in dtypes:
+        if dt[1] == document_type:
+            dt_pk = dt[0]
+    return dt_pk
+
+def irb_documents(request, document_type):
+    print document_type
+    dt_pk = check_irb_document_type(document_type)
+    if dt_pk is None:
+        raise Http404
+    toc = IRBDocument.objects.filter(document_type=dt_pk).order_by("-irb__toc__name")
+    paginator, page, page_range, page_id = prepeare_pagination(toc, request)
+    return render(request, "laws/irb-document-toc.html", locals())
+
+def view_irb_document(request, document_type, pk):
+    dt_pk = check_irb_document_type(document_type)
+    if dt_pk is None:
+        raise Http404
+    irbd = get_object_or_404(IRBDocument, pk=pk, document_type=dt_pk)
+    return render(request, "laws/view-irb-document.html", locals())

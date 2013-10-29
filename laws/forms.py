@@ -47,6 +47,12 @@ class SearchForm(forms.Form):
         ('iletters','Information Letters'),
         ('wdeterminations','Written Determinations'),
         ('namedacts','Named Acts'),
+        ('revenueprocedures','Revenue Procedures'),
+        ('announcements','Announcements'),
+        ('notices','Notices'),
+        ('treasurydecisions','Treasury Decisions'),
+        ('proposedregulations','Proposed Regulations'),
+        ('irbs','Internal Revenue Bulletins'),
         ('comment', 'Comments'),
         ('post','News / Questions'),
     )

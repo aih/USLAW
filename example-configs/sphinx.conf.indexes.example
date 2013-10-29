@@ -1,3 +1,63 @@
+source uslaw_irb
+{
+	type = pgsql
+	sql_host = localhost
+	sql_user = uslaw-beta
+	sql_pass = uslaw-beta
+	sql_db = uslaw-beta
+	sql_port =  # optional, default is 3306
+
+        sql_query = select a.id, (select id from django_content_type where model='internalrevenuebulletin' and app_label='laws') as content_type, b.name as title, '' as description, '' as add_field, a.text, EXTRACT( epoch FROM b.current_through) as ext_date, NULL as last_update from laws_internalrevenuebulletintoc b, laws_internalrevenuebulletin a where a.toc_id=b.id;
+	sql_attr_bigint             = document_type
+	sql_attr_bigint             = ext_date
+	sql_attr_timestamp             = last_update
+        sql_attr_bigint                = content_type
+}
+
+index uslaw_irb
+{
+	source = uslaw_irb
+	path = /var/lib/sphinxsearch/data/uslaw_irb
+	docinfo = extern
+	mlock = 0
+	morphology = stem_en
+	min_word_len = 2
+	charset_type = utf-8
+	html_strip = 1
+}
+
+
+
+source uslaw_irbdocuments
+{
+	type = pgsql
+	sql_host = localhost
+	sql_user = uslaw-beta
+	sql_pass = uslaw-beta
+	sql_db = uslaw-beta
+	sql_port =  # optional, default is 3306
+
+	sql_query = select a.id, a.document_type, (select id from django_content_type where model='irbdocument' and app_label='laws') as content_type, c.name as title, '' as description, '' as add_field, b.text, EXTRACT( epoch FROM c.current_through) as ext_date, NULL as last_update from laws_internalrevenuebulletintoc c, laws_internalrevenuebulletin b, laws_irbdocument a where a.irb_id=b.id and b.toc_id=c.id;
+        sql_attr_bigint             = document_type
+        sql_attr_bigint             = ext_date
+        sql_attr_timestamp             = last_update
+        sql_attr_bigint                = content_type   
+
+}
+
+index uslaw_irbdocuments
+{
+	source = uslaw_irbdocuments
+	path = /var/lib/sphinxsearch/data/uslaw_irbdocuments
+	docinfo = extern
+	mlock = 0
+	morphology = stem_en
+	min_word_len = 2
+	charset_type = utf-8
+	html_strip = 1
+}
+
+
 source uslaw_wdeterminations
 {
         type                                    = pgsql

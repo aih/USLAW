@@ -179,10 +179,14 @@ class Command(BaseCommand, BasePlugin):
             data = data.replace('<div></div>', '') # PyQuery bug
             fname = page.url.split('/')[-1].split('#')[0].split('?')[0]
             data = data.replace(fname, '') # remove filename from html
+            top_i = top_irb_toc.parent
+            while top_i.parent is not None:
+                top_i = top_i.parent
             def link_repl(mobj):
-                return "<a href='/irb-redirect/?toc=%s&sect=%s'>" % (top_irb_toc.pk,
-                                                                     mobj.group(0))
-            data = re.sub(r'<a href="(\w+).html">', link_repl, data) 
+                print mobj.group(1)
+                return "<a href='/laws/irb-redirect/?toc=%s&sect=%s'>" % (top_i.pk,
+                                                                     mobj.group(1))
+            data = re.sub(r'<a href="(\w+)(.*?)">', link_repl, data) 
             d = pq(data)
             part_id = 0
             subtitle = d('h3.subtitle:first').html()
