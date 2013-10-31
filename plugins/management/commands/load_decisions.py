@@ -15,7 +15,7 @@ from django.conf import settings
 
 from utils.load_url import load_url
 from utils.txt2html import texttohtml
-from laws.models import Decision
+from laws.models import Decision, TextStore
 from parserefs.autoparser import parse 
 from plugins.plugin_base import BasePlugin
 
@@ -95,11 +95,19 @@ from http://apps.irs.gov/app/picklist/list/actionsOnDecisions.html"""
                                                         title=d[2].strip())
                 fai.document = document
                 fai.description = d[3].strip()
-                fai.text = data
+                if fai.store is None:
+                    st = TextStore(text=data)
+                    st.save()
+                    fai.store = st
+                else:
+                    fai.store.text = data
+
+                #fai.text = data
                 fai.external_publication_date = external_publication_date.date()
                 fai.last_update = datetime.now()
                 fai.save()
-
+                
+                fai.store.save()
                 self.extract_references(data, fai)
 
             return new_urls

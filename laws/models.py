@@ -4,6 +4,7 @@
 import sys
 from datetime import datetime
 from string import ascii_uppercase as ABC
+
 from djangosphinx.models import SphinxSearch
 import hashlib
 
@@ -14,133 +15,7 @@ from django.db import IntegrityError
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
 
-def str2int(text):
-    """Helper for intelligetn sorting"""
-    add = 0
-    res = ""
-    for c in text:
-        if c.isdigit():
-            res = "%s%s" % (res, c)
-        else:
-            try:
-                add += ABC.index(c.upper()) + 1
-            except ValueError:
-                pass
-    return int(res)*3 + add
-
-def int_to_roman(input):
-    """
-    Convert an integer to Roman numerals.
-
-    Examples:
-    >>> int_to_roman(0)
-    Traceback (most recent call last):
-    ValueError: Argument must be between 1 and 3999
-
-    >>> int_to_roman(-1)
-    Traceback (most recent call last):
-    ValueError: Argument must be between 1 and 3999
-
-    >>> int_to_roman(1.5)
-    Traceback (most recent call last):
-    TypeError: expected integer, got <type 'float'>
-
-    >>> for i in range(1, 21): print int_to_roman(i)
-    ...
-    I
-    II
-    III
-    IV
-    V
-    VI
-    VII
-    VIII
-    IX
-    X
-    XI
-    XII
-    XIII
-    XIV
-    XV
-    XVI
-    XVII
-    XVIII
-    XIX
-    XX
-    >>> print int_to_roman(2000)
-    MM
-    >>> print int_to_roman(1999)
-    MCMXCIX
-    """
-    if type(input) != type(1):
-        raise TypeError, "expected integer, got %s" % type(input)
-    if not 0 < input < 4000:
-        raise ValueError, "Argument must be between 1 and 3999"   
-
-    ints = (1000, 900,  500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)
-    nums = ('M',  'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 
-            'IX', 'V', 'IV', 'I')
-    result = ""
-    for i in range(len(ints)):
-        count = int(input / ints[i])
-        result += nums[i] * count
-        input -= ints[i] * count
-    return result
-
-def roman_to_int(input):
-    """Convert a roman numeral to an integer.
-    
-    >>> r = range(1, 4000)
-    >>> nums = [int_to_roman(i) for i in r]
-    >>> ints = [roman_to_int(n) for n in nums]
-    >>> print r == ints
-    1
-
-    >>> roman_to_int('VVVIV')
-    Traceback (most recent call last):
-    ...
-    ValueError: input is not a valid roman numeral: VVVIV
-    >>> roman_to_int(1)
-    Traceback (most recent call last):
-    ...
-    TypeError: expected string, got <type 'int'>
-    >>> roman_to_int('a')
-    Traceback (most recent call last):
-    ...
-    ValueError: input is not a valid roman numeral: A
-    >>> roman_to_int('IL')
-    Traceback (most recent call last):
-    ...
-    ValueError: input is not a valid roman numeral: IL
-    """
-    if type(input) != type(""):
-        raise TypeError, "expected string, got %s" % type(input)
-    input = input.upper().replace('-','')
-    nums = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
-    ints = [1000, 500, 100, 50,  10,  5,   1]
-    places = []
-    for c in input:
-        if not c in nums:
-            raise ValueError, "input is not a valid roman numeral: %s" % input
-    for i in range(len(input)):
-        c = input[i]
-        value = ints[nums.index(c)]
-        # If the next place holds a larger number, this value is negative.
-        try:
-            nextvalue = ints[nums.index(input[i +1])]
-            if nextvalue > value:
-                value *= -1
-        except IndexError:
-            # there is no next place.
-            pass
-        places.append(value)
-    sum = 0
-    for n in places: sum += n
-    # Easiest test for validity...
-    if int_to_roman(sum) == input:
-        return sum
-    else:
-        raise ValueError, 'input is not a valid roman numeral: %s' % input
+from numfunc import *
 
 class TextStore(models.Model):
     """
@@ -155,6 +30,7 @@ class TextStore(models.Model):
     text = models.TextField(null=True, blank=True)
     raw_text = models.TextField(null=True, blank=True, default="")
 
+    
 class Title(models.Model):
     """Top level of Statutes tree. """
 
@@ -282,6 +158,8 @@ class TmpSubsection(models.Model):
     s_type = models.IntegerField(default=0)# 0 - regular, 1 - header , 2 - top Header
     text = models.TextField(null=True, blank=True)
     raw_text = models.TextField(null=True, blank=True)
+    #store = models.ForeignKey(TextStore, null=True, blank=True)
+
     is_processed = models.BooleanField(default=False) #  Field for storing information about processed this field or no
 
     def __unicode__(self):
@@ -308,6 +186,8 @@ class Subsection(models.Model):
     s_type = models.IntegerField(default=0)# 0 - regular, 1 - header , 2 - top Header
     text = models.TextField(null=True, blank=True)
     raw_text = models.TextField(null=True, blank=True)
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+    
     source = models.CharField(max_length=255, null=True, blank=True)  # file source
     hash = models.CharField(max_length=40, blank=True, default="")#, unique=True)
     is_active = models.BooleanField(default=True)
@@ -562,6 +442,8 @@ class TmpSectionAdditional(models.Model):
     order = models.IntegerField(default=0)
     text = models.TextField()
     raw_text = models.TextField()
+    #store = models.ForeignKey(TextStore, null=True, blank=True)
+
     publication_date = models.DateTimeField(default=datetime.now())
     sa_type = models.IntegerField(default=0)# 0 - regular text, 1 - Header
     is_processed = models.BooleanField(default=False) #  Field for storing information about processed this field or no
@@ -575,6 +457,8 @@ class SectionAdditional(models.Model):
     order = models.IntegerField(default=0)
     text = models.TextField()
     raw_text = models.TextField()
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     publication_date = models.DateTimeField(default=datetime.now())
     sa_type = models.IntegerField(default=0)# 0 - regular text, 1 - Header
     is_processed = models.BooleanField(default=False) #  Field for storing information about processed this field or no
@@ -610,7 +494,10 @@ class Regulation(models.Model):
     document = models.FileField(blank=True, null=True, upload_to="uploads/documents/")
     main_section = models.ForeignKey(Section, null=True, blank=True, related_name="main_section")
     sections = models.ManyToManyField(Section)
+
     text = models.TextField(null=True, blank=True)
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     link = models.CharField(max_length=255, null=True, blank=True)
     shortlink = models.CharField(max_length=55, null=True, blank=True)
     browsable = models.BooleanField(default=True)
@@ -681,6 +568,8 @@ class IRSRevenueRulings(models.Model):
     document = models.FileField(blank=True, null=True, upload_to="uploads/documents/")
     sections = models.ManyToManyField(Section)
     text = models.TextField(null=True, blank=True)
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     link = models.CharField(max_length=255, null=True, blank=True)
     browsable = models.BooleanField(default=True)
     rate = models.IntegerField(default=0)
@@ -725,6 +614,8 @@ class IRSPrivateLetter(models.Model):
     document = models.FileField(blank=True, null=True, upload_to="uploads/documents/")
     sections = models.ManyToManyField(Section)
     text = models.TextField()
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     link = models.CharField(max_length=255, null=True, blank=True)
     browsable = models.BooleanField(default=True)
     rate = models.IntegerField(default=0)
@@ -764,6 +655,7 @@ class PubLaw(models.Model):
     billnum = models.CharField(max_length = 15) 
     text = models.TextField(null=True, blank=True)
     html = models.TextField(null=True, blank=True)
+    #store = models.ForeignKey(TextStore, null=True, blank=True)
 
     def __unicode__(self):
         return u"P.L. %s" % self.plnum
@@ -825,6 +717,8 @@ class FormAndInstruction(models.Model):
     document = models.FileField(blank=True, null=True, upload_to="uploads/documents/")
     sections = models.ManyToManyField(Section)
     text = models.TextField(null=True, blank=True)
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     link = models.CharField(max_length=255, null=True, blank=True)
     rate = models.IntegerField(default=0)
 
@@ -936,16 +830,20 @@ class Decision(models.Model):
     product_number = models.CharField(max_length=50)
     title = models.CharField(max_length=500)
     description = models.CharField(max_length=500)
-    document = models.FileField(blank=True, null=True, upload_to="uploads/documents/")
+    document = models.FileField(blank=True, null=True,
+                                upload_to="uploads/documents/")
     sections = models.ManyToManyField(Section)
     text = models.TextField(null=True, blank=True)
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     link = models.CharField(max_length=255, null=True, blank=True)
     rate = models.IntegerField(default=0)
 
     publication_date = models.DateTimeField(default=datetime.now())
     is_active = models.BooleanField(default=True)
     is_outdated = models.BooleanField(default=False)
-    external_publication_date = models.DateField(null=True, blank=True, max_length=20)
+    external_publication_date = models.DateField(null=True, blank=True,
+                                                 max_length=20)
     last_update = models.DateTimeField(blank=True, null=True)
 
     def __unicode__(self):
@@ -977,6 +875,8 @@ class InformationLetter(models.Model):
     document = models.FileField(blank=True, null=True, upload_to="uploads/documents/")
     sections = models.ManyToManyField(Section)
     text = models.TextField(null=True, blank=True)
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     link = models.CharField(max_length=255, null=True, blank=True)
     rate = models.IntegerField(default=0)
 
@@ -1069,7 +969,8 @@ class InternalRevenueManualToc(models.Model):
 class InternalRevenueManual(models.Model):
     toc = models.ForeignKey(InternalRevenueManualToc)
     text = models.TextField(null=True, blank=True)
-    
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     def __unicode__(self):
         return self.toc
 
@@ -1115,6 +1016,8 @@ class InternalRevenueBulletin(models.Model):
     sub_toc = models.ForeignKey(InternalRevenueBulletinToc,
                                 null=True, blank=True, related_name="sub_toc")
     text = models.TextField(null=True, blank=True)
+    store = models.ForeignKey(TextStore, null=True, blank=True)
+
     part_id = models.PositiveIntegerField()
     
     def __unicode__(self):
@@ -1130,6 +1033,13 @@ class InternalRevenueBulletin(models.Model):
             u = "%s" % (self.toc.name)
         return u
 
+    #def text(self):
+    #    if self.store:
+    #        return self.store.text
+    #    else:
+    #        return None
+        
+        
     def get_ext_date(self):
         return self.toc.current_through
 
@@ -1224,7 +1134,8 @@ class IRBDocument(models.Model):
 
     def get_absolute_url(self):
         dt_name = self.DOCUMENT_TYPES[self.document_type][1]
-        url = reverse('view_irb_document', kwargs={'document_type':dt_name, 'pk':self.pk})
+        url = reverse('view_irb_document', kwargs={'document_type':dt_name,
+                                                   'pk':self.pk})
         return url
 
     def get_ext_date(self):
