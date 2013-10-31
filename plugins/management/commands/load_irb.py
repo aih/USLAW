@@ -18,7 +18,7 @@ from django.conf import settings
 from utils.shorturl import bitly_short
 from utils.load_url import load_url
 from utils.txt2html import texttohtml
-from laws.models import InternalRevenueBulletinToc, InternalRevenueBulletin
+from laws.models import InternalRevenueBulletinToc, InternalRevenueBulletin, TextStore
 from parserefs.autoparser import parse 
 from plugins.plugin_base import BasePlugin
 from plugins.models import Plugin
@@ -190,9 +190,17 @@ class Command(BaseCommand, BasePlugin):
             d = pq(data)
             part_id = 0
             subtitle = d('h3.subtitle:first').html()
-            irb_item = InternalRevenueBulletin.objects.get_or_create(text=subtitle,
+            irb_item, c = InternalRevenueBulletin.objects.get_or_create(#text=subtitle,
                                                                      toc=top_irb_toc,
                                                                      part_id=part_id)
+            if irb_item.store is None:
+                ts = TextStore(text=subtitle)
+                ts.save()
+                irb_item.store = ts
+                irb_item.save()
+            else:
+                irb_item.store.text = subtitle
+                irb_item.store.save()
             article = d('div.article:first').html()
             part_id += 1
             anchor_re = re.compile(r'<a name="(\w+)">')

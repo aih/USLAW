@@ -66,7 +66,8 @@ class Command(BaseCommand, BasePlugin):
                 text_path = "%s.txt" % full_filename
 
                 data = self.pdftotext(full_filename, text_path, data)
-                data = parse(texttohtml(data))[0]
+                raw_data = texttohtml(data)
+                data = parse(raw_data)[0]
                 data = self.replace_this_links(data)
                 #print data
 
@@ -79,13 +80,16 @@ class Command(BaseCommand, BasePlugin):
                 fai.document = document
                 fai.external_publication_date = external_publication_date.date()
                 fai.last_update = datetime.now()
+                if fai.store is None:
+                    st = TextStore(text=data, raw_text=raw_data)
+                    st.save()
+                    fai.store = st
+                else:
+                    fai.store.text = data
+                    fai.store.raw_text = raw_data
+                    fai.store.save()
                 fai.save()
 
-                if fai.store is None:
-                    ts = TextStore(text=data)
-                    ts.save()
-                    fai.store = ts
-                    fai.save()
 
                 self.extract_references(data, fai)
 

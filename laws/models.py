@@ -186,7 +186,7 @@ class Subsection(models.Model):
     s_type = models.IntegerField(default=0)# 0 - regular, 1 - header , 2 - top Header
     text = models.TextField(null=True, blank=True)
     raw_text = models.TextField(null=True, blank=True)
-    store = models.ForeignKey(TextStore, null=True, blank=True)
+    #store = models.ForeignKey(TextStore, null=True, blank=True)
     
     source = models.CharField(max_length=255, null=True, blank=True)  # file source
     hash = models.CharField(max_length=40, blank=True, default="")#, unique=True)
@@ -457,7 +457,7 @@ class SectionAdditional(models.Model):
     order = models.IntegerField(default=0)
     text = models.TextField()
     raw_text = models.TextField()
-    store = models.ForeignKey(TextStore, null=True, blank=True)
+    #store = models.ForeignKey(TextStore, null=True, blank=True)
 
     publication_date = models.DateTimeField(default=datetime.now())
     sa_type = models.IntegerField(default=0)# 0 - regular text, 1 - Header
@@ -800,7 +800,8 @@ class Publication(models.Model):
     is_active = models.BooleanField(default=True)
     is_outdated = models.BooleanField(default=False)
     revision_date = models.CharField(max_length=10)
-    external_publication_date = models.DateField(null=True, blank=True, max_length=20)
+    external_publication_date = models.DateField(null=True,
+                                                 blank=True, max_length=20)
     last_update = models.DateTimeField(blank=True, null=True)
 
     def __unicode__(self):

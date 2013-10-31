@@ -15,7 +15,7 @@ from django.conf import settings
 
 from utils.load_url import load_url
 from utils.txt2html import texttohtml
-from laws.models import IRSPrivateLetter
+from laws.models import IRSPrivateLetter, TextStore
 from parserefs.autoparser import parse 
 from plugins.plugin_base import BasePlugin
 from utils.txt2html import texttohtml
@@ -68,15 +68,24 @@ class Command(BaseCommand, BasePlugin):
             text_path = "%s.txt" % full_filename
 
             data = self.pdftotext(full_filename, text_path, data)
-            data = parse(texttohtml(data))[0]
+            raw_data = texttohtml(data)
+            data = parse(raw_data)[0]
             data = self.replace_this_links(data)
 
             document = "uploads/%s" % filename
             pr, c = IRSPrivateLetter.objects.get_or_create(section=number, title=number)
             pr.document = document
-            pr.text = data
+            #pr.text = data
             pr.link = page.url
             pr.last_update = datetime.now()
+            if pr.store is None:
+                st = TextStore(text=data, raw_text=raw_data)
+                st.save()
+                pr.store = st
+            else:
+                pr.store.text = data
+                pr.store.raw_text = raw_data
+                pr.store.save()            
             pr.save()
             print "ID: %s" % pr.id
             self.extract_references(data, fai)

@@ -18,7 +18,7 @@ from django.conf import settings
 from utils.shorturl import bitly_short
 from utils.load_url import load_url
 from utils.txt2html import texttohtml
-from laws.models import Regulation, Section, Title
+from laws.models import Regulation, Section, Title, TextStore
 from parserefs.autoparser import parse 
 from plugins.plugin_base import BasePlugin
 from plugins.models import Plugin
@@ -78,6 +78,7 @@ class Command(BaseCommand, BasePlugin):
         content = unicode(content).replace('&#167;', u'§')
         # print content
         # parse content for links:
+        raw_content = content
         content = parse(content)[0]
         r, c = Regulation.objects.get_or_create(section=regulation)
         if settings.DEBUG:
@@ -110,12 +111,16 @@ class Command(BaseCommand, BasePlugin):
         r.section = regulation
         r.title = reg_name
         r.last_update = datetime.now()
-        if r.text != content: # regulation text changed 
-            plugin = Plugin.objects.get(plugin_id=_PLUGIN_ID)
-            #u = Update(plugin=plugin, update_text="Regulation text updated -  %s " % r)
-            #u.save()
+        if r.store is None:
+            ts = TextStore(text=content, raw_text=raw_content)
+            ts.save()
+            r.store = ts
+        else:
+            r.store.text = content
+            r.store.raw_text = raw_content
+            r.store.save()
 
-        r.text = content
+        #r.text = content
         r.link = sub_url
         r.save()
 

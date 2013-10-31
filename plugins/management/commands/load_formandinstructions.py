@@ -14,7 +14,7 @@ from django.conf import settings
 
 from utils.load_url import load_url
 from utils.txt2html import texttohtml
-from laws.models import FormAndInstruction
+from laws.models import FormAndInstruction, TextStore
 
 #from plugins.models import *
 from parserefs.autoparser import parse 
@@ -63,7 +63,8 @@ class Command(BaseCommand, BasePlugin):
                 text_path = "%s.txt" % full_filename
 
                 data = self.pdftotext(full_filename, text_path, data)
-                data = parse(texttohtml(data))[0]
+                raw_data = texttohtml(data)
+                data = parse(raw_data)[0]
                 data = self.replace_this_links(data)
 
                 document = "uploads/%s" % filename
@@ -72,11 +73,21 @@ class Command(BaseCommand, BasePlugin):
                                                                   product_number=d[1].strip(),
                                                                   title=d[2].strip())
                 fai.document = document
-                fai.text = data
+                #fai.text = data
                 fai.revision_date = d[3].strip()
                 fai.external_publication_date = external_publication_date.date()
                 fai.last_update = datetime.now()
+                if fai.store is None:
+                    st = TextStore(text=data, raw_text=raw_data)
+                    st.save()
+                    fai.store = st
+                else:
+                    fai.store.text = data
+                    fai.store.raw_text = raw_data
+
                 fai.save()
+                fai.store.save()
+
                 self.extract_references(data, fai)
 
             return new_urls

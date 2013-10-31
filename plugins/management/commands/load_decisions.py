@@ -85,7 +85,8 @@ from http://apps.irs.gov/app/picklist/list/actionsOnDecisions.html"""
                 data = self.pdftotext(full_filename, text_path, data)
                 if not data:
                     continue
-                data = parse(texttohtml(data))[0]
+                raw_data = texttohtml(data)
+                data = parse(raw_data)[0]
                 data = self.replace_this_links(data)
 
                 document = "uploads/%s" % filename
@@ -95,19 +96,19 @@ from http://apps.irs.gov/app/picklist/list/actionsOnDecisions.html"""
                                                         title=d[2].strip())
                 fai.document = document
                 fai.description = d[3].strip()
+                fai.external_publication_date = external_publication_date.date()
+                fai.last_update = datetime.now()
                 if fai.store is None:
-                    st = TextStore(text=data)
+                    st = TextStore(text=data, raw_text=raw_data)
                     st.save()
                     fai.store = st
                 else:
                     fai.store.text = data
-
-                #fai.text = data
-                fai.external_publication_date = external_publication_date.date()
-                fai.last_update = datetime.now()
+                    fai.store.raw_text = raw_data
+                    fai.store.save()
                 fai.save()
-                
                 fai.store.save()
+
                 self.extract_references(data, fai)
 
             return new_urls

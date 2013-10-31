@@ -19,7 +19,7 @@ from django.conf import settings
 from utils.shorturl import bitly_short
 from utils.load_url import load_url
 from utils.txt2html import texttohtml
-from laws.models import InternalRevenueManualToc, InternalRevenueManual
+from laws.models import InternalRevenueManualToc, InternalRevenueManual, TextStore
 from parserefs.autoparser import parse 
 from plugins.plugin_base import BasePlugin
 from plugins.models import Plugin
@@ -132,7 +132,14 @@ class Command(BaseCommand, BasePlugin):
             irm, c = InternalRevenueManual.objects.get_or_create(toc=related_toc)
             nav_link_re = re.compile(r'<div class="chunkNavigation">(.*?)</div>', re.DOTALL)
             text = re.sub(nav_link_re, '', text)
-            irm.text = text
+            if irm.store is None:
+                ts = TextStore(text=text)
+                ts.save()
+                irm.store = ts
+            else:
+                irm.store.text = text
+                irm.store.save()
+            #irm.text = text
             #print text
             irm.save()
             

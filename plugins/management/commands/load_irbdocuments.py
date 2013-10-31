@@ -13,7 +13,8 @@ import traceback
 from django.core.management.base import BaseCommand
 from django.conf import settings
 
-from laws.models import InternalRevenueBulletinToc, InternalRevenueBulletin, IRBDocument
+from laws.models import InternalRevenueBulletinToc, InternalRevenueBulletin
+from laws.models import IRBDocument, TextStore
 from parserefs.autoparser import parse 
 from plugins.plugin_base import BasePlugin
 from plugins.models import Plugin
@@ -57,13 +58,16 @@ class Command(BaseCommand, BasePlugin):
                             print "New IRB Document: %s" % irbd
                         else:
                             
-                            if irbd.irb.text is None:
-                                irbd.irb = irb
+                            if irbd.irb.store is None:
+                                ts = TextStore(text=irb.text)
+                                ts.save()
+                                irbd.irb.store = ts
+                                irbd.irb.store.save()
                                 irbd.save()
                                 print "Text updated..!!!!."
-                            elif irb.text is not None:
-                                if len(irbd.irb.text) < len(irb.text):
-                                    print "%s - %s " % (len(irbd.irb.text), len(irb.text))
+                            else:
+                                if len(irbd.irb.store.text) < len(irb.store.text):
+                                    print "%s - %s " % (len(irbd.irb.store.text), len(irb.store.text))
                                     irbd.irb = irb
                                     irbd.save()
                                     print "Text updated..."
